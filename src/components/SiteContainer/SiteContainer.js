@@ -7,7 +7,7 @@ import {
   light,
   dark,
 } from './../../hooks';
-import {lightTheme, darkTheme} from './../../theme.css';
+import {lightTheme, darkTheme} from './../../theme/theme.css';
 
 export default function SiteContainer(props) {
   const [currentTheme, setCurrentTheme] = useLocalStorage(light, light);
@@ -17,6 +17,7 @@ export default function SiteContainer(props) {
     setCurrentTheme(theme);
   }
 
+  
   return (
     <ThemesContext.Provider value={{handleTheme, currentTheme}}>
       <div

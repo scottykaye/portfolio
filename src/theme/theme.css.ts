@@ -4,7 +4,7 @@ import {
   createThemeContract,
   globalStyle,
 } from '@vanilla-extract/css';
-import {light} from './hooks';
+import { light } from '../../hooks';
 
 const root = createGlobalTheme('.App', {
   space: {
@@ -76,7 +76,7 @@ export const darkTheme = createTheme(colors, {
   },
 });
 
-export const theme = {...root, colors};
+export const theme = { ...root, colors };
 
 // Global styles
 // don't love the next id we need height: 100% for it
@@ -98,3 +98,8 @@ globalStyle('html, body, .App, #__next', {
     },
   },
 });
+
+// override a global defaults
+globalStyle('input[type="checkbox" i] ', {
+  margin: 0,
+})

@@ -1,5 +1,5 @@
-import {style} from '@vanilla-extract/css';
-import {theme} from './../../theme.css';
+import { style } from '@vanilla-extract/css';
+import { theme } from '../../theme/theme.css';
 
 export const ButtonStyles = style({
   fontFamily: theme.fonts.body,
@@ -10,7 +10,7 @@ export const ButtonStyles = style({
   border: 0,
   appearance: 'none',
   cursor: 'pointer',
-
+  //
   // spacing
   margin: theme.space[100],
   padding: `${theme.space[300]} ${theme.space[400]}`,
@@ -37,10 +37,10 @@ export const ButtonStyles = style({
     boxShadow: `0 0 0 2px ${theme.colors.text.inverse}, 0 0 0 4px ${theme.colors.text.normal}`,
   },
 
-  // figure out why it doesn't like not later
-  // @ts-ignore
-  ':focus:not(:focus-visible)': {
-    transform: 'translateY(-0.25em) scale(1.1)',
-    boxShadow: `0 0 0 2px ${theme.colors.text.inverse}, 0 0 0 4px ${theme.colors.text.normal}`,
+  selectors: {
+    '&:focus:not(:focus-visible)': {
+      transform: 'translateY(-0.25em) scale(1.1)',
+      boxShadow: `0 0 0 2px ${theme.colors.text.inverse}, 0 0 0 4px ${theme.colors.text.normal}`,
+    },
   },
 });

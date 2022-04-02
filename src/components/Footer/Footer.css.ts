@@ -1,5 +1,5 @@
 import {style, keyframes} from '@vanilla-extract/css';
-import {theme} from './../../theme.css';
+import {theme} from '././../../theme/theme.css';
 
 const animate = keyframes({
   '0%': {
