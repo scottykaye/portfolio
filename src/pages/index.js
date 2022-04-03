@@ -1,14 +1,9 @@
-import SiteContainer from '../components/SiteContainer/';
-import Header from '../components/Header/';
-import MainContent from '../components/MainContent/';
-import Footer from '../components/Footer/';
+import App from '../components/App';
 
 export default function Home() {
   return (
-    <SiteContainer>
-      <Header>Header</Header>
-      <MainContent>Test</MainContent>
-      <Footer>Footer</Footer>
-    </SiteContainer>
+    <App>
+      Home
+    </App>
   );
 }

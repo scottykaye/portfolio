@@ -1,11 +1,12 @@
-import {style} from '@vanilla-extract/css';
-import {theme} from './../../theme/theme.css';
+import { style } from '@vanilla-extract/css';
+import { theme, colors } from '../../theme/theme.css';
 
-export const MainContentStyle = style({
-  backgroundColor: theme.colors.background,
+export const mainContentStyle = style({
+  backgroundColor: colors.background,
   fontFamily: theme.fonts.body,
-  color: theme.colors.text.normal,
-  padding: 10,
+  color: colors.text.normal,
   flexGrow: 1,
-  display: 'grid',
+  // Doing padding on main since issues with the theme on body and html reset
+  paddingTop: theme.space[500],
+  paddingBottom: theme.space[1000],
 });

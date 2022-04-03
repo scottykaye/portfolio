@@ -21,6 +21,9 @@ module.exports = {
   ],
   rules: {
     'import/prefer-default-export': 'off',
-    'eact/jsx-no-bind': false,
+    'react/jsx-no-bind': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };

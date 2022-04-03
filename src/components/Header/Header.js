@@ -1,25 +1,26 @@
 import React from 'react';
-import { headerStyle , rightStyle} from './Header.css';
-import Button from '../../components/Button';
-import Toggle from '../../components/Toggle';
-import { useTheme, dark, light } from '../../hooks';
+import Wrapper from '../Wrapper';
+import {
+  headerStyle, innerHeaderStyle, rightStyle, centerStyle,
+} from './Header.css';
+import {
+  useTheme,
+} from '../../hooks';
 
 export default function Header(props) {
-  const { currentTheme, handleTheme } = useTheme();
-
-  const theme = currentTheme === light ? dark : light;
-
-  function toggleTheme() {
-    handleTheme(theme);
-  }
-
   return (
     <header className={headerStyle} {...props}>
-      {props.children}
-      <div className={rightStyle}>
-      <Button onClick={toggleTheme}>{currentTheme}</Button>
-        <Toggle onClick={toggleTheme} checked={currentTheme === dark} showLabel label={theme}/>
-      </div>
+      <Wrapper>
+        <div className={innerHeaderStyle}>{props.children}</div>
+      </Wrapper>
     </header>
   );
+}
+
+export function SplitContainer(props) {
+  return <div className={rightStyle} {...props} />;
+}
+
+export function CenterContainer(props) {
+  return <div className={centerStyle} {...props} />;
 }

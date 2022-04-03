@@ -2,11 +2,9 @@ import {
   createGlobalTheme,
   createTheme,
   createThemeContract,
-  globalStyle,
 } from '@vanilla-extract/css';
-import { light } from '../../hooks';
 
-const root = createGlobalTheme('.App', {
+export const theme = createGlobalTheme(':root', {
   space: {
     0: '0px',
     100: '5px',
@@ -21,32 +19,23 @@ const root = createGlobalTheme('.App', {
     1000: '50px',
   },
   fonts: {
-    heading: 'Georgia, Times, Times New Roman, serif',
-    body: 'system-ui',
+    // heading: 'Georgia, Times, Times New Roman, serif',
+    heading: 'Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif',
+    // body: 'system-ui',
+    body: 'Helvetica Neue, Helvetica, Arial, sans-serif',
   },
 });
 
-// We could just grab an array from the first theme to get a contract instead of doing this
-
-// export const [themeClass, themeVars] = createTheme({
-//   color: {
-//     brand: 'blue',
-//   },
-//   font: {
-//     body: 'arial',
-//   },
-// });
-
-const colors = createThemeContract({
-  primary: '',
-  secondary: '',
-  background: '',
+export const colors = createThemeContract({
+  primary: null,
+  secondary: null,
+  background: null,
   text: {
-    normal: '',
-    white: '',
-    black: '',
-    disabled: '',
-    inverse: '',
+    normal: null,
+    white: null,
+    black: null,
+    disabled: null,
+    inverse: null,
   },
 });
 
@@ -75,31 +64,3 @@ export const darkTheme = createTheme(colors, {
     inverse: '#000000',
   },
 });
-
-export const theme = { ...root, colors };
-
-// Global styles
-// don't love the next id we need height: 100% for it
-globalStyle('html, body, .App, #__next', {
-  margin: 0,
-  padding: 0,
-  minHeight: '100%',
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  flexGrow: 1,
-
-  '@media': {
-    '(prefers-color-scheme: light)': {
-      background: '#EBF7FA',
-    },
-    '(prefers-color-scheme: dark)': {
-      background: '#170038',
-    },
-  },
-});
-
-// override a global defaults
-globalStyle('input[type="checkbox" i] ', {
-  margin: 0,
-})

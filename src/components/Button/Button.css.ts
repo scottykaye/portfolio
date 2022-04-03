@@ -1,10 +1,10 @@
 import { style } from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
+import { theme, colors } from '../../theme/theme.css';
 
 export const ButtonStyles = style({
   fontFamily: theme.fonts.body,
-  backgroundColor: theme.colors.primary,
-  color: theme.colors.text.inverse,
+  backgroundColor: colors.primary,
+  color: colors.text.inverse,
 
   // button style overrides
   border: 0,
@@ -20,27 +20,27 @@ export const ButtonStyles = style({
   minWidth: '48px',
   minHeight: '48px',
   transition:
-    'color .2s ease, background-color .2s ease, transform .2s ease, box-shadow .2s ease',
+    'color 200ms ease, background-color 200ms ease, transform 200ms ease, box-shadow 200ms ease',
 
   ':hover': {
     transform: 'translateY(-0.25em)',
-    boxShadow: `0 0.5em 0.5em -0.4em ${theme.colors.text.normal}`,
+    boxShadow: `0 0.5em 0.5em -0.4em ${colors.text.normal}`,
   },
   ':active': {
     transform: 'translateY(-0.25em) scale(1.1)',
   },
   ':focus-visible': {
     transform: 'translateY(-0.25em)',
-    boxShadow: `0 0 0 2px ${theme.colors.text.inverse}, 0 0 0 4px ${theme.colors.text.normal}`,
+    boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
   },
   ':focus': {
-    boxShadow: `0 0 0 2px ${theme.colors.text.inverse}, 0 0 0 4px ${theme.colors.text.normal}`,
+    boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
   },
 
   selectors: {
     '&:focus:not(:focus-visible)': {
       transform: 'translateY(-0.25em) scale(1.1)',
-      boxShadow: `0 0 0 2px ${theme.colors.text.inverse}, 0 0 0 4px ${theme.colors.text.normal}`,
+      boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
     },
   },
 });
