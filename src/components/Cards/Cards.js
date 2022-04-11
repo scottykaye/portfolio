@@ -5,12 +5,12 @@ import {
   cardTitleStyles,
 } from './Cards.css';
 
-export default function Cards(props) {
+export default function Cards({ children }) {
   return (
     <div className={cardStyles}>
       <div className={cardImageStyles} />
       {/* <img className={cardImageStyles} src="https://www.placecage.com/800/600" /> */}
-      <div className={cardTitleStyles}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, consequuntur rem in accusamus voluptates nesciunt</div>
+      <div className={cardTitleStyles}>{children}</div>
     </div>
   );
 }

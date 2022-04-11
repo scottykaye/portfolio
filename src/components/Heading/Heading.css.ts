@@ -6,7 +6,7 @@ export const headingStyle = style({
   fontFamily: theme.fonts.heading,
   fontSize: 32,
   color: colors.text.normal,
-  padding: 10,
+  padding: `${theme.space[200]} 0${theme.space[400]}`,
   display: 'flex',
   alignItems: 'center',
 });

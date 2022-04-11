@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { linkStyles } from './LinkStyles.css';
 
 export default function Link({ children, href, ...props }) {
   const { isActive, ...rest } = props;
@@ -11,7 +12,7 @@ export default function Link({ children, href, ...props }) {
   }
 
   return (
-    <a href={href} onClick={handleClick} {...rest}>
+    <a href={href} onClick={handleClick} className={linkStyles} {...rest}>
       {children}
     </a>
   );
