@@ -1,9 +1,9 @@
 import { style, keyframes } from '@vanilla-extract/css';
-import { redirect } from 'next/dist/server/api-utils';
 import { theme, colors } from '../../theme/theme.css';
 
 const animate = keyframes({
   '0%': {
+
     backgroundPosition: '0% 50%',
   },
   '50%': {

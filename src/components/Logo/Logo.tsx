@@ -1,4 +1,10 @@
-export default function Logo({ logoSize = 100, backgroundColor = '#000000', foregroundColor = '#FFFFFF' }) {
+interface Props {
+  logoSize: number;
+  backgroundColor: string;
+  foregroundColor: string;
+}
+
+export default function Logo({ logoSize = 100, backgroundColor = '#000000', foregroundColor = '#FFFFFF' }: Props) {
   return (
     <svg width={logoSize} viewBox="0 0 400 400" className={backgroundColor}>
       <path d="M387.546,201.298c0,103.577-83.97,187.54-187.549,187.54c-103.577,0-187.543-83.963-187.543-187.54

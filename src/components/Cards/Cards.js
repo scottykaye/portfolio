@@ -1,16 +1,16 @@
 import React from 'react';
-import {
-  cardStyles,
-  cardImageStyles,
-  cardTitleStyles,
-} from './Cards.css';
+import * as styles from './Cards.css';
 
-export default function Cards({ children }) {
+interface Props {
+  children: React.ReactNode;
+}
+
+export default function Cards({ children }: Props) {
   return (
-    <div className={cardStyles}>
-      <div className={cardImageStyles} />
-      {/* <img className={cardImageStyles} src="https://www.placecage.com/800/600" /> */}
-      <div className={cardTitleStyles}>{children}</div>
+    <div className={styles.cardStyles}>
+      <div className={styles.cardImageStyles} />
+      {/* <img className={styles.cardImageStyles} src="https://www.placecage.com/800/600" /> */}
+      <div className={styles.cardTitleStyles}>{children}</div>
     </div>
   );
 }

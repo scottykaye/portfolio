@@ -1,25 +1,27 @@
-import { useMemo } from 'react';
+import { useMemo, ReactNode } from 'react';
 import { useRouter } from 'next/router';
-import {
-  appStyles, logoBGColor,
-  logoFillColor,
-} from './App.css';
+import cx from 'classnames';
+import * as styles from './App.css';
 import {
   ThemesContext,
   useLocalStorage,
   light, dark,
 } from '../../hooks';
-import Header, { SplitContainer, CenterContainer } from '/components/Header';
-import Heading from '/components/Heading';
-import { Navigation, NavItem, NavLink } from '/components/Navigation';
-import MainContent from '/components/MainContent';
-import Footer, { FooterRightContainer } from '/components/Footer';
-import Toggle from '../../components/Toggle';
-import Logo from '../../components/Logo';
-import { lightTheme, darkTheme } from '../../theme/theme.css';
+import Header, { SplitContainer, CenterContainer } from '../Header';
+import Heading from '../Heading';
+import { Navigation, NavItem, NavLink } from '../Navigation';
+import MainContent from '../MainContent';
+import Footer, { FooterRightContainer } from '../Footer';
+import Toggle from '../Toggle';
+import Logo from '../Logo';
+import * as themeStyles from '../../theme/theme.css';
 import '../../theme/global-reset.css';
 
-export default function App(props) {
+interface Props {
+  children: ReactNode;
+}
+
+export default function App(props: Props) {
   const router = useRouter();
 
   const [currentTheme, setCurrentTheme] = useLocalStorage(light, light);
@@ -28,14 +30,20 @@ export default function App(props) {
     setCurrentTheme((prevTheme) => (prevTheme === 'light' ? dark : light));
   }
 
-  const theme = useMemo(() => ({ setCurrentTheme, currentTheme }));
+  const theme = useMemo(() => ({ setCurrentTheme, currentTheme }), [setCurrentTheme, currentTheme]);
 
-  const logoBackgroundColor = logoBGColor;
-  const logoPrimaryColor = logoFillColor;
+  const logoBackgroundColor = styles.logoBGColor;
+
+  const logoPrimaryColor = styles.logoFillColor;
 
   return (
     <ThemesContext.Provider value={theme}>
-      <div className={`${appStyles} ${currentTheme === 'light' ? lightTheme : darkTheme}`}>
+      <div className={cx(styles.appStyles, {
+        [themeStyles.lightTheme]: currentTheme === 'light',
+        [themeStyles.darkTheme]: currentTheme === 'dark',
+      })}
+      >
+
         <Header>
           <Logo backgroundColor={logoBackgroundColor} foregroundColor={logoPrimaryColor} />
           <Heading>ScottyKaye</Heading>

@@ -1,5 +1,5 @@
-import { style, createVar, fallbackVar } from '@vanilla-extract/css';
-import { theme, colors } from '../../theme/theme.css';
+import { style } from '@vanilla-extract/css';
+import { theme } from '../../theme/theme.css';
 
 export const wrapperStyles = style({
   maxWidth: 1240,

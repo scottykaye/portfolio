@@ -1,7 +1,8 @@
 import App from '../components/App';
 import Link from '../components/Link';
 import Heading from '../components/Heading';
-import Article from '../components/Article';
+// @TODO: To be used
+// import Article from '../components/Article';
 
 export default function Home() {
   return (

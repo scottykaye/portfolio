@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { theme, colors } from '../../theme/theme.css';
+import { colors } from '../../theme/theme.css';
 
 export const navigationStyle = style({
   backgroundColor: colors.background,

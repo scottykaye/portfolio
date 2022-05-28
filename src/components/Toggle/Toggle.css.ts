@@ -1,5 +1,5 @@
-import { style, createVar, fallbackVar } from '@vanilla-extract/css';
-import { theme, colors } from '../../theme/theme.css';
+import { style, createVar } from '@vanilla-extract/css';
+import { colors } from '../../theme/theme.css';
 
 export const toggleStyle = style({
   position: 'relative',
