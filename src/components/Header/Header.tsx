@@ -3,7 +3,7 @@ import Wrapper from '../Wrapper';
 import * as styles from './Header.css';
 
 interface Props {
-  children: React.ReadNode;
+  children: React.ReactNode;
 }
 
 export default function Header(props: Props) {

@@ -59,7 +59,7 @@ export default function App(props: Props) {
                 label={currentTheme}
                 value={currentTheme}
               />
-              <div>{`${currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)} theme`}</div>
+              <div>{`${typeof currentTheme === 'string' && currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)} theme`}</div>
             </CenterContainer>
           </SplitContainer>
         </Header>

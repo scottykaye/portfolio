@@ -1,11 +1,13 @@
 import React from 'react';
-import { headingStyle } from './Heading.css';
+import * as styles from './Heading.css';
 
-interface Props {
-  is: React.ReactElement;
+interface Props<T extends React.ElementType> {
+  is?: T | string;
   [rest: string]: unknown;
 }
 
-export default function Heading({ is: Element = 'h2', ...rest }: Props) {
-  return <Element className={headingStyle} {...rest} />;
+export default function Heading<T extends React.ElementType = 'h2'>({ is = 'h2', ...props }: Props<T> & React.ComponentPropsWithoutRef<T>) {
+  const Element = is;
+
+  return <Element className={styles.headingStyle} {...props} />;
 }

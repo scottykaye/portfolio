@@ -16,7 +16,7 @@ export default function Blog() {
           <Cards key={item}>
             <Article title="Keyboard Shortcuts" caption="by ScottyKaye">
               If you know me, you know I am a huge proponent of keyboard shortcuts and simple workflows. I've compiled some simple
-              <table><tr><td>test</td></tr></table>
+              <table><tbody><tr><td>test</td></tr></tbody></table>
             </Article>
           </Cards>
         ))}

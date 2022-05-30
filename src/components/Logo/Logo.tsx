@@ -1,5 +1,5 @@
 interface Props {
-  logoSize: number;
+  logoSize?: number;
   backgroundColor: string;
   foregroundColor: string;
 }

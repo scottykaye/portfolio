@@ -36,5 +36,6 @@ module.exports = {
     'max-len': 'off',
     'import/extensions': 'off',
     'react/button-has-type': 'off',
+    'react/require-default-props': 'off',
   },
 };

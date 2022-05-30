@@ -8,6 +8,7 @@ interface Props {
 }
 interface NavLinkProps extends Props{
   isActive: boolean;
+  href: string;
 }
 
 export function Navigation(props: Props) {

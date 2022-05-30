@@ -27,15 +27,15 @@ export const theme = createGlobalTheme(':root', {
 });
 
 export const colors = createThemeContract({
-  primary: null,
-  secondary: null,
-  background: null,
+  primary: '',
+  secondary: '',
+  background: '',
   text: {
-    normal: null,
-    white: null,
-    black: null,
-    disabled: null,
-    inverse: null,
+    normal: '',
+    white: '',
+    black: '',
+    disabled: '',
+    inverse: '',
   },
 });
 

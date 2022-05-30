@@ -3,8 +3,10 @@ import React from 'react';
 import * as styles from './Toggle.css';
 
 interface Props {
-  label: string | null;
-  showLabel: boolean;
+  // 'currentTheme' is initially returning as unknown
+  // label?: unknown;
+  label?: string;
+  showLabel?: boolean;
   [rest : string]: unknown;
 }
 
