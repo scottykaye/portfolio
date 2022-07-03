@@ -20,20 +20,28 @@ const flex = style({
 export const footerStyle = style([flex, {
   backgroundColor: colors.background,
   fontFamily: theme.fonts.body,
-  color: colors.text.normal,
+  color: colors.normal,
   padding: `${theme.space[600]} 0`,
   position: 'relative',
 
-  ':before': {
-    content: '',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: 5,
-    background: 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
-    backgroundSize: '400% 400%',
-    animation: `${animate} 10s linear infinite`,
+  selectors: {
+    '&::before': {
+      content: '',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      height: 5,
+      // background: 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
+      background: `linear-gradient(-45deg, ${colors.gradient})`,
+      backgroundSize: '400% 400%',
+
+      '@media': {
+        '(prefers-reduced-motion: no-preference)': {
+          animation: `${animate} 5s linear infinite`,
+        },
+      },
+    },
   },
 }]);
 

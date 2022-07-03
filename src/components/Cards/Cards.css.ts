@@ -29,7 +29,7 @@ export const cardStyles = style({
     content: '',
     position: 'absolute',
     inset: -5,
-    background: 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
+    // background: 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
     backgroundSize: '400% 400%',
     animation: `${animate} 10s linear infinite`,
     // transform: 'scale(1)',
@@ -68,7 +68,7 @@ export const cardTitleStyles = style({
 
 // backgroundColor: colors.background,
 // fontFamily: theme.fonts.body,
-// color: colors.text.normal,
+// color: colors.normal,
 // padding: `${theme.space[1000]} ${theme.space[200]}`,
 // position: 'relative',
 //

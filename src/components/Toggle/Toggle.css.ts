@@ -29,7 +29,6 @@ export const checkStyles = style({
     'color 200ms ease, background-color 200ms ease, transform 200ms ease-in-out, box-shadow 200ms ease',
 
   ':checked': {
-    backgroundColor: colors.secondary,
 
   },
 
@@ -44,17 +43,17 @@ export const checkStyles = style({
 
   ':hover': {
     transform: 'translateY(-0.25em)',
-    boxShadow: `0 0.5em 0.5em -0.4em ${colors.text.normal}`,
+    boxShadow: `0 0.5em 0.5em -0.4em ${colors.normal}`,
   },
   ':active': {
     transform: 'translateY(-0.25em) scale(1.1)',
   },
   ':focus-visible': {
     transform: 'translateY(-0.25em)',
-    boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
+    boxShadow: `0 0 0 2px ${colors.inverse}, 0 0 0 4px ${colors.normal}`,
   },
   ':focus': {
-    boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
+    boxShadow: `0 0 0 2px ${colors.inverse}, 0 0 0 4px ${colors.normal}`,
   },
 
   selectors: {
@@ -65,7 +64,7 @@ export const checkStyles = style({
     '&:focus:not(:focus-visible)': {
       // use to also scale on focus
       transform: 'translateY(-0.25em) scale(1.1)',
-      boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
+      boxShadow: `0 0 0 2px ${colors.inverse}, 0 0 0 4px ${colors.normal}`,
     },
   },
 });
@@ -85,7 +84,7 @@ export const checkStyles = style({
 //   right: 8,
 //   width,
 //   transform: 'translate(100%, 50%)',
-//   color: colors.text.inverse,
+//   color: colors.inverse,
 //   transition: 'background-color 200ms ease-in-out, transform 200ms ease-in-out',
 //   pointerEvents: 'none',
 //   fontSize: '14px',

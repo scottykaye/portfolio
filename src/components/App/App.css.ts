@@ -7,5 +7,5 @@ export const appStyles = style({
   minHeight: '100%',
 });
 
-export const logoBGColor = style({ fill: colors.primary });
-export const logoFillColor = style({ fill: colors.text.inverse });
+export const logoBGColor = style({ fill: colors.normal });
+export const logoFillColor = style({ fill: colors.inverse });
