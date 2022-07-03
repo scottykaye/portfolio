@@ -4,7 +4,7 @@ import { theme, colors } from '../../theme/theme.css';
 export const ButtonStyles = style({
   fontFamily: theme.fonts.body,
   backgroundColor: colors.primary,
-  color: colors.text.inverse,
+  color: colors.inverse,
 
   // button style overrides
   border: 0,
@@ -24,23 +24,23 @@ export const ButtonStyles = style({
 
   ':hover': {
     transform: 'translateY(-0.25em)',
-    boxShadow: `0 0.5em 0.5em -0.4em ${colors.text.normal}`,
+    boxShadow: `0 0.5em 0.5em -0.4em ${colors.normal}`,
   },
   ':active': {
     transform: 'translateY(-0.25em) scale(1.1)',
   },
   ':focus-visible': {
     transform: 'translateY(-0.25em)',
-    boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
+    boxShadow: `0 0 0 2px ${colors.inverse}, 0 0 0 4px ${colors.normal}`,
   },
   ':focus': {
-    boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
+    boxShadow: `0 0 0 2px ${colors.inverse}, 0 0 0 4px ${colors.normal}`,
   },
 
   selectors: {
     '&:focus:not(:focus-visible)': {
       transform: 'translateY(-0.25em) scale(1.1)',
-      boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
+      boxShadow: `0 0 0 2px ${colors.inverse}, 0 0 0 4px ${colors.normal}`,
     },
   },
 });

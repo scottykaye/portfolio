@@ -6,5 +6,4 @@ export const wrapperStyles = style({
   width: '100%',
   margin: 'auto',
   padding: `0 ${theme.space[800]}`,
-  boxSizing: 'border-box',
 });

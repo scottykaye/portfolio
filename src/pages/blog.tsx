@@ -1,7 +1,7 @@
 import App from '../components/App';
 import Article from '../components/Article';
 import Heading from '../components/Heading';
-import CardsContainer from '../components/CardsContainer';
+import AutoGrid from '../components/AutoGrid';
 import Cards from '../components/Cards';
 
 export default function Blog() {
@@ -10,8 +10,7 @@ export default function Blog() {
       <Heading>Welcome to my blog,</Heading>
       <p>Here I will post my perspective on my engineering thoughts on daily challenges I am working on and solving.</p>
 
-      <CardsContainer>
-
+      <AutoGrid>
         {[...Array(7).keys()].map((item) => (
           <Cards key={item}>
             <Article title="Keyboard Shortcuts" caption="by ScottyKaye">
@@ -20,7 +19,7 @@ export default function Blog() {
             </Article>
           </Cards>
         ))}
-      </CardsContainer>
+      </AutoGrid>
     </App>
   );
 }

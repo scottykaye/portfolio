@@ -16,10 +16,10 @@ export default function Header(props: Props) {
   );
 }
 
-export function SplitContainer(props) {
-  return <div className={styles.rightStyle} {...props} />;
+export function HeaderContainer(props) {
+  return <div className={styles.container} {...props} />;
 }
 
-export function CenterContainer(props) {
-  return <div className={styles.centerStyle} {...props} />;
+export function HeaderStack(props) {
+  return <div className={styles.stack} {...props} />;
 }

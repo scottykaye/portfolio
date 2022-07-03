@@ -20,47 +20,50 @@ export const theme = createGlobalTheme(':root', {
   },
   fonts: {
     // heading: 'Georgia, Times, Times New Roman, serif',
-    heading: 'Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif',
+    heading: 'Raleway, Helvetica Neue, Helvetica, sans-serif',
     // body: 'system-ui',
-    body: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+    body: 'Helvetica Neue, Helvetica, sans-serif',
   },
 });
 
 export const colors = createThemeContract({
   primary: '',
   secondary: '',
+  tertiary: '',
   background: '',
-  text: {
-    normal: '',
-    white: '',
-    black: '',
-    disabled: '',
-    inverse: '',
-  },
+  gray: '',
+  normal: '',
+  white: '',
+  black: '',
+  disabled: '',
+  inverse: '',
+  gradient: '',
 });
 
 export const lightTheme = createTheme(colors, {
-  primary: '#1F004A',
-  secondary: '#8C0613',
-  background: '#EBF7FA',
-  text: {
-    normal: '#333333',
-    white: '#FFFFFF',
-    black: '#000000',
-    disabled: '#555555',
-    inverse: '#ffffff',
-  },
+  primary: '#968EA9',
+  secondary: '#379AC8',
+  tertiary: '#D94562',
+  background: '#F0F9F9',
+  gray: '#555555',
+  normal: '#333333',
+  white: '#FFFFFF',
+  black: '#000000',
+  disabled: '#555555',
+  inverse: '#ffffff',
+  gradient: ' #4158d0, #c850c0, #ffcc70',
 });
-
+//  I dig this purple but only 2.44 compliance color with white text #A9A3BD
 export const darkTheme = createTheme(colors, {
-  primary: '#82FFF9',
-  secondary: '#FF7680',
-  background: '#170038',
-  text: {
-    normal: '#E2FFCA',
-    white: '#FFFFFF',
-    black: '#000000',
-    disabled: '#CCD6D9',
-    inverse: '#000000',
-  },
+  primary: '#F0FF00',
+  secondary: '#30D4FD',
+  tertiary: '#FD3075',
+  background: '#111111',
+  gray: '#555555',
+  normal: '#ffffff',
+  white: '#FFFFFF',
+  black: '#000000',
+  disabled: '#CCD6D9',
+  inverse: '#000000',
+  gradient: '#fbda61, #ff5acd',
 });

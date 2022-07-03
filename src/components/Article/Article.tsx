@@ -1,6 +1,5 @@
 import React from 'react';
 // @TODO still styling
-// /import { articleStyle } from './Article.css';
 import Heading from '../Heading';
 
 interface Props {

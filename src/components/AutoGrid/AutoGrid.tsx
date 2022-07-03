@@ -1,10 +1,10 @@
 import React from 'react';
-import { cardsContainerStyles } from './CardsContainer.css';
+import { cardsContainerStyles } from './ AutoGrid.css';
 
 interface Props {
   children: React.ReactNode;
 }
 
-export default function CardsContainer({ children }: Props) {
+export default function AutoGrid({ children }: Props) {
   return <div className={cardsContainerStyles}>{children}</div>;
 }

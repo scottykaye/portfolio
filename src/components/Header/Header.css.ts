@@ -13,37 +13,45 @@ const animate = keyframes({
   },
 });
 
-const flex = style({
+export const flex = style({
   display: 'flex',
 });
 
 export const headerStyle = style([flex, {
   backgroundColor: colors.background,
   fontFamily: theme.fonts.body,
-  color: colors.text.normal,
+  color: colors.normal,
   padding: `${theme.space[200]} `,
   position: 'relative',
+  justifyContent: 'space-between',
+  selectors: {
 
-  ':after': {
-    content: '',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: 5,
-    background: 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
-    backgroundSize: '400% 400%',
-    animation: `${animate} 10s linear infinite`,
+    '&::after': {
+      content: '',
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: 5,
+      background: `linear-gradient(-45deg, ${colors.primary},${colors.secondary},${colors.tertiary})`,
+      backgroundSize: '400% 400%',
+
+      '@media': {
+        '(prefers-reduced-motion: no-preference)': {
+          animation: `${animate} 5s linear infinite`,
+        },
+      },
+    },
   },
 }]);
 
-export const innerHeaderStyle = style([flex]);
+export const innerHeaderStyle = style([flex, { justifyContent: 'space-between' }]);
 
-export const rightStyle = style([flex, { marginLeft: 'auto' }]);
+export const container = style([flex, {
+  gap: theme.space[500],
+}]);
 
-export const centerStyle = style([flex, {
-  justifyContent: 'center',
+export const stack = style([flex, {
   flexDirection: 'column',
-  margin: theme.space[500],
-  gap: theme.space[200],
+  justifyContent: 'center',
 }]);

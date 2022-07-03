@@ -7,7 +7,7 @@ import {
   useLocalStorage,
   light, dark,
 } from '../../hooks';
-import Header, { SplitContainer, CenterContainer } from '../Header';
+import Header, { HeaderContainer, HeaderStack } from '../Header';
 import Heading from '../Heading';
 import { Navigation, NavItem, NavLink } from '../Navigation';
 import MainContent from '../MainContent';
@@ -33,7 +33,6 @@ export default function App(props: Props) {
   const theme = useMemo(() => ({ setCurrentTheme, currentTheme }), [setCurrentTheme, currentTheme]);
 
   const logoBackgroundColor = styles.logoBGColor;
-
   const logoPrimaryColor = styles.logoFillColor;
 
   return (
@@ -43,25 +42,28 @@ export default function App(props: Props) {
         [themeStyles.darkTheme]: currentTheme === 'dark',
       })}
       >
-
         <Header>
-          <Logo backgroundColor={logoBackgroundColor} foregroundColor={logoPrimaryColor} />
-          <Heading>ScottyKaye</Heading>
-          <SplitContainer>
+          <HeaderContainer>
+            <Logo backgroundColor={logoBackgroundColor} foregroundColor={logoPrimaryColor} />
+            <Heading>
+              ScottyKaye
+            </Heading>
+          </HeaderContainer>
+          <HeaderContainer>
             <Navigation>
               <NavItem><NavLink isActive={router.pathname === '/'} href="/">Home</NavLink></NavItem>
               <NavItem><NavLink isActive={router.pathname === '/blog'} href="/blog">Blog</NavLink></NavItem>
             </Navigation>
-            <CenterContainer>
+            <HeaderStack>
               <Toggle
                 onChange={toggleTheme}
                 checked={currentTheme === dark}
                 label={currentTheme}
                 value={currentTheme}
               />
-              <div>{`${typeof currentTheme === 'string' && currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)} theme`}</div>
-            </CenterContainer>
-          </SplitContainer>
+              <p>{`${typeof currentTheme === 'string' && currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)} theme`}</p>
+            </HeaderStack>
+          </HeaderContainer>
         </Header>
         <MainContent>
           {props.children}

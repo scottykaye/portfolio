@@ -3,7 +3,7 @@ import { colors } from '../../theme/theme.css';
 
 export const navigationStyle = style({
   backgroundColor: colors.background,
-  color: colors.text.normal,
+  color: colors.normal,
   display: 'flex',
 });
 
@@ -21,7 +21,7 @@ export const navListItemStyle = style({
 
 export const activeStyle = style({
   backgroundColor: colors.primary,
-  color: colors.text.inverse,
+  color: colors.inverse,
 });
 
 export const navLinkStyle = style({
@@ -38,20 +38,20 @@ export const navLinkStyle = style({
   selectors: {
     // Set the color as long as its not active
     [`&:not(${activeStyle})`]: {
-      color: colors.text.normal,
+      color: colors.normal,
     },
 
     [`&:hover:not(${activeStyle})`]: {
       backgroundColor: colors.secondary,
-      color: colors.text.inverse,
+      color: colors.inverse,
     },
     [`&:active:not(${activeStyle})`]: {
       backgroundColor: colors.secondary,
-      color: colors.text.inverse,
+      color: colors.inverse,
     },
     [`&:focus:not(${activeStyle})`]: {
       backgroundColor: colors.secondary,
-      color: colors.text.inverse,
+      color: colors.inverse,
     },
   },
 });

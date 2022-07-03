@@ -29,3 +29,6 @@ globalStyle('input[type="checkbox" i], ul, li', {
 globalStyle('li ', {
   padding: 0,
 });
+globalStyle('*', {
+  boxSizing: 'border-box',
+});
