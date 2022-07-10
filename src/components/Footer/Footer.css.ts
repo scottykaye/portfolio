@@ -19,16 +19,16 @@ const flex = style({
 
 export const footerStyle = style([flex, {
   backgroundColor: colors.background,
+
   fontFamily: theme.fonts.body,
   color: colors.normal,
-  padding: `${theme.space[600]} 0`,
+  padding: `${theme.space[1000]} 0`,
   position: 'relative',
 
   selectors: {
-    '&::before': {
+    '&::before, &::after': {
       content: '',
       position: 'absolute',
-      top: 0,
       left: 0,
       right: 0,
       height: 5,
@@ -41,7 +41,17 @@ export const footerStyle = style([flex, {
         },
       },
     },
+
+    '&::before': {
+      top: 0,
+      // display: 'none'
+    },
+
+    '&::after': {
+      bottom: 0,
+    },
   },
+
 }]);
 
 export const footerInnerStyle = style([flex, {

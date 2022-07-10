@@ -33,10 +33,13 @@ export const navLinkStyle = style({
   textDecoration: 'none',
   transition:
     'color 200ms ease, background-color 200ms ease',
+  border: '2px solid transparent ',
 
-  // Making sure our active style doesnt' change when using these states
   selectors: {
-    // Set the color as long as its not active
+    '&:focus-visible': {
+      outline: 0,
+      borderColor: colors.tertiary,
+    },
     [`&:not(${activeStyle})`]: {
       color: colors.normal,
     },
@@ -52,6 +55,7 @@ export const navLinkStyle = style({
     [`&:focus:not(${activeStyle})`]: {
       backgroundColor: colors.secondary,
       color: colors.inverse,
+
     },
   },
 });

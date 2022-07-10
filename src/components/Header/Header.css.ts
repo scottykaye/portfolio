@@ -17,23 +17,22 @@ export const flex = style({
   display: 'flex',
 });
 
-export const headerStyle = style([flex, {
+export const headerStyle = style({
   backgroundColor: colors.background,
   fontFamily: theme.fonts.body,
   color: colors.normal,
-  padding: `${theme.space[200]} `,
+
   position: 'relative',
   justifyContent: 'space-between',
   selectors: {
 
-    '&::after': {
+    '&::before': {
       content: '',
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
+      display: 'block',
+      width: '100%',
       height: 5,
-      background: `linear-gradient(-45deg, ${colors.primary},${colors.secondary},${colors.tertiary})`,
+      marginBottom: theme.space[300],
+      background: `linear-gradient(-45deg, ${colors.primary},${colors.secondary})`,
       backgroundSize: '400% 400%',
 
       '@media': {
@@ -43,7 +42,7 @@ export const headerStyle = style([flex, {
       },
     },
   },
-}]);
+});
 
 export const innerHeaderStyle = style([flex, { justifyContent: 'space-between' }]);
 

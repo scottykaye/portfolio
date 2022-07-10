@@ -11,8 +11,7 @@ export const headingStyle = styleVariants(
   (color) => [color,
     {
       fontFamily: theme.fonts.heading,
-      fontSize: 32,
-      padding: `${theme.space[200]} 0${theme.space[400]}`,
+      fontSize: 30,
       display: 'flex',
       alignItems: 'center',
     },

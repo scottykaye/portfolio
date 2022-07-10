@@ -1,10 +1,11 @@
 import { style } from '@vanilla-extract/css';
-import { colors } from '../../theme/theme.css';
+import { colors, theme } from '../../theme/theme.css';
 
-export const appStyles = style({
+export const app = style({
   display: 'flex',
   flexDirection: 'column',
   minHeight: '100%',
+  padding: theme.space[1000],
 });
 
 export const logoBGColor = style({ fill: colors.normal });

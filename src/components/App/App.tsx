@@ -37,7 +37,7 @@ export default function App(props: Props) {
 
   return (
     <ThemesContext.Provider value={theme}>
-      <div className={cx(styles.appStyles, {
+      <div className={cx(styles.app, {
         [themeStyles.lightTheme]: currentTheme === 'light',
         [themeStyles.darkTheme]: currentTheme === 'dark',
       })}
