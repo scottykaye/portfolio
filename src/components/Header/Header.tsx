@@ -16,7 +16,6 @@ export default function Header(props: Props) {
   );
 }
 
-<<<<<<< HEAD
 interface HeaderProps {
   [key: string]: unknown
 }
@@ -26,12 +25,5 @@ export function HeaderContainer(props:HeaderProps) {
 }
 
 export function HeaderStack(props: HeaderProps) {
-=======
-export function HeaderContainer(props) {
-  return <div className={styles.container} {...props} />;
-}
-
-export function HeaderStack(props) {
->>>>>>> f42bbff97e8bf99bd30ed198472452669f38ca53
   return <div className={styles.stack} {...props} />;
 }

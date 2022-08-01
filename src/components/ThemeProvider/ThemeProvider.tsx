@@ -1,12 +1,10 @@
 import {
   useMemo, useEffect, ReactNode, useRef,
 } from 'react';
-import cx from 'classnames';
 
 import {
   ThemesContext,
   useLocalStorage,
-  light, dark,
 } from '../../hooks';
 
 interface Props {

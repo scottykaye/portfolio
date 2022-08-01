@@ -59,28 +59,21 @@ function AppContainer(props: Props) {
   return (
     <>
       <Header>
-        <HeaderContainer>
-          <Logo backgroundColor={logoBackgroundColor} foregroundColor={logoPrimaryColor} />
-          <Heading>
+        <Logo backgroundColor={logoBackgroundColor} foregroundColor={logoPrimaryColor} />
+        <Heading>
+          ScottyKaye
+        </Heading>
+        <Navigation>
+          <NavItem><NavLink isActive={router.pathname === '/'} href="/">Home</NavLink></NavItem>
+          <NavItem><NavLink isActive={router.pathname === '/blog'} href="/blog">Blog</NavLink></NavItem>
+        </Navigation>
+        <select value={colorMode} name="mode" id="mode" onChange={handleChange}>
+          <option value="os">OS Default</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
 
-            ScottyKaye
-          </Heading>
-        </HeaderContainer>
-        <HeaderContainer>
-          <Navigation>
-            <NavItem><NavLink isActive={router.pathname === '/'} href="/">Home</NavLink></NavItem>
-            <NavItem><NavLink isActive={router.pathname === '/blog'} href="/blog">Blog</NavLink></NavItem>
-          </Navigation>
-          <HeaderStack>
-            <select value={colorMode} name="mode" id="mode" onChange={handleChange}>
-              <option value="os">OS Default</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-
-            <p>{`${typeof currentTheme === 'string' && currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)} theme`}</p>
-          </HeaderStack>
-        </HeaderContainer>
+        <p>{`${typeof currentTheme === 'string' && currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)} theme`}</p>
       </Header>
       <MainContent>
         <Select

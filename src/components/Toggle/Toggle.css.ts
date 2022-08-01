@@ -43,28 +43,17 @@ export const checkStyles = style({
 
   ':hover': {
     transform: 'translateY(-0.25em)',
-<<<<<<< HEAD
     boxShadow: `0 0.5em 0.5em -0.4em ${theme.colors.normal}`,
-=======
-    boxShadow: `0 0.5em 0.5em -0.4em ${colors.normal}`,
->>>>>>> f42bbff97e8bf99bd30ed198472452669f38ca53
   },
   ':active': {
     transform: 'translateY(-0.25em) scale(1.1)',
   },
   ':focus-visible': {
     transform: 'translateY(-0.25em)',
-<<<<<<< HEAD
     boxShadow: `0 0 0 2px ${theme.colors.inverse}, 0 0 0 4px ${theme.colors.normal}`,
   },
   ':focus': {
     boxShadow: `0 0 0 2px ${theme.colors.inverse}, 0 0 0 4px ${theme.colors.normal}`,
-=======
-    boxShadow: `0 0 0 2px ${colors.inverse}, 0 0 0 4px ${colors.normal}`,
-  },
-  ':focus': {
-    boxShadow: `0 0 0 2px ${colors.inverse}, 0 0 0 4px ${colors.normal}`,
->>>>>>> f42bbff97e8bf99bd30ed198472452669f38ca53
   },
 
   selectors: {
@@ -75,11 +64,7 @@ export const checkStyles = style({
     '&:focus:not(:focus-visible)': {
       // use to also scale on focus
       transform: 'translateY(-0.25em) scale(1.1)',
-<<<<<<< HEAD
       boxShadow: `0 0 0 2px ${theme.colors.inverse}, 0 0 0 4px ${theme.colors.normal}`,
-=======
-      boxShadow: `0 0 0 2px ${colors.inverse}, 0 0 0 4px ${colors.normal}`,
->>>>>>> f42bbff97e8bf99bd30ed198472452669f38ca53
     },
   },
 });
@@ -99,11 +84,7 @@ export const checkStyles = style({
 //   right: 8,
 //   width,
 //   transform: 'translate(100%, 50%)',
-<<<<<<< HEAD
 //   color: theme.colors.inverse,
-=======
-//   color: colors.inverse,
->>>>>>> f42bbff97e8bf99bd30ed198472452669f38ca53
 //   transition: 'background-color 200ms ease-in-out, transform 200ms ease-in-out',
 //   pointerEvents: 'none',
 //   fontSize: '14px',
