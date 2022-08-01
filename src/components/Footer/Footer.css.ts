@@ -21,6 +21,7 @@ export const footerStyle = style([flex, {
   backgroundColor: theme.colors.background,
 
   fontFamily: theme.fonts.body,
+<<<<<<< HEAD
   color: theme.colors.normal,
   padding: `${theme.space[1000]} 0`,
   position: 'relative',
@@ -33,6 +34,22 @@ export const footerStyle = style([flex, {
       right: 0,
       height: 5,
       background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary},${theme.colors.tertiary})`,
+=======
+  color: colors.normal,
+  padding: `${theme.space[600]} 0`,
+  position: 'relative',
+
+  selectors: {
+    '&::before': {
+      content: '',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      height: 5,
+      // background: 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
+      background: `linear-gradient(-45deg, ${colors.gradient})`,
+>>>>>>> f42bbff97e8bf99bd30ed198472452669f38ca53
       backgroundSize: '400% 400%',
 
       '@media': {
@@ -41,6 +58,7 @@ export const footerStyle = style([flex, {
         },
       },
     },
+<<<<<<< HEAD
 
     '&::before': {
       top: 0,
@@ -50,6 +68,8 @@ export const footerStyle = style([flex, {
     '&::after': {
       bottom: 0,
     },
+=======
+>>>>>>> f42bbff97e8bf99bd30ed198472452669f38ca53
   },
 
 }]);

@@ -2,8 +2,13 @@ import { style } from '@vanilla-extract/css';
 import { theme } from '../../theme/theme.css';
 
 export const navigationStyle = style({
+<<<<<<< HEAD
   backgroundColor: theme.colors.background,
   color: theme.colors.normal,
+=======
+  backgroundColor: colors.background,
+  color: colors.normal,
+>>>>>>> f42bbff97e8bf99bd30ed198472452669f38ca53
   display: 'flex',
 });
 
@@ -20,8 +25,13 @@ export const navListItemStyle = style({
 });
 
 export const activeStyle = style({
+<<<<<<< HEAD
   backgroundColor: theme.colors.primary,
   color: theme.colors.inverse,
+=======
+  backgroundColor: colors.primary,
+  color: colors.inverse,
+>>>>>>> f42bbff97e8bf99bd30ed198472452669f38ca53
 });
 
 export const navLinkStyle = style({
@@ -41,6 +51,7 @@ export const navLinkStyle = style({
       borderColor: theme.colors.tertiary,
     },
     [`&:not(${activeStyle})`]: {
+<<<<<<< HEAD
       color: theme.colors.normal,
     },
 
@@ -56,6 +67,22 @@ export const navLinkStyle = style({
       backgroundColor: theme.colors.secondary,
       color: theme.colors.inverse,
 
+=======
+      color: colors.normal,
+    },
+
+    [`&:hover:not(${activeStyle})`]: {
+      backgroundColor: colors.secondary,
+      color: colors.inverse,
+    },
+    [`&:active:not(${activeStyle})`]: {
+      backgroundColor: colors.secondary,
+      color: colors.inverse,
+    },
+    [`&:focus:not(${activeStyle})`]: {
+      backgroundColor: colors.secondary,
+      color: colors.inverse,
+>>>>>>> f42bbff97e8bf99bd30ed198472452669f38ca53
     },
   },
 });

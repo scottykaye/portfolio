@@ -6,7 +6,7 @@ import {
   useTheme, dark, light, useLocalStorage,
 } from '../../hooks';
 import * as styles from './App.css';
-import Header, { HeaderContainer, HeaderStack } from '../Header';
+import Header from '../Header';
 import Heading from '../Heading';
 import { Navigation, NavItem, NavLink } from '../Navigation';
 import MainContent from '../MainContent';
@@ -62,6 +62,7 @@ function AppContainer(props: Props) {
         <HeaderContainer>
           <Logo backgroundColor={logoBackgroundColor} foregroundColor={logoPrimaryColor} />
           <Heading>
+
             ScottyKaye
           </Heading>
         </HeaderContainer>
