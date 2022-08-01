@@ -1,5 +1,5 @@
 import { style, keyframes } from '@vanilla-extract/css';
-import { theme, colors } from '../../theme/theme.css';
+import { theme } from '../../theme/theme.css';
 
 const animate = keyframes({
   '0%': {
@@ -18,10 +18,10 @@ const flex = style({
 });
 
 export const footerStyle = style([flex, {
-  backgroundColor: colors.background,
+  backgroundColor: theme.colors.background,
 
   fontFamily: theme.fonts.body,
-  color: colors.normal,
+  color: theme.colors.normal,
   padding: `${theme.space[1000]} 0`,
   position: 'relative',
 
@@ -32,7 +32,7 @@ export const footerStyle = style([flex, {
       left: 0,
       right: 0,
       height: 5,
-      background: `linear-gradient(-45deg, ${colors.primary},${colors.secondary},${colors.tertiary})`,
+      background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary},${theme.colors.tertiary})`,
       backgroundSize: '400% 400%',
 
       '@media': {
@@ -61,5 +61,5 @@ export const footerInnerStyle = style([flex, {
 
 export const rightStyle = style([flex, {
   gap: theme.space[200],
-  fill: colors.primary,
+  fill: theme.colors.primary,
 }]);

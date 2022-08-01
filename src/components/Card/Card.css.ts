@@ -1,5 +1,5 @@
 import { style, keyframes } from '@vanilla-extract/css';
-import { theme, colors } from '../../theme/theme.css';
+import { theme } from '../../theme/theme.css';
 
 const animate = keyframes({
   '0%': {
@@ -16,10 +16,10 @@ export const card = style({
   overflow: 'hidden',
   outline: '5px solid',
   outlineOffset: -10,
-  outlineColor: colors.inverse,
+  outlineColor: theme.colors.inverse,
   position: 'relative',
   border: '4px solid transparent',
-  color: colors.normal,
+  color: theme.colors.normal,
   padding: theme.space[100],
   // height: 300,
   cursor: 'pointer',
@@ -37,7 +37,7 @@ export const card = style({
     position: 'absolute',
     inset: 1,
     zIndex: -1,
-    background: colors.background,
+    background: theme.colors.background,
     // transform: 'scale(1)',
   },
 
@@ -46,7 +46,7 @@ export const card = style({
     position: 'absolute',
     inset: -4,
     zIndex: -2,
-    background: `linear-gradient(-45deg, ${colors.primary},${colors.secondary})`,
+    background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary})`,
   },
 });
 

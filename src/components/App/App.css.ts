@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { colors, theme } from '../../theme/theme.css';
+import { theme } from '../../theme/theme.css';
 
 export const app = style({
   display: 'flex',
@@ -8,5 +8,5 @@ export const app = style({
   padding: theme.space[1000],
 });
 
-export const logoBGColor = style({ fill: colors.normal });
-export const logoFillColor = style({ fill: colors.inverse });
+export const logoBGColor = style({ fill: theme.colors.normal });
+export const logoFillColor = style({ fill: theme.colors.inverse });

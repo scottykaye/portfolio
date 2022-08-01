@@ -1,5 +1,5 @@
 import { style, keyframes } from '@vanilla-extract/css';
-import { theme, colors } from '../../theme/theme.css';
+import { theme } from '../../theme/theme.css';
 
 const animate = keyframes({
   '0%': {
@@ -18,9 +18,9 @@ export const flex = style({
 });
 
 export const headerStyle = style({
-  backgroundColor: colors.background,
+  backgroundColor: theme.colors.background,
   fontFamily: theme.fonts.body,
-  color: colors.normal,
+  color: theme.colors.normal,
 
   position: 'relative',
   justifyContent: 'space-between',
@@ -32,7 +32,7 @@ export const headerStyle = style({
       width: '100%',
       height: 5,
       marginBottom: theme.space[300],
-      background: `linear-gradient(-45deg, ${colors.primary},${colors.secondary})`,
+      background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary})`,
       backgroundSize: '400% 400%',
 
       '@media': {

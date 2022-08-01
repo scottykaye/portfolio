@@ -1,34 +1,34 @@
 import {
   globalStyle,
 } from '@vanilla-extract/css';
-import { colors } from './theme.css';
+import { theme } from './theme.css';
+
+globalStyle(':root', {
+  minHeight: '100%',
+  height: '100%',
+  backgroundColor: theme.colors.background,
+});
 
 globalStyle('html, body, #__next', {
-  margin: 0,
-  padding: 0,
+  display: 'contents',
+
+});
+
+globalStyle(' .light, .dark', {
   minHeight: '100%',
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
-  flexGrow: 1,
-  backgroundColor: colors.background,
-  //  figure out perfers color scheme
-  // '@media': {
-  //   '(prefers-color-scheme: light)': {
-  //     background: '#EBF7FA',
-  //   },
-  //   '(prefers-color-scheme: dark)': {
-  //     background: '#170038',
-  //   },
-  // },
 });
 
-globalStyle('input[type="checkbox" i], ul, li h1, h2, h3, h4, h5, h6', {
+globalStyle('.light, .dark, input[type="checkbox" i], ul, li h1, h2, h3, h4, h5, h6', {
   margin: 0,
 });
-globalStyle('li ', {
+
+globalStyle('.light, .dark, li ', {
   padding: 0,
 });
+
 globalStyle('*', {
   boxSizing: 'border-box',
 });
