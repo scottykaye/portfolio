@@ -1,4 +1,4 @@
 import { style } from '@vanilla-extract/css';
-import { colors } from '../../theme/theme.css';
+import { theme } from '../../theme/theme.css';
 
-export const linkStyles = style({ color: colors.primary });
+export const linkStyles = style({ color: theme.colors.primary });

@@ -1,5 +1,5 @@
-import { style, createVar, fallbackVar } from '@vanilla-extract/css';
-import { theme, colors } from '../../theme/theme.css';
+import { style, createVar } from '@vanilla-extract/css';
+import { theme } from '../../theme/theme.css';
 
 export const toggleStyle = style({
   position: 'relative',
@@ -22,21 +22,20 @@ export const checkStyles = style({
   height,
   appearance: 'none',
   borderRadius: '25% / 50%',
-  backgroundColor: colors.primary,
+  backgroundColor: theme.colors.primary,
   cursor: 'pointer',
-  border: `4px solid ${colors.primary}`,
+  border: `4px solid ${theme.colors.primary}`,
   transition:
     'color 200ms ease, background-color 200ms ease, transform 200ms ease-in-out, box-shadow 200ms ease',
 
   ':checked': {
-    backgroundColor: colors.secondary,
 
   },
 
   '::after': {
     content: '',
     borderRadius: '50%',
-    backgroundColor: colors.background,
+    backgroundColor: theme.colors.background,
     width: '50%',
     height: '100%',
     transition: 'background-color 200ms ease-in-out, transform 200ms ease-in-out',
@@ -44,17 +43,17 @@ export const checkStyles = style({
 
   ':hover': {
     transform: 'translateY(-0.25em)',
-    boxShadow: `0 0.5em 0.5em -0.4em ${colors.text.normal}`,
+    boxShadow: `0 0.5em 0.5em -0.4em ${theme.colors.normal}`,
   },
   ':active': {
     transform: 'translateY(-0.25em) scale(1.1)',
   },
   ':focus-visible': {
     transform: 'translateY(-0.25em)',
-    boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
+    boxShadow: `0 0 0 2px ${theme.colors.inverse}, 0 0 0 4px ${theme.colors.normal}`,
   },
   ':focus': {
-    boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
+    boxShadow: `0 0 0 2px ${theme.colors.inverse}, 0 0 0 4px ${theme.colors.normal}`,
   },
 
   selectors: {
@@ -65,7 +64,7 @@ export const checkStyles = style({
     '&:focus:not(:focus-visible)': {
       // use to also scale on focus
       transform: 'translateY(-0.25em) scale(1.1)',
-      boxShadow: `0 0 0 2px ${colors.text.inverse}, 0 0 0 4px ${colors.text.normal}`,
+      boxShadow: `0 0 0 2px ${theme.colors.inverse}, 0 0 0 4px ${theme.colors.normal}`,
     },
   },
 });
@@ -85,7 +84,7 @@ export const checkStyles = style({
 //   right: 8,
 //   width,
 //   transform: 'translate(100%, 50%)',
-//   color: colors.text.inverse,
+//   color: theme.colors.inverse,
 //   transition: 'background-color 200ms ease-in-out, transform 200ms ease-in-out',
 //   pointerEvents: 'none',
 //   fontSize: '14px',

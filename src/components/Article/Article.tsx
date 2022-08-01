@@ -1,8 +1,14 @@
 import React from 'react';
-import { articleStyle } from './Article.css';
-import Heading from '/components/Heading';
+// @TODO still styling
+import Heading from '../Heading';
 
-export default function Article(props) {
+interface Props {
+  children: React.ReactNode;
+  title: string;
+  caption: string;
+}
+
+export default function Article(props: Props) {
   return (
     <article>
       <header><Heading is="h3">{props.title}</Heading></header>
