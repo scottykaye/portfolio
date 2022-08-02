@@ -5,6 +5,8 @@ export const navigationStyle = style({
   backgroundColor: theme.colors.background,
   color: theme.colors.normal,
   display: 'flex',
+  flexGrow: '1',
+  justifyContent: 'flex-end',
 });
 
 export const navListStyle = style({

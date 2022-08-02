@@ -1,4 +1,5 @@
 import { style, keyframes } from '@vanilla-extract/css';
+import { assignVars } from '@vanilla-extract/css/dist/vanilla-extract-css.cjs';
 import { theme } from '../../theme/theme.css';
 
 const animate = keyframes({
@@ -47,10 +48,12 @@ export const headerStyle = style({
 export const innerHeaderStyle = style([flex, { justifyContent: 'space-between' }]);
 
 export const container = style([flex, {
-  gap: theme.space[500],
+  flexGrow: '.25',
+  marginLeft: theme.space[500],
+
 }]);
 
 export const stack = style([flex, {
   flexDirection: 'column',
-  justifyContent: 'center',
+  flexGrow: '1',
 }]);

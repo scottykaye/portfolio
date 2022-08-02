@@ -25,9 +25,16 @@ export function ChevronDown({ className }) {
 
 export const SelectContext = React.createContext(null);
 
-export function Option({
-  value, isMultiSelect, onClick = (e:any) => { }, isFocused, ...props
-}) {
+export const Option = React.forwardRef((
+  {
+    value,
+    isMultiSelect,
+    onClick = (e:any) => { },
+    isFocused,
+    ...props
+  },
+  ref,
+) => {
   const {
     values, setValues, setIsOpen, focusedValue,
   } = React.useContext(
@@ -62,14 +69,16 @@ export function Option({
         })}
         onClick={handleClick}
         tabIndex={0}
+        ref={ref}
+        {...props}
       >
         {value}
       </span>
     );
   }
-
   return (
     <span
+      {...props}
       className={cx('Option', {
         'is-focused': isFocused === focusedValue,
         'is-selected': values?.includes(value),
@@ -87,7 +96,7 @@ export function Option({
       {value}
     </span>
   );
-}
+});
 
 export default function Select(props) {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -95,6 +104,7 @@ export default function Select(props) {
   const [isFocused, setIsFocused] = React.useState(false);
   const [focusedValue, setFocusedValue] = React.useState(Number(-1));
   const [isTyped, setIsTyped] = React.useState('');
+  const [childRefs, setChildRefs] = React.useState([]);
 
   // Create a ref that we add to the element for which we want to detect outside clicks
   const ref = React.useRef();
@@ -124,6 +134,24 @@ export default function Select(props) {
   }
 
   function handleKeyDown(e) {
+    if (!props.isMultiSelect) {
+      // console.log(e.target, console.log(childRefs, props.options));
+      props.options.map((option, index) => {
+        if (option.value === props.options[focusedValue]?.value) {
+          if (childRefs[focusedValue]) {
+            if (childRefs[focusedValue]?.focus) {
+              childRefs[focusedValue].focus();
+              if (e.key === ' ' || e.key === 'Enter') {
+                setValues([childRefs[focusedValue].textContent]);
+              }
+              // console.log('test', childRefs[focusedValue], document.activeElement);}
+            }
+          }
+          // childRefs?.[index].focus();
+        }
+      });
+    }
+
     switch (e.key) {
       case ' ':
         e.preventDefault();
@@ -245,6 +273,19 @@ export default function Select(props) {
     }
   }
 
+  function assignChildRefs(node) {
+    if (!node) {
+      return [];
+    }
+
+    setChildRefs((prevState) => {
+      if (!prevState.includes(node)) {
+        return [...prevState, node];
+      }
+      return prevState;
+    });
+  }
+
   // Call hook passing in the ref and a function to call on outside click
   useOnClickOutside(ref, () => {
     setIsOpen(false);
@@ -276,16 +317,17 @@ export default function Select(props) {
 
   useEffect(() => {
     setValues([...props.defaultValue]);
-    // setValues(defaultValue)
   }, [props.defaultValue]);
 
   return (
     <SelectContext.Provider
-      value={context}
+      value={{ ...context, onKeyDown: handleKeyDown }}
     >
       <div className={styles.wrapper} ref={ref}>
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
         <div
           //  Should this be another accessible element?
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
           tabIndex="0"
           value={props?.value}
           className={cx(styles.select, {
@@ -298,6 +340,7 @@ export default function Select(props) {
           onKeyDown={handleKeyDown}
 
         >
+          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label
             className={cx(styles.labels.label, {
               [styles.labelAndActive]: props.placeholder || values.length > 0,
@@ -312,7 +355,7 @@ export default function Select(props) {
                 const Component = props.component ? props.component : 'span';
 
                 return (
-                  <Component>
+                  <Component key={value}>
                     {value}
                     {Component === 'span'
                         && values.length - 1 > index
@@ -329,8 +372,9 @@ export default function Select(props) {
           {props.options
               && props.options.map((option, index) => (
                 <Option
-                  {...option}
-                  onClick={props.options[index].onClick}
+                  {...props.options[index]}
+                  onKeyDown={handleKeyDown}
+                  ref={assignChildRefs}
                   key={option.value}
                   isFocused={index}
                   isMultiSelect={props.isMultiSelect}

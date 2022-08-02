@@ -18,40 +18,40 @@ export const select = style({
   minHeight: '42px',
   textAlign: 'left',
   cursor: 'pointer',
-
-  backgroundImage: `linear-gradient(to bottom right, ${theme.colors.gradient})`,
-
-  color: theme.colors.inverse,
+  color: theme.colors.normal,
   outline: '0',
   transition: 'all 0.2s ease',
   '::after': {
-    zIndex: 1,
+    zIndex: '1',
     position: 'absolute',
     inset: '-2px',
     content: '""',
     display: 'block',
     // borderRadius: '8px',
+    border: `2px solid ${theme.colors.normal}`,
   },
 });
 
 export const isFocused = style({
   '::after': {
     outline: '2px solid #555',
-    outlineOffset: '-2px',
+    outlineOffset: '2px',
+    border: '2px solid transparent',
+    borderImage: `linear-gradient(to bottom right, ${theme.colors.gradient}) 1`,
   },
 });
 
 export const isActive = style({
   '::after': {
     clipPath: `polygon(
-        5% 0,
+        10px 0,
         0 0,
         0% 100%,
         100% 100%,
         100% 0%,
         95% 0,
         95% 10%,
-        5% 10%
+        10px 10%
       )`,
   },
 });
@@ -63,7 +63,7 @@ export const wrapper = style({
 
 export const labels = styleVariants({
   placeholder: {
-    color: theme.colors.inverse,
+    color: theme.colors.normal,
 
   },
   label: {
@@ -96,7 +96,8 @@ export const optionsContainer = style({
   zIndex: '100',
   width: '100%',
   backgroundColor: theme.colors.background,
-  border: `2px solid ${theme.colors.gray}`,
+  border: '2px solid transparent',
+  borderImage: `linear-gradient(to bottom right, ${theme.colors.gradient}) 1`,
 });
 
 export const labelAndActive = style({
@@ -132,16 +133,24 @@ export const option = style({
     '&:not(:last-child)': {
       borderBottom: `2px solid ${theme.colors.gray}`,
     },
+    // [`&:hover:not()`]: {
+    //   backgroundColor: theme.colors.secondary,
+    //   outline: `2px solid ${theme.colors.gray}`,
+    //   outlineOffset: '-2px',
+    //   color: theme.colors.inverse,
+    // },
   },
 });
 
 export const optionIsFocused = style({
+  backgroundColor: theme.colors.secondary,
   outline: `2px solid ${theme.colors.gray}`,
-  /* outline-offset: -2px; */
+  outlineOffset: '-2px',
 });
 
 export const optionsIsSelected = style({
   backgroundColor: theme.colors.primary,
+  color: theme.colors.inverse,
 });
 
 // export const checkbox = style({

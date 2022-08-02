@@ -6,7 +6,7 @@ import {
   useTheme, dark, light, useLocalStorage,
 } from '../../hooks';
 import * as styles from './App.css';
-import Header from '../Header';
+import Header, { HeaderContainer, HeaderStack } from '../Header';
 import Heading from '../Heading';
 import { Navigation, NavItem, NavLink } from '../Navigation';
 import MainContent from '../MainContent';
@@ -32,22 +32,22 @@ function AppContainer(props: Props) {
     if (event.target.value === 'os') {
       // if it's the os operating system we're gonna set the theme based on it an dstore the color mode in state
       setCurrentTheme(globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? dark : light);
-      setColorMode(event.target.value);
     } else {
       setCurrentTheme(event.target.value);
-      setColorMode(event.target.value);
     }
+
+    setColorMode(event.target.value);
   }
 
   function handleOptionClick(event) {
     if (event.target.textContent === 'os') {
       // if it's the os operating system we're gonna set the theme based on it an dstore the color mode in state
       setCurrentTheme(globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? dark : light);
-      setColorMode(event.target.textContent);
     } else {
       setCurrentTheme(event.target.textContent);
-      setColorMode(event.target.textContent);
     }
+
+    setColorMode(event.target.textContent);
   }
 
   useEffect(() => {
@@ -67,25 +67,29 @@ function AppContainer(props: Props) {
           <NavItem><NavLink isActive={router.pathname === '/'} href="/">Home</NavLink></NavItem>
           <NavItem><NavLink isActive={router.pathname === '/blog'} href="/blog">Blog</NavLink></NavItem>
         </Navigation>
-        <select value={colorMode} name="mode" id="mode" onChange={handleChange}>
-          <option value="os">OS Default</option>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
-
-        <p>{`${typeof currentTheme === 'string' && currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)} theme`}</p>
+        <HeaderContainer>
+          <HeaderStack>
+            <Select
+              label="Theme Select"
+              options={[
+                { onKeyDown: handleOptionClick, onClick: handleOptionClick, value: 'os' },
+                { onKeyDown: handleOptionClick, onClick: handleOptionClick, value: 'light' },
+                { onKeyDown: handleOptionClick, onClick: handleOptionClick, value: 'dark' },
+              ]}
+              defaultValue={[colorMode]}
+            />
+            <p>
+              <select value={colorMode} name="mode" id="mode" onChange={handleChange}>
+                <option value="os">OS Default</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+            </p>
+            <p>{`${typeof currentTheme === 'string' && currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)} theme`}</p>
+          </HeaderStack>
+        </HeaderContainer>
       </Header>
       <MainContent>
-        <Select
-          label="Theme Select"
-          options={[
-            { onClick: handleOptionClick, value: 'os' },
-            { onClick: handleOptionClick, value: 'light' },
-            { onClick: handleOptionClick, value: 'dark' },
-          ]}
-          defaultValue={[currentTheme]}
-        />
-
         {props.children}
       </MainContent>
       <Footer>
