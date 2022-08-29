@@ -1,5 +1,5 @@
 import {
-  ReactNode, useEffect,
+  ReactNode, useEffect, SetStateAction,
 } from 'react';
 import { useRouter } from 'next/router';
 import {
@@ -27,8 +27,7 @@ function AppContainer(props: Props) {
   const logoPrimaryColor = styles.logoFillColor;
   const { currentTheme, setCurrentTheme } = useTheme();
   const [colorMode, setColorMode] = useLocalStorage('os', 'colorMode');
-
-  function handleChange(event) {
+  function handleChange(event: any) {
     if (event.target.value === 'os') {
       // if it's the os operating system we're gonna set the theme based on it an dstore the color mode in state
       setCurrentTheme(globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? dark : light);
@@ -38,8 +37,9 @@ function AppContainer(props: Props) {
 
     setColorMode(event.target.value);
   }
+  // MouseEvent<HTMLInputElement>)
 
-  function handleOptionClick(event) {
+  function handleOptionClick(event: any) {
     if (event.target.textContent === 'os') {
       // if it's the os operating system we're gonna set the theme based on it an dstore the color mode in state
       setCurrentTheme(globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? dark : light);
@@ -47,7 +47,7 @@ function AppContainer(props: Props) {
       setCurrentTheme(event.target.textContent);
     }
 
-    setColorMode(event.target.textContent);
+    setColorMode(event.target.textContent as SetStateAction<string>);
   }
 
   useEffect(() => {

@@ -40,6 +40,7 @@ export const ButtonStyles = style({
   selectors: {
     '&:focus:not(:focus-visible)': {
       transform: 'translateY(-0.25em) scale(1.1)',
-      boxShadow: `0 0 0 2px ${theme.colors.inverse}, 0 0 0 4px ${theme.colors.normal}`,    },
+      boxShadow: `0 0 0 2px ${theme.colors.inverse}, 0 0 0 4px ${theme.colors.normal}`,
+    },
   },
 });

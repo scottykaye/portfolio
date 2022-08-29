@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@root/*": ["*"],
+      "@components/*": ["components/*"],
+      "@private/*": ["private/*"],
+      "@hooks/*": ["hooks/*"],
+      "@pages/*": ["pages/*"],
+      "@theme/*": ["theme/*"]
+    },
     "target": "es5",
     "lib": [
       "dom",
@@ -13,8 +22,10 @@
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
+    "strictNullChecks": false,
     "module": "esnext",
-    "resolveJsonModule": true,
+   "moduleResolution": "node",
+   "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve"
   },

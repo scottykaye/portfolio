@@ -1,5 +1,4 @@
 import { style, keyframes } from '@vanilla-extract/css';
-import { assignVars } from '@vanilla-extract/css/dist/vanilla-extract-css.cjs';
 import { theme } from '../../theme/theme.css';
 
 const animate = keyframes({

@@ -1,3 +1,12 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-shadow */
+/* eslint-disable array-callback-return */
+/* eslint-disable no-plusplus */
+/* eslint-disable react/jsx-no-constructed-context-values */
+/* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import cx from 'classnames';
 import useOnClickOutside from '../useOnClickOutside';
@@ -29,7 +38,7 @@ export const Option = React.forwardRef((
   {
     value,
     isMultiSelect,
-    onClick = (e:any) => { },
+    onClick = () => { },
     isFocused,
     ...props
   },
@@ -63,11 +72,13 @@ export const Option = React.forwardRef((
   if (!isMultiSelect) {
     return (
       <span
+        role="listbox"
         className={cx(styles.option, {
           [styles.optionIsFocused]: isFocused === focusedValue,
           [styles.optionsIsSelected]: values.includes(value),
         })}
         onClick={handleClick}
+        onKeyDown={() => {}}
         tabIndex={0}
         ref={ref}
         {...props}
@@ -84,6 +95,9 @@ export const Option = React.forwardRef((
         'is-selected': values?.includes(value),
       })}
       onClick={handleClick}
+      onKeyDown={() => {
+        console.log('test');
+      }}
       tabIndex={0}
     >
       <input
@@ -98,7 +112,7 @@ export const Option = React.forwardRef((
   );
 });
 
-export default function Select(props) {
+function Select(props) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [values, setValues] = React.useState([]);
   const [isFocused, setIsFocused] = React.useState(false);
@@ -284,6 +298,8 @@ export default function Select(props) {
       }
       return prevState;
     });
+
+    return null;
   }
 
   // Call hook passing in the ref and a function to call on outside click
@@ -387,3 +403,5 @@ export default function Select(props) {
     </SelectContext.Provider>
   );
 }
+
+export default React.memo(Select);

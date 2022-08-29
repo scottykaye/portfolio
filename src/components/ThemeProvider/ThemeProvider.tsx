@@ -9,9 +9,8 @@ import {
 
 interface Props {
   children: ReactNode
-  defaultTheme: string
+  defaultTheme?: string
 }
-
 // const darkMode = {
 //   getSetting() {
 //     try {
@@ -32,7 +31,7 @@ export default function ThemeProvider({ children, defaultTheme = 'light' }: Prop
 
   const theme = useMemo(() => ({ setCurrentTheme, currentTheme }), [setCurrentTheme, currentTheme]);
 
-  const prevCurrentTheme = useRef();
+  const prevCurrentTheme = useRef<any>();
   useEffect(() => {
     document.documentElement.classList.add(currentTheme);
 

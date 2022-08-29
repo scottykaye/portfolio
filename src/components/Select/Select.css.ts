@@ -18,7 +18,7 @@ export const select = style({
   minHeight: '42px',
   textAlign: 'left',
   cursor: 'pointer',
-  color: theme.colors.normal,
+  // color: theme.colors.normal,
   outline: '0',
   transition: 'all 0.2s ease',
   '::after': {
@@ -61,41 +61,45 @@ export const wrapper = style({
   width: '100%',
 });
 
-export const labels = styleVariants({
-  placeholder: {
-    color: theme.colors.normal,
+export const labels = styleVariants(
+  {
+    placeholder: {
+    // color: theme.colors.normal,
 
+    },
+    label: {
+    // color: theme.colors.normal,
+    },
   },
-  label: {
-    color: theme.colors.normal,
+  (styles) => ({
+    ...styles,
 
-  },
-}, (styles) => ({
-  ...styles,
+    position: 'absolute',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    left: '20px',
+    right: '20px',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    transition: 'all 0.2s ease',
+  }
 
-  position: 'absolute',
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  left: '20px',
-  right: '20px',
-  top: '50%',
-  transform: 'translateY(-50%)',
-  transition: 'all 0.2s ease',
-}));
+  ),
+);
 
 export const optionsContainer = style({
   position: 'absolute',
   top: '100%',
   left: '0',
   display: 'flex',
-  flexDirection: ' column',
+  flexDirection: 'column',
   /* Control overflow to support border radius consistency on state events */
   /* overflow:' hidden' */
   // borderRadius: ' 8px',
   zIndex: '100',
   width: '100%',
-  backgroundColor: theme.colors.background,
+  // backgroundColor: theme.colors.background,
   border: '2px solid transparent',
   borderImage: `linear-gradient(to bottom right, ${theme.colors.gradient}) 1`,
 });

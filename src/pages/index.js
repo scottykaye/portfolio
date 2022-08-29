@@ -14,7 +14,7 @@ export default function Home() {
         {' '}
         <Link href="http://wayfair.com/" target="_blank" rel="noreferrer">Wayfair</Link>
         {' '}
-        where I currently work on their Design System named Homebase.
+        where I currently work on Homebase Design System.
       </header>
       <section>
         Some Cards Here
