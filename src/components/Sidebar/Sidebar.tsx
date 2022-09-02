@@ -24,7 +24,6 @@ export default function Sidebar({
     <nav
       className={styles.sidebar}
       style={assignInlineVars({ [styles.sidebarSize]: resize })}
-      aria-label={ariaLabel}
       {...props}
 
     >

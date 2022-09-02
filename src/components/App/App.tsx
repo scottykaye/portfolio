@@ -1,4 +1,4 @@
-import {
+import React, {
   ReactNode, useEffect, SetStateAction, useState,
 } from 'react';
 import { useRouter } from 'next/router';
@@ -14,6 +14,9 @@ import Footer, { FooterRightContainer } from '../Footer';
 import Logo from '../Logo';
 import Select from '../Select';
 import Sidebar from '../Sidebar';
+import Stack from '../Stack';
+import Button from '../Button';
+import useNavigation from '../useNavigation';
 import ThemeProvider from '../ThemeProvider';
 import '../../theme/global-reset.css';
 
@@ -28,6 +31,7 @@ function AppContainer(props: Props) {
   const logoPrimaryColor = styles.logoFillColor;
   const { currentTheme, setCurrentTheme } = useTheme();
   const [colorMode, setColorMode] = useLocalStorage('os', 'colorMode');
+
   function handleChange(event: any) {
     if (event.target.value === 'os') {
       // if it's the os operating system we're gonna set the theme based on it an dstore the color mode in state
@@ -67,47 +71,28 @@ function AppContainer(props: Props) {
 
   const collapsedLinks = resize === '50px';
 
+  const refs = [...Array(4).keys()].map(() => React.useRef(null));
+
+  const { handleKey } = useNavigation(refs);
+
   return (
     <Sidebar.Wrapper>
       <Sidebar resize={resize}>
-
-        {[...Array(40).keys()].map(() => (
-          <div style={{
-            height: '50px',
-            padding: '8px',
-            borderBottom: '1px solid white',
-            display: 'flex',
-          }}
-          >
-            <div style={{
-              // transition: 'opacity .2s ease',
-              opacity: collapsedLinks ? '1' : '0',
-              display: collapsedLinks ? 'flex' : 'none',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            >
-              icon
-
-            </div>
-            <div style={{
-              // transition: collapsedLinks ? 'opacity .2s ease' : 'opacity .2s ease .2s',
-              opacity: !collapsedLinks ? '1' : '0',
-              display: !collapsedLinks ? 'flex' : 'none',
-              alignItems: 'center',
-              justifyContent: 'center',
-              whiteSpace: 'nowrap',
-            }}
-            >
-              link text
-
-            </div>
-          </div>
-        ))}
+        <Stack>
+          <Button onClick={() => console.log('Home')} onKeyDown={handleKey} ref={refs[0]}>
+            Home
+          </Button>
+          <Button onClick={() => console.log('Blog')} onKeyDown={handleKey} ref={refs[1]}>
+            Blog
+          </Button>
+          <Button onClick={() => console.log('Social')} onKeyDown={handleKey} ref={refs[2]}>
+            Social
+          </Button>
+          <input type="text" defaultValue="test" ref={refs[3]} />
+        </Stack>
       </Sidebar>
-
       <Sidebar.Page>
-        <button type="button" onClick={handleToggle}>toggle</button>
+        <div><Button type="button" onClick={handleToggle}>toggle</Button></div>
         <Header>
           <Logo backgroundColor={logoBackgroundColor} foregroundColor={logoPrimaryColor} />
           <Heading>
