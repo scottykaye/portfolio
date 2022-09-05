@@ -71,7 +71,7 @@ function AppContainer(props: Props) {
 
   const collapsedLinks = resize === '50px';
 
-  const refs = [...Array(4).keys()].map(() => React.useRef(null));
+  const refs = [...Array(3).keys()].map(() => React.useRef(null));
 
   const { handleKey } = useNavigation(refs);
 
@@ -88,7 +88,7 @@ function AppContainer(props: Props) {
           <Button onClick={() => console.log('Social')} onKeyDown={handleKey} ref={refs[2]}>
             Social
           </Button>
-          <input type="text" defaultValue="test" ref={refs[3]} />
+
         </Stack>
       </Sidebar>
       <Sidebar.Page>

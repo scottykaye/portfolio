@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 const ORIENTATION = {
   vertical: {
     back: 'ArrowUp',
@@ -12,34 +10,40 @@ const ORIENTATION = {
 };
 
 // vertical vs horizontal style navs
-const useNavAccessibility = (listItems, orientation = 'vertical') => {
-  const [, setIsTyped] = useState('');
+const useNavigation = (listItems, orientation = 'vertical') => {
   const handleKey = (e) => {
+    const currentIndex = listItems.findIndex(
+      (ref) => ref.current === document.activeElement,
+    );
+
     if (/^[a-z0-9]$/i.test(e.key)) {
-      // @ts-ignore
-      clearTimeout(() => { });
+      const newOrder = [
+        ...listItems.slice(currentIndex, listItems.length),
+        ...listItems.slice(0, currentIndex),
+      ];
 
-      setTimeout(() => {
-        setIsTyped('');
-      }, 500);
-
-      setIsTyped((prevState) => {
-        const typed = prevState + e.key;
-        const re = new RegExp(`^${typed}`, 'i');
-
-        const index = listItems.findIndex((option) => re.test(option.current.textContent));
-
-        if (index === -1) {
-          return typed;
+      const index = newOrder.findIndex((ref) => {
+        if (ref.current === document.activeElement) {
+          return false;
         }
-        listItems[index]?.current?.focus();
 
-        return typed;
+        const removeSpacesFromString = ref.current?.textContent
+          // Make sure to remove any type of white space
+          .split(/\s+/)
+          .join('')
+          .toLowerCase();
+
+        return removeSpacesFromString?.startsWith(e.key);
       });
+
+      if (index === -1) {
+        return null;
+      }
+
+      newOrder[index]?.current?.focus();
     }
 
     if (
-
       e.key !== ORIENTATION[orientation].back
       && e.key !== ORIENTATION[orientation].forward
       && e.key !== 'Home'
@@ -50,7 +54,6 @@ const useNavAccessibility = (listItems, orientation = 'vertical') => {
 
     // Prevent scrolling on arrows if need be
     e.preventDefault();
-    const currentIndex = listItems.findIndex((ref) => ref.current === document.activeElement);
 
     if (currentIndex === -1) {
       return null;
@@ -86,4 +89,4 @@ const useNavAccessibility = (listItems, orientation = 'vertical') => {
   return { handleKey };
 };
 
-export default useNavAccessibility;
+export default useNavigation;
