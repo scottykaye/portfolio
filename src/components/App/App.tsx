@@ -6,7 +6,7 @@ import {
   useTheme, dark, light, useLocalStorage,
 } from '../../hooks';
 import * as styles from './App.css';
-import Header, { HeaderContainer, HeaderStack } from '../Header';
+import Header from '../Header';
 import Heading from '../Heading';
 import { Navigation, NavItem, NavLink } from '../Navigation';
 import MainContent from '../MainContent';
@@ -63,22 +63,22 @@ function AppContainer(props: Props) {
 
   //  stuff related to sidebar
 
-  const [resize, setResize] = useState(typeof window !== 'undefined' ? '75px' : '50px');
+  const [size, setResize] = useState(typeof window !== 'undefined' ? '100px' : '300px');
 
   function handleToggle() {
-    setResize((p) => (p === '50px' ? '250px' : '50px'));
+    setResize((p) => (p === '100px' ? '300px' : '100px'));
   }
 
-  const collapsedLinks = resize === '50px';
+  const collapsedLinks = size === '100px';
 
-  const refs = [...Array(3).keys()].map(() => React.useRef(null));
+  const refs = [React.useRef(null), React.useRef(null), React.useRef(null)];
 
   const { handleKey } = useNavigation(refs);
 
   return (
-    <Sidebar.Wrapper>
-      <Sidebar resize={resize}>
-        <Stack>
+    <Sidebar.Wrapper size={size}>
+      <Sidebar>
+        <Stack isFullHeight p="400">
           <Button onClick={() => console.log('Home')} onKeyDown={handleKey} ref={refs[0]}>
             Home
           </Button>
@@ -88,11 +88,33 @@ function AppContainer(props: Props) {
           <Button onClick={() => console.log('Social')} onKeyDown={handleKey} ref={refs[2]}>
             Social
           </Button>
-
+        </Stack>
+        <Stack size="30px" p="400">
+          <p>
+            Theme:
+            {' '}
+            {`${typeof currentTheme === 'string' && currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)}`}
+          </p>
+          <Select
+            label="Theme Select"
+            options={[
+              { onKeyDown: handleOptionClick, onClick: handleOptionClick, value: 'os' },
+              { onKeyDown: handleOptionClick, onClick: handleOptionClick, value: 'light' },
+              { onKeyDown: handleOptionClick, onClick: handleOptionClick, value: 'dark' },
+            ]}
+            defaultValue={[colorMode]}
+          />
+          {/* <p>
+            <select value={colorMode} name="mode" id="mode" onChange={handleChange}>
+              <option value="os">OS Default</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </p> */}
+          <Button type="button" onClick={handleToggle}>Sidebar Toggle</Button>
         </Stack>
       </Sidebar>
       <Sidebar.Page>
-        <div><Button type="button" onClick={handleToggle}>toggle</Button></div>
         <Header>
           <Logo backgroundColor={logoBackgroundColor} foregroundColor={logoPrimaryColor} />
           <Heading>
@@ -102,27 +124,6 @@ function AppContainer(props: Props) {
             <NavItem><NavLink isActive={router.pathname === '/'} href="/">Home</NavLink></NavItem>
             <NavItem><NavLink isActive={router.pathname === '/blog'} href="/blog">Blog</NavLink></NavItem>
           </Navigation>
-          <HeaderContainer>
-            <HeaderStack>
-              <Select
-                label="Theme Select"
-                options={[
-                  { onKeyDown: handleOptionClick, onClick: handleOptionClick, value: 'os' },
-                  { onKeyDown: handleOptionClick, onClick: handleOptionClick, value: 'light' },
-                  { onKeyDown: handleOptionClick, onClick: handleOptionClick, value: 'dark' },
-                ]}
-                defaultValue={[colorMode]}
-              />
-              <p>
-                <select value={colorMode} name="mode" id="mode" onChange={handleChange}>
-                  <option value="os">OS Default</option>
-                  <option value="light">Light</option>
-                  <option value="dark">Dark</option>
-                </select>
-              </p>
-              <p>{`${typeof currentTheme === 'string' && currentTheme.charAt(0).toUpperCase()}${currentTheme.slice(1)} theme`}</p>
-            </HeaderStack>
-          </HeaderContainer>
         </Header>
         <MainContent>
           {props.children}

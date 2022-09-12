@@ -7,6 +7,8 @@ globalStyle(':root', {
   minHeight: '100%',
   height: '100%',
   backgroundColor: theme.colors.background,
+  color: theme.colors.normal,
+  fontFamily: theme.fonts.body,
 });
 
 globalStyle('html, body, #__next', {
