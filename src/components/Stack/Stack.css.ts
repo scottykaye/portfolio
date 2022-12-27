@@ -1,5 +1,5 @@
-import { theme } from '@root/../theme/theme.css';
 import { style, createVar, styleVariants } from '@vanilla-extract/css';
+import { theme } from '../../theme/theme.css';
 
 export const size = createVar();
 

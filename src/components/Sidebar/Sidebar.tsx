@@ -1,5 +1,8 @@
 import React, {
-  createContext, ReactNode, useContext, CSSProperties,
+  createContext,
+  ReactNode,
+  useContext,
+  CSSProperties,
 } from 'react';
 import cx from 'classnames';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
@@ -27,13 +30,14 @@ function Wrapper({
   anchor = 'left',
   isAnchoredToParent = false,
 }: WrapperProps) {
-  const sharedContext = React.useMemo(() => ({
-    size,
-    isAnchoredToParent,
-    anchor,
-  }), [size,
-    isAnchoredToParent,
-    anchor]);
+  const sharedContext = React.useMemo(
+    () => ({
+      size,
+      isAnchoredToParent,
+      anchor,
+    }),
+    [size, isAnchoredToParent, anchor]
+  );
 
   return (
     <SidebarContext.Provider value={sharedContext}>
@@ -42,7 +46,6 @@ function Wrapper({
         style={assignInlineVars({ [styles.sidebarSize]: size })}
       >
         {children}
-
       </div>
     </SidebarContext.Provider>
   );
@@ -57,7 +60,12 @@ function Page({ children }: PageProps) {
   const { size, anchor, isAnchoredToParent } = useContext(SidebarContext);
 
   return (
-    <div className={cx(styles.page, styles.pageSize[anchor === 'left' ? 'left' : 'right'])}>
+    <div
+      className={cx(
+        styles.page,
+        styles.pageSize[anchor === 'left' ? 'left' : 'right']
+      )}
+    >
       {children}
     </div>
   );
@@ -101,7 +109,12 @@ interface LabelWithHeading extends Props {
 type AccessibleLabelWithProps = LabelWithoutHeading | LabelWithHeading;
 
 function Sidebar({
-  children, labelledBy, label, top = '0', bottom = '0', ...props
+  children,
+  labelledBy,
+  label,
+  top = '0',
+  bottom = '0',
+  ...props
 }: AccessibleLabelWithProps) {
   const { isAnchoredToParent } = useContext(SidebarContext);
 
@@ -110,8 +123,10 @@ function Sidebar({
       {...props}
       aria-label={label}
       aria-labelledby={labelledBy}
-      className={cx(styles.sidebar, styles.isAnchoredToParent[isAnchoredToParent ? 'sticky' : 'fixed'])}
-
+      className={cx(
+        styles.sidebar,
+        styles.isAnchoredToParent[isAnchoredToParent ? 'sticky' : 'fixed']
+      )}
     >
       {children}
     </nav>

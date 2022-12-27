@@ -34,7 +34,7 @@ export function ChevronDown({ className }) {
 
 export const SelectContext = React.createContext(null);
 
-export const Option = React.forwardRef((
+export const Option = React.forwardRef(function OptionValue(
   {
     value,
     isMultiSelect,
@@ -43,7 +43,7 @@ export const Option = React.forwardRef((
     ...props
   },
   ref,
-) => {
+) {
   const {
     values, setValues, setIsOpen, focusedValue,
   } = React.useContext(
@@ -404,4 +404,4 @@ function Select(props) {
   );
 }
 
-export default React.memo(Select);
+export default Select;
