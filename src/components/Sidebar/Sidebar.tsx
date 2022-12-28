@@ -24,52 +24,52 @@ interface WrapperProps extends Context {
   children: ReactNode;
 }
 
-function Wrapper({
-  children,
-  size = '250px',
-  anchor = 'left',
-  isAnchoredToParent = false,
-}: WrapperProps) {
-  const sharedContext = React.useMemo(
-    () => ({
-      size,
-      isAnchoredToParent,
-      anchor,
-    }),
-    [size, isAnchoredToParent, anchor]
-  );
+// function Wrapper({
+//   children,
+//   size = '250px',
+//   anchor = 'left',
+//   isAnchoredToParent = false,
+// }: WrapperProps) {
+//   const sharedContext = React.useMemo(
+//     () => ({
+//       size,
+//       isAnchoredToParent,
+//       anchor,
+//     }),
+//     [size, isAnchoredToParent, anchor]
+//   );
 
-  return (
-    <SidebarContext.Provider value={sharedContext}>
-      <div
-        className={styles.wrapper}
-        style={assignInlineVars({ [styles.sidebarSize]: size })}
-      >
-        {children}
-      </div>
-    </SidebarContext.Provider>
-  );
-}
+//   return (
+//     <SidebarContext.Provider value={sharedContext}>
+//       <div
+//         className={styles.wrapper}
+//         style={assignInlineVars({ [styles.sidebarSize]: size })}
+//       >
+//         {children}
+//       </div>
+//     </SidebarContext.Provider>
+//   );
+// }
 
 interface PageProps extends Context {
   /** The children rendered in the Sidebar.Page component */
   children?: ReactNode;
 }
 
-function Page({ children }: PageProps) {
-  const { size, anchor, isAnchoredToParent } = useContext(SidebarContext);
+// function Page({ children }: PageProps) {
+//   const { size, anchor, isAnchoredToParent } = useContext(SidebarContext);
 
-  return (
-    <div
-      className={cx(
-        styles.page,
-        styles.pageSize[anchor === 'left' ? 'left' : 'right']
-      )}
-    >
-      {children}
-    </div>
-  );
-}
+//   return (
+//     <div
+//       className={cx(
+//         styles.page,
+//         styles.pageSize[anchor === 'left' ? 'left' : 'right']
+//       )}
+//     >
+//       {children}
+//     </div>
+//   );
+// }
 
 interface Props {
   /** The children rendered in Sidebar component */
@@ -108,32 +108,52 @@ interface LabelWithHeading extends Props {
 // Create a union that makes clear one or the other should not both.
 type AccessibleLabelWithProps = LabelWithoutHeading | LabelWithHeading;
 
-function Sidebar({
+// function Sidebar({
+//   children,
+//   labelledBy,
+//   label,
+//   top = '0',
+//   bottom = '0',
+//   ...props
+// }: AccessibleLabelWithProps) {
+//   const { isAnchoredToParent } = useContext(SidebarContext);
+
+//   return (
+//     <nav
+//       {...props}
+//       aria-label={label}
+//       aria-labelledby={labelledBy}
+//       className={cx(
+//         styles.sidebar,
+//         styles.isAnchoredToParent[isAnchoredToParent ? 'sticky' : 'fixed']
+//       )}
+//     >
+//       {children}
+//     </nav>
+//   );
+// }
+
+// export default Object.assign(Sidebar, {
+//   Wrapper,
+//   Page,
+// });
+
+// Stubs for when we want this to go live
+const Sidebar = ({
   children,
   labelledBy,
   label,
   top = '0',
   bottom = '0',
   ...props
-}: AccessibleLabelWithProps) {
-  const { isAnchoredToParent } = useContext(SidebarContext);
-
-  return (
-    <nav
-      {...props}
-      aria-label={label}
-      aria-labelledby={labelledBy}
-      className={cx(
-        styles.sidebar,
-        styles.isAnchoredToParent[isAnchoredToParent ? 'sticky' : 'fixed']
-      )}
-    >
-      {children}
-    </nav>
-  );
-}
+}: AccessibleLabelWithProps) => <></>;
 
 export default Object.assign(Sidebar, {
-  Wrapper,
-  Page,
+  Wrapper: ({
+    children,
+    size = '250px',
+    anchor = 'left',
+    isAnchoredToParent = false,
+  }: WrapperProps) => <>{children}</>,
+  Page: ({ children }: PageProps) => <>{children}</>,
 });

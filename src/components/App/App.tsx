@@ -9,12 +9,13 @@ import MainContent from '../MainContent';
 import Footer, { FooterRightContainer } from '../Footer';
 import Logo from '../Logo';
 import Select from '../Select';
-import Sidebar from '../Sidebar';
 import Stack from '../Stack';
 import Button from '../Button';
 import useNavigation from '../useNavigation';
 import ThemeProvider from '../ThemeProvider';
 import '../../theme/global-reset.css';
+import Sidebar from '../Sidebar';
+import Link from '../Link';
 
 interface Props {
   children: ReactNode;
@@ -154,11 +155,13 @@ function AppContainer(props: Props) {
       </Sidebar>
       <Sidebar.Page>
         <Header>
-          <Logo
-            backgroundColor={logoBackgroundColor}
-            foregroundColor={logoPrimaryColor}
-          />
-          <Heading>ScottyKaye</Heading>
+          <Link href="/" isNextLink>
+            <Logo
+              backgroundColor={logoBackgroundColor}
+              foregroundColor={logoPrimaryColor}
+            />
+          </Link>
+          {/* <Heading>ScottyKaye</Heading> */}
           <Navigation>
             <NavItem>
               <NavLink isActive={router.pathname === '/'} href="/">

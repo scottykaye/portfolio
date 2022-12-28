@@ -7,7 +7,13 @@ interface Props {
 }
 
 export default function Footer({ children }: Props) {
-  return <footer className={styles.footerStyle}><Wrapper><div className={styles.footerInnerStyle}>{children}</div></Wrapper></footer>;
+  return (
+    <footer className={styles.footerStyle}>
+      <Wrapper>
+        <div className={styles.footerInnerStyle}>{children}</div>
+      </Wrapper>
+    </footer>
+  );
 }
 
 export function FooterRightContainer({ children }: Props) {

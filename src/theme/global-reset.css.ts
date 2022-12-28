@@ -1,6 +1,4 @@
-import {
-  globalStyle,
-} from '@vanilla-extract/css';
+import { globalStyle } from '@vanilla-extract/css';
 import { theme } from './theme.css';
 
 globalStyle(':root', {
@@ -9,11 +7,11 @@ globalStyle(':root', {
   backgroundColor: theme.colors.background,
   color: theme.colors.normal,
   fontFamily: theme.fonts.body,
+  lineHeight: 1.5,
 });
 
 globalStyle('html, body, #__next', {
   display: 'contents',
-
 });
 
 globalStyle(' .light, .dark', {
@@ -23,10 +21,12 @@ globalStyle(' .light, .dark', {
   flexDirection: 'column',
 });
 
-globalStyle('.light, .dark, input[type="checkbox" i], ul, li h1, h2, h3, h4, h5, h6', {
-  margin: 0,
-});
-
+globalStyle(
+  '.light, .dark, input[type="checkbox" i], ul, li h1, h2, h3, h4, h5, h6',
+  {
+    margin: 0,
+  }
+);
 globalStyle('.light, .dark, li ', {
   padding: 0,
 });

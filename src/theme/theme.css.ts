@@ -1,7 +1,4 @@
-import {
-  createGlobalTheme,
-  createThemeContract,
-} from '@vanilla-extract/css';
+import { createGlobalTheme, createThemeContract } from '@vanilla-extract/css';
 
 export const theme = createThemeContract({
   space: {
@@ -18,9 +15,7 @@ export const theme = createThemeContract({
     1000: '',
   },
   fonts: {
-    // heading: 'Georgia, Times, Times New Roman, serif',
     heading: '',
-    // body: 'system-ui',
     body: '',
   },
   colors: {
