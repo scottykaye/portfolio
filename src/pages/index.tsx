@@ -2,7 +2,6 @@ import App from '../components/App';
 import Link from '../components/Link';
 import Heading from '../components/Heading';
 import Card from '../components/Card';
-
 import Article from '../components/Article';
 
 export default function Home() {
@@ -19,9 +18,9 @@ export default function Home() {
       <Card>
         <Article title="NEXTJS portfolio update">
           <p>
-            For 2023, I am begin to post my learnings & opinions as articles for
-            frontend engineering. I plan on writing my takes on new technology
-            as well as sharing my thoughts and patterns.
+            For 2023, I am planning to post my learnings & opinions as articles
+            for frontend engineering. I plan on writing my takes on new
+            technology as well as sharing my thoughts and patterns.
           </p>
           <p>
             This portfolio was designed using NEXT.JS and Styled with Vanilla
