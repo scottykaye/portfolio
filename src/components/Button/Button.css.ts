@@ -1,7 +1,10 @@
 import { style } from '@vanilla-extract/css';
 import { theme } from '../../theme/theme.css';
 
-export const ButtonStyles = style({
+export const fullWidth = style({ width: '100%' });
+
+export const buttonStyles = style({
+  boxSizing: 'border-box',
   fontFamily: theme.fonts.body,
   backgroundColor: theme.colors.primary,
   color: theme.colors.inverse,
@@ -12,7 +15,6 @@ export const ButtonStyles = style({
   cursor: 'pointer',
   //
   // spacing
-  margin: theme.space[100],
   padding: `${theme.space[300]} ${theme.space[400]}`,
 
   // button theme.styling

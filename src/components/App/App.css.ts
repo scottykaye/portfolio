@@ -8,5 +8,9 @@ export const app = style({
   padding: theme.space[1000],
 });
 
-export const logoBGColor = style({ fill: theme.colors.normal });
-export const logoFillColor = style({ fill: theme.colors.inverse });
+// Stub out sets inverse
+// export const logoBGColor = style({ fill: theme.colors.normal });
+// export const logoFillColor = style({ fill: theme.colors.inverse });
+
+export const logoBGColor = style({ fill: theme.colors.black });
+export const logoFillColor = style({ fill: theme.colors.white });

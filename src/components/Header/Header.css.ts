@@ -24,6 +24,7 @@ export const headerStyle = style({
 
   position: 'relative',
   justifyContent: 'space-between',
+
   selectors: {
 
     '&::before': {
@@ -45,12 +46,3 @@ export const headerStyle = style({
 });
 
 export const innerHeaderStyle = style([flex, { justifyContent: 'space-between' }]);
-
-export const container = style([flex, {
-  gap: theme.space[500],
-}]);
-
-export const stack = style([flex, {
-  flexDirection: 'column',
-  justifyContent: 'center',
-}]);

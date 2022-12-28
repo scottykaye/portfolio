@@ -5,12 +5,17 @@ import { linkStyles } from './LinkStyles.css';
 interface Props {
   children: React.ReactNode;
   href: string;
-  isActive: boolean;
+  isActive?: boolean;
   [rest: string]: unknown;
 }
 
 export default function Link({
-  children, href, isActive, ...rest
+  children,
+  href,
+  isActive = false,
+  onClick,
+  isNextLink,
+  ...rest
 }: Props) {
   const router = useRouter();
 
@@ -20,7 +25,12 @@ export default function Link({
   }
 
   return (
-    <a href={href} onClick={handleClick} className={linkStyles} {...rest}>
+    <a
+      href={href}
+      onClick={isNextLink && handleClick}
+      className={linkStyles}
+      {...rest}
+    >
       {children}
     </a>
   );

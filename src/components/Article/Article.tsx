@@ -1,19 +1,26 @@
-import React from 'react';
-// @TODO still styling
+import React, { ReactNode } from 'react';
 import Heading from '../Heading';
 
 interface Props {
-  children: React.ReactNode;
-  title: string;
-  caption: string;
+  children: ReactNode;
+  title: ReactNode;
+  caption?: ReactNode;
 }
 
-export default function Article(props: Props) {
+export default function Article({
+  children,
+  title,
+  caption = 'By ScottyKaye',
+}: Props) {
   return (
     <article>
-      <header><Heading is="h3">{props.title}</Heading></header>
-      <section>{props.children}</section>
-      <footer>{props.caption}</footer>
+      <header>
+        <Heading is="h3" color="primary">
+          {title}
+        </Heading>
+      </header>
+      <section>{children}</section>
+      <footer>{caption}</footer>
     </article>
   );
 }

@@ -1,5 +1,5 @@
 import { style, keyframes } from '@vanilla-extract/css';
-import { theme, colors } from '../../theme/theme.css';
+// import { theme } from '../../theme/theme.css';
 
 const animate = keyframes({
   '0%': {
@@ -45,7 +45,7 @@ export const cardImageStyles = style({
   height: '100%',
   objectFit: 'cover',
   borderRadius: 10,
-  backgroundColor: colors.background,
+  // backgroundColor: theme.colors.background,
   // opacity: 0.6,
   opacity: 1,
   transition: 'transform 750ms',
@@ -59,16 +59,16 @@ export const cardImageStyles = style({
 
 export const cardTitleStyles = style({
   position: 'absolute',
-  left: theme.space[600],
-  bottom: theme.space[600],
-  right: theme.space[600],
+  // left: theme.space[600],
+  // bottom: theme.space[600],
+  // right: theme.space[600],
   fontSize: 20,
   textShadow: '0 0 1px rgba(0,0,0, .5)',
 });
 
-// backgroundColor: colors.background,
+// backgroundColor: theme.colors.background,
 // fontFamily: theme.fonts.body,
-// color: colors.normal,
+// color: theme.colors.normal,
 // padding: `${theme.space[1000]} ${theme.space[200]}`,
 // position: 'relative',
 //

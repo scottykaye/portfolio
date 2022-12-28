@@ -1,22 +1,32 @@
 import React from 'react';
-import { ButtonStyles } from './Button.css';
+import cx from 'classnames';
+import { buttonStyles, fullWidth } from './Button.css';
 
-type BtnType = 'submit' | 'button'
+type BtnType = 'submit' | 'button';
 
 interface Props {
   children: React.ReactNode;
   type: BtnType;
+  isFullWidth: boolean;
   [props: string]: unknown;
 }
 
-export default function Button({ children, type = 'button', ...props }: Props) {
+const Button = React.forwardRef<HTMLInputElement, Props>(function ButtonElement(
+  { isFullWidth, children, type = 'button', ...props },
+  ref
+) {
   return (
     <button
-      className={ButtonStyles}
+      className={cx(buttonStyles, {
+        [fullWidth]: isFullWidth,
+      })}
       type={type}
+      ref={ref}
       {...props}
     >
       {children}
     </button>
   );
-}
+});
+
+export default Button;
