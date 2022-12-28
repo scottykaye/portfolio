@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import Heading from '../Heading';
+import * as styles from './Article.css';
 
 interface Props {
   children: ReactNode;
@@ -10,17 +11,17 @@ interface Props {
 export default function Article({
   children,
   title,
-  caption = 'By ScottyKaye',
+  caption = '- ScottyKaye',
 }: Props) {
   return (
-    <article>
+    <article className={styles.article}>
       <header>
         <Heading is="h3" color="primary">
           {title}
         </Heading>
       </header>
       <section>{children}</section>
-      <footer>{caption}</footer>
+      <footer className={styles.caption}>{caption}</footer>
     </article>
   );
 }

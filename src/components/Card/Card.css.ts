@@ -24,7 +24,7 @@ export const card = style({
   marginTop: theme.space[1000],
   marginBottom: theme.space[1000],
   // height: 300,
-  cursor: 'pointer',
+  // cursor: 'pointer',
   // backgroundSize: '400% 400%',
   zIndex: 1,
 
