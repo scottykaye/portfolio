@@ -181,7 +181,7 @@ function AppContainer(props: Props) {
           <FooterRightContainer>
             <a
               aria-label="Instagram"
-              href="https://www.instagram.com/squattykaye"
+              href="https://www.instagram.com/localmeethero"
               target="_blank"
               rel="noreferrer"
             >

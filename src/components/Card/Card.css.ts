@@ -21,12 +21,12 @@ export const card = style({
   position: 'relative',
   // border: '4px solid transparent',
   color: theme.colors.normal,
-  marginTop: theme.space[1000],
-  marginBottom: theme.space[1000],
+  paddingTop: theme.space[300],
+  marginTop: theme.space[500],
   // height: 300,
-  cursor: 'pointer',
+  // cursor: 'pointer',
   // backgroundSize: '400% 400%',
-  zIndex: 1,
+  // zIndex: 1,
 
   // '@media': {
   //   '(prefers-reduced-motion: no-preference)': {
@@ -50,6 +50,11 @@ export const card = style({
   //   zIndex: -2,
   //   background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary})`,
   // },
+  selectors: {
+    '& + &': {
+      borderTop: `1px solid ${theme.colors.gray}`,
+    },
+  },
 });
 
 // export const image = style({
