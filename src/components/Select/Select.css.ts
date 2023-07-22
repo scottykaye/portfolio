@@ -1,48 +1,48 @@
-import { style, styleVariants } from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
+import { style, styleVariants } from "@vanilla-extract/css";
+import { theme } from "../../theme/theme.css";
 
 export const container = style({
-  display: 'flex',
-  justifyContent: 'space-between',
-  margin: 'auto',
-  alignItems: 'center',
-  padding: '20px',
-  width: '100%',
-  gap: '20px',
+  display: "flex",
+  justifyContent: "space-between",
+  margin: "auto",
+  alignItems: "center",
+  padding: "20px",
+  width: "100%",
+  gap: "20px",
 });
 
 export const select = style({
   // borderRadius: '8px',
 
-  padding: '10px',
-  minHeight: '42px',
-  textAlign: 'left',
-  cursor: 'pointer',
+  padding: "10px",
+  minHeight: "42px",
+  textAlign: "left",
+  cursor: "pointer",
   // color: theme.colors.normal,
-  outline: '0',
-  transition: 'all 0.2s ease',
-  '::after': {
-    zIndex: '1',
-    position: 'absolute',
-    inset: '-2px',
+  outline: "0",
+  transition: "all 0.2s ease",
+  "::after": {
+    zIndex: "1",
+    position: "absolute",
+    inset: "-2px",
     content: '""',
-    display: 'block',
+    display: "block",
     // borderRadius: '8px',
     border: `2px solid ${theme.colors.normal}`,
   },
 });
 
 export const isFocused = style({
-  '::after': {
-    outline: '2px solid #555',
-    outlineOffset: '2px',
-    border: '2px solid transparent',
+  "::after": {
+    outline: "2px solid #555",
+    outlineOffset: "2px",
+    border: "2px solid transparent",
     borderImage: `linear-gradient(to bottom right, ${theme.colors.gradient}) 1`,
   },
 });
 
 export const isActive = style({
-  '::after': {
+  "::after": {
     clipPath: `polygon(
         10px 0,
         0 0,
@@ -57,84 +57,85 @@ export const isActive = style({
 });
 
 export const wrapper = style({
-  position: 'relative',
-  width: '100%',
+  position: "relative",
+  width: "100%",
 });
 
 export const labels = styleVariants(
   {
     placeholder: {
-    // color: theme.colors.normal,
-
+      // color: theme.colors.normal,
     },
     label: {
-    // color: theme.colors.normal,
+      // color: theme.colors.normal,
     },
   },
   (styles) => ({
     ...styles,
 
-    position: 'absolute',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    left: '20px',
-    right: '20px',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    transition: 'all 0.2s ease',
-  }
-
-  ),
+    position: "absolute",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    insetInlineStart: "20px",
+    insetInlineEnd: "20px",
+    top: "50%",
+    transform: "translateY(-50%)",
+    transition: "all 0.2s ease",
+  })
 );
 
 export const optionsContainer = style({
-  position: 'absolute',
-  top: '100%',
-  left: '0',
-  display: 'flex',
-  flexDirection: 'column',
+  position: "absolute",
+  top: "100%",
+  insetInlineStart: "0",
+  display: "flex",
+  flexDirection: "column",
   /* Control overflow to support border radius consistency on state events */
   /* overflow:' hidden' */
   // borderRadius: ' 8px',
-  zIndex: '100',
-  width: '100%',
+  zIndex: "100",
+  width: "100%",
   // backgroundColor: theme.colors.background,
-  border: '2px solid transparent',
+  border: "2px solid transparent",
   borderImage: `linear-gradient(to bottom right, ${theme.colors.gradient}) 1`,
 });
 
 export const labelAndActive = style({
-  top: '-12px',
-  transform: 'none',
-  fontSize: '12px',
+  top: "-12px",
+  transform: "none",
+  fontSize: "12px",
 });
 
-export const icons = styleVariants({
-  down: {
-    transform: 'translateY(-50%)',
+export const icons = styleVariants(
+  {
+    down: {
+      transform: "translateY(-50%)",
+    },
+    up: {
+      transform: "translateY(-50%) rotate(180deg)",
+    },
   },
-  up: {
-    transform: 'translateY(-50%) rotate(180deg)',
-  },
-}, (styles) => ({
-  ...styles,
-
-  display: 'flex',
-  position: 'absolute',
-  right: '20px',
-  top: '50%',
-  width: '14px',
-  height: '14px',
-  transition: 'all 0.2s ease',
-}));
+  (transform) => [
+    transform,
+    {
+      display: "flex",
+      position: "absolute",
+      insetInlineEnd: "20px",
+      top: "50%",
+      width: "14px",
+      height: "14px",
+      transition: "all 0.2s ease",
+    },
+  ]
+);
 
 export const option = style({
-  cursor: 'pointer',
-  padding: '20px',
+  cursor: "pointer",
+  padding: "20px",
   background: theme.colors.background,
   selectors: {
-    '&:not(:last-child)': {
+    "&:not(:last-child)": {
       borderBottom: `2px solid ${theme.colors.gray}`,
     },
     // [`&:hover:not()`]: {
@@ -149,7 +150,7 @@ export const option = style({
 export const optionIsFocused = style({
   backgroundColor: theme.colors.secondary,
   outline: `2px solid ${theme.colors.gray}`,
-  outlineOffset: '-2px',
+  outlineOffset: "-2px",
 });
 
 export const optionsIsSelected = style({
@@ -171,7 +172,7 @@ export const optionsIsSelected = style({
 //   fontSize: '12px',
 //   selectors: {
 //     '&:not(:last-child)': {
-//       marginRight: '5px',
+//       insetInlineEnd: '5px',
 //     },
 //   },
 // });
@@ -179,6 +180,6 @@ export const optionsIsSelected = style({
 // export const close = style({
 //   width: '8px',
 //   height: '8px',
-//   marginLeft: '5px',
+//   insetInlineStart: '5px',
 //   fill: '#fff',
 // });
