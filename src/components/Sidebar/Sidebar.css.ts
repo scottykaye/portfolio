@@ -43,9 +43,9 @@ export const isAnchoredToParent = styleVariants({
 
 export const pageSize = styleVariants({
   left: {
-    marginLeft: sidebarSize,
+    marginInlineStart: sidebarSize,
   },
   right: {
-    marginRight: sidebarSize,
+    marginInlineEnd: sidebarSize,
   },
 });
