@@ -3,12 +3,12 @@ import React, {
   ReactNode,
   useContext,
   CSSProperties,
-} from 'react';
-import cx from 'classnames';
-import { assignInlineVars } from '@vanilla-extract/dynamic';
-import * as styles from './Sidebar.css';
+} from "react";
+import cx from "classnames";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
+import * as styles from "./Sidebar.css";
 
-type Anchor = 'left' | 'right';
+type Anchor = "left" | "right";
 interface Context {
   /** The size of the Sidebar */
   size?: string;
@@ -75,11 +75,11 @@ interface Props {
   /** The children rendered in Sidebar component */
   children: ReactNode;
   /** The top numeric position the Sidebar will stick at */
-  top?: CSSProperties['top'];
+  top?: CSSProperties["top"];
   /** The top numeric position the Sidebar will stick at */
-  bottom?: CSSProperties['bottom'];
+  bottom?: CSSProperties["bottom"];
   /** Background color of Sidebar */
-  backgroundColor?: CSSProperties['backgroundColor'];
+  backgroundColor?: CSSProperties["backgroundColor"];
   props?: { [key: string]: unknown };
 }
 
@@ -96,13 +96,13 @@ interface LabelWithHeading extends Props {
   /** Identifier to the label thats in the Sidebar */
   labelledBy: string;
   /** The display property for the Sidebar */
-  display?: CSSProperties['display'];
+  display?: CSSProperties["display"];
   /** The flex direction of the Sidebar */
-  flexDirection?: CSSProperties['flexDirection'];
+  flexDirection?: CSSProperties["flexDirection"];
   /** The top start point of where the Sidebar sticks to */
-  top?: CSSProperties['top'];
+  top?: CSSProperties["top"];
   /** The bottom start point of where the Sidebar sticks to */
-  bottom?: CSSProperties['bottom'];
+  bottom?: CSSProperties["bottom"];
 }
 
 // Create a union that makes clear one or the other should not both.
@@ -143,16 +143,16 @@ const Sidebar = ({
   children,
   labelledBy,
   label,
-  top = '0',
-  bottom = '0',
+  top = "0",
+  bottom = "0",
   ...props
 }: AccessibleLabelWithProps) => <></>;
 
 export default Object.assign(Sidebar, {
   Wrapper: ({
     children,
-    size = '250px',
-    anchor = 'left',
+    size = "250px",
+    anchor = "left",
     isAnchoredToParent = false,
   }: WrapperProps) => <>{children}</>,
   Page: ({ children }: PageProps) => <>{children}</>,

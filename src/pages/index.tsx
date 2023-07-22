@@ -13,7 +13,7 @@ export default function Home() {
         <Link href="http://wayfair.com/" target="_blank" rel="noreferrer">
           Wayfair
         </Link>{' '}
-        where I work on the Storefront Frontend Platform Team.
+        where I work on the Frontend Platform Team.
       </header>
       <Card>
         <Article title="NEXTJS portfolio update">
