@@ -161,9 +161,11 @@ function Education() {
       <PrimaryHeading>
         New England School of Art & Design @ Suffolk University
       </PrimaryHeading>
-      <div>Boston, MA</div>
-      <div>BA in Graphic Design</div>
-      <div>Graduated in May 2012</div>
+      <List listStyle="none">
+        <List.Item margin="0">Boston, MA</List.Item>
+        <List.Item margin="0">BA in Graphic Design</List.Item>
+        <List.Item margin="0">Graduated in May 2012</List.Item>
+      </List>
     </Section>
   );
 }

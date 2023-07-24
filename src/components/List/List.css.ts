@@ -1,12 +1,38 @@
-import { style } from '@vanilla-extract/css';
+import {
+  style,
+  styleVariants,
+  fallbackVar,
+  createVar,
+} from '@vanilla-extract/css';
 import { theme } from '../../theme/theme.css';
 
+export const margin = createVar();
+
+export const list = styleVariants(
+  {
+    default: {},
+    none: { listStyle: 'none' },
+  },
+  (listStyle) => [
+    listStyle,
+    {
+      margin: `${theme.space[100]} ${theme.space[0]}`,
+
+      '@media': {
+        print: {
+          margin: theme.space[50],
+        },
+      },
+    },
+  ]
+);
+
 export const listItem = style({
-  margin: `${theme.space[200]} ${theme.space[0]}`,
+  margin: fallbackVar(margin, `${theme.space[200]} ${theme.space[0]}`),
 
   '@media': {
     print: {
-      margin: `${theme.space[50]} ${theme.space[0]}`,
+      margin: theme.space[0],
       fontSize: 11,
       lineHeight: 1.3,
     },
@@ -14,17 +40,7 @@ export const listItem = style({
 
   selectors: {
     '& &': {
-      margin: `${theme.space[50]} ${theme.space[0]}`,
-    },
-  },
-});
-
-export const list = style({
-  margin: `${theme.space[100]} ${theme.space[0]}`,
-
-  '@media': {
-    print: {
-      margin: theme.space[50],
+      margin: theme.space[0],
     },
   },
 });

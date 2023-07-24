@@ -1,20 +1,41 @@
-import React from "react";
-import * as styles from "./List.css";
+import React from 'react';
+import * as styles from './List.css';
 
+import { assignInlineVars } from '@vanilla-extract/dynamic';
+
+function stringOrNumber(fontSize: string | number) {
+  if (typeof fontSize === 'number') {
+    return `${fontSize}px`;
+  }
+  return fontSize;
+}
 interface Props {
   children: React.ReactNode;
 }
 
-interface ItemProps extends Props {}
-
-function Item({ children }: ItemProps) {
-  return <li className={styles.listItem}>{children}</li>;
+interface ItemProps extends Props {
+  margin?: string | number;
 }
 
-interface ListProps extends Props {}
+function Item({ children, margin }: ItemProps) {
+  return (
+    <li
+      style={assignInlineVars({
+        [styles.margin]: stringOrNumber(margin),
+      })}
+      className={styles.listItem}
+    >
+      {children}
+    </li>
+  );
+}
 
-export default function List({ children }: ListProps) {
-  return <ul className={styles.list}>{children}</ul>;
+interface ListProps extends Props {
+  listStyle?: 'none' | 'default';
+}
+
+export default function List({ children, listStyle = 'default' }: ListProps) {
+  return <ul className={styles.list[listStyle]}>{children}</ul>;
 }
 
 List.Item = Item;
