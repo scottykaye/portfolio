@@ -18,11 +18,7 @@ function SubHeading(props) {
 
 function WorkExperience() {
   return (
-    <Section
-      is="article"
-      heading="Work Experience"
-      className={styles.printable}
-    >
+    <Section is="article" heading="Work Experience">
       <Heading is="h2">Wayfair</Heading>
       <PrimaryHeading>Staff Engineer - Frontend Platforms</PrimaryHeading>
       <SubHeading>November 2022 - Present</SubHeading>
@@ -107,7 +103,7 @@ function WorkExperience() {
 
 function Knowledge() {
   return (
-    <Section heading="Knowledge" className={styles.printable}>
+    <Section heading="Knowledge">
       <List>
         <List.Item>
           <PrimaryHeading fontSize={18}>JavaScript</PrimaryHeading>
@@ -162,7 +158,7 @@ function Knowledge() {
 }
 function Education() {
   return (
-    <Section heading="Education" className={styles.printable}>
+    <Section heading="Education">
       <PrimaryHeading>
         New England School of Art & Design @ Suffolk University
       </PrimaryHeading>
