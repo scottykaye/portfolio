@@ -7,6 +7,10 @@ export const mainContentStyle = style({
   color: theme.colors.normal,
   flexGrow: 1,
   // Doing padding on main since issues with the theme on body and html reset
-  paddingTop: theme.space[500],
-  paddingBottom: theme.space[1000],
+  paddingBlock: `${theme.space[500]} ${theme.space[0]} ${theme.space[1000]}`,
+  '@media': {
+    print: {
+      paddingBlock: theme.space[0],
+    },
+  },
 });

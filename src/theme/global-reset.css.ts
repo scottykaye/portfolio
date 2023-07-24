@@ -1,24 +1,28 @@
-import { globalStyle } from "@vanilla-extract/css";
-import { theme } from "./theme.css";
+import { globalStyle } from '@vanilla-extract/css';
+import { theme } from './theme.css';
 
-globalStyle(":root", {
-  minHeight: "100%",
-  height: "100%",
+globalStyle(':root', {
+  minHeight: '100%',
+  height: '100%',
   backgroundColor: theme.colors.background,
   color: theme.colors.normal,
   fontFamily: theme.fonts.body,
   lineHeight: 1.5,
 });
 
-globalStyle("html, body, #__next", {
-  display: "contents",
+globalStyle('html, body, #__next', {
+  display: 'contents',
 });
 
-globalStyle(".light, .dark", {
-  minHeight: "100%",
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
+globalStyle('html', {
+  overflowY: 'scroll',
+});
+
+globalStyle('.light, .dark', {
+  minHeight: '100%',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
 });
 
 globalStyle(
@@ -27,17 +31,17 @@ globalStyle(
     margin: 0,
   }
 );
-globalStyle(".light, .dark,", {
+globalStyle('.light, .dark,', {
   padding: 0,
 });
 
-globalStyle("ul", {
-  margin: "10px 0",
+globalStyle('ul', {
+  margin: '10px 0',
   paddingInlineStart: 15,
-  listStyleType: "disc",
+  listStyleType: 'disc',
 });
 
-globalStyle("li", {
+globalStyle('li', {
   paddingInlineStart: 5,
   marginBlockStart: 5,
 
@@ -52,6 +56,6 @@ globalStyle("li", {
   // }
 });
 
-globalStyle("*", {
-  boxSizing: "border-box",
+globalStyle('*', {
+  boxSizing: 'border-box',
 });

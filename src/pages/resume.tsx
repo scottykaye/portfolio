@@ -1,11 +1,12 @@
-import App from "../components/App";
-import Article from "../components/Article";
-import Heading from "../components/Heading";
-import AutoGrid from "../components/AutoGrid";
-import Grid from "../components/Grid";
-import List from "../components/List";
-import Section from "../components/Section";
-import Card from "../components/Card";
+import App from '../components/App';
+import Article from '../components/Article';
+import Heading from '../components/Heading';
+import AutoGrid from '../components/AutoGrid';
+import Grid from '../components/Grid';
+import List from '../components/List';
+import Section from '../components/Section';
+import Card from '../components/Card';
+import * as styles from '../experience/resume.css';
 
 function PrimaryHeading(props) {
   return <Heading is="h3" color="primary" fontSize={20} {...props} />;
@@ -17,7 +18,11 @@ function SubHeading(props) {
 
 function WorkExperience() {
   return (
-    <Section is="article" heading="Work Experience">
+    <Section
+      is="article"
+      heading="Work Experience"
+      className={styles.printable}
+    >
       <Heading is="h2">Wayfair</Heading>
       <PrimaryHeading>Staff Engineer - Frontend Platforms</PrimaryHeading>
       <SubHeading>November 2022 - Present</SubHeading>
@@ -102,7 +107,7 @@ function WorkExperience() {
 
 function Knowledge() {
   return (
-    <Section heading="Knowledge">
+    <Section heading="Knowledge" className={styles.printable}>
       <List>
         <List.Item>
           <PrimaryHeading fontSize={18}>JavaScript</PrimaryHeading>
@@ -157,7 +162,7 @@ function Knowledge() {
 }
 function Education() {
   return (
-    <Section heading="Education">
+    <Section heading="Education" className={styles.printable}>
       <PrimaryHeading>
         New England School of Art & Design @ Suffolk University
       </PrimaryHeading>

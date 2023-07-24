@@ -1,7 +1,8 @@
-import { styleVariants, createVar, fallbackVar } from "@vanilla-extract/css";
-import { theme } from "../../theme/theme.css";
+import { styleVariants, createVar, fallbackVar } from '@vanilla-extract/css';
+import { theme } from '../../theme/theme.css';
 
 export const size = createVar();
+export const margin = createVar();
 
 export const headingStyle = styleVariants(
   {
@@ -9,7 +10,7 @@ export const headingStyle = styleVariants(
     primary: {
       color: theme.colors.primary,
 
-      "@media": {
+      '@media': {
         print: {
           color: theme.colors.black,
         },
@@ -20,9 +21,16 @@ export const headingStyle = styleVariants(
     color,
     {
       fontFamily: theme.fonts.heading,
-      fontSize: fallbackVar(size, "30px"),
-      display: "flex",
-      alignItems: "center",
+      fontSize: fallbackVar(size, '30px'),
+      margin: fallbackVar(margin, '0'),
+      display: 'flex',
+      alignItems: 'center',
+      '@media': {
+        print: {
+          fontSize: 12,
+          lineHeight: 1.3,
+        },
+      },
     },
   ]
 );

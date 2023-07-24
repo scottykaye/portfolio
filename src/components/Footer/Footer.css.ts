@@ -17,50 +17,63 @@ const flex = style({
   display: 'flex',
 });
 
-export const footerStyle = style([flex, {
-  backgroundColor: theme.colors.background,
+export const footerStyle = style([
+  flex,
+  {
+    backgroundColor: theme.colors.background,
 
-  fontFamily: theme.fonts.body,
+    fontFamily: theme.fonts.body,
 
-  color: theme.colors.normal,
-  padding: `${theme.space[1000]} 0`,
-  position: 'relative',
+    color: theme.colors.normal,
+    padding: `${theme.space[1000]} 0`,
+    position: 'relative',
 
-  selectors: {
-    '&::before, &::after': {
-      content: '',
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      height: 5,
-      background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary},${theme.colors.tertiary})`,
-      backgroundSize: '400% 400%',
+    selectors: {
+      '&::before, &::after': {
+        content: '',
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        height: 5,
+        background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary},${theme.colors.tertiary})`,
+        backgroundSize: '400% 400%',
 
-      '@media': {
-        '(prefers-reduced-motion: no-preference)': {
-          animation: `${animate} 5s linear infinite`,
+        '@media': {
+          '(prefers-reduced-motion: no-preference)': {
+            animation: `${animate} 5s linear infinite`,
+          },
         },
+      },
+
+      '&::before': {
+        top: 0,
+        // display: 'none'
+      },
+
+      '&::after': {
+        bottom: 0,
       },
     },
 
-    '&::before': {
-      top: 0,
-      // display: 'none'
-    },
-
-    '&::after': {
-      bottom: 0,
+    '@media': {
+      print: {
+        display: 'none',
+      },
     },
   },
+]);
 
-}]);
+export const footerInnerStyle = style([
+  flex,
+  {
+    justifyContent: 'space-between',
+  },
+]);
 
-export const footerInnerStyle = style([flex, {
-  justifyContent: 'space-between',
-
-}]);
-
-export const rightStyle = style([flex, {
-  gap: theme.space[200],
-  fill: theme.colors.primary,
-}]);
+export const rightStyle = style([
+  flex,
+  {
+    gap: theme.space[200],
+    fill: theme.colors.primary,
+  },
+]);
