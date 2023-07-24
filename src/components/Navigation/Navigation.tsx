@@ -1,7 +1,7 @@
-import React from "react";
-import cx from "classnames";
-import Link from "../Link";
-import * as styles from "./Navigation.css";
+import React from 'react';
+import cx from 'classnames';
+import Link from '../Link';
+import * as styles from './Navigation.css';
 
 interface Props {
   children: React.ReactNode;
