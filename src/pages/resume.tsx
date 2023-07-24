@@ -6,7 +6,6 @@ import Grid from '../components/Grid';
 import List from '../components/List';
 import Section from '../components/Section';
 import Card from '../components/Card';
-import * as styles from '../experience/resume.css';
 
 function PrimaryHeading(props) {
   return <Heading is="h3" color="primary" fontSize={20} {...props} />;
