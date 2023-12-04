@@ -1,11 +1,11 @@
-import App from '../components/App';
-import Article from '../components/Article';
-import Heading from '../components/Heading';
-import AutoGrid from '../components/AutoGrid';
-import Grid from '../components/Grid';
-import List from '../components/List';
-import Section from '../components/Section';
-import Card from '../components/Card';
+import App from "../components/App";
+import Article from "../components/Article";
+import Heading from "../components/Heading";
+import AutoGrid from "../components/AutoGrid";
+import Grid from "../components/Grid";
+import List from "../components/List";
+import Section from "../components/Section";
+import Card from "../components/Card";
 
 function PrimaryHeading(props) {
   return <Heading is="h3" color="primary" fontSize={20} {...props} />;
@@ -171,14 +171,12 @@ function Education() {
 }
 export default function Resume() {
   return (
-    <App>
-      <AutoGrid alignItems="flexStart">
-        <WorkExperience />
-        <Grid is="article">
-          <Knowledge />
-          <Education />
-        </Grid>
-      </AutoGrid>
-    </App>
+    <AutoGrid alignItems="flexStart">
+      <WorkExperience />
+      <Grid is="article">
+        <Knowledge />
+        <Education />
+      </Grid>
+    </AutoGrid>
   );
 }

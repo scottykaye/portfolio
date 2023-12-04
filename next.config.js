@@ -1,9 +1,21 @@
-const {createVanillaExtractPlugin} = require('@vanilla-extract/next-plugin');
+const { createVanillaExtractPlugin } = require("@vanilla-extract/next-plugin");
 const withVanillaExtract = createVanillaExtractPlugin();
 
-const nextConfig = {};
+const nextConfig = {
+  webpack(config) {
+    config.resolve.fallback = {
+      // if you miss it, all the other options in fallback, specified
+      // by next.js will be dropped.
+      ...config.resolve.fallback,
 
-const withMDX = require('@next/mdx')({
+      fs: false, // the solution
+    };
+
+    return config;
+  },
+};
+
+const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
   options: {
     // If you use remark-gfm, you'll need to use next.config.mjs
@@ -20,9 +32,9 @@ module.exports = {
   ...withMDX({
     ...withVanillaExtract(nextConfig),
     options: {
-      providerImportSource: '@mdx-js/react',
+      providerImportSource: "@mdx-js/react",
     },
     // Append the default value with md extensions
-    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   }),
-}
+};
