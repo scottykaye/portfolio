@@ -1,18 +1,15 @@
-import App from "../components/App";
-import Article from "../components/Article";
-import Heading from "../components/Heading";
-import AutoGrid from "../components/AutoGrid";
-import Grid from "../components/Grid";
-import List from "../components/List";
-import Section from "../components/Section";
-import Card from "../components/Card";
+import Heading from '../components/Heading'
+import AutoGrid from '../components/AutoGrid'
+import Grid from '../components/Grid'
+import List from '../components/List'
+import Section from '../components/Section'
 
 function PrimaryHeading(props) {
-  return <Heading is="h3" color="primary" fontSize={20} {...props} />;
+  return <Heading is="h3" color="primary" fontSize={20} {...props} />
 }
 
 function SubHeading(props) {
-  return <Heading is="h4" fontSize={12} {...props} />;
+  return <Heading is="h4" fontSize={12} {...props} />
 }
 
 function WorkExperience() {
@@ -97,7 +94,7 @@ function WorkExperience() {
         <List.Item>Helped create UI for early SPA pages.</List.Item>
       </List>
     </Section>
-  );
+  )
 }
 
 function Knowledge() {
@@ -153,7 +150,7 @@ function Knowledge() {
         </List.Item>
       </List>
     </Section>
-  );
+  )
 }
 function Education() {
   return (
@@ -167,7 +164,7 @@ function Education() {
         <List.Item margin="0">Graduated in May 2012</List.Item>
       </List>
     </Section>
-  );
+  )
 }
 export default function Resume() {
   return (
@@ -178,5 +175,5 @@ export default function Resume() {
         <Education />
       </Grid>
     </AutoGrid>
-  );
+  )
 }

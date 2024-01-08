@@ -1,125 +1,123 @@
-import React, { ReactNode, useEffect, SetStateAction, useState } from "react";
-import { useRouter } from "next/router";
-import { useTheme, dark, light, useLocalStorage } from "../hooks";
-import * as styles from "../components/App/App.css";
-import Header from "../components/Header";
-import Heading from "../components/Heading";
-import { Navigation, NavItem, NavLink } from "../components/Navigation";
-import MainContent from "../components/MainContent";
-import Footer, { FooterRightContainer } from "../components/Footer";
-import Logo from "../components/Logo";
-import Select from "../components/Select";
-import Stack from "../components/Stack";
-import Button from "../components/Button";
-import useNavigation from "../components/useNavigation";
-import ThemeProvider from "../components/ThemeProvider";
-import "../components/../theme/global-reset.css";
-import Sidebar from "../components/Sidebar";
-import Link from "../components/Link";
-import Breadcrumbs from "../components/Breadcrumbs";
+import React, { ReactNode, useEffect, SetStateAction, useState } from 'react'
+import { useRouter } from 'next/router'
+import { useTheme, dark, light, useLocalStorage } from '../hooks'
+import * as styles from '../components/App/App.css'
+import Header from '../components/Header'
+import Heading from '../components/Heading'
+import { Navigation, NavItem, NavLink } from '../components/Navigation'
+import MainContent from '../components/MainContent'
+import Footer, { FooterRightContainer } from '../components/Footer'
+import Logo from '../components/Logo'
+import Select from '../components/Select'
+import Stack from '../components/Stack'
+import Button from '../components/Button'
+import useNavigation from '../components/useNavigation'
+import ThemeProvider from '../components/ThemeProvider'
+import '../components/../theme/global-reset.css'
+import Sidebar from '../components/Sidebar'
+import Link from '../components/Link'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode
 }
 
 function getCurrentRoute(route) {
   return route
-    .split("/")
+    .split('/')
     .filter((item) => item)
-    .join("");
+    .join('')
 }
 
 function formatCurrentRoute(route) {
-  return `${route.charAt(0).toUpperCase()}${route.slice(1)}`;
+  return `${route.charAt(0).toUpperCase()}${route.slice(1)}`
 }
 
 function AppContainer(props: Props) {
-  const router = useRouter();
+  const router = useRouter()
 
-  const logoBackgroundColor = styles.logoBGColor;
-  const logoPrimaryColor = styles.logoFillColor;
-  const { currentTheme, setCurrentTheme } = useTheme();
-  const [colorMode, setColorMode] = useLocalStorage("os", "colorMode");
+  const logoBackgroundColor = styles.logoBGColor
+  const logoPrimaryColor = styles.logoFillColor
+  const { currentTheme, setCurrentTheme } = useTheme()
+  const [colorMode, setColorMode] = useLocalStorage('os', 'colorMode')
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    if (event.target.value === "os") {
+    if (event.target.value === 'os') {
       // if it's the os operating system we're gonna set the theme based on it an dstore the color mode in state
       setCurrentTheme(
-        globalThis.matchMedia("(prefers-color-scheme: dark)").matches
+        globalThis.matchMedia('(prefers-color-scheme: dark)').matches
           ? dark
-          : light
-      );
+          : light,
+      )
     } else {
-      setCurrentTheme(event.target.value);
+      setCurrentTheme(event.target.value)
     }
 
-    setColorMode(event.target.value);
+    setColorMode(event.target.value)
   }
   // MouseEvent<HTMLInputElement>)
 
   function handleOptionClick(event: React.ChangeEvent<HTMLInputElement>) {
-    if (event.target.textContent === "os") {
+    if (event.target.textContent === 'os') {
       // if it's the os operating system we're gonna set the theme based on it an dstore the color mode in state
       setCurrentTheme(
-        globalThis.matchMedia("(prefers-color-scheme: dark)").matches
+        globalThis.matchMedia('(prefers-color-scheme: dark)').matches
           ? dark
-          : light
-      );
+          : light,
+      )
     } else {
-      setCurrentTheme(event.target.textContent);
+      setCurrentTheme(event.target.textContent)
     }
 
-    setColorMode(event.target.textContent as SetStateAction<string>);
+    setColorMode(event.target.textContent as SetStateAction<string>)
   }
 
   useEffect(() => {
-    if (colorMode === "os") {
+    if (colorMode === 'os') {
       setCurrentTheme(
-        globalThis.matchMedia("(prefers-color-scheme: dark)").matches
+        globalThis.matchMedia('(prefers-color-scheme: dark)').matches
           ? dark
-          : light
-      );
+          : light,
+      )
     }
-  }, [colorMode, setCurrentTheme]);
+  }, [colorMode, setCurrentTheme])
 
   //  stuff related to sidebar
 
   const [size, setResize] = useState(
-    typeof window !== "undefined" ? "100px" : "300px"
-  );
+    typeof window !== 'undefined' ? '100px' : '300px',
+  )
 
   function handleToggle() {
-    setResize((p) => (p === "100px" ? "300px" : "100px"));
+    setResize((p) => (p === '100px' ? '300px' : '100px'))
   }
 
-  const collapsedLinks = size === "100px";
+  const collapsedLinks = size === '100px'
 
-  const refs = [React.useRef(null), React.useRef(null), React.useRef(null)];
+  const refs = [React.useRef(null), React.useRef(null), React.useRef(null)]
 
-  const { handleKey } = useNavigation(refs);
-
-  console.log("test", props.children);
+  const { handleKey } = useNavigation(refs)
 
   return (
     <Sidebar.Wrapper size={size}>
       <Sidebar label="Top Level Navigation">
         <Stack isFullHeight p="400">
           <Button
-            onClick={() => console.log("Home")}
+            onClick={() => console.log('Home')}
             onKeyDown={handleKey}
             ref={refs[0]}
           >
             Home
           </Button>
           <Button
-            onClick={() => console.log("Blog")}
+            onClick={() => console.log('Blog')}
             onKeyDown={handleKey}
             ref={refs[1]}
           >
             Blog
           </Button>
           <Button
-            onClick={() => console.log("Social")}
+            onClick={() => console.log('Social')}
             onKeyDown={handleKey}
             ref={refs[2]}
           >
@@ -128,9 +126,9 @@ function AppContainer(props: Props) {
         </Stack>
         <Stack size="30px" p="400">
           <p>
-            Theme:{" "}
+            Theme:{' '}
             {`${
-              typeof currentTheme === "string" &&
+              typeof currentTheme === 'string' &&
               currentTheme.charAt(0).toUpperCase()
             }${currentTheme.slice(1)}`}
           </p>
@@ -140,17 +138,17 @@ function AppContainer(props: Props) {
               {
                 onKeyDown: handleOptionClick,
                 onClick: handleOptionClick,
-                value: "os",
+                value: 'os',
               },
               {
                 onKeyDown: handleOptionClick,
                 onClick: handleOptionClick,
-                value: "light",
+                value: 'light',
               },
               {
                 onKeyDown: handleOptionClick,
                 onClick: handleOptionClick,
-                value: "dark",
+                value: 'dark',
               },
             ]}
             defaultValue={[colorMode]}
@@ -180,7 +178,7 @@ function AppContainer(props: Props) {
           </Heading>
           <Navigation>
             <NavItem>
-              <NavLink isActive={router.pathname === "/"} href="/">
+              <NavLink isActive={router.pathname === '/'} href="/">
                 Home
               </NavLink>
             </NavItem>
@@ -190,7 +188,7 @@ function AppContainer(props: Props) {
               </NavLink>
             </NavItem> */}
             <NavItem>
-              <NavLink isActive={router.pathname === "/resume"} href="/resume">
+              <NavLink isActive={router.pathname === '/resume'} href="/resume">
                 Resume
               </NavLink>
             </NavItem>
@@ -199,7 +197,7 @@ function AppContainer(props: Props) {
         <MainContent>
           <Breadcrumbs>
             <Breadcrumbs.Breadcrumb
-              href={router.pathname === "/" ? undefined : "/"}
+              href={router.pathname === '/' ? undefined : '/'}
             >
               Home
             </Breadcrumbs.Breadcrumb>
@@ -295,15 +293,15 @@ function AppContainer(props: Props) {
         </Footer>
       </Sidebar.Page>
     </Sidebar.Wrapper>
-  );
+  )
 }
 
 export default function App({
   Component,
   pageProps,
 }: {
-  Component: any;
-  pageProps: Props;
+  Component: any
+  pageProps: Props
 }) {
   return (
     <ThemeProvider>
@@ -311,5 +309,5 @@ export default function App({
         <Component {...pageProps} />
       </AppContainer>
     </ThemeProvider>
-  );
+  )
 }
