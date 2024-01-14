@@ -24,7 +24,6 @@ interface Props {
 }
 
 function getCurrentRoute(route) {
-  console.log(route)
   return route
     .split('/')
     .reduce(
@@ -39,7 +38,6 @@ function formatCurrentRoute(route) {
 }
 
 function AppContainer(props: Props) {
-  console.log(props)
   const router = useRouter()
 
   const logoBackgroundColor = styles.logoBGColor
@@ -223,6 +221,7 @@ function AppContainer(props: Props) {
                 href="https://www.instagram.com/localmeethero"
                 target="_blank"
                 rel="noreferrer"
+                className={styles.flex}
               >
                 <svg
                   fill="inherit"
@@ -242,6 +241,7 @@ function AppContainer(props: Props) {
                 href="https://twitter.com/scottykaye"
                 target="_blank"
                 rel="noreferrer"
+                className={styles.flex}
               >
                 <svg
                   fill="inherit"
@@ -261,6 +261,7 @@ function AppContainer(props: Props) {
                 href="https://github.com/scottykaye/"
                 target="_blank"
                 rel="noreferrer"
+                className={styles.flex}
               >
                 <svg
                   fill="inherit"
@@ -280,6 +281,7 @@ function AppContainer(props: Props) {
                 href="mailto:scottykaye.web@gmail.com"
                 target="_blank"
                 rel="noreferrer"
+                className={styles.flex}
               >
                 <svg
                   fill="inherit"

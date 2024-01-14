@@ -31,3 +31,5 @@ export const skipNav = style({
     left: 0,
   },
 })
+
+export const flex = style({ display: 'flex' })

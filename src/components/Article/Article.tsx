@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
-import Heading from '../Heading';
-import * as styles from './Article.css';
+import React, { ReactNode } from 'react'
+import Heading from '../Heading'
+import * as styles from './Article.css'
 
 interface Props {
-  children: ReactNode;
-  title: ReactNode;
-  caption?: ReactNode;
+  children: ReactNode
+  title: ReactNode
+  caption?: ReactNode
 }
 
 export default function Article({
@@ -23,5 +23,5 @@ export default function Article({
       <section>{children}</section>
       <footer className={styles.caption}>{caption}</footer>
     </article>
-  );
+  )
 }

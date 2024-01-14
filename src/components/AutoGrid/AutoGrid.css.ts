@@ -1,5 +1,5 @@
-import { styleVariants } from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
+import { styleVariants } from '@vanilla-extract/css'
+import { theme } from '../../theme/theme.css'
 
 export const autoGrid = styleVariants(
   {
@@ -21,5 +21,5 @@ export const autoGrid = styleVariants(
       gap: theme.space[500],
       margin: `auto`,
     },
-  ]
-);
+  ],
+)

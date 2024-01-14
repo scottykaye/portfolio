@@ -21,16 +21,14 @@ export default function Home(props) {
         </Link>{' '}
         where I work on the Frontend Platform Team.
       </header>
-      {props.posts.map((post) => {
-        return (
-          <Card is="a" href={post.url} key={post.title}>
-            <Article title={post.title}>
-              <p>{post.description}</p>
-              {post.date}
-            </Article>
-          </Card>
-        )
-      })}
+      {props.posts.map((post) => (
+        <Card is="a" href={post.url} key={post.title}>
+          <Article title={post.title}>
+            <p>{post.description}</p>
+            {post.date}
+          </Article>
+        </Card>
+      ))}
     </>
   )
 }

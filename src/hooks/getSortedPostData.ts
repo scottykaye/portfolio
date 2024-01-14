@@ -18,11 +18,17 @@ export default function getSortedPostsData() {
     const matterResult = matter(fileContents)
     // Combine the data with the id
 
-    const { content: mdx, data } = matterResult
+    const {
+      content: mdx,
+      data,
+      data: { description, date, title },
+    } = matterResult
+
     return {
       id,
-      //  Let's just set a null date to make sure we always have a date field to sort by below
-      date: null,
+      date,
+      title,
+      description,
       url: `blog/${id}`,
       source: mdx,
       frontMatter: data,

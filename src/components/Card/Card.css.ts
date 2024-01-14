@@ -1,61 +1,60 @@
-import { style, keyframes } from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
+import { style, keyframes } from '@vanilla-extract/css'
+import { theme } from '../../theme/theme.css'
 
-// const animate = keyframes({
-//   '0%': {
-//     backgroundPosition: '0% 50%',
-//   },
-//   '50%': {
-//     backgroundPosition: '100% 50%',
-//   },
-//   '100%': {
-//     backgroundPosition: '0% 50%',
-//   },
-// });
+const animate = keyframes({
+  '0%': {
+    backgroundPosition: '0% 50%',
+  },
+  '50%': {
+    backgroundPosition: '100% 50%',
+  },
+  '100%': {
+    backgroundPosition: '0% 50%',
+  },
+})
 
 export const card = style({
-  overflow: 'hidden',
-  // outline: '5px solid',
-  // outlineOffset: -10,
-  // outlineColor: theme.colors.inverse,
   position: 'relative',
-  // border: '4px solid transparent',
+  display: 'block',
+  outline: '2px solid',
+  outlineColor: theme.colors.primary,
   color: theme.colors.normal,
-  paddingTop: theme.space[300],
-  marginTop: theme.space[500],
-  // height: 300,
-  // cursor: 'pointer',
-  // backgroundSize: '400% 400%',
-  // zIndex: 1,
-
-  // '@media': {
-  //   '(prefers-reduced-motion: no-preference)': {
-  //     animation: `${animate} 14s linear infinite`,
-  //   },
-  // },
-
-  // ':before': {
+  padding: theme.space[300],
+  marginBlock: theme.space[800],
+  cursor: 'pointer',
+  textDecoration: 'none',
+  'article > header': {
+    position: 'absolute',
+    top: 0,
+    transform: ' translateY(-50%)',
+    left: '10px',
+    clip: 'rect(255,255,255,255)',
+    backgroundColor: theme.colors.background,
+    paddingInline: theme.space[200],
+  },
+  // '::before': {
   //   content: '',
   //   position: 'absolute',
-  //   inset: 1,
-  //   zIndex: -1,
-  //   background: theme.colors.background,
-  //   // transform: 'scale(1)',
-  // },
-
-  // ':after': {
-  //   content: '',
-  //   position: 'absolute',
-  //   inset: -4,
-  //   zIndex: -2,
-  //   background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary})`,
+  //   top: 0,
+  //   left: 0,
+  //   width: '100%',
+  //   height: '100%',
+  //   backgroundColor: theme.colors.background,
+  //   clipPath: 'polygon(0% 0%, 100% 0%, 100% 90%, 0% 90%)',
+  //   zIndex: '1',
   // },
   selectors: {
-    '& + &': {
-      borderTop: `1px solid ${theme.colors.gray}`,
+    '&:focus, &:hover': {
+      outlineColor: theme.colors.secondary,
     },
   },
-});
+
+  '@media': {
+    '(prefers-reduced-motion: no-preference)': {
+      animation: `${animate} 14s linear infinite`,
+    },
+  },
+})
 
 // export const image = style({
 //   maxWidth: '100%',

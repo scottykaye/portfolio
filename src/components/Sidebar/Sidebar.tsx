@@ -3,25 +3,25 @@ import React, {
   ReactNode,
   useContext,
   CSSProperties,
-} from "react";
-import cx from "classnames";
-import { assignInlineVars } from "@vanilla-extract/dynamic";
-import * as styles from "./Sidebar.css";
+} from 'react'
+import cx from 'classnames'
+import { assignInlineVars } from '@vanilla-extract/dynamic'
+import * as styles from './Sidebar.css'
 
-type Anchor = "left" | "right";
+type Anchor = 'left' | 'right'
 interface Context {
   /** The size of the Sidebar */
-  size?: string;
+  size?: string
   /** The side the Sidebar is anchored to */
-  anchor?: Anchor;
+  anchor?: Anchor
   /** Whether the Sidebar is anchored to it's parent or if false anchored to the window */
-  isAnchoredToParent?: boolean;
+  isAnchoredToParent?: boolean
 }
-const SidebarContext = createContext<Context>({});
+const SidebarContext = createContext<Context>({})
 
 interface WrapperProps extends Context {
   /** The children rendered in the Sidebar.Wrapper component */
-  children: ReactNode;
+  children: ReactNode
 }
 
 // function Wrapper({
@@ -53,7 +53,7 @@ interface WrapperProps extends Context {
 
 interface PageProps extends Context {
   /** The children rendered in the Sidebar.Page component */
-  children?: ReactNode;
+  children?: ReactNode
 }
 
 // function Page({ children }: PageProps) {
@@ -73,40 +73,40 @@ interface PageProps extends Context {
 
 interface Props {
   /** The children rendered in Sidebar component */
-  children: ReactNode;
+  children: ReactNode
   /** The top numeric position the Sidebar will stick at */
-  top?: CSSProperties["top"];
+  top?: CSSProperties['top']
   /** The top numeric position the Sidebar will stick at */
-  bottom?: CSSProperties["bottom"];
+  bottom?: CSSProperties['bottom']
   /** Background color of Sidebar */
-  backgroundColor?: CSSProperties["backgroundColor"];
-  props?: { [key: string]: unknown };
+  backgroundColor?: CSSProperties['backgroundColor']
+  props?: { [key: string]: unknown }
 }
 
 // Create two interfaces, both in which setting that the other should never happen.
 interface LabelWithoutHeading extends Props {
   /** Label of whats contained in the Sidebar */
-  label: string;
+  label: string
   /** Identifier to the label thats in the Sidebar */
-  labelledBy?: never;
+  labelledBy?: never
 }
 interface LabelWithHeading extends Props {
   /** Label of whats contained in the Sidebar */
-  label?: never;
+  label?: never
   /** Identifier to the label thats in the Sidebar */
-  labelledBy: string;
+  labelledBy: string
   /** The display property for the Sidebar */
-  display?: CSSProperties["display"];
+  display?: CSSProperties['display']
   /** The flex direction of the Sidebar */
-  flexDirection?: CSSProperties["flexDirection"];
+  flexDirection?: CSSProperties['flexDirection']
   /** The top start point of where the Sidebar sticks to */
-  top?: CSSProperties["top"];
+  top?: CSSProperties['top']
   /** The bottom start point of where the Sidebar sticks to */
-  bottom?: CSSProperties["bottom"];
+  bottom?: CSSProperties['bottom']
 }
 
 // Create a union that makes clear one or the other should not both.
-type AccessibleLabelWithProps = LabelWithoutHeading | LabelWithHeading;
+type AccessibleLabelWithProps = LabelWithoutHeading | LabelWithHeading
 
 // function Sidebar({
 //   children,
@@ -143,17 +143,17 @@ const Sidebar = ({
   children,
   labelledBy,
   label,
-  top = "0",
-  bottom = "0",
+  top = '0',
+  bottom = '0',
   ...props
-}: AccessibleLabelWithProps) => <></>;
+}: AccessibleLabelWithProps) => <></>
 
 export default Object.assign(Sidebar, {
   Wrapper: ({
     children,
-    size = "250px",
-    anchor = "left",
+    size = '250px',
+    anchor = 'left',
     isAnchoredToParent = false,
   }: WrapperProps) => <>{children}</>,
   Page: ({ children }: PageProps) => <>{children}</>,
-});
+})

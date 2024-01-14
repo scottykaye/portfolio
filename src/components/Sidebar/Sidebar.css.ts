@@ -1,14 +1,12 @@
-import {
-  style, createVar, styleVariants,
-} from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
+import { style, createVar, styleVariants } from '@vanilla-extract/css'
+import { theme } from '../../theme/theme.css'
 
-export const sidebarSize = createVar();
+export const sidebarSize = createVar()
 
 export const wrapper = style({
   display: 'flex',
   minHeight: '100%',
-});
+})
 
 export const page = style({
   display: 'flex',
@@ -16,8 +14,7 @@ export const page = style({
   flexGrow: '1',
   // transition: 'width .2s ease-in',
   overflow: 'auto',
-
-});
+})
 
 export const sidebar = style({
   display: 'flex',
@@ -30,7 +27,7 @@ export const sidebar = style({
   scrollBehavior: 'smooth',
   // App specific aesthetics
   backgroundColor: theme.colors.inverse,
-});
+})
 
 export const isAnchoredToParent = styleVariants({
   sticky: {
@@ -39,7 +36,7 @@ export const isAnchoredToParent = styleVariants({
   fixed: {
     position: 'fixed',
   },
-});
+})
 
 export const pageSize = styleVariants({
   left: {
@@ -48,4 +45,4 @@ export const pageSize = styleVariants({
   right: {
     marginInlineEnd: sidebarSize,
   },
-});
+})
