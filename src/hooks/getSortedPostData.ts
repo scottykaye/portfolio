@@ -13,18 +13,19 @@ export default function getSortedPostsData() {
     // Read markdown file as string
     const fullPath = path.join(blogDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
+
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
     // Combine the data with the id
-    //
-    console.log(matterResult)
+
+    const { content: mdx, data } = matterResult
     return {
       id,
       //  Let's just set a null date to make sure we always have a date field to sort by below
       date: null,
       url: `blog/${id}`,
-      content: matterResult.content,
-      ...matterResult.data,
+      source: mdx,
+      frontMatter: data,
     }
   })
 

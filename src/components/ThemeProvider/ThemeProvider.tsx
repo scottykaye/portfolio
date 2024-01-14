@@ -1,11 +1,6 @@
-import {
-  useMemo, useEffect, ReactNode, useRef,
-} from 'react';
+import { useMemo, useEffect, ReactNode, useRef } from 'react'
 
-import {
-  ThemesContext,
-  useLocalStorage,
-} from '../../hooks';
+import { ThemesContext, useLocalStorage } from '../../hooks'
 
 interface Props {
   children: ReactNode
@@ -26,25 +21,29 @@ interface Props {
 //   },
 // };
 
-export default function ThemeProvider({ children, defaultTheme = 'light' }: Props) {
-  const [currentTheme, setCurrentTheme] = useLocalStorage(defaultTheme, 'theme');
+export default function ThemeProvider({
+  children,
+  defaultTheme = 'light',
+}: Props) {
+  const [currentTheme, setCurrentTheme] = useLocalStorage(defaultTheme, 'theme')
 
-  const theme = useMemo(() => ({ setCurrentTheme, currentTheme }), [setCurrentTheme, currentTheme]);
+  const theme = useMemo(
+    () => ({ setCurrentTheme, currentTheme }),
+    [setCurrentTheme, currentTheme],
+  )
 
-  const prevCurrentTheme = useRef<any>();
+  const prevCurrentTheme = useRef<any>()
   useEffect(() => {
-    document.documentElement.classList.add(currentTheme);
+    document.body.classList.add(currentTheme)
 
     if (prevCurrentTheme.current) {
-      document.documentElement.classList.remove(prevCurrentTheme.current);
+      document.body.classList.remove(prevCurrentTheme.current)
     }
 
-    prevCurrentTheme.current = currentTheme;
-  }, [currentTheme]);
+    prevCurrentTheme.current = currentTheme
+  }, [currentTheme])
 
   return (
-    <ThemesContext.Provider value={theme}>
-      {children}
-    </ThemesContext.Provider>
-  );
+    <ThemesContext.Provider value={theme}>{children}</ThemesContext.Provider>
+  )
 }

@@ -25,8 +25,10 @@ interface Props {
 function getCurrentRoute(route) {
   return route
     .split('/')
-    .filter((item) => item)
-    .join('')
+    .reduce(
+      (acc, curr) => (!curr ? acc : [...acc, formatCurrentRoute(curr)]),
+      [],
+    )
 }
 
 function formatCurrentRoute(route) {
@@ -178,17 +180,17 @@ function AppContainer(props: Props) {
           </Heading>
           <Navigation>
             <NavItem>
-              <NavLink isActive={router.pathname === '/'} href="/">
+              <NavLink isActive={router.asPath === '/'} href="/">
                 Home
               </NavLink>
             </NavItem>
             {/* <NavItem>
-              <NavLink isActive={router.pathname === "/blog"} href="/blog">
+              <NavLink isActive={router.asPath === "/blog"} href="/blog">
                 Blog
               </NavLink>
             </NavItem> */}
             <NavItem>
-              <NavLink isActive={router.pathname === '/resume'} href="/resume">
+              <NavLink isActive={router.asPath === '/resume'} href="/resume">
                 Resume
               </NavLink>
             </NavItem>
@@ -197,15 +199,14 @@ function AppContainer(props: Props) {
         <MainContent>
           <Breadcrumbs>
             <Breadcrumbs.Breadcrumb
-              href={router.pathname === '/' ? undefined : '/'}
+              href={router.asPath === '/' ? undefined : '/'}
             >
               Home
             </Breadcrumbs.Breadcrumb>
-            {router.pathname.length > 1 && (
-              <Breadcrumbs.Breadcrumb>
-                {formatCurrentRoute(getCurrentRoute(router.pathname))}
-              </Breadcrumbs.Breadcrumb>
-            )}
+            {router.asPath.length > 1 &&
+              getCurrentRoute(router.asPath).map((route) => (
+                <Breadcrumbs.Breadcrumb>{route}</Breadcrumbs.Breadcrumb>
+              ))}
           </Breadcrumbs>
           {props.children}
         </MainContent>

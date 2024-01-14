@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
@@ -11,8 +11,10 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <Main />
-      <NextScript />
+      <body>
+        <Main />
+        <NextScript />
+      </body>
     </Html>
-  );
+  )
 }
