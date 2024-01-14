@@ -1,4 +1,4 @@
-import { style, keyframes } from '@vanilla-extract/css'
+import { style, keyframes, globalStyle } from '@vanilla-extract/css'
 import { theme } from '../../theme/theme.css'
 
 const animate = keyframes({
@@ -23,15 +23,6 @@ export const card = style({
   marginBlock: theme.space[800],
   cursor: 'pointer',
   textDecoration: 'none',
-  'article > header': {
-    position: 'absolute',
-    top: 0,
-    transform: ' translateY(-50%)',
-    left: '10px',
-    clip: 'rect(255,255,255,255)',
-    backgroundColor: theme.colors.background,
-    paddingInline: theme.space[200],
-  },
   // '::before': {
   //   content: '',
   //   position: 'absolute',
@@ -54,6 +45,17 @@ export const card = style({
       animation: `${animate} 14s linear infinite`,
     },
   },
+})
+
+// Oh boy
+globalStyle(`${card} > article > header`, {
+  position: 'absolute',
+  top: 0,
+  transform: ' translateY(-50%)',
+  left: '10px',
+  clip: 'rect(255,255,255,255)',
+  backgroundColor: theme.colors.background,
+  paddingInline: theme.space[200],
 })
 
 // export const image = style({
