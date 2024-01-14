@@ -22,7 +22,6 @@ export default function Home(props) {
         where I work on the Frontend Platform Team.
       </header>
       {props.posts.map((post) => {
-        console.log(post)
         return (
           <Card is="a" href={post.url} key={post.title}>
             <Article title={post.title}>

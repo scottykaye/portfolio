@@ -1,9 +1,4 @@
-import {
-  createGlobalTheme,
-  createThemeContract,
-  globalStyle,
-  assignVars,
-} from '@vanilla-extract/css'
+import { createGlobalTheme, createThemeContract } from '@vanilla-extract/css'
 
 export const theme = createThemeContract({
   space: {
@@ -59,7 +54,8 @@ const lightTheme = {
     body: 'Helvetica Neue, Helvetica, sans-serif',
   },
   colors: {
-    primary: '#968EA9',
+    //   primary: '#968EA9',
+    primary: '#cbc3e3',
     secondary: '#379AC8',
     tertiary: '#D94562',
     background: '#F0F9F9',
@@ -73,6 +69,10 @@ const lightTheme = {
   },
 }
 
+// #393d00 #121a26 #211a28
+// #24253d #222243
+// #7a6d7a
+// #fad961 #ffeb27 #ffcc00 #f0e68c
 const darkTheme = {
   space: {
     0: '0px',
@@ -94,15 +94,17 @@ const darkTheme = {
     body: 'Helvetica Neue, Helvetica, sans-serif',
   },
   colors: {
-    primary: '#F0FF00',
-    secondary: '#30D4FD',
-    tertiary: '#FD3075',
-    background: '#111111',
+    //  primary: '#f0ff00',
+    primary: '#ffeb20',
+    secondary: '#30d4fd',
+    tertiary: '#fd3075',
+    //  background: '#111111',
+    background: '#24253d',
     gray: '#555555',
-    normal: '#FFFFFF',
-    white: '#FFFFFF',
+    normal: '#ffffff',
+    white: '#ffffff',
     black: '#000000',
-    disabled: '#CCD6D9',
+    disabled: '#ccd6d9',
     inverse: '#000000',
     gradient: '#fbda61, #ff5acd',
   },

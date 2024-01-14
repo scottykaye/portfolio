@@ -5,17 +5,17 @@ import { MDXRemote } from 'next-mdx-remote'
 // I thought it would be cool to have one layout for all blog posts
 // It's maybe not necessary and each file can just be named by id
 // Will do it this way for now
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps({ req, query }) {
   const posts = getSortedPostsData()
   const post = posts.find((post) => post.id.includes(query.slug))
 
   const source = await serialize(post.source)
 
-  return { props: source }
+  return { props: { source, url: req.url } }
 }
 
 const components = {}
 
 export default function BlogPost(props) {
-  return <MDXRemote {...props} components={components} />
+  return <MDXRemote {...props.source} components={components} />
 }

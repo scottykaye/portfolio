@@ -166,6 +166,7 @@ function Education() {
     </Section>
   )
 }
+
 export default function Resume() {
   return (
     <AutoGrid alignItems="flexStart">
