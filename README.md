@@ -1,5 +1,19 @@
-# ScottyKaye New Portfolio Experimental App
+# scottykaye's NextJS portfolio
+This repo is a space for me to:
+- Blog my recent engineering thoughts
+- Experiment with new technologies and ideas
+- Build cool accessible UI
+- Inspire others to be better versions of themselves
 
 ### To load dev
+Using yarn berry 😎. @Theo hates it and hates me for it. (Will update to bun soon though!)
 
-Run `yarn dev`
+Run `yarn && yarn dev`
+
+### Feel free to reach out to me!
+Feel free to reach out to me on any medium to chat! I am always down for coffee ☕︎ and talk frontend!  __(or if you really want powerlifting)__
+
+- [scottykaye.web@gmail.com](mailto:scottykaye.web@gmail.com)
+- [Twitter](https://twitter.com/scottykaye)
+- [Twitch](https://twitch.tv/scottykaye)
+- [Instagram](https://instagram.com/localmeethero)
