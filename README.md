@@ -6,12 +6,12 @@ This repo is a space for me to:
 - Inspire others to be better versions of themselves
 
 ### To load dev
-Using yarn berry 😎. @Theo hates it and hates me for it. (Will update to bun soon though!)
+Using yarn berry 😎. @Theo hates it and hates me for it. _(Will update to bun soon though!)_
 
 Run `yarn && yarn dev`
 
 ### Feel free to reach out to me!
-Feel free to reach out to me on any medium to chat! I am always down for coffee ☕︎ and talk frontend!  __(or if you really want powerlifting)__
+Feel free to reach out to me on any medium to chat! I am always down for coffee ☕︎ and talk frontend!  _(or if you really want powerlifting)_
 
 - [scottykaye.web@gmail.com](mailto:scottykaye.web@gmail.com)
 - [Twitter](https://twitter.com/scottykaye)
