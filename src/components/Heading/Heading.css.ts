@@ -1,8 +1,8 @@
-import { styleVariants, createVar, fallbackVar } from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
+import { styleVariants, createVar, fallbackVar } from '@vanilla-extract/css'
+import { theme } from '../../theme/theme.css'
 
-export const size = createVar();
-export const margin = createVar();
+export const size = createVar()
+export const margin = createVar()
 
 export const headingStyle = styleVariants(
   {
@@ -29,8 +29,10 @@ export const headingStyle = styleVariants(
         print: {
           fontSize: 12,
           lineHeight: 1.3,
+
+          color: theme.colors.gray,
         },
       },
     },
-  ]
-);
+  ],
+)

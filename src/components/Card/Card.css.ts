@@ -1,63 +1,53 @@
-import { style, keyframes } from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
-
-// const animate = keyframes({
-//   '0%': {
-//     backgroundPosition: '0% 50%',
-//   },
-//   '50%': {
-//     backgroundPosition: '100% 50%',
-//   },
-//   '100%': {
-//     backgroundPosition: '0% 50%',
-//   },
-// });
+import { style, keyframes, globalStyle } from '@vanilla-extract/css'
+import { theme } from '../../theme/theme.css'
 
 export const card = style({
-  overflow: 'hidden',
-  // outline: '5px solid',
-  // outlineOffset: -10,
-  // outlineColor: theme.colors.inverse,
   position: 'relative',
-  // border: '4px solid transparent',
+  display: 'flex',
+  flexDirection: 'column',
+  border: '2px solid',
+  borderColor: theme.colors.primary,
+
   color: theme.colors.normal,
-  paddingTop: theme.space[300],
-  marginTop: theme.space[500],
-  // height: 300,
-  // cursor: 'pointer',
-  // backgroundSize: '400% 400%',
-  // zIndex: 1,
-
-  // '@media': {
-  //   '(prefers-reduced-motion: no-preference)': {
-  //     animation: `${animate} 14s linear infinite`,
-  //   },
-  // },
-
-  // ':before': {
-  //   content: '',
-  //   position: 'absolute',
-  //   inset: 1,
-  //   zIndex: -1,
-  //   background: theme.colors.background,
-  //   // transform: 'scale(1)',
-  // },
-
-  // ':after': {
-  //   content: '',
-  //   position: 'absolute',
-  //   inset: -4,
-  //   zIndex: -2,
-  //   background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary})`,
-  // },
+  padding: theme.space[300],
+  marginBlock: theme.space[300],
+  cursor: 'pointer',
+  textDecoration: 'none',
+  transition: 'translate 100ms ease, border-color 100ms ease',
   selectors: {
-    '& + &': {
-      borderTop: `1px solid ${theme.colors.gray}`,
+    '&:focus, &:hover': {
+      borderColor: theme.colors.secondary,
     },
   },
-});
 
-// export const image = style({
-//   maxWidth: '100%',
-//   maxHeight: '100%',
-// });
+  '@media': {
+    '(prefers-reduced-motion: no-preference)': {
+      selectors: {
+        '&:hover, &:focus-visible': {
+          translate: `0 ${theme.space[200]}`,
+        },
+        '&:focus-visible': {
+          translate: `0 ${theme.space[200]}`,
+          outline: '2px solid highlight',
+          outlineOffset: theme.space[100],
+        },
+
+        '&:active': {
+          translate: 0,
+        },
+      },
+    },
+  },
+
+  '@container': {
+    // 80px, is 40 padding both sides plus 300 minmax size
+    'home (min-width: 380px)': {
+      selectors: {
+        '&:nth-child(2n)': {
+          // @todo consider a staggered look
+          // marginBlock: `${theme.space[1000]} ${theme.space[800]}`,
+        },
+      },
+    },
+  },
+})

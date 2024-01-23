@@ -1,11 +1,18 @@
-import React from 'react';
-import { mainContentStyle } from './MainContent.css';
-import Wrapper from '../Wrapper';
+import React from 'react'
+import { mainContentStyle } from './MainContent.css'
+import Wrapper from '../Wrapper'
+import { clsx } from 'clsx'
 
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode
+  id?: string
+  className?: string
 }
 
-export default function MainContent({ children }: Props) {
-  return <main className={mainContentStyle}><Wrapper>{children}</Wrapper></main>;
+export default function MainContent({ children, id, className }: Props) {
+  return (
+    <main className={clsx(mainContentStyle, className)} id={id}>
+      <Wrapper>{children}</Wrapper>
+    </main>
+  )
 }

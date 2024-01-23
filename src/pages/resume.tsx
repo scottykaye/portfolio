@@ -1,18 +1,16 @@
-import App from '../components/App';
-import Article from '../components/Article';
-import Heading from '../components/Heading';
-import AutoGrid from '../components/AutoGrid';
-import Grid from '../components/Grid';
-import List from '../components/List';
-import Section from '../components/Section';
-import Card from '../components/Card';
+import Head from 'next/head'
+import Heading from '../components/Heading'
+import AutoGrid from '../components/AutoGrid'
+import Grid from '../components/Grid'
+import List from '../components/List'
+import Section from '../components/Section'
 
 function PrimaryHeading(props) {
-  return <Heading is="h3" color="primary" fontSize={20} {...props} />;
+  return <Heading is="h3" color="primary" fontSize={20} {...props} />
 }
 
 function SubHeading(props) {
-  return <Heading is="h4" fontSize={12} {...props} />;
+  return <Heading is="h4" fontSize={12} {...props} />
 }
 
 function WorkExperience() {
@@ -23,18 +21,19 @@ function WorkExperience() {
       <SubHeading>November 2022 - Present</SubHeading>
       <List>
         <List.Item>
-          Introducing and maintaining a NextJS application for all of Wayfairs
-          brands B2C and B2B services.
+          Leading an initiative upgrading our Next.js framework to leverage the
+          app router and server components.
         </List.Item>
         <List.Item>
-          Upgrading our Next JS framework to server components.
+          Building at scale and maintaining a Next.js application for all of
+          Wayfairs brands B2C and B2B services.
         </List.Item>
         <List.Item>
           Introducing Storybook at scale for all teams to build components in
           isolation.
         </List.Item>
         <List.Item>
-          Implemented and help create tracking service for NextJS website.
+          Implemented and help develop frontend internal tracking service.
         </List.Item>
       </List>
       <PrimaryHeading>
@@ -44,9 +43,10 @@ function WorkExperience() {
       <List>
         <List.Item>
           Providing and maintaining reusable Design System for Wayfairs 5
-          Storefront Brands (Wayfair, Joss and Main, Birch Lane, All Modern &
-          Perigold) as well as our internal user, supplier and business to
-          business themes.
+          Storefront Brands{' '}
+          <em>(Wayfair, Joss and Main, Birch Lane, All Modern & Perigold)</em>{' '}
+          as well as our internal user, supplier and business to business
+          themes.
         </List.Item>
         <List.Item>
           Responsible for creating and maintaining reusable UI components
@@ -55,7 +55,7 @@ function WorkExperience() {
       </List>
       <PrimaryHeading>
         Senior Software Engineer - Arlow, Interior Design Application & Wayfair
-        B2B (Business to Business)
+        B2B
       </PrimaryHeading>
       <SubHeading>October 2017 - April 2019</SubHeading>
       <List>
@@ -66,8 +66,8 @@ function WorkExperience() {
         </List.Item>
       </List>
       <PrimaryHeading>
-        Senior Software Engineer - Lifestyles Brands (Joss and Main, Birch Lane,
-        All Modern & Perigold)
+        Senior Software Engineer - Lifestyles Brands - (Joss and Main, Birch
+        Lane, All Modern & Perigold
       </PrimaryHeading>
       <SubHeading>February 2015 - October 2017</SubHeading>
       <List>
@@ -76,14 +76,15 @@ function WorkExperience() {
         </List.Item>
         <List.Item>
           Prototyped and implemented first responsive blueprint for Wayfair and
-          all storefront brand websites. (Same blueprint implemented today.)
+          all storefront brand websites{' '}
+          <em>(Same blueprint implemented today)</em>
         </List.Item>
         <List.Item>
-          Created and developed first category pages for Wayfair.
+          Created and developed first category pages for Wayfair
         </List.Item>
         <List.Item>
           Created and maintained UI and features for Lifestyles brand pages
-          including responsive headers footers and page features.
+          including responsive headers footers and page features
         </List.Item>
       </List>
       <PrimaryHeading>Frontend Developer - Joss and Main</PrimaryHeading>
@@ -93,11 +94,10 @@ function WorkExperience() {
           Lead migrating Jossandmain.com to the same platform as Wayfair.com
         </List.Item>
         <List.Item>Responsible for UI on all of JossandMain.com</List.Item>
-        <List.Item>Developed UI for a responsive My account flow.</List.Item>
-        <List.Item>Helped create UI for early SPA pages.</List.Item>
+        <List.Item>Developed UI for a responsive account flow</List.Item>
       </List>
     </Section>
-  );
+  )
 }
 
 function Knowledge() {
@@ -153,7 +153,7 @@ function Knowledge() {
         </List.Item>
       </List>
     </Section>
-  );
+  )
 }
 function Education() {
   return (
@@ -167,11 +167,20 @@ function Education() {
         <List.Item margin="0">Graduated in May 2012</List.Item>
       </List>
     </Section>
-  );
+  )
 }
+
 export default function Resume() {
   return (
-    <App>
+    <>
+      {' '}
+      <Head>
+        <title>Scotty Kaye Resume</title>
+        <meta
+          name="description"
+          content="Scotty Kaye is a Staff Frontend Engineer working on Frontend Platform teams as well as Design Systems. "
+        />
+      </Head>
       <AutoGrid alignItems="flexStart">
         <WorkExperience />
         <Grid is="article">
@@ -179,6 +188,6 @@ export default function Resume() {
           <Education />
         </Grid>
       </AutoGrid>
-    </App>
-  );
+    </>
+  )
 }

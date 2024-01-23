@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
+import { style } from '@vanilla-extract/css'
+import { theme } from '../../theme/theme.css'
 
 export const navigationStyle = style({
   backgroundColor: theme.colors.background,
@@ -7,7 +7,7 @@ export const navigationStyle = style({
   display: 'flex',
   flexGrow: '1',
   justifyContent: 'flex-end',
-});
+})
 
 export const navListStyle = style({
   //overriding defaults
@@ -15,7 +15,7 @@ export const navListStyle = style({
   margin: theme.space[0],
   listStyle: 'none',
   display: 'flex',
-});
+})
 
 export const navListItemStyle = style({
   //overriding defaults
@@ -23,19 +23,13 @@ export const navListItemStyle = style({
   margin: theme.space[0],
   listStyle: 'none',
   display: 'block',
-  // borderTop: '5px solid #ccff00',
   borderTop: `5px solid ${theme.colors.primary}`,
   '@media': {
     print: {
       borderTop: `5px solid ${theme.colors.black}`,
     },
   },
-});
-
-export const activeStyle = style({
-  backgroundColor: theme.colors.primary,
-  color: theme.colors.inverse,
-});
+})
 
 export const navLinkStyle = style({
   cursor: 'pointer',
@@ -44,29 +38,24 @@ export const navLinkStyle = style({
   height: '100%',
   padding: '0 3vw',
   textDecoration: 'none',
+  color: theme.colors.normal,
   transition: 'color 200ms ease, background-color 200ms ease',
-  border: '2px solid transparent ',
-
+  ':focus': {
+    outline: '2px solid highlight',
+  },
   selectors: {
-    '&:focus-visible': {
-      outline: 0,
-      borderColor: theme.colors.tertiary,
-    },
-    [`&:not(${activeStyle})`]: {
-      color: theme.colors.normal,
-    },
-
-    [`&:hover:not(${activeStyle})`]: {
-      backgroundColor: theme.colors.secondary,
-      color: theme.colors.inverse,
-    },
-    [`&:active:not(${activeStyle})`]: {
-      backgroundColor: theme.colors.secondary,
-      color: theme.colors.inverse,
-    },
-    [`&:focus:not(${activeStyle})`]: {
+    ['&:focus-visible, &:hover']: {
       backgroundColor: theme.colors.secondary,
       color: theme.colors.inverse,
     },
   },
-});
+})
+
+export const activeStyle = style({
+  selectors: {
+    ['&, &:hover']: {
+      backgroundColor: theme.colors.primary,
+      color: theme.colors.inverse,
+    },
+  },
+})

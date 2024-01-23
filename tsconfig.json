@@ -2,14 +2,26 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@root/*": ["*"],
-      "@components/*": ["components/*"],
-      "@private/*": ["private/*"],
-      "@hooks/*": ["hooks/*"],
-      "@pages/*": ["pages/*"],
-      "@theme/*": ["theme/*"]
+      "@root/*": [
+        "*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@private/*": [
+        "private/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@theme/*": [
+        "theme/*"
+      ]
     },
-  "target": "es5",
+    "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
@@ -27,14 +39,22 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "noUnusedLocals": false,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    "**/*.mjs"
+    "**/*.mjs",
+    "**/*.mdx",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

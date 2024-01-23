@@ -1,52 +1,44 @@
-import App from '../components/App';
-import Link from '../components/Link';
-import Heading from '../components/Heading';
-import Card from '../components/Card';
-import Article from '../components/Article';
+import Head from 'next/head'
+import Heading from '../components/Heading'
+import Card from '../components/Card'
+import Article from '../components/Article'
+import AutoGrid from '../components/AutoGrid'
+import getSortedPostsData from '../hooks/getSortedPostData'
+import * as styles from '../home/Home.css'
 
-export default function Home() {
+export async function getServerSideProps() {
+  const posts = getSortedPostsData()
+  console.log(posts)
+  return { props: { posts } }
+}
+
+export default function Home(props) {
   return (
-    <App>
+    <>
+      <Head>
+        <title>Scotty Kaye</title>
+        <meta
+          name="description"
+          content="Scotty Kaye is a Frontend Software Engineer located in Boston, Massachusetts with a strong background in UI, React, Accessibility and Next.js"
+        />
+      </Head>
       <header>
         <Heading>{`Hi, I'm Scott`} &#128075;</Heading>
-        {`I'm a Frontend Software Engineer at`}{' '}
-        <Link href="http://wayfair.com/" target="_blank" rel="noreferrer">
-          Wayfair
-        </Link>{' '}
-        where I work on the Frontend Platform Team.
+        <p>
+          {`I'm a Staff Frontend Software Engineer with experience on Frontend Platform teams and Design Systems.`}
+        </p>
       </header>
-      <Card>
-        <Article title="NEXTJS portfolio update">
-          <p>
-            For 2023, I am planning to post my learnings & opinions as articles
-            for frontend engineering. I plan on writing my takes on new
-            technology as well as sharing my thoughts and patterns.
-          </p>
-          <p>
-            This portfolio was designed using NEXT.JS and Styled with Vanilla
-            Extract. I will be updating it to NEXT 13 the coming months.
-          </p>
-          <p>
-            Stay tuned for more or find me on{' '}
-            <Link
-              href="https://twitter.com/scottykaye"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Twitter
-            </Link>{' '}
-            or{' '}
-            <Link
-              href="https://github.com/scottykaye"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Github
-            </Link>
-            .
-          </p>
-        </Article>
-      </Card>
-    </App>
-  );
+      <div className={styles.home}>
+        <AutoGrid>
+          {props.posts.map((post) => (
+            <Card is="a" href={post.url} key={post.title}>
+              <Article title={post.title} date={post.date}>
+                <p>{post.description}</p>
+              </Article>
+            </Card>
+          ))}
+        </AutoGrid>
+      </div>
+    </>
+  )
 }

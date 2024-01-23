@@ -1,19 +1,18 @@
-import { style } from "@vanilla-extract/css";
-import { theme } from "../../theme/theme.css";
-import { NodeNextRequest } from "next/dist/server/base-http/node";
+import { style } from '@vanilla-extract/css'
+import { theme } from '../../theme/theme.css'
 
-export const linkStyles = style({
+export const link = style({
   color: theme.colors.primary,
 
-  "@media": {
+  '@media': {
     print: {
       color: theme.colors.black,
     },
   },
 
-  textDecorationSkipInk: "auto",
-  ":hover": {
+  textDecorationSkipInk: 'auto',
+  ':hover': {
     color: theme.colors.secondary,
-    transition: " color 200ms linear",
+    transition: ' color 200ms linear',
   },
-});
+})

@@ -1,13 +1,24 @@
 interface Props {
-  logoSize?: number;
-  backgroundColor: string;
-  foregroundColor: string;
+  logoSize?: number
+  backgroundColor: string
+  foregroundColor: string
 }
 
-export default function Logo({ logoSize = 75, backgroundColor = '#000000', foregroundColor = '#FFFFFF' }: Props) {
+export default function Logo({
+  logoSize = 75,
+  backgroundColor = '#000000',
+  foregroundColor = '#FFFFFF',
+}: Props) {
   return (
-    <svg width={logoSize} viewBox="0 0 400 400" className={backgroundColor}>
-      <path d="M387.546,201.298c0,103.577-83.97,187.54-187.549,187.54c-103.577,0-187.543-83.963-187.543-187.54
+    <svg
+      width={logoSize}
+      viewBox="0 0 400 400"
+      className={backgroundColor}
+      aria-labelledby="title"
+    >
+      <title id="title">Scotty Kaye logo</title>
+      <path
+        d="M387.546,201.298c0,103.577-83.97,187.54-187.549,187.54c-103.577,0-187.543-83.963-187.543-187.54
   c0-103.584,83.966-187.546,187.543-187.546C303.577,13.752,387.546,97.714,387.546,201.298z"
       />
       <path
@@ -15,12 +26,20 @@ export default function Logo({ logoSize = 75, backgroundColor = '#000000', foreg
         d="M377.652,201.293c0,98.113-79.536,177.65-177.655,177.65c-98.113,0-177.65-79.537-177.65-177.65
   c0-98.111,79.538-177.647,177.65-177.647C298.116,23.646,377.652,103.182,377.652,201.293z"
       />
-      <path d="M367.193,201.293c0,92.338-74.857,167.194-167.196,167.194c-92.336,0-167.19-74.856-167.19-167.194
+      <path
+        d="M367.193,201.293c0,92.338-74.857,167.194-167.196,167.194c-92.336,0-167.19-74.856-167.19-167.194
   c0-92.337,74.854-167.19,167.19-167.19C292.336,34.103,367.193,108.956,367.193,201.293z"
       />
-      <path className={foregroundColor} d="M358.192,202.218c0,87.565-70.981,154.937-158.542,154.937V202.218H358.192z" />
-      <path className={foregroundColor} d="M43.387,201.007c0-87.566,70.982-155.712,158.543-155.712v155.879L43.387,201.007z" />
-      <path d="M340.002,200.003c0,77.319-62.681,140.001-140.005,140.001c-77.323,0-140.002-62.682-140.002-140.001
+      <path
+        className={foregroundColor}
+        d="M358.192,202.218c0,87.565-70.981,154.937-158.542,154.937V202.218H358.192z"
+      />
+      <path
+        className={foregroundColor}
+        d="M43.387,201.007c0-87.566,70.982-155.712,158.543-155.712v155.879L43.387,201.007z"
+      />
+      <path
+        d="M340.002,200.003c0,77.319-62.681,140.001-140.005,140.001c-77.323,0-140.002-62.682-140.002-140.001
   c0-77.324,62.679-140.008,140.002-140.008C277.321,59.995,340.002,122.679,340.002,200.003z"
       />
       <g>
@@ -38,5 +57,5 @@ export default function Logo({ logoSize = 75, backgroundColor = '#000000', foreg
         />
       </g>
     </svg>
-  );
+  )
 }
