@@ -8,7 +8,7 @@ import * as styles from '../home/Home.css'
 
 export async function getServerSideProps() {
   const posts = getSortedPostsData()
-
+  console.log(posts)
   return { props: { posts } }
 }
 
@@ -24,10 +24,12 @@ export default function Home(props) {
       </Head>
       <header>
         <Heading>{`Hi, I'm Scott`} &#128075;</Heading>
-        {`I'm a Staff Frontend Software Engineer with experience on Frontend Platform teams and Design Systems.`}
+        <p>
+          {`I'm a Staff Frontend Software Engineer with experience on Frontend Platform teams and Design Systems.`}
+        </p>
       </header>
       <div className={styles.home}>
-        {/*    <AutoGrid alignItems="flexStart">
+        <AutoGrid>
           {props.posts.map((post) => (
             <Card is="a" href={post.url} key={post.title}>
               <Article title={post.title} date={post.date}>
@@ -36,8 +38,6 @@ export default function Home(props) {
             </Card>
           ))}
         </AutoGrid>
-
-          */}
       </div>
     </>
   )

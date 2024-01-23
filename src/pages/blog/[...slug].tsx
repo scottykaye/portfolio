@@ -2,6 +2,7 @@ import Head from 'next/head'
 import getSortedPostsData from '../../hooks/getSortedPostData'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
+import List from '@root/src/components/List'
 
 // I thought it would be cool to have one layout for all blog posts
 // It's maybe not necessary and each file can just be named by id
@@ -15,7 +16,10 @@ export async function getServerSideProps({ req, query }) {
   return { props: { source, url: req.url } }
 }
 
-const components = {}
+const components = {
+  List,
+  ListItem: List.Item,
+}
 
 // Can use format from _app we just gotta move it into a utils
 function formatPageName(route) {

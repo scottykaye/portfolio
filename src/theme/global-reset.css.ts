@@ -15,6 +15,7 @@ globalStyle(':root', {
 
 globalStyle('html, body, #__next', {
   display: 'contents',
+  background: 'red',
 })
 
 globalStyle('html', {

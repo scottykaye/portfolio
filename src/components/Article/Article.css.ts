@@ -6,6 +6,10 @@ export const article = style({
   color: theme.colors.normal,
   paddingTop: theme.space[200],
   paddingBottom: theme.space[200],
+
+  display: 'flex',
+  flexDirection: 'column',
+  height: '100%',
 })
 
 export const caption = style({
@@ -30,19 +34,19 @@ export const heading = style({
   //  whiteSpace: 'nowrap',
   //  overflow: 'hidden',
 
-  fontSize: '24px',
+  fontSize: 24,
   display: '-webkit-box',
   WebkitBoxOrient: 'vertical',
   WebkitLineClamp: '2',
   paddingInline: theme.space[200],
   backgroundColor: theme.colors.background,
+  overflow: 'hidden',
 })
 
 export const description = style({
-  overflow: 'hidden',
   display: '-webkit-box',
   WebkitBoxOrient: 'vertical',
   WebkitLineClamp: '3',
-
-  paddingInline: theme.space[100],
+  overflow: 'hidden',
+  flexGrow: '1',
 })

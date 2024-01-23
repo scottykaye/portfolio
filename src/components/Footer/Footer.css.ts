@@ -25,7 +25,6 @@ export const footerStyle = style([
     color: theme.colors.normal,
     padding: `${theme.space[1000]} ${theme.space[0]}`,
     position: 'relative',
-    marginBlockStart: theme.space[800],
 
     selectors: {
       '&::before, &::after': {

@@ -1,20 +1,20 @@
-import React from 'react';
-import * as styles from './List.css';
+import React from 'react'
+import * as styles from './List.css'
 
-import { assignInlineVars } from '@vanilla-extract/dynamic';
+import { assignInlineVars } from '@vanilla-extract/dynamic'
 
 function stringOrNumber(fontSize: string | number) {
   if (typeof fontSize === 'number') {
-    return `${fontSize}px`;
+    return `${fontSize}px`
   }
-  return fontSize;
+  return fontSize
 }
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 interface ItemProps extends Props {
-  margin?: string | number;
+  margin?: string | number
 }
 
 function Item({ children, margin }: ItemProps) {
@@ -27,15 +27,15 @@ function Item({ children, margin }: ItemProps) {
     >
       {children}
     </li>
-  );
+  )
 }
 
 interface ListProps extends Props {
-  listStyle?: 'none' | 'default';
+  listStyle?: 'none' | 'default'
 }
 
 export default function List({ children, listStyle = 'default' }: ListProps) {
-  return <ul className={styles.list[listStyle]}>{children}</ul>;
+  return <ul className={styles.list[listStyle]}>{children}</ul>
 }
 
-List.Item = Item;
+List.Item = Item

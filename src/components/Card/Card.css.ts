@@ -3,13 +3,14 @@ import { theme } from '../../theme/theme.css'
 
 export const card = style({
   position: 'relative',
-  display: 'block',
+  display: 'flex',
+  flexDirection: 'column',
   border: '2px solid',
   borderColor: theme.colors.primary,
 
   color: theme.colors.normal,
   padding: theme.space[300],
-  marginBlock: theme.space[800],
+  marginBlock: theme.space[300],
   cursor: 'pointer',
   textDecoration: 'none',
   transition: 'translate 100ms ease, border-color 100ms ease',

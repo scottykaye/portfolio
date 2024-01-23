@@ -24,7 +24,7 @@ export default function Article({
       </header>
       <section className={styles.description}>{children}</section>
       {date}
-      <footer className={styles.caption}>{caption}</footer>
+      {/* <footer className={styles.caption}>{caption}</footer> */}
     </article>
   )
 }
