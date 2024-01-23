@@ -54,9 +54,13 @@ const lightTheme = {
     body: 'Helvetica Neue, Helvetica, sans-serif',
   },
   colors: {
-    //   primary: '#968EA9',
-    primary: '#cbc3e3',
-    secondary: '#379AC8',
+    // primary: '#968EA9',
+    // primary: '#cbc3e3',
+    // primary: '#747082',
+    primary: '#4A4773',
+    //   #6A688F
+    // secondary: '#379AC8',
+    secondary: '#26728A',
     tertiary: '#D94562',
     background: '#F0F9F9',
     gray: '#CCCCCC',
@@ -65,6 +69,7 @@ const lightTheme = {
     black: '#000000',
     disabled: '#555555',
     inverse: '#ffffff',
+    // gradient: ' #4158d0, #c850c0, #ffcc70',
     gradient: ' #4158d0, #c850c0, #ffcc70',
   },
 }
@@ -73,6 +78,8 @@ const lightTheme = {
 // #24253d #222243
 // #7a6d7a
 // #fad961 #ffeb27 #ffcc00 #f0e68c
+// #fd3075
+
 const darkTheme = {
   space: {
     0: '0px',
@@ -89,7 +96,8 @@ const darkTheme = {
   },
   fonts: {
     // heading: 'Georgia, Times, Times New Roman, serif',
-    heading: 'Raleway, Helvetica Neue, Helvetica, sans-serif',
+    // heading: 'Raleway, Helvetica Neue, Helvetica, sans-serif',
+    heading: 'var(--font-raleway)',
     // body: 'system-ui',
     body: 'Helvetica Neue, Helvetica, sans-serif',
   },

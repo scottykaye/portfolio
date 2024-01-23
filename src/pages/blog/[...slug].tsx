@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import getSortedPostsData from '../../hooks/getSortedPostData'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
@@ -16,6 +17,21 @@ export async function getServerSideProps({ req, query }) {
 
 const components = {}
 
+// Can use format from _app we just gotta move it into a utils
+function formatPageName(route) {
+  return `${route.charAt(0).toUpperCase()}${route.slice(1)}`
+}
+
 export default function BlogPost(props) {
-  return <MDXRemote {...props.source} components={components} />
+  const url = props.url.split('/')
+  const pageName = formatPageName(url[url.length - 1])
+
+  return (
+    <>
+      <Head>
+        <title>Scotty Kaye - {pageName}</title>
+      </Head>
+      <MDXRemote {...props.source} components={components} />
+    </>
+  )
 }

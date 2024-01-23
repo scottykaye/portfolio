@@ -1,5 +1,5 @@
-import { style, keyframes } from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
+import { style, keyframes } from '@vanilla-extract/css'
+import { theme } from '../../theme/theme.css'
 
 const animate = keyframes({
   '0%': {
@@ -11,11 +11,11 @@ const animate = keyframes({
   '100%': {
     backgroundPosition: '0% 50%',
   },
-});
+})
 
 export const flex = style({
   display: 'flex',
-});
+})
 
 export const headerStyle = style({
   backgroundColor: theme.colors.background,
@@ -26,14 +26,13 @@ export const headerStyle = style({
   justifyContent: 'space-between',
 
   selectors: {
-
     '&::before': {
       content: '',
       display: 'block',
       width: '100%',
       height: 5,
       marginBottom: theme.space[300],
-      background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary})`,
+      background: `linear-gradient(-45deg, ${theme.colors.secondary},${theme.colors.primary})`,
       backgroundSize: '400% 400%',
 
       '@media': {
@@ -43,6 +42,9 @@ export const headerStyle = style({
       },
     },
   },
-});
+})
 
-export const innerHeaderStyle = style([flex, { justifyContent: 'space-between' }]);
+export const innerHeaderStyle = style([
+  flex,
+  { justifyContent: 'space-between' },
+])

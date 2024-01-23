@@ -3,10 +3,10 @@ import {
   styleVariants,
   fallbackVar,
   createVar,
-} from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
+} from '@vanilla-extract/css'
+import { theme } from '../../theme/theme.css'
 
-export const margin = createVar();
+export const margin = createVar()
 
 export const list = styleVariants(
   {
@@ -21,11 +21,13 @@ export const list = styleVariants(
       '@media': {
         print: {
           margin: theme.space[50],
+
+          color: theme.colors.gray,
         },
       },
     },
-  ]
-);
+  ],
+)
 
 export const listItem = style({
   margin: fallbackVar(margin, `${theme.space[200]} ${theme.space[0]}`),
@@ -43,4 +45,4 @@ export const listItem = style({
       margin: theme.space[0],
     },
   },
-});
+})

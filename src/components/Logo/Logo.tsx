@@ -10,7 +10,13 @@ export default function Logo({
   foregroundColor = '#FFFFFF',
 }: Props) {
   return (
-    <svg width={logoSize} viewBox="0 0 400 400" className={backgroundColor}>
+    <svg
+      width={logoSize}
+      viewBox="0 0 400 400"
+      className={backgroundColor}
+      aria-labelledby="title"
+    >
+      <title id="title">Scotty Kaye logo</title>
       <path
         d="M387.546,201.298c0,103.577-83.97,187.54-187.549,187.54c-103.577,0-187.543-83.963-187.543-187.54
   c0-103.584,83.966-187.546,187.543-187.546C303.577,13.752,387.546,97.714,387.546,201.298z"

@@ -1,5 +1,5 @@
-import { style, keyframes } from '@vanilla-extract/css';
-import { theme } from '../../theme/theme.css';
+import { style, keyframes } from '@vanilla-extract/css'
+import { theme } from '../../theme/theme.css'
 
 const animate = keyframes({
   '0%': {
@@ -11,22 +11,21 @@ const animate = keyframes({
   '100%': {
     backgroundPosition: '0% 50%',
   },
-});
+})
 
 const flex = style({
   display: 'flex',
-});
+})
 
 export const footerStyle = style([
   flex,
   {
     backgroundColor: theme.colors.background,
-
     fontFamily: theme.fonts.body,
-
     color: theme.colors.normal,
-    padding: `${theme.space[1000]} 0`,
+    padding: `${theme.space[1000]} ${theme.space[0]}`,
     position: 'relative',
+    marginBlockStart: theme.space[800],
 
     selectors: {
       '&::before, &::after': {
@@ -35,7 +34,7 @@ export const footerStyle = style([
         left: 0,
         right: 0,
         height: 5,
-        background: `linear-gradient(-45deg, ${theme.colors.primary},${theme.colors.secondary},${theme.colors.tertiary})`,
+        background: `linear-gradient(-45deg, ${theme.colors.secondary},${theme.colors.primary})`,
         backgroundSize: '400% 400%',
 
         '@media': {
@@ -61,19 +60,21 @@ export const footerStyle = style([
       },
     },
   },
-]);
+])
 
 export const footerInnerStyle = style([
   flex,
   {
     justifyContent: 'space-between',
   },
-]);
+])
 
 export const rightStyle = style([
   flex,
   {
+    flexWrap: 'wrap',
+    paddingInlineStart: theme.space[300],
     gap: theme.space[200],
     fill: theme.colors.primary,
   },
-]);
+])

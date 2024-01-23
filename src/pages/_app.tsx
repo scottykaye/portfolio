@@ -16,8 +16,15 @@ import ThemeProvider from '../components/ThemeProvider'
 import Link from '../components/Link'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Sidebar from '../components/Sidebar'
+import { Raleway } from 'next/font/google'
 
 import '../theme/global-reset.css'
+
+const raleway = Raleway({
+  weight: ['300', '700'],
+  subsets: ['latin'],
+  variable: '--font-raleway',
+})
 
 interface Props {
   children: ReactNode
@@ -32,7 +39,7 @@ function getCurrentRoute(route) {
       [],
     )
 }
-
+// move this out of _app into a utility
 function formatCurrentRoute(route) {
   return `${route.charAt(0).toUpperCase()}${route.slice(1)}`
 }
@@ -175,14 +182,14 @@ function AppContainer(props: Props) {
         </Sidebar>
         <Sidebar.Page>
           <Header>
-            <Link href="/" isNextLink>
+            <Link href="/">
               <Logo
                 backgroundColor={logoBackgroundColor}
                 foregroundColor={logoPrimaryColor}
               />
             </Link>
             <Heading fontSize={16} margin="0 10px">
-              ScottyKaye
+              Scotty Kaye
             </Heading>
             <Navigation>
               <NavItem>
@@ -197,7 +204,7 @@ function AppContainer(props: Props) {
               </NavItem>
             </Navigation>
           </Header>
-          <MainContent id="skipToContent">
+          <MainContent id="skipToContent" className={raleway.className}>
             <Breadcrumbs>
               <Breadcrumbs.Breadcrumb
                 href={router.asPath === '/' ? undefined : '/'}
@@ -214,8 +221,46 @@ function AppContainer(props: Props) {
             {props.children}
           </MainContent>
           <Footer>
-            <div>ScottyKaye {new Date().getFullYear()}</div>
+            <div>Scotty Kaye {new Date().getFullYear()}</div>
             <FooterRightContainer>
+              <a
+                aria-label="LinkedIn"
+                href="https://www.linkedin.com/in/scott-kaye-93279b54/"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.flex}
+              >
+                <svg
+                  fill="inherit"
+                  aria-hidden="true"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+              <a
+                aria-label="Twitch"
+                href="https:/twitch.tv/scottykaye"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.flex}
+              >
+                <svg
+                  aria-hidden="true"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                >
+                  <title>Twitch</title>
+                  <desc>View ScottyKaye on Twitch</desc>
+                  <path d="M2.149 0l-1.612 4.119v16.836h5.731v3.045h3.224l3.045-3.045h4.657l6.269-6.269v-14.686h-21.314zm19.164 13.612l-3.582 3.582h-5.731l-3.045 3.045v-3.045h-4.836v-15.045h17.194v11.463zm-3.582-7.343v6.262h-2.149v-6.262h2.149zm-5.731 0v6.262h-2.149v-6.262h2.149z" />
+                </svg>
+              </a>
               <a
                 aria-label="Instagram"
                 href="https://www.instagram.com/localmeethero"

@@ -1,8 +1,10 @@
-import Link from '../components/Link'
+import Head from 'next/head'
 import Heading from '../components/Heading'
 import Card from '../components/Card'
 import Article from '../components/Article'
+import AutoGrid from '../components/AutoGrid'
 import getSortedPostsData from '../hooks/getSortedPostData'
+import * as styles from '../home/Home.css'
 
 export async function getServerSideProps() {
   const posts = getSortedPostsData()
@@ -13,22 +15,30 @@ export async function getServerSideProps() {
 export default function Home(props) {
   return (
     <>
+      <Head>
+        <title>Scotty Kaye</title>
+        <meta
+          name="description"
+          content="Scotty Kaye is a Frontend Software Engineer located in Boston, Massachusetts with a strong background in UI, React, Accessibility and Next.js"
+        />
+      </Head>
       <header>
         <Heading>{`Hi, I'm Scott`} &#128075;</Heading>
-        {`I'm a Frontend Software Engineer at`}{' '}
-        <Link href="http://wayfair.com/" target="_blank" rel="noreferrer">
-          Wayfair
-        </Link>{' '}
-        where I work on the Frontend Platform Team.
+        {`I'm a Staff Frontend Software Engineer with experience on Frontend Platform teams and Design Systems.`}
       </header>
-      {props.posts.map((post) => (
-        <Card is="a" href={post.url} key={post.title}>
-          <Article title={post.title}>
-            <p>{post.description}</p>
-            {post.date}
-          </Article>
-        </Card>
-      ))}
+      <div className={styles.home}>
+        {/*    <AutoGrid alignItems="flexStart">
+          {props.posts.map((post) => (
+            <Card is="a" href={post.url} key={post.title}>
+              <Article title={post.title} date={post.date}>
+                <p>{post.description}</p>
+              </Article>
+            </Card>
+          ))}
+        </AutoGrid>
+
+          */}
+      </div>
     </>
   )
 }

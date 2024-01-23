@@ -1,14 +1,14 @@
-import React from 'react';
-import cx from 'classnames';
-import Link from '../Link';
-import * as styles from './Navigation.css';
+import React from 'react'
+import cx from 'classnames'
+import Link from '../Link'
+import * as styles from './Navigation.css'
 
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 interface NavLinkProps extends Props {
-  isActive?: boolean;
-  href: string;
+  isActive?: boolean
+  href: string
 }
 
 export function Navigation(props: Props) {
@@ -16,11 +16,11 @@ export function Navigation(props: Props) {
     <nav className={styles.navigationStyle}>
       <ul className={styles.navListStyle}>{props.children}</ul>
     </nav>
-  );
+  )
 }
 
 export function NavItem(props: Props) {
-  return <li className={styles.navListItemStyle}>{props.children}</li>;
+  return <li className={styles.navListItemStyle}>{props.children}</li>
 }
 
 export function NavLink(props: NavLinkProps) {
@@ -29,23 +29,10 @@ export function NavLink(props: NavLinkProps) {
       className={cx(styles.navLinkStyle, {
         [styles.activeStyle]: props.isActive,
       })}
-      isNextLink
+      aria-current={props.isActive ? 'page' : null}
       {...props}
     >
       {props.children}
     </Link>
-  );
+  )
 }
-
-// // Stubs before we go live
-// export function Navigation(props: Props) {
-//   return <></>;
-// }
-
-// export function NavItem(props: Props) {
-//   return <></>;
-// }
-
-// export function NavLink(props: NavLinkProps) {
-//   return <></>;
-// }

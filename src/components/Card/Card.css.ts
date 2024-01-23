@@ -1,64 +1,52 @@
 import { style, keyframes, globalStyle } from '@vanilla-extract/css'
 import { theme } from '../../theme/theme.css'
 
-const animate = keyframes({
-  '0%': {
-    backgroundPosition: '0% 50%',
-  },
-  '50%': {
-    backgroundPosition: '100% 50%',
-  },
-  '100%': {
-    backgroundPosition: '0% 50%',
-  },
-})
-
 export const card = style({
   position: 'relative',
   display: 'block',
-  outline: '2px solid',
-  outlineColor: theme.colors.primary,
+  border: '2px solid',
+  borderColor: theme.colors.primary,
+
   color: theme.colors.normal,
   padding: theme.space[300],
   marginBlock: theme.space[800],
   cursor: 'pointer',
   textDecoration: 'none',
-  // '::before': {
-  //   content: '',
-  //   position: 'absolute',
-  //   top: 0,
-  //   left: 0,
-  //   width: '100%',
-  //   height: '100%',
-  //   backgroundColor: theme.colors.background,
-  //   clipPath: 'polygon(0% 0%, 100% 0%, 100% 90%, 0% 90%)',
-  //   zIndex: '1',
-  // },
+  transition: 'translate 100ms ease, border-color 100ms ease',
   selectors: {
     '&:focus, &:hover': {
-      outlineColor: theme.colors.secondary,
+      borderColor: theme.colors.secondary,
     },
   },
 
   '@media': {
     '(prefers-reduced-motion: no-preference)': {
-      animation: `${animate} 14s linear infinite`,
+      selectors: {
+        '&:hover, &:focus-visible': {
+          translate: `0 ${theme.space[200]}`,
+        },
+        '&:focus-visible': {
+          translate: `0 ${theme.space[200]}`,
+          outline: '2px solid highlight',
+          outlineOffset: theme.space[100],
+        },
+
+        '&:active': {
+          translate: 0,
+        },
+      },
+    },
+  },
+
+  '@container': {
+    // 80px, is 40 padding both sides plus 300 minmax size
+    'home (min-width: 380px)': {
+      selectors: {
+        '&:nth-child(2n)': {
+          // @todo consider a staggered look
+          // marginBlock: `${theme.space[1000]} ${theme.space[800]}`,
+        },
+      },
     },
   },
 })
-
-// Oh boy
-globalStyle(`${card} > article > header`, {
-  position: 'absolute',
-  top: 0,
-  transform: ' translateY(-50%)',
-  left: '10px',
-  clip: 'rect(255,255,255,255)',
-  backgroundColor: theme.colors.background,
-  paddingInline: theme.space[200],
-})
-
-// export const image = style({
-//   maxWidth: '100%',
-//   maxHeight: '100%',
-// });

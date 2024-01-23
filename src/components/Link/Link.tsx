@@ -1,12 +1,12 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import { linkStyles } from './LinkStyles.css';
+import React from 'react'
+import * as styles from './LinkStyles.css'
+import NextLink from 'next/link'
 
 interface Props {
-  children: React.ReactNode;
-  href: string;
-  isActive?: boolean;
-  [rest: string]: unknown;
+  children: React.ReactNode
+  href: string
+  isActive?: boolean
+  [rest: string]: unknown
 }
 
 export default function Link({
@@ -17,21 +17,9 @@ export default function Link({
   isNextLink,
   ...rest
 }: Props) {
-  const router = useRouter();
-
-  function handleClick(e) {
-    e.preventDefault();
-    router.push(href);
-  }
-
   return (
-    <a
-      href={href}
-      onClick={isNextLink && handleClick}
-      className={linkStyles}
-      {...rest}
-    >
+    <NextLink href={href} className={styles.link} {...rest}>
       {children}
-    </a>
-  );
+    </NextLink>
+  )
 }

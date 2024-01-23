@@ -1,5 +1,5 @@
 import React from 'react'
-import { autoGrid } from './AutoGrid.css'
+import * as styles from './AutoGrid.css'
 
 interface Props {
   children: React.ReactNode
@@ -7,5 +7,5 @@ interface Props {
 }
 
 export default function AutoGrid({ children, alignItems = 'default' }: Props) {
-  return <div className={autoGrid[alignItems]}>{children}</div>
+  return <div className={styles.autoGrid[alignItems]}>{children}</div>
 }

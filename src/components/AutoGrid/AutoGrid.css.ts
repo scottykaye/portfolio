@@ -6,9 +6,7 @@ export const autoGrid = styleVariants(
     flexStart: {
       alignItems: 'flex-start',
     },
-    default: {
-      alignItems: 'auto',
-    },
+    default: {},
     center: {
       alignItems: 'center',
     },
@@ -19,7 +17,7 @@ export const autoGrid = styleVariants(
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
       gap: theme.space[500],
-      margin: `auto`,
+      margin: 'auto',
     },
   ],
 )
