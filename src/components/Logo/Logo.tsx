@@ -1,5 +1,5 @@
 import { clsx } from 'clsx'
-import * as styles from './Logo.css.ts'
+import * as styles from './Logo.css'
 
 interface Props {
   logoSize?: number
