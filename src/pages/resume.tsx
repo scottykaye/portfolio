@@ -21,7 +21,7 @@ function WorkExperience() {
       <SubHeading>November 2022 - Present</SubHeading>
       <List>
         <List.Item>
-          Leading an initiative upgrading our Next.js framework to leverage the
+          Leading an initiative upgrading our Next.js framework to leveoage the
           app router and server components.
         </List.Item>
         <List.Item>
@@ -54,8 +54,8 @@ function WorkExperience() {
         </List.Item>
       </List>
       <PrimaryHeading>
-        Senior Software Engineer - Arlow, Interior Design Application & Wayfair
-        B2B
+        {`Senior Software Engineer - "Arlow" an Interior Design Application &
+        Wayfair B2B`}
       </PrimaryHeading>
       <SubHeading>October 2017 - April 2019</SubHeading>
       <List>
@@ -72,7 +72,7 @@ function WorkExperience() {
       <SubHeading>February 2015 - October 2017</SubHeading>
       <List>
         <List.Item>
-          Lead frontend breakdown and creation of new Brand website Perigold.
+          Led frontend breakdown and creation of new brand website Perigold.
         </List.Item>
         <List.Item>
           Prototyped and implemented first responsive blueprint for Wayfair and

@@ -93,8 +93,6 @@ function AppContainer(props: Props) {
     }
   }, [colorMode, setCurrentTheme])
 
-  //  stuff related to sidebar
-
   const [size, setResize] = useState(
     typeof window !== 'undefined' ? '100px' : '300px',
   )
@@ -204,7 +202,7 @@ function AppContainer(props: Props) {
               </NavItem>
             </Navigation>
           </Header>
-          <MainContent id="skipToContent" className={raleway.className}>
+          <MainContent id="skipToContent">
             <Breadcrumbs>
               <Breadcrumbs.Breadcrumb
                 href={router.asPath === '/' ? undefined : '/'}
