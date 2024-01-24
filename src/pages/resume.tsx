@@ -173,16 +173,12 @@ function Education() {
 export default function Resume() {
   return (
     <>
-      {' '}
       <Head>
         <title>Scotty Kaye Resume</title>
         <meta
           name="description"
           content="Scotty Kaye is a Staff Frontend Engineer working on Frontend Platform teams as well as Design Systems. "
         />
-        <link rel="scottykaye favicon" href="/static/favicon.ico" />
-        <meta name="color-scheme" content="light dark" />
-        <noscript id="__next_css__DO_NOT_USE__"></noscript>
       </Head>
       <AutoGrid alignItems="flexStart">
         <WorkExperience />

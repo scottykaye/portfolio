@@ -4,20 +4,36 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="color-scheme" content="light dark" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <meta
+          name="description"
+          content="Scotty Kaye is a Frontend Software Engineer located in Boston, Massachusetts with a strong background in UI, React, Accessibility and Next.js"
+        />
         <link
           rel="icon"
-          href="/icon/favicon.ico"
+          href="/images/favicon.ico"
           type="image/x-icon"
           sizes="48x48"
         />
         <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/images/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/images/favicon-16x16.png"
+        />
+        <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/icon/apple-touch-icon.png"
+          href="/images/apple-touch-icon.png"
         />
-        <meta property="og:title" content="Example Page" />
-        <meta property="og:image" content="/icon/favicon.ico" />
+        <meta property="og:title" content="Scotty Kaye" />
+        <meta property="og:image" content="/images/favicon.ico" />
         <meta
           property="og:description"
           content="Scotty Kaye - Frontend Software Engineer"
@@ -32,6 +48,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css?family=Raleway:300,700&display=optional"
           rel="stylesheet"
         />
+        <meta name="color-scheme" content="light dark" />
       </Head>
       <body>
         <Main />
