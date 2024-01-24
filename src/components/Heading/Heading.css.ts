@@ -29,7 +29,6 @@ export const headingStyle = styleVariants(
         print: {
           fontSize: 12,
           lineHeight: 1.3,
-
           color: theme.colors.gray,
         },
       },

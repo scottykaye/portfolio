@@ -17,7 +17,7 @@ export const flex = style({
   display: 'flex',
 })
 
-export const headerStyle = style({
+export const header = style({
   backgroundColor: theme.colors.background,
   fontFamily: theme.fonts.body,
   color: theme.colors.normal,
@@ -44,7 +44,4 @@ export const headerStyle = style({
   },
 })
 
-export const innerHeaderStyle = style([
-  flex,
-  { justifyContent: 'space-between' },
-])
+export const innerHeader = style([flex, { justifyContent: 'space-between' }])

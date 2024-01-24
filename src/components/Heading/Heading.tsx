@@ -23,7 +23,7 @@ function stringOrNumber(fontSize: string | number) {
 export default function Heading<T extends React.ElementType = 'h2'>({
   is = 'h2',
   color = 'default',
-  fontSize = 30,
+  fontSize = 26,
   margin,
   className,
   ...props

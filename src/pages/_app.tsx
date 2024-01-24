@@ -16,15 +16,7 @@ import ThemeProvider from '../components/ThemeProvider'
 import Link from '../components/Link'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Sidebar from '../components/Sidebar'
-import { Raleway } from 'next/font/google'
-
 import '../theme/global-reset.css'
-
-const raleway = Raleway({
-  weight: ['300', '700'],
-  subsets: ['latin'],
-  variable: '--font-raleway',
-})
 
 interface Props {
   children: ReactNode
@@ -54,7 +46,7 @@ function AppContainer(props: Props) {
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     if (event.target.value === 'os') {
-      // if it's the os operating system we're gonna set the theme based on it an dstore the color mode in state
+      // if it's the os operating system we're gonna set the theme based on it and store the color mode in state
       setCurrentTheme(
         globalThis.matchMedia('(prefers-color-scheme: dark)').matches
           ? dark
@@ -70,7 +62,7 @@ function AppContainer(props: Props) {
 
   function handleOptionClick(event: React.ChangeEvent<HTMLInputElement>) {
     if (event.target.textContent === 'os') {
-      // if it's the os operating system we're gonna set the theme based on it an dstore the color mode in state
+      // if it's the os operating system we're gonna set the theme based on it and store the color mode in state
       setCurrentTheme(
         globalThis.matchMedia('(prefers-color-scheme: dark)').matches
           ? dark
@@ -106,7 +98,6 @@ function AppContainer(props: Props) {
   const refs = [React.useRef(null), React.useRef(null), React.useRef(null)]
 
   const { handleKey } = useNavigation(refs)
-
   return (
     <>
       <a href="#skipToContent" className={styles.skipNav}>

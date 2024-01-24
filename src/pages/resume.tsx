@@ -21,80 +21,80 @@ function WorkExperience() {
       <SubHeading>November 2022 - Present</SubHeading>
       <List>
         <List.Item>
-          Leading an initiative upgrading our Next.js framework to leveoage the
-          app router and server components.
+          Architecting and delivering on upgrading the Next.js platform to the
+          app router leveraging server components and streaming. Led to large
+          increase in performance benefits.
         </List.Item>
         <List.Item>
-          Building at scale and maintaining a Next.js application for all of
-          Wayfairs brands B2C and B2B services.
+          Building, scaling and maintaining a Next.js application for all
+          Wayfair brands. Scaling the product to hundreds of engineers.
         </List.Item>
         <List.Item>
-          Introducing Storybook at scale for all teams to build components in
-          isolation.
+          Introducing Storybook at scale for all teams to develop libraries
+          outside of applications.
         </List.Item>
         <List.Item>
-          Implemented and help develop frontend internal tracking service.
+          Added new performance metrics TTFB, FCP and INP at scale for all
+          brands and pages and recorded real time monitoring in Datadog.
+        </List.Item>
+        <List.Item>
+          Developing a scalable frontend architecture for our internal tracking
+          service used by hundreds of engineers.
         </List.Item>
       </List>
       <PrimaryHeading>
-        Senior Software Engineer - Homebase, Wayfair Design System
+        Senior Software Engineer - Wayfair Design System
       </PrimaryHeading>
       <SubHeading>April 2019 - November 2022</SubHeading>
       <List>
         <List.Item>
-          Providing and maintaining reusable Design System for Wayfairs 5
-          Storefront Brands{' '}
-          <em>(Wayfair, Joss and Main, Birch Lane, All Modern & Perigold)</em>{' '}
-          as well as our internal user, supplier and business to business
-          themes.
+          Providing and maintaining a scalable reusable Design System for
+          Wayfair brands as well as our internal user, supplier and business to
+          business themes.
         </List.Item>
         <List.Item>
-          Responsible for creating and maintaining reusable UI components
-          library solutions.
+          Responsible for developing complex components: Sidebars, Drawers,
+          Modals and reusable accessible solutions.
+        </List.Item>
+        <List.Item>
+          Responsible for documentation and onboarding new engineers on the
+          design system and best practices.
         </List.Item>
       </List>
       <PrimaryHeading>
-        {`Senior Software Engineer - "Arlow" an Interior Design Application &
-        Wayfair B2B`}
+        {`Senior Software Engineer - "Arlow" an Interior Design Application`}
       </PrimaryHeading>
       <SubHeading>October 2017 - April 2019</SubHeading>
       <List>
         <List.Item>
-          Created an interior design application that allowed users to save and
-          pick from all Wayfair brand and non Wayfair brand products and create
-          services invoices.
+          Scaffolded the frontend for an interior design application that
+          allowed to save any product online and create services invoices.
         </List.Item>
       </List>
       <PrimaryHeading>
-        Senior Software Engineer - Lifestyles Brands - (Joss and Main, Birch
-        Lane, All Modern & Perigold
+        Senior Software Engineer - Lifestyles Brands
       </PrimaryHeading>
       <SubHeading>February 2015 - October 2017</SubHeading>
       <List>
         <List.Item>
-          Led frontend breakdown and creation of new brand website Perigold.
+          Led frontend prototyping and creating new Perigold brand website.
         </List.Item>
         <List.Item>
-          Prototyped and implemented first responsive blueprint for Wayfair and
-          all storefront brand websites{' '}
-          <em>(Same blueprint implemented today)</em>
-        </List.Item>
-        <List.Item>
-          Created and developed first category pages for Wayfair
+          Prototyped and implemented first responsive website for Wayfair and
+          all brands. <em>(Same blueprint implemented today)</em>
         </List.Item>
         <List.Item>
           Created and maintained UI and features for Lifestyles brand pages
-          including responsive headers footers and page features
+          including responsive headers footers and page features.
         </List.Item>
       </List>
       <PrimaryHeading>Frontend Developer - Joss and Main</PrimaryHeading>
-      <SubHeading>April 2014 - Februrary 2015</SubHeading>
+      <SubHeading>April 2014 - February 2015</SubHeading>
       <List>
         <List.Item>
-          Lead migrating Jossandmain.com to the same platform as Wayfair.com
+          Led migrating Jossandmain.com to the same platform as Wayfair.com.
         </List.Item>
-        <List.Item>Responsible for UI on all of JossandMain.com</List.Item>
-        <List.Item>Developed UI for a responsive account flow</List.Item>
+        <List.Item>Developed UI for a responsive account flow.</List.Item>
       </List>
     </Section>
   )
@@ -173,13 +173,15 @@ function Education() {
 export default function Resume() {
   return (
     <>
-      {' '}
       <Head>
         <title>Scotty Kaye Resume</title>
         <meta
           name="description"
           content="Scotty Kaye is a Staff Frontend Engineer working on Frontend Platform teams as well as Design Systems. "
         />
+        <link rel="scottykaye favicon" href="/static/favicon.ico" />
+        <meta name="color-scheme" content="light dark" />
+        <noscript id="__next_css__DO_NOT_USE__"></noscript>
       </Head>
       <AutoGrid alignItems="flexStart">
         <WorkExperience />
