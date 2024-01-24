@@ -34,6 +34,7 @@ export default function Document() {
         />
         <meta property="og:title" content="Scotty Kaye" />
         <meta property="og:image" content="/images/favicon.ico" />
+
         <meta
           property="og:description"
           content="Scotty Kaye - Frontend Software Engineer"
@@ -48,7 +49,6 @@ export default function Document() {
           href="https://fonts.googleapis.com/css?family=Raleway:300,700&display=optional"
           rel="stylesheet"
         />
-        <meta name="color-scheme" content="light dark" />
       </Head>
       <body>
         <Main />
