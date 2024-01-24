@@ -48,9 +48,7 @@ const lightTheme = {
     1000: '50px',
   },
   fonts: {
-    // heading: 'Georgia, Times, Times New Roman, serif',
     heading: 'Raleway, Helvetica Neue, Helvetica, sans-serif',
-    // body: 'system-ui',
     body: 'Helvetica Neue, Helvetica, sans-serif',
   },
   colors: {
@@ -95,10 +93,7 @@ const darkTheme = {
     1000: '50px',
   },
   fonts: {
-    // heading: 'Georgia, Times, Times New Roman, serif',
-    // heading: 'Raleway, Helvetica Neue, Helvetica, sans-serif',
-    heading: 'var(--font-raleway)',
-    // body: 'system-ui',
+    heading: 'Raleway, Helvetica Neue, Helvetica, sans-serif',
     body: 'Helvetica Neue, Helvetica, sans-serif',
   },
   colors: {

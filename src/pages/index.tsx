@@ -8,7 +8,7 @@ import * as styles from '../home/Home.css'
 
 export async function getServerSideProps() {
   const posts = getSortedPostsData()
-  console.log(posts)
+
   return { props: { posts } }
 }
 

@@ -1,6 +1,10 @@
 import { style } from '@vanilla-extract/css'
 import { theme } from '../../theme/theme.css'
 
+export const appContainer = style({
+  display: 'contents',
+})
+
 export const app = style({
   display: 'flex',
   flexDirection: 'column',

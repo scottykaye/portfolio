@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css'
 import { theme } from '../../theme/theme.css'
 
-export const mainContentStyle = style({
+export const mainContent = style({
   backgroundColor: theme.colors.background,
   fontFamily: theme.fonts.body,
   color: theme.colors.normal,

@@ -1,3 +1,6 @@
+import { clsx } from 'clsx'
+import * as styles from './Logo.css.ts'
+
 interface Props {
   logoSize?: number
   backgroundColor: string
@@ -13,7 +16,7 @@ export default function Logo({
     <svg
       width={logoSize}
       viewBox="0 0 400 400"
-      className={backgroundColor}
+      className={clsx(styles.logo, backgroundColor)}
       aria-labelledby="title"
     >
       <title id="title">Scotty Kaye logo</title>
