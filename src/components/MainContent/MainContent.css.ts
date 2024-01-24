@@ -6,9 +6,8 @@ export const mainContentStyle = style({
   fontFamily: theme.fonts.body,
   color: theme.colors.normal,
   flexGrow: 1,
-  marginBlockEnd: theme.space[800],
   // Doing padding on main since issues with the theme on body and html reset
-  paddingBlock: `${theme.space[500]} ${theme.space[0]} ${theme.space[1000]}`,
+  padding: `${theme.space[500]} ${theme.space[0]} ${theme.space[1000]}`,
   '@media': {
     print: {
       paddingBlock: theme.space[0],

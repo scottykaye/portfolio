@@ -15,7 +15,7 @@ globalStyle(':root', {
 
 globalStyle('html, body, #__next', {
   display: 'contents',
-  background: 'red',
+  fontFamily: theme.fonts.body,
 })
 
 globalStyle('html', {
