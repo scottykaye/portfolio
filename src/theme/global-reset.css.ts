@@ -15,14 +15,13 @@ globalStyle(':root', {
 
 globalStyle('html, body, #__next', {
   display: 'contents',
-  fontFamily: theme.fonts.body,
 })
 
 globalStyle('html', {
   overflowY: 'scroll',
 })
 
-globalStyle(':root, input[type="checkbox" i], ul, li, h1, h2, h3, h4, h5, h6', {
+globalStyle(':root, input[type="checkbox"], li, h1, h2, h3, h4, h5, h6', {
   margin: 0,
 })
 

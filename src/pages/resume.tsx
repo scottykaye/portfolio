@@ -34,7 +34,7 @@ function WorkExperience() {
           outside of applications.
         </List.Item>
         <List.Item>
-          Added new performance metrics TTFB, FCP and INP at scale for all
+          Introducing new performance metrics TTFB, FCP and INP at scale for all
           brands and pages and recorded real time monitoring in Datadog.
         </List.Item>
         <List.Item>
@@ -67,7 +67,7 @@ function WorkExperience() {
       <SubHeading>October 2017 - April 2019</SubHeading>
       <List>
         <List.Item>
-          Scaffolded the frontend for an interior design application that
+          Scaffolding the frontend for an interior design application that
           allowed to save any product online and create services invoices.
         </List.Item>
       </List>
@@ -77,14 +77,14 @@ function WorkExperience() {
       <SubHeading>February 2015 - October 2017</SubHeading>
       <List>
         <List.Item>
-          Led frontend prototyping and creating new Perigold brand website.
+          Leading frontend prototyping and creating new Perigold brand website.
         </List.Item>
         <List.Item>
-          Prototyped and implemented first responsive website for Wayfair and
-          all brands. <em>(Same blueprint implemented today)</em>
+          Prototyping and implementing first responsive website for Wayfair and
+          all brands. <em>(Still used today</em>
         </List.Item>
         <List.Item>
-          Created and maintained UI and features for Lifestyles brand pages
+          Creating and maintaining UI and features for Lifestyles brand pages
           including responsive headers footers and page features.
         </List.Item>
       </List>
@@ -92,9 +92,9 @@ function WorkExperience() {
       <SubHeading>April 2014 - February 2015</SubHeading>
       <List>
         <List.Item>
-          Led migrating Jossandmain.com to the same platform as Wayfair.com.
+          Leading Jossandmain.com site migration Wayfair.com platform.
         </List.Item>
-        <List.Item>Developed UI for a responsive account flow.</List.Item>
+        <List.Item>Developing UI for a responsive account flow.</List.Item>
       </List>
     </Section>
   )
