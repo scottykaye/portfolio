@@ -1,6 +1,17 @@
 import { style } from '@vanilla-extract/css'
 import { theme } from '../../theme/theme.css'
 
+export const links = style({
+  display: 'block',
+  color: theme.colors.normal,
+  fontSize: 14,
+  selectors: {
+    '&:hover, &:focus-visible': {
+      color: theme.colors.primary,
+    },
+  },
+})
+
 export const appContainer = style({
   display: 'contents',
 })
