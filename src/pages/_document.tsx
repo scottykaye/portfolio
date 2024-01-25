@@ -40,9 +40,19 @@ export default function Document() {
           content="Scotty Kaye - Frontend Software Engineer"
         />
         <meta property="og:url" content="https://scottykaye.com/" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@scottykaye" />
         <meta
-          name="twitter:card"
+          name="twitter:title"
           content="Scotty Kaye - Frontend Software Engineer"
+        />
+        <meta
+          name="twitter:description"
+          content="Hi I'm Scott 👋, I am a frontend engineer. Checkout my blog, work and resume."
+        />
+        <meta
+          name="twitter:image"
+          content="/images/android-chrome-512x512.png"
         />
         <noscript id="__next_css__DO_NOT_USE__"></noscript>
         <link
