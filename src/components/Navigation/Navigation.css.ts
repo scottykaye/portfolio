@@ -45,8 +45,6 @@ export const navListItemStyle = style({
     print: {
       borderTop: `5px solid ${theme.colors.black}`,
     },
-  },
-  '@media': {
     '(min-width: 550px)': {
       width: 'auto',
     },
