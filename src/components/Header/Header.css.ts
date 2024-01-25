@@ -44,4 +44,12 @@ export const header = style({
   },
 })
 
-export const innerHeader = style([flex, { justifyContent: 'space-between' }])
+export const innerHeader = style([
+  flex,
+  {
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    containerType: 'inline-size',
+    containerName: 'nav',
+  },
+])

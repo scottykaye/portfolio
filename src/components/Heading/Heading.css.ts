@@ -23,7 +23,6 @@ export const headingStyle = styleVariants(
       fontFamily: theme.fonts.heading,
       fontSize: fallbackVar(size, '30px'),
       margin: fallbackVar(margin, '0'),
-      display: 'flex',
       alignItems: 'center',
       '@media': {
         print: {

@@ -6,7 +6,17 @@ export const navigationStyle = style({
   color: theme.colors.normal,
   display: 'flex',
   flexGrow: '1',
-  justifyContent: 'flex-end',
+  minHeight: 80,
+  flexBasis: '100%',
+  justifyContent: 'center',
+
+  '@container': {
+    // 80px, is 40 padding both sides plus 300 minmax size
+    'nav (min-width: 550px)': {
+      justifyContent: 'flex-end',
+      flexBasis: 'auto',
+    },
+  },
 })
 
 export const navListStyle = style({
@@ -15,6 +25,13 @@ export const navListStyle = style({
   margin: theme.space[0],
   listStyle: 'none',
   display: 'flex',
+  textAlign: 'center',
+  width: '100%',
+  '@media': {
+    '(min-width: 550px)': {
+      width: 'auto',
+    },
+  },
 })
 
 export const navListItemStyle = style({
@@ -22,11 +39,14 @@ export const navListItemStyle = style({
   padding: theme.space[0],
   margin: theme.space[0],
   listStyle: 'none',
-  display: 'block',
   borderTop: `5px solid ${theme.colors.primary}`,
+  width: '100%',
   '@media': {
     print: {
       borderTop: `5px solid ${theme.colors.black}`,
+    },
+    '(min-width: 550px)': {
+      width: 'auto',
     },
   },
 })
@@ -35,6 +55,7 @@ export const navLinkStyle = style({
   cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
   height: '100%',
   padding: '0 3vw',
   textDecoration: 'none',

@@ -179,6 +179,15 @@ function AppContainer(props: Props) {
             </Link>
             <Heading fontSize={16} margin="0 10px">
               Scotty Kaye
+              <a
+                className={styles.links}
+                href="mailto:scottykaye.web@gmail.com"
+              >
+                scottykaye.web@gmail.com
+              </a>
+              <a className={styles.links} href="tel:9789799908">
+                978-979-9908
+              </a>
             </Heading>
             <Navigation>
               <NavItem>
