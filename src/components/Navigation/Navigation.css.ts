@@ -70,6 +70,12 @@ export const navLinkStyle = style({
       color: theme.colors.inverse,
     },
   },
+
+  '@media': {
+    print: {
+      color: theme.colors.gray,
+    },
+  },
 })
 
 export const activeStyle = style({
