@@ -10,6 +10,12 @@ export const links = style({
       color: theme.colors.primary,
     },
   },
+
+  '@media': {
+    print: {
+      color: theme.colors.gray,
+    },
+  },
 })
 
 export const appContainer = style({
