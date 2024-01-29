@@ -25,6 +25,12 @@ export const header = style({
   position: 'relative',
   justifyContent: 'space-between',
 
+  '@media': {
+    print: {
+      color: theme.colors.gray,
+    },
+  },
+
   selectors: {
     '&::before': {
       content: '',
