@@ -8,6 +8,7 @@ interface Props<T extends ElementType> {
   children?: ReactNode
   heading?: ReactNode
   className?: string
+  headingIs?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
 
 export default function Section<T extends ElementType = 'section'>({
@@ -15,6 +16,7 @@ export default function Section<T extends ElementType = 'section'>({
   children,
   heading,
   className = undefined,
+  headingIs,
 }: Props<T> & ComponentPropsWithoutRef<T>) {
   const Element = is
 
@@ -26,7 +28,7 @@ export default function Section<T extends ElementType = 'section'>({
     >
       <div className={styles.heading}>
         {heading && (
-          <Heading is="h2" fontSize={14}>
+          <Heading is={headingIs} fontSize={14}>
             {heading}
           </Heading>
         )}
