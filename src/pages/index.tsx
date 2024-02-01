@@ -23,7 +23,7 @@ export default function Home(props) {
         />
       </Head>
       <header>
-        <Heading>{`Hi, I'm Scott`} &#128075;</Heading>
+        <Heading is="h1">{`Hi, I'm Scotty Kaye`} &#128075;</Heading>
         <p>
           {`I'm a Staff Frontend Software Engineer with experience on Frontend Platform teams and Design Systems.`}
         </p>

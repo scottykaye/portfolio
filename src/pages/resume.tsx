@@ -15,7 +15,7 @@ function SubHeading(props) {
 
 function WorkExperience() {
   return (
-    <Section is="article" heading="Work Experience">
+    <Section is="article" heading="Work Experience" headingIs="h1">
       <Heading is="h2">Wayfair</Heading>
       <PrimaryHeading>Staff Engineer - Frontend Platforms</PrimaryHeading>
       <SubHeading>November 2022 - Present</SubHeading>
