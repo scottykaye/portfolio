@@ -320,7 +320,7 @@ function AppContainer(props: Props) {
                 </svg>
               </a>
               <a
-                aria-label="Email Scotty Kaye"
+                aria-label="Email Scotty Kaye (opens in a new window)"
                 href="mailto:scottykaye.web@gmail.com"
                 target="_blank"
                 rel="noreferrer"
