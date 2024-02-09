@@ -15,7 +15,6 @@ const nextConfig = {
       },
     ],
   },
-
   async rewrites() {
     return {
       beforeFiles: [
