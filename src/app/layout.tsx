@@ -50,6 +50,7 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
+
       <body className={montserrat.className}>{children}</body>
     </html>
   )
