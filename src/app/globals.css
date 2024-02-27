@@ -77,7 +77,7 @@ body {
     );
 
   background-attachment: fixed;
-  min-height: 200dvh;
+  min-height: 250dvh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content 1fr;
@@ -95,11 +95,6 @@ body {
   overflow: clip;
 }
 .Nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  translate: 0 -100%;
   animation: slideIn 0.2s ease-in-out forwards 0.4s;
 }
 .Nav-link {
@@ -230,7 +225,6 @@ body {
   animation: scale-down both ease-in;
   animation-timeline: view();
   animation-range: entry 10% 90%;
-  view-timeline: --header;
 }
 @keyframes rotate {
   0% {

@@ -4,6 +4,18 @@ const withVanillaExtract = createVanillaExtractPlugin()
 
 const nextConfig = {
   swcMinify: true,
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        port: '',
+        pathname: '/u/**',
+      },
+    ],
+  },
+
   async rewrites() {
     return {
       beforeFiles: [

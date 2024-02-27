@@ -62,7 +62,6 @@ export default async function Test() {
   const headers = nextHeaders()
   const { data: github } = await getGithubData(headers.get('user-agent'))
   const stargazers = await getStargazers(github.stargazers_url)
-
   const codepen = await getCodepen(HOVER_CODEPEN)
 
   return (
@@ -72,8 +71,8 @@ export default async function Test() {
           <Link href="/" className="Logo" title="Scotty Kaye Home">
             SK
           </Link>
-          <nav className="Nav">
-            <ul className="Nav-list">
+          <nav className="overflow-clip">
+            <ul className="Nav-list list-none p-0 m-0 flex ">
               <li className="Nav-item">
                 <Link href="/" className="Nav-link">
                   Thoughts
