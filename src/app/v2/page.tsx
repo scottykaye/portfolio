@@ -2,6 +2,7 @@ import { cache } from 'react'
 import { Octokit } from 'octokit'
 import { headers as nextHeaders } from 'next/headers'
 import Image from 'next/image'
+import Link from 'next/link'
 
 async function getData(userAgent) {
   const octokit = new Octokit({
@@ -39,37 +40,56 @@ async function getStargazersData(url) {
 const getGithubData = cache(getData)
 const getStargazers = cache(getStargazersData)
 
+async function getCodepen(url) {
+  const fetchData = fetch(
+    `https://codepen.io/api/oembed?format=json&url=${url}`,
+  )
+
+  try {
+    const data = await fetchData
+    const response = data.json()
+
+    return response
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+const HOVER_CODEPEN = 'https://codepen.io/scottykaye/pen/xxBMKyb'
+
 export default async function Test() {
   const headers = nextHeaders()
   const { data: github } = await getGithubData(headers.get('user-agent'))
   const stargazers = await getStargazers(github.stargazers_url)
-  console.log(github)
+
+  const codepen = await getCodepen(HOVER_CODEPEN)
+
   return (
     <>
       <header className="Header sticky top-0 backdrop-blur border-b-2 border-border p-5 z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <a href="/" className="Logo" alt="Scotty Kaye Home">
+          <Link href="/" className="Logo" alt="Scotty Kaye Home">
             SK
-          </a>
+          </Link>
           <nav className="Nav">
             <ul className="Nav-list">
               <li className="Nav-item">
-                <a href="/" className="Nav-link">
+                <Link href="/" className="Nav-link">
                   Thoughts
-                </a>
+                </Link>
               </li>
               <li className="Nav-item">
-                <a href="/" className="Nav-link">
+                <Link href="/" className="Nav-link">
                   Resume
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
         </div>
       </header>
       <main>
-        <div className="grid max-w-7xl mx-auto min-h-full">
-          <h1 className="Title Scroll m-auto">Hi👋, I'm Scotty Kaye</h1>
+        <div className="grid max-w-3xl mx-auto min-h-full">
+          <h1 className="Title Scroll m-auto">{`Hi👋, I'm Scotty Kaye`}</h1>
           <div className="Scroll grid place-self-center">
             <h2 className="text-2xl primary font-bold mb-5 text-primary">
               Projects
@@ -126,19 +146,36 @@ export default async function Test() {
                 </div>
                 <div className="flex gap-1">
                   {stargazers.length &&
-                    stargazers.map((stargazer, index) => {
+                    stargazers.map((stargazer) => {
                       return (
-                        <div className="w-8 h-8 overflow-clip rounded-full border border-border">
-                          <img
+                        <div
+                          key={stargazer.login}
+                          className="w-8 h-8 overflow-clip rounded-full border border-border"
+                        >
+                          <Image
                             width={32}
                             height={32}
                             src={stargazer.avatar_url}
+                            alt={`${stargazer.login}'s avatar image`}
                           />
                         </div>
                       )
                     })}
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="Scroll">
+            <h2 className="text-2xl primary font-bold mb-5 text-primary">
+              Codepens
+            </h2>
+            <div className="rounded-md m-auto shadow-lift backdrop-blur boxShadow-lift bg-background-opaque bg-blend-difference border border-border min-w-full p-2">
+              <iframe
+                height="320"
+                className="w-full"
+                allowtransparency="true"
+                srcDoc={codepen.html}
+              ></iframe>
             </div>
           </div>
         </div>

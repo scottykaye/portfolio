@@ -231,7 +231,6 @@ body {
   animation-timeline: view();
   animation-range: entry 10% 90%;
   view-timeline: --header;
-  animation-timeline: --header;
 }
 @keyframes rotate {
   0% {

@@ -24,7 +24,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <link
+          rel="icon"
+          href={`/images/${
+            process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
+          }favicon.ico`}
+          sizes="any"
+        />
+
+        <link
+          rel="icon"
+          href={`/images/${
+            process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
+          }/favicon?<generated>`}
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+        <link
+          rel="apple-touch-icon"
+          href={`/images/${
+            process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
+          }/apple-touch-icon?<generated>`}
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+      </head>
       <body className={montserrat.className}>{children}</body>
     </html>
   )
