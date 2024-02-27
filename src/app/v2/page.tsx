@@ -1,3 +1,4 @@
+// @ts-expect-error
 import { cache } from 'react'
 import { Octokit } from 'octokit'
 import { headers as nextHeaders } from 'next/headers'
@@ -68,7 +69,7 @@ export default async function Test() {
     <>
       <header className="Header sticky top-0 backdrop-blur border-b-2 border-border p-5 z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="Logo" alt="Scotty Kaye Home">
+          <Link href="/" className="Logo" title="Scotty Kaye Home">
             SK
           </Link>
           <nav className="Nav">
@@ -173,6 +174,7 @@ export default async function Test() {
               <iframe
                 height="320"
                 className="w-full"
+                // @ts-expect-error
                 allowtransparency="true"
                 srcDoc={codepen.html}
               ></iframe>

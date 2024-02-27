@@ -2,31 +2,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@root/*": [
-        "*"
-      ],
-      "@components/*": [
-        "components/*"
-      ],
-      "@private/*": [
-        "private/*"
-      ],
-      "@hooks/*": [
-        "hooks/*"
-      ],
-      "@pages/*": [
-        "pages/*"
-      ],
-      "@theme/*": [
-        "theme/*"
-      ]
+      "@root/*": ["*"],
+      "@components/*": ["components/*"],
+      "@private/*": ["private/*"],
+      "@hooks/*": ["hooks/*"],
+      "@pages/*": ["pages/*"],
+      "@theme/*": ["theme/*"]
     },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -41,6 +25,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "noUnusedLocals": false,
+    "noImplicitAny": false,
     "plugins": [
       {
         "name": "next"
@@ -56,7 +41,5 @@
     "**/*.mdx",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
