@@ -50,7 +50,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  /*background: rgb(var(--background));
+  /*
   background-image: linear-gradient(
     215deg,
     rgb(240deg 24% 7%) 0%,
@@ -60,7 +60,7 @@ body {
     rgb(240deg 25% 17%) 96%,
     rgb(238deg 26% 19%) 100%
   );*/
-  background: radial-gradient(
+  background-image: radial-gradient(
       farthest-side at top left,
       rgb(var(--background) / 1),
       rgb(54 25 53 / 0.7)
@@ -75,7 +75,6 @@ body {
       rgb(var(--background) / 1),
       rgb(var(--inverse) / 1)
     );
-
   background-attachment: fixed;
   min-height: 250dvh;
   display: grid;
@@ -84,35 +83,17 @@ body {
   margin: 0;
 }
 
-.header {
-  inset-block-start: 0;
-  background-color: rgb(var(--background) / 0.7);
-  backdrop-filter: blur(0.2rem);
-  border-block-end: 0.1rem solid rgb(var(--base));
-}
-
-.Nav {
-  overflow: clip;
-}
 .Nav-list {
   animation: slideIn 0.2s ease-in-out forwards 0.4s;
 }
-.Nav-link {
-  background-color: rgb(var(--primary) / 0.7);
-  padding: 1.2rem;
-  display: block;
-  text-decoration: none;
-  color: rgb(var(--inverse));
-  position: relative;
-  overflow: clip;
-}
+
 .Nav-link::before {
   content: '';
   position: absolute;
   border-block-start: 0.25rem solid transparent;
   inset-inline: 0;
   inset-block-start: 0;
-  border-color: black;
+  border-color: var(--primary);
   z-index: 1;
   scale: 0 1;
   transition: scale 0.2s;
@@ -125,7 +106,6 @@ body {
 }
 .Nav-item:nth-child(even) .Nav-link::before {
   transform-origin: left;
-  background: red;
 }
 .Nav-item:nth-child(odd) .Nav-link::before {
   transform-origin: left;
@@ -207,11 +187,6 @@ body {
   gap: 0.5rem;
 }
 
-.Wrapper {
-  max-width: 1240px;
-  margin: 0 auto;
-}
-
 @keyframes scale-down {
   to {
     scale: 0.8 0.8;
@@ -250,7 +225,7 @@ body {
   background-size: 150% 150%;
   /* animation: rotate 1s ease infinite, scale-down both ease-in; */
   animation: scale-down both ease-in;
-
+  filter: drop-shadow(0 5px 4px rgb(160, 0, 210));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
