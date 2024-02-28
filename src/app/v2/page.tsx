@@ -109,7 +109,7 @@ export default async function Test() {
             alt="Picture of Scotty Kaye"
             blurDataURL="data:image/jpg"
           />
-          <h1 className="Title Scroll m-auto flex items-center justify-between gap-4">
+          <h1 className="Scroll flex items-center gap-4">
             <Image
               src="/images/scottykaye-avatar.jpg"
               width="150"
@@ -123,16 +123,16 @@ export default async function Test() {
               }}
               className="border border-border "
             />
-            <div>
+            <span className="Title">
               Hi👋,
-              <div>{`I'm Scotty Kaye`}</div>
-            </div>
+              <span className="block">{`I'm Scotty Kaye`}</span>
+            </span>
           </h1>
-          <div className="Scroll grid place-self-center">
+          <div className="Scroll">
             <h2 className="text-2xl primary font-bold mb-5 text-primary">
               Projects
             </h2>
-            <div className="rounded-md m-auto shadow-lift backdrop-blur boxShadow-lift bg-background-opaque bg-blend-difference border border-border">
+            <div className="rounded-md m-auto shadow-lift backdrop-blur boxShadow-lift bg-background-opaque backdrop-hue-rotate-30 border border-border">
               <div className="flex gap-5 justify-between p-4 border-b border-border">
                 <div className="flex gap-2">
                   <svg
@@ -203,7 +203,7 @@ export default async function Test() {
               </div>
             </div>
           </div>
-          <div className="Scroll">
+          <div className="">
             <h2 className="text-2xl primary font-bold mb-5 text-primary">
               Codepens
             </h2>
