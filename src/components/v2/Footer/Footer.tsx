@@ -9,15 +9,14 @@ export function SocialLinkIcon({
 }: {
   href: string
   openInNewWindow: boolean
-  path: ReactNode
-  viewBox?: null | string
+  viewBox?: string
   label: string
+  children: ReactNode
 }) {
   return (
     <a
       href={href}
       aria-label={label}
-      viewBox={viewBox}
       target={openInNewWindow && '_blank'}
       rel={openInNewWindow && 'noreferrer'}
       className="fill-primary outline-offset-4 transition-all hover:scale-125 focus:scale-125 [&:not(:focus,:hover)]:opacity-75"
