@@ -11,10 +11,10 @@ export default function StandardLayout({ children }: { children: ReactNode }) {
           SK
         </Link>
         <MainNav>
-          <li className="Nav-item bg-background-opaque">
+          <li className="Nav-item">
             <MainNavLink href="/">Thoughts</MainNavLink>
           </li>
-          <li className="Nav-item bg-background-opaque">
+          <li className="Nav-item">
             <MainNavLink href="/resume">Resume</MainNavLink>
           </li>
         </MainNav>

@@ -7,7 +7,7 @@ export function MainNavLink(props: LinkProps & { children: ReactNode }) {
   return (
     <Link
       {...rest}
-      className="Nav-link block relative overflow-clip outline-offset-2 p-5 mix-blend-difference transition-colors hover:text-black hover:bg-primary-opaque"
+      className="Nav-link block relative overflow-clip outline-offset-2 p-5 filter-sepia hover:bg-gray-500/50 transition-colors"
     >
       {children}
     </Link>

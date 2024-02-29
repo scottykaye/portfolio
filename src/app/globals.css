@@ -43,9 +43,8 @@ html {
   scroll-behavior: smooth;
 }
 
-html,
 body {
-  font: 16px/1.33 'helvetica', arial, sans-serif;
+  font: 16px/1.33 var(--montserrat), arial, sans-serif;
 }
 
 body {
