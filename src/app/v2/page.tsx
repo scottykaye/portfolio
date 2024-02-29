@@ -3,7 +3,6 @@ import { cache } from 'react'
 import { Octokit } from 'octokit'
 import { headers as nextHeaders } from 'next/headers'
 import Image from 'next/image'
-import Link from 'next/link'
 
 async function getData(userAgent) {
   const octokit = new Octokit({
