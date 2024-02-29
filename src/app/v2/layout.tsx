@@ -7,9 +7,12 @@ export default function StandardLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <Header>
-        <Link href="/" className="Logo" title="Scotty Kaye Home">
-          SK
-        </Link>
+        <div className="flex">
+          <Link href="/" className="Logo" title="Scotty Kaye Home">
+            SK
+          </Link>
+        </div>
+
         <MainNav>
           <li className="Nav-item">
             <MainNavLink href="/">Thoughts</MainNavLink>
@@ -19,7 +22,7 @@ export default function StandardLayout({ children }: { children: ReactNode }) {
           </li>
         </MainNav>
       </Header>
-      <main className="grid max-w-3xl mx-auto min-h-full">{children}</main>
+      <main>{children}</main>
       <Footer>
         <li className="gap-4 flex">Scotty Kaye {new Date().getFullYear()}</li>
         <li className="gap-4 flex">

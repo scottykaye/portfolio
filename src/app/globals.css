@@ -49,17 +49,6 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  /*
-  /*background: rgb(var(--background));
-  background-image: linear-gradient(
-    215deg,
-    rgb(240deg 24% 7%) 0%,
-    rgb(240deg 23% 9%) 29%,
-    rgb(236deg 25% 12%) 62%,
-    rgb(240deg 25% 14%) 84%,
-    rgb(240deg 25% 17%) 96%,
-    rgb(238deg 26% 19%) 100%
-  );*/
   background-image: radial-gradient(
       farthest-side at top left,
       rgb(var(--background) / 1),
@@ -76,15 +65,16 @@ body {
       rgb(var(--inverse) / 1)
     );
   background-attachment: fixed;
-  min-height: 250dvh;
+  min-height: 300dvh;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr;
-  margin: 0;
+  grid-template-rows: 1fr;
 }
 
 .Nav-list {
   animation: slideIn 0.2s ease-in-out forwards 0.4s;
+  /* using p-5 for the header which is 1.25rem on top and bottom
+   * Multiplying that by 2 then making it negative for it to start outside the page */
+  translate: 0 calc(-1 * (100% + 1.25rem * 2));
 }
 
 .Nav-link::before {
@@ -92,13 +82,15 @@ body {
   position: absolute;
   border-block-start: 0.25rem solid transparent;
   inset-inline: 0;
-  inset-block-start: 0;
+  inset-block-end: 0;
   border-color: var(--primary);
   z-index: 1;
   scale: 0 1;
   transition: scale 0.2s;
 }
-.Nav-link:hover::before {
+
+.Nav-link:hover::before,
+.Nav-link.isActive::before {
   scale: 1;
 }
 .Nav-item:nth-child(odd) .Nav-link::before {
@@ -142,6 +134,7 @@ body {
   line-height: 1.2;
   opacity: 0;
   animation: fadeIn 0.2s linear forwards 0.2s;
+  mix-blend-mode: difference;
 }
 .Logo:hover {
   /* border-color: rgb(var(--primary));*/
@@ -193,13 +186,32 @@ body {
   }
 }
 
-.Scroll {
-  /*   position: sticky;
-   *     top: 0; */
-  transform-origin: 50% 0%;
-  animation: scale-down both ease-in;
-  animation-timeline: view();
-  animation-range: entry 10% 90%;
+@supports (animation-timeline: scroll()) {
+  .Scroll {
+    transform-origin: 50% 0%;
+    animation: scale-down both ease-in;
+    animation-timeline: view();
+    animation-range: exit;
+    view-timeline: --header;
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 0;
+  }
+}
+
+.Hello::before {
+  content: '';
+  position: absolute;
+  inset: -100% 0 -100% 0;
+  background-color: rgb(var(--background) / 0.6);
+  z-index: -1;
+
+  animation: fade both linear;
+  animation-timeline: --header;
+  animation-range: exit-crossing 0% exit 0%;
 }
 
 @keyframes rotate {
@@ -214,19 +226,17 @@ body {
   }
 }
 .Title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   background-image: linear-gradient(
     290deg,
     #4158d0 0%,
     #c850c0 46%,
-    #ffcc70 100%
+    rgb(var(--primary)) 100%
   );
-  background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
   background-size: 150% 150%;
-  /* animation: rotate 1s ease infinite, scale-down both ease-in; */
-  animation: scale-down both ease-in;
-  filter: drop-shadow(0 5px 4px rgb(160, 0, 210));
+  animation: rotate 10s ease infinite;
+  filter: drop-shadow(0 2px 1px rgb(var(--background)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
