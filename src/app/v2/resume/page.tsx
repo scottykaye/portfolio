@@ -171,7 +171,7 @@ function Education() {
 
 export default function Resume() {
   return (
-    <AutoGrid alignItems="flexStart" className="Scroll">
+    <AutoGrid alignItems="flexStart" className="Scroll mt-40 grid max-w-7xl">
       <WorkExperience />
       <Grid is="article">
         <Knowledge />

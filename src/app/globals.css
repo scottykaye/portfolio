@@ -45,9 +45,6 @@ html {
 
 body {
   font: 16px/1.33 var(--montserrat), arial, sans-serif;
-}
-
-body {
   color: rgb(var(--foreground-rgb));
   background-image: radial-gradient(
       farthest-side at top left,
@@ -65,7 +62,6 @@ body {
       rgb(var(--inverse) / 1)
     );
   background-attachment: fixed;
-  min-height: 300dvh;
   display: grid;
   grid-template-rows: 1fr;
 }
@@ -202,18 +198,6 @@ body {
   }
 }
 
-.Hello::before {
-  content: '';
-  position: absolute;
-  inset: -100% 0 -100% 0;
-  background-color: rgb(var(--background) / 0.6);
-  z-index: -1;
-
-  animation: fade both linear;
-  animation-timeline: --header;
-  animation-range: exit-crossing 0% exit 0%;
-}
-
 @keyframes rotate {
   0% {
     background-position: 0% 50%;
@@ -239,6 +223,23 @@ body {
   filter: drop-shadow(0 2px 1px rgb(var(--background)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.Hello {
+  grid-template-columns: repeat(2, max-content);
+}
+.Hello::before {
+  content: '';
+  position: absolute;
+  inset: -100% 0;
+  background-color: rgb(var(--background) / 0.6);
+  z-index: -1;
+
+  animation: fade both linear;
+  animation-timeline: --header;
+  animation-range: exit-crossing 0% exit 0%;
+}
+.HomeGrid {
+  grid-template-rows: repeat(4, min-content);
 }
 
 @keyframes slideIn {

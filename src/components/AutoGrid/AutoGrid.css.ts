@@ -17,7 +17,8 @@ export const autoGrid = styleVariants(
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
       gap: theme.space[500],
-      margin: 'auto',
+      marginLeft: 'auto',
+      marginRight: 'auto',
     },
   ],
 )
