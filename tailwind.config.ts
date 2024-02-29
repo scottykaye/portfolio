@@ -63,7 +63,7 @@ const config = {
         },
       },
       boxShadow: {
-        lift: '0 10px 8px -10px rgb(var(--base))',
+        lift: '0 10px 8px -10px rgb(var(--black))',
       },
       borderRadius: {
         lg: 'var(--radius)',
