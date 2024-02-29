@@ -101,7 +101,7 @@ export default async function HomePage() {
           </span>
         </h1>
       </div>
-      <section className="HomeGrid grid max-w-3xl mx-auto relative -inset-y-60">
+      <section className="HomeGrid grid max-w-3xl mx-auto relative -inset-y-60 p-5">
         <h2 className="text-2xl primary font-bold mb-5 text-primary">
           Projects
         </h2>
