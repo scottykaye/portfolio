@@ -225,7 +225,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 .Hello {
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(2, auto);
 }
 .Hello::before {
   content: '';
