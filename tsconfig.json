@@ -3,11 +3,11 @@
     "baseUrl": ".",
     "paths": {
       "@root/*": ["*"],
-      "@components/*": ["components/*"],
-      "@private/*": ["private/*"],
-      "@hooks/*": ["hooks/*"],
-      "@pages/*": ["pages/*"],
-      "@theme/*": ["theme/*"]
+      "@components/*": ["src/components/*"],
+      "@private/*": ["src/private/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@pages/*": ["src/pages/*"],
+      "@theme/*": ["src/theme/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

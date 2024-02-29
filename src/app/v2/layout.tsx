@@ -1,6 +1,8 @@
 import { ReactNode } from 'react'
-import { Footer, SocialLinkIcon } from '../../components/v2/Footer/Footer'
-import { Header, MainNav, MainNavLink } from '../../components/v2/Header/Header'
+import { Footer } from '@components/v2/Footer/Footer'
+import { SocialLinkIcon } from '@components/v2/Footer/SocialLinkIcon'
+import { Header, MainNav } from '@components/v2/Header/Header'
+import { MainNavLink } from '@components/v2/Header/Link'
 import Link from 'next/link'
 
 export default function StandardLayout({ children }: { children: ReactNode }) {
@@ -8,11 +10,14 @@ export default function StandardLayout({ children }: { children: ReactNode }) {
     <>
       <Header>
         <div className="flex">
-          <Link href="/" className="Logo" title="Scotty Kaye Home">
+          <Link
+            href="/"
+            className="Logo outline-offset-4"
+            title="Scotty Kaye Home"
+          >
             SK
           </Link>
         </div>
-
         <MainNav>
           <li className="Nav-item">
             <MainNavLink href="/">Thoughts</MainNavLink>
@@ -24,8 +29,8 @@ export default function StandardLayout({ children }: { children: ReactNode }) {
       </Header>
       <main>{children}</main>
       <Footer>
-        <li className="gap-4 flex">Scotty Kaye {new Date().getFullYear()}</li>
-        <li className="gap-4 flex">
+        <li>Scotty Kaye {new Date().getFullYear()}</li>
+        <li className="gap-4 flex items-center">
           <SocialLinkIcon
             label="Scotty Kaye's LinkedIn (opens in new window)"
             href="https://www.linkedin.com/in/scott-kaye-93279b54/"
