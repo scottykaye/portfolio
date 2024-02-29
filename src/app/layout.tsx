@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Montserrat } from 'next/font/google'
-
+import clsx from 'clsx'
 import './globals.css'
 
 export const viewport: Viewport = {
@@ -10,7 +10,7 @@ export const viewport: Viewport = {
   ],
 }
 
-const montserrat = Montserrat({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--montserrat' })
 
 export const metadata: Metadata = {
   title: 'ScottyKaye Portfolio',
@@ -50,8 +50,9 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-
-      <body className={montserrat.className}>{children}</body>
+      <body className={clsx(montserrat.className, montserrat.variable)}>
+        {children}
+      </body>
     </html>
   )
 }

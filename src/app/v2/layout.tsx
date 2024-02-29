@@ -1,11 +1,28 @@
 import { ReactNode } from 'react'
 import { Footer, SocialLinkIcon } from '../../components/v2/Footer/Footer'
+import { Header, MainNav, MainNavLink } from '../../components/v2/Header/Header'
+import Link from 'next/link'
 
 export default function StandardLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      {children}
+      <Header>
+        <div className="flex">
+          <Link href="/" className="Logo" title="Scotty Kaye Home">
+            SK
+          </Link>
+        </div>
 
+        <MainNav>
+          <li className="Nav-item">
+            <MainNavLink href="/">Thoughts</MainNavLink>
+          </li>
+          <li className="Nav-item">
+            <MainNavLink href="/resume">Resume</MainNavLink>
+          </li>
+        </MainNav>
+      </Header>
+      <main>{children}</main>
       <Footer>
         <li className="gap-4 flex">Scotty Kaye {new Date().getFullYear()}</li>
         <li className="gap-4 flex">
