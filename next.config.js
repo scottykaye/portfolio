@@ -40,6 +40,17 @@ const nextConfig = {
             },
           ],
         },
+        {
+          source: '/blog/:slug*',
+          destination: '/v2/blog/:slug*',
+          has: [
+            {
+              type: 'cookie',
+              key: 'scottykaye-v2',
+              value: 'true',
+            },
+          ],
+        },
       ],
     }
   },

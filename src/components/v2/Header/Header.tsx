@@ -1,20 +1,4 @@
-import { LinkProps } from 'next/link'
 import { ReactNode } from 'react'
-import { Link } from './Link'
-
-export function MainNavLink(props: LinkProps & { children: ReactNode }) {
-  const { children, ...rest } = props
-
-  return (
-    <Link
-      {...rest}
-      className="Nav-link block relative rounded-md overflow-clip outline-offset-2 p-4 m-1
-      filter-sepia hover:bg-gray-500/50 transition-colors mix-blend-difference"
-    >
-      {children}
-    </Link>
-  )
-}
 
 export function MainNav({ children }: { children: ReactNode }) {
   return (

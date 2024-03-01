@@ -1130,6 +1130,7 @@ __metadata:
     "@vanilla-extract/css": "npm:^1.6.8"
     "@vanilla-extract/dynamic": "npm:^2.0.2"
     "@vanilla-extract/next-plugin": "npm:^2.0.1"
+    accessible-navigation: "npm:^0.0.0"
     autoprefixer: "npm:^10.0.1"
     classnames: "npm:^2.3.1"
     clsx: "npm:^2.1.0"
@@ -1697,6 +1698,18 @@ __metadata:
   version: 2.0.0
   resolution: "abbrev@npm:2.0.0"
   checksum: f742a5a107473946f426c691c08daba61a1d15942616f300b5d32fd735be88fef5cba24201757b6c407fd564555fb48c751cfa33519b2605c8a7aadd22baf372
+  languageName: node
+  linkType: hard
+
+"accessible-navigation@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "accessible-navigation@npm:0.0.0"
+  dependencies:
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+  peerDependencies:
+    typescript: ^5.0.0
+  checksum: b4facaf168e4c095ef02d5f00dd59118af7c63078d00aea9a7a91ee238a4aac0d3a2db6996b374782e9009750041ac0979d1b512f5812b65b23b5784483081fd
   languageName: node
   linkType: hard
 

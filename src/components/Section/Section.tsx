@@ -26,14 +26,14 @@ export default function Section<T extends ElementType = 'section'>({
         [className]: className,
       })}
     >
-      <div className={styles.heading}>
+      <div className={styles.headingContainer}>
         {heading && (
-          <Heading is={headingIs} fontSize={14}>
+          <Heading is={headingIs} fontSize={14} className={styles.heading}>
             {heading}
           </Heading>
         )}
       </div>
-      {children}
+      <div className="p-5">{children}</div>
     </Element>
   )
 }

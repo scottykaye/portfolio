@@ -39,6 +39,11 @@
     --inverse: 26 27 41;
   }
 }
+
+html,
+body {
+  height: 100%;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -63,7 +68,12 @@ body {
     );
   background-attachment: fixed;
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr min-content;
+}
+
+ul {
+  padding-inline-start: 15px;
+  list-style-type: disc;
 }
 
 .Nav-list {
@@ -132,9 +142,7 @@ body {
   animation: fadeIn 0.2s linear forwards 0.2s;
   mix-blend-mode: difference;
 }
-.Logo:hover {
-  /* border-color: rgb(var(--primary));*/
-}
+
 .Logo::before,
 .Logo::after {
   content: '';
@@ -152,6 +160,10 @@ body {
 }
 .Header:hover .Logo::before,
 .Header:hover .Logo::after {
+  scale: 1;
+}
+.Logo:focus-visible::before,
+.Logo:focus-visible::after {
   scale: 1;
 }
 
@@ -238,6 +250,10 @@ body {
   animation-timeline: --header;
   animation-range: exit-crossing 0% exit 0%;
 }
+.About {
+  inset-block-start: -50vh;
+}
+
 .HomeGrid {
   grid-template-rows: repeat(4, min-content);
 }

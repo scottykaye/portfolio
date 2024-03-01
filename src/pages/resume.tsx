@@ -81,7 +81,7 @@ function WorkExperience() {
         </List.Item>
         <List.Item>
           Prototyping and implementing first responsive website for Wayfair and
-          all brands. <em>(Still used today</em>
+          all brands. <em>(Still used today)</em>
         </List.Item>
         <List.Item>
           Creating and maintaining UI and features for Lifestyles brand pages
