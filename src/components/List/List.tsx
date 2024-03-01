@@ -17,7 +17,7 @@ interface ItemProps extends Props {
   margin?: string | number
 }
 
-function Item({ children, margin }: ItemProps) {
+export function Item({ children, margin }: ItemProps) {
   return (
     <li
       style={assignInlineVars({

@@ -20,7 +20,7 @@ export default function StandardLayout({ children }: { children: ReactNode }) {
         </div>
         <MainNav>
           <li className="Nav-item">
-            <MainNavLink href="/">Thoughts</MainNavLink>
+            <MainNavLink href="/blog">Thoughts</MainNavLink>
           </li>
           <li className="Nav-item">
             <MainNavLink href="/resume">Resume</MainNavLink>

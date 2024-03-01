@@ -39,6 +39,11 @@
     --inverse: 26 27 41;
   }
 }
+
+html,
+body {
+  height: 100%;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -63,7 +68,12 @@ body {
     );
   background-attachment: fixed;
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr min-content;
+}
+
+ul {
+  padding-inline-start: 15px;
+  list-style-type: disc;
 }
 
 .Nav-list {

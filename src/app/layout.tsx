@@ -10,7 +10,11 @@ export const viewport: Viewport = {
   ],
 }
 
-const montserrat = Montserrat({ subsets: ['latin'], variable: '--montserrat' })
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--montserrat',
+  weight: ['400', '700'],
+})
 
 export const metadata: Metadata = {
   title: 'ScottyKaye Portfolio',
@@ -23,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <link
           rel="icon"

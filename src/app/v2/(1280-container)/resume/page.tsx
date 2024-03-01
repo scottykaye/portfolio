@@ -1,8 +1,8 @@
-import Heading from '../../../components/Heading'
-import AutoGrid from '../../../components/AutoGrid'
-import Grid from '../../../components/Grid'
-import List from '../../../components/List'
-import Section from '../../../components/Section'
+import Heading from '@components/Heading'
+import AutoGrid from '@components/AutoGrid'
+import Grid from '@components/Grid'
+import List from '@components/List'
+import Section from '@components/Section'
 
 function PrimaryHeading(props) {
   return <Heading is="h3" color="primary" fontSize={20} {...props} />
@@ -80,7 +80,7 @@ function WorkExperience() {
         </List.Item>
         <List.Item>
           Prototyping and implementing first responsive website for Wayfair and
-          all brands. <em>(Still used today</em>
+          all brands. <em>(Still used today)</em>
         </List.Item>
         <List.Item>
           Creating and maintaining UI and features for Lifestyles brand pages
@@ -171,7 +171,7 @@ function Education() {
 
 export default function Resume() {
   return (
-    <AutoGrid alignItems="flexStart" className="Scroll mt-40 grid max-w-7xl">
+    <AutoGrid alignItems="flexStart">
       <WorkExperience />
       <Grid is="article">
         <Knowledge />

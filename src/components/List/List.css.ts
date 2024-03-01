@@ -16,8 +16,6 @@ export const list = styleVariants(
   (listStyle) => [
     listStyle,
     {
-      margin: `${theme.space[100]} ${theme.space[0]}`,
-
       '@media': {
         print: {
           margin: theme.space[50],
