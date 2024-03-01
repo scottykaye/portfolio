@@ -69,7 +69,7 @@ export function MainNavLink(props: LinkProps & { children: ReactNode }) {
   }
   const refs = useKeyboardNav(rest.href.toString())
   return (
-    <NextLink passHref legacyBehavior href={'/'}>
+    <NextLink passHref legacyBehavior href={rest.href}>
       <CustomLink
         {...rest}
         className="Nav-link block relative rounded-md overflow-clip outline-offset-4 p-4 m-1
