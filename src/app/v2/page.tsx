@@ -101,7 +101,7 @@ export default async function HomePage() {
           </span>
         </h1>
         <p className="About Title max-w-3xl relative top-0 grid -translate-y-full place-items-center place-content-center gap-2 p-5 mx-auto">
-          I'm a Staff Software Engineer with a strong foundation in UX & UI.
+          {`I'm a Staff Software Engineer with a strong foundation in UX & UI.`}
         </p>
       </div>
 
