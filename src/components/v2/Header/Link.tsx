@@ -39,14 +39,17 @@ const CustomLink = forwardRef(function Link(
     className?: string
     onKeyDown?: (event) => void
     ref: ReactNode
+    as?: any
   },
-  ref: any,
+  ref,
 ) {
-  const { children, className, ...rest } = props
+  const { children, className, as, ...rest } = props
   const pathname = usePathname()
 
+  const Element = as ?? 'a'
+
   return (
-    <a
+    <Element
       {...rest}
       href={rest.href as string}
       className={clsx(className ?? '', {
@@ -55,7 +58,7 @@ const CustomLink = forwardRef(function Link(
       ref={ref}
     >
       {children}
-    </a>
+    </Element>
   )
 })
 
@@ -69,16 +72,15 @@ export function MainNavLink(props: LinkProps & { children: ReactNode }) {
   }
   const refs = useKeyboardNav(rest.href.toString())
   return (
-    <NextLink passHref legacyBehavior href={rest.href}>
-      <CustomLink
-        {...rest}
-        className="Nav-link block relative rounded-md overflow-clip outline-offset-4 p-4 m-1
-      filter-sepia hover:bg-gray-500/50 transition-colors mix-blend-difference"
-        ref={refs as any}
-        onKeyDown={handleKeyDown}
-      >
-        {children}
-      </CustomLink>
-    </NextLink>
+    <CustomLink
+      as={NextLink}
+      {...rest}
+      className="Nav-link block relative rounded-md overflow-clip outline-offset-4 p-4 m-1
+      filter-sepia focus-visible:bg-gray-500/50 hover:bg-gray-500/50 transition-all mix-blend-difference active:translate-y-1"
+      ref={refs}
+      onKeyDown={handleKeyDown}
+    >
+      {children}
+    </CustomLink>
   )
 }
