@@ -132,9 +132,7 @@ body {
   animation: fadeIn 0.2s linear forwards 0.2s;
   mix-blend-mode: difference;
 }
-.Logo:hover {
-  /* border-color: rgb(var(--primary));*/
-}
+
 .Logo::before,
 .Logo::after {
   content: '';
@@ -152,6 +150,10 @@ body {
 }
 .Header:hover .Logo::before,
 .Header:hover .Logo::after {
+  scale: 1;
+}
+.Logo:focus-visible::before,
+.Logo:focus-visible::after {
   scale: 1;
 }
 
