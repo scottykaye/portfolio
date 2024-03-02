@@ -1,11 +1,15 @@
-import { styleVariants, createVar, fallbackVar } from '@vanilla-extract/css'
+import {
+  styleVariants,
+  style,
+  createVar,
+  fallbackVar,
+} from '@vanilla-extract/css'
 import { theme } from '../../theme/theme.css'
 
 export const size = createVar()
 export const margin = createVar()
-export const fontFamily = createVar()
 
-export const headingStyle = styleVariants(
+export const heading = styleVariants(
   {
     default: {},
     primary: {
@@ -21,7 +25,6 @@ export const headingStyle = styleVariants(
   (color) => [
     color,
     {
-      fontFamily: fallbackVar(fontFamily, theme.fonts.heading),
       fontSize: fallbackVar(size, '30px'),
       margin: fallbackVar(margin, '0'),
       alignItems: 'center',
@@ -35,3 +38,7 @@ export const headingStyle = styleVariants(
     },
   ],
 )
+
+export const font = style({
+  fontFamily: theme.fonts.heading,
+})
