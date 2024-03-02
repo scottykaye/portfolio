@@ -17,7 +17,7 @@ interface ItemProps extends Props {
   margin?: string | number
 }
 
-export function Item({ children, margin }: ItemProps) {
+export function ListItem({ children, margin }: ItemProps) {
   return (
     <li
       style={assignInlineVars({
@@ -38,4 +38,4 @@ export default function List({ children, listStyle = 'default' }: ListProps) {
   return <ul className={styles.list[listStyle]}>{children}</ul>
 }
 
-List.Item = Item
+List.Item = ListItem

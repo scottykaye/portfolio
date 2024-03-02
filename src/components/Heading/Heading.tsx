@@ -8,6 +8,7 @@ interface Props<T extends React.ElementType> {
   color?: 'primary' | 'default'
   fontSize?: number | string
   margin?: number | string
+  fontFamily?: 'inherit'
   classname?: string
   [rest: string]: unknown
 }
@@ -26,18 +27,18 @@ export default function Heading<T extends React.ElementType = 'h2'>({
   fontSize = 26,
   margin,
   className,
+  fontFamily,
   ...props
 }: Props<T> & React.ComponentPropsWithoutRef<T>) {
   const Element = is
-
   return (
     <Element
       {...props}
       style={assignInlineVars({
+        [styles.fontFamily]: fontFamily,
         [styles.size]: stringOrNumber(fontSize),
         [styles.margin]: stringOrNumber(margin),
       })}
-      fontSize={styles.size}
       className={clsx(styles.headingStyle[color], className)}
     />
   )
