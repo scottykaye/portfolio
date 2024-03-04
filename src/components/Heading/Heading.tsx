@@ -36,7 +36,7 @@ export default function Heading<T extends React.ElementType = 'h2'>({
       {...props}
       style={assignInlineVars({
         [styles.size]: stringOrNumber(fontSize),
-        [styles.margin]: stringOrNumber(margin),
+        [styles.margin]: margin ? stringOrNumber(margin) : null,
       })}
       className={clsx(styles.heading[color], className, {
         [styles.font]: fontFamily !== 'inherit',

@@ -27,7 +27,7 @@ export default function Blog() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold text-primary">Thoughts</h1>
+      <h1 className="text-3xl font-bold text-primary">{`Scott's Thoughts`}</h1>
       <section className="py-5">
         {blogs.map((blog) => (
           <>
@@ -37,9 +37,9 @@ export default function Blog() {
               key={blog.slug}
             >
               <div className="py-5">
-                <h3 className="text-lg font-bold group-hover:underline group-hover:text-current text-primary transition-colors mb-4">
+                <h2 className="text-lg font-bold group-hover:underline group-hover:text-current text-primary transition-colors mb-4">
                   {blog.meta.title}
-                </h3>
+                </h2>
                 <p className="mb-2">{blog.meta.description}</p>
                 <p className="text-xs text-gray-400">{blog.meta.date}</p>
               </div>

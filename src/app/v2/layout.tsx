@@ -12,7 +12,7 @@ export default function StandardLayout({ children }: { children: ReactNode }) {
         <div className="flex">
           <Link
             href="/"
-            className="Logo outline-offset-4 focus-visible:border-primary"
+            className="Logo outline-offset-4 focus-visible:border-primary active:translate-y-1 transition-all"
             title="Scotty Kaye Home"
           >
             SK

@@ -25,7 +25,7 @@ async function getData(userAgent) {
 }
 
 async function getStargazersData(url) {
-  const fetchData = fetch(url)
+  const fetchData = fetch(url, { next: { revalidate: 3600 } })
 
   try {
     const data = await fetchData
@@ -37,12 +37,10 @@ async function getStargazersData(url) {
   }
 }
 
-const getGithubData = cache(getData)
-const getStargazers = cache(getStargazersData)
-
-async function getCodepen(url) {
+async function getCodepenData(url) {
   const fetchData = fetch(
     `https://codepen.io/api/oembed?format=json&url=${url}`,
+    { next: { revalidate: 3600 } },
   )
 
   try {
@@ -54,6 +52,10 @@ async function getCodepen(url) {
     console.log(`Error retrieving Codepen data: ${e}`)
   }
 }
+
+const getGithubData = cache(getData)
+const getStargazers = cache(getStargazersData)
+const getCodepen = cache(getCodepenData)
 
 const HOVER_CODEPEN = 'https://codepen.io/scottykaye/pen/xxBMKyb'
 
@@ -93,7 +95,7 @@ export default async function HomePage() {
               borderRadius: '50%',
               filter: 'drop-shadow(0 .25rem .5rem #000)',
             }}
-            className="border border-border "
+            className="border border-border"
           />
           <span className="Title">
             Hi👋,
@@ -107,7 +109,7 @@ export default async function HomePage() {
 
       <section className="HomeGrid grid max-w-3xl mx-auto relative -inset-y-80 px-5">
         <div>
-          <h2 className="sticky top-24 z-10 py-4 px-2 mt-40 text-2xl primary font-bold mb-5 text-primary backdrop-blur backdrop-hue-rotate-30">
+          <h2 className="sticky top-24 z-10 py-4 px-2 mt-40 text-2xl primary font-bold mb-5 text-primary backdrop-blur border-b border-border">
             Projects
           </h2>
           <div className="min-w-full rounded-md m-auto shadow-lift backdrop-blur bg-background-opaque backdrop-hue-rotate-30 border border-border">
@@ -181,7 +183,7 @@ export default async function HomePage() {
             </div>
           </div>
         </div>
-        <h2 className="sticky top-24 z-10 py-4 px-2 mt-40 text-2xl primary font-bold mb-5 text-primary backdrop-blur backdrop-hue-rotate-30">
+        <h2 className="sticky top-24 z-10 py-4 px-2 mt-40 text-2xl primary font-bold mb-5 text-primary backdrop-blur border-b border-border">
           Codepens
         </h2>
         <div className="min-w-full p-2 rounded-md m-auto shadow-lift backdrop-blur bg-background-opaque backdrop-hue-rotate-30 border border-border">
