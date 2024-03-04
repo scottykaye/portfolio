@@ -29,7 +29,7 @@ export function SocialLinkIcon({
       aria-label={label}
       target={openInNewWindow && '_blank'}
       rel={openInNewWindow && 'noreferrer'}
-      className="fill-primary outline-offset-4 transition-all hover:scale-125 focus:scale-125 [&:not(:focus,:hover)]:opacity-75"
+      className="fill-primary outline-offset-4 transition-all hover:scale-125 focus-visible:scale-125 active:translate-y-1 [&:not(:focus,:hover)]:opacity-75"
       ref={refs}
       onKeyDown={handleKeyDown}
     >
