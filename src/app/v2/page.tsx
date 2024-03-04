@@ -25,7 +25,7 @@ async function getData(userAgent) {
 }
 
 async function getStargazersData(url) {
-  const fetchData = fetch(url, { next: { revalidate: 3600 } })
+  const fetchData = fetch(url)
 
   try {
     const data = await fetchData
@@ -40,7 +40,6 @@ async function getStargazersData(url) {
 async function getCodepenData(url) {
   const fetchData = fetch(
     `https://codepen.io/api/oembed?format=json&url=${url}`,
-    { next: { revalidate: 3600 } },
   )
 
   try {
