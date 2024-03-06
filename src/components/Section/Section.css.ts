@@ -33,7 +33,6 @@ export const heading = style({
       insetBlockStart: '50%',
       width: '100vw',
       borderBlockStart: `2px solid ${theme.colors.primary}`,
-      borderBlockStart: `2px solid ${theme.colors.primary}`,
 
       '@media': {
         print: {
