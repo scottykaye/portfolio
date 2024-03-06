@@ -37,32 +37,32 @@ async function getStargazersData(url) {
   }
 }
 
-async function getCodepenData(url) {
-  const fetchData = fetch(
-    `https://codepen.io/api/oembed?format=json&url=${url}`,
-  )
-
-  try {
-    const data = await fetchData
-    const response = data.json()
-
-    return response
-  } catch (e) {
-    console.log(`Error retrieving Codepen data: ${e}`)
-  }
-}
+// async function getCodepenData(url) {
+//   const fetchData = fetch(
+//     `https://codepen.io/api/oembed?format=json&url=${url}`,
+//   )
+//
+//   try {
+//     const data = await fetchData
+//     const response = data.json()
+//
+//     return response
+//   } catch (e) {
+//     console.log(`Error retrieving Codepen data: ${e}`)
+//   }
+// }
 
 const getGithubData = cache(getData)
 const getStargazers = cache(getStargazersData)
-const getCodepen = cache(getCodepenData)
+// const getCodepen = cache(getCodepenData)
 
-const HOVER_CODEPEN = 'https://codepen.io/scottykaye/pen/xxBMKyb'
+// const HOVER_CODEPEN = 'https://codepen.io/scottykaye/pen/xxBMKyb'
 
 export default async function HomePage() {
   const headers = nextHeaders()
   const { data: github } = await getGithubData(headers.get('user-agent'))
   const stargazers = await getStargazers(github.stargazers_url)
-  const codepen = await getCodepen(HOVER_CODEPEN)
+  // const codepen = await getCodepen(HOVER_CODEPEN)
 
   return (
     <>
@@ -182,11 +182,12 @@ export default async function HomePage() {
             </div>
           </div>
         </div>
+        {/*
         <h2 className="sticky top-24 z-10 py-4 px-2 mt-40 text-2xl primary font-bold mb-5 text-primary backdrop-blur border-b border-border">
           Codepens
         </h2>
         <div className="min-w-full p-2 rounded-md m-auto shadow-lift backdrop-blur bg-background-opaque backdrop-hue-rotate-30 border border-border">
-          <iframe
+         <iframe
             height="320"
             className="min-w-full"
             // @ts-expect-error
@@ -194,6 +195,7 @@ export default async function HomePage() {
             srcDoc={codepen.html}
           ></iframe>
         </div>
+          */}
       </section>
     </>
   )
