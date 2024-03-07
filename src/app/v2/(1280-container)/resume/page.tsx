@@ -1,8 +1,8 @@
-import Heading from '@components/Heading'
+import Heading from '@components/v2/Heading'
 import AutoGrid from '@components/AutoGrid'
 import Grid from '@components/Grid'
 import List from '@components/List'
-import Section from '@components/Section'
+import Section from '@components/v2/Section'
 
 function PrimaryHeading(props) {
   return <Heading is="h3" color="primary" fontSize={20} {...props} />
