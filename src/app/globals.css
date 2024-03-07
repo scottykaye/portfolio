@@ -4,6 +4,10 @@
 
 :root {
   color-scheme: light dark;
+  /*
+   *
+   * No light mode for now!
+   *
   --foreground-rgb: 0 0 0;
   --background-start-rgb: 214 219 220;
   --background-end-rgb: 255 255 255;
@@ -29,6 +33,39 @@
       farthest-side at bottom left,
       rgb(var(--background) / 1),
       rgb(200 200 200 / 1)
+    ),
+    radial-gradient(
+      farthest-corner at bottom right,
+      rgb(var(--background) / 1),
+      rgb(var(--inverse) / 1)
+    );*/
+
+  /* you can delete this two later but they don't yet exist in dark mode, consider changing border!! */
+  --radius: 8px;
+  --border: 57 58 97;
+
+  --foreground-rgb: 255 255 255;
+  --background-start-rgb: 0 0 0;
+  --background-end-rgb: 0 0 0;
+  --primary: 255 235 32;
+  --secondary: 48 212 253;
+  --tertiary: 253 48 117;
+  --background: 36 37 61;
+  --gray: 85 85 85;
+  --base: 255 255 255;
+  --white: 255 255 255;
+  --black: 0 0 0;
+  --disabled: 204 214 217;
+  --inverse: 26 27 41;
+  --gradient: radial-gradient(
+      farthest-side at top left,
+      rgb(var(--background) / 1),
+      rgb(54 25 53 / 0.7)
+    ),
+    radial-gradient(
+      farthest-side at bottom left,
+      rgb(var(--background) / 1),
+      rgb(36 61 55 / 1)
     ),
     radial-gradient(
       farthest-corner at bottom right,

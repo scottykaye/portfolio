@@ -21,35 +21,35 @@ const nextConfig = {
         {
           source: '/',
           destination: '/v2',
-          has: [
+          /*  has: [
             {
               type: 'cookie',
               key: 'scottykaye-v2',
               value: 'true',
             },
-          ],
+          ],*/
         },
         {
           source: '/resume',
           destination: '/v2/resume',
-          has: [
+          /* has: [
             {
               type: 'cookie',
               key: 'scottykaye-v2',
               value: 'true',
             },
-          ],
+          ],*/
         },
         {
           source: '/blog/:slug*',
           destination: '/v2/blog/:slug*',
-          has: [
+          /*  has: [
             {
               type: 'cookie',
               key: 'scottykaye-v2',
               value: 'true',
             },
-          ],
+          ],*/
         },
       ],
     }
