@@ -27,8 +27,9 @@ const config = {
         },
         input: 'rgb(var(--input))',
         ring: 'rgb(var(--ring))',
-        foreground: 'rgb(var(--foreground))',
+        foreground: 'rgb(var(--foreground-rgb))',
         background: {
+          primary: 'rgb(var(--background-end-rgb))',
           DEFAULT: 'rgb(var(--background))',
           opaque: 'rgb(var(--background) / .6)',
         },

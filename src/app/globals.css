@@ -4,14 +4,18 @@
 
 :root {
   color-scheme: light dark;
+  /*
+   *
+   * No light mode for now!
+   *
   --foreground-rgb: 0 0 0;
   --background-start-rgb: 214 219 220;
   --background-end-rgb: 255 255 255;
   --background-hsl: 240 20% 15%;
-  --primary: 255 235 32;
+  --primary: 65 88 208;
   --secondary: 48 212 253;
   --tertiary: 253 48 117;
-  --background: 36 37 61;
+  --background: 236 237 231;
   --border: 57 58 97;
   --gray: 85 85 85;
   --base: 255 255 255;
@@ -20,6 +24,54 @@
   --disabled: 204 214 217;
   --inverse: 255 255 255;
   --radius: 8px;
+  --gradient: radial-gradient(
+      farthest-side at top left,
+      rgb(var(--background) / 1),
+      rgb(200 200 200 / 0.7)
+    ),
+    radial-gradient(
+      farthest-side at bottom left,
+      rgb(var(--background) / 1),
+      rgb(200 200 200 / 1)
+    ),
+    radial-gradient(
+      farthest-corner at bottom right,
+      rgb(var(--background) / 1),
+      rgb(var(--inverse) / 1)
+    );*/
+
+  /* you can delete this two later but they don't yet exist in dark mode, consider changing border!! */
+  --radius: 8px;
+  --border: 57 58 97;
+
+  --foreground-rgb: 255 255 255;
+  --background-start-rgb: 0 0 0;
+  --background-end-rgb: 0 0 0;
+  --primary: 255 235 32;
+  --secondary: 48 212 253;
+  --tertiary: 253 48 117;
+  --background: 36 37 61;
+  --gray: 85 85 85;
+  --base: 255 255 255;
+  --white: 255 255 255;
+  --black: 0 0 0;
+  --disabled: 204 214 217;
+  --inverse: 26 27 41;
+  --gradient: radial-gradient(
+      farthest-side at top left,
+      rgb(var(--background) / 1),
+      rgb(54 25 53 / 0.7)
+    ),
+    radial-gradient(
+      farthest-side at bottom left,
+      rgb(var(--background) / 1),
+      rgb(36 61 55 / 1)
+    ),
+    radial-gradient(
+      farthest-corner at bottom right,
+      rgb(var(--background) / 1),
+      rgb(var(--inverse) / 1)
+    );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +89,21 @@
     --black: 0 0 0;
     --disabled: 204 214 217;
     --inverse: 26 27 41;
+    --gradient: radial-gradient(
+        farthest-side at top left,
+        rgb(var(--background) / 1),
+        rgb(54 25 53 / 0.7)
+      ),
+      radial-gradient(
+        farthest-side at bottom left,
+        rgb(var(--background) / 1),
+        rgb(36 61 55 / 1)
+      ),
+      radial-gradient(
+        farthest-corner at bottom right,
+        rgb(var(--background) / 1),
+        rgb(var(--inverse) / 1)
+      );
   }
 }
 
@@ -51,21 +118,7 @@ html {
 body {
   font: 16px/1.33 var(--montserrat), arial, sans-serif;
   color: rgb(var(--foreground-rgb));
-  background-image: radial-gradient(
-      farthest-side at top left,
-      rgb(var(--background) / 1),
-      rgb(54 25 53 / 0.7)
-    ),
-    radial-gradient(
-      farthest-side at bottom left,
-      rgb(var(--background) / 1),
-      rgb(36 61 55 / 1)
-    ),
-    radial-gradient(
-      farthest-corner at bottom right,
-      rgb(var(--background) / 1),
-      rgb(var(--inverse) / 1)
-    );
+  background-image: var(--gradient);
   background-attachment: fixed;
   display: grid;
   grid-template-rows: 1fr min-content;
@@ -75,7 +128,6 @@ ul {
   padding-inline-start: 15px;
   list-style-type: disc;
 }
-
 .Nav-list {
   animation: slideIn 0.2s ease-in-out forwards 0.4s;
   /* using p-5 for the header which is 1.25rem on top and bottom
@@ -133,14 +185,14 @@ ul {
   overflow: clip;
   z-index: 2;
   font-size: 2rem;
-  color: rgb(var(---inverse));
-  border: 4px solid rgb(var(--base));
+  color: rgb(var(---foreground-rgb));
+  border: 4px solid rgb(var(--foreground-rgb));
   text-transform: uppercase;
   letter-spacing: -0.2rem;
   line-height: 1.2;
   opacity: 0;
   animation: fadeIn 0.2s linear forwards 0.2s;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference;*/
 }
 
 .Logo::before,
@@ -150,10 +202,13 @@ ul {
   position: absolute;
   inset-inline: 0;
   height: 0.2rem;
-  background-color: rgb(var(--base));
+  background-color: rgb(var(--foreground-rgb));
   transition: border-color 0.2s, scale 0.2s;
   overflow: clip;
   scale: 0 1;
+}
+.Header {
+  background-color: rgb(var(--background-end-rgb) / 0.3);
 }
 .Header:hover .Logo {
   border-color: rgb(var(--primary));
