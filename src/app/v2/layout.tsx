@@ -86,7 +86,7 @@ export default function StandardLayout({ children }: { children: ReactNode }) {
           </SocialLinkIcon>
           <SocialLinkIcon
             label="Scotty Kaye's Twitch (opens in new window)"
-            href="https:/twitch.tv/scottykaye"
+            href="https://twitch.tv/scottykaye"
             openInNewWindow
           >
             <title>Twitch</title>
