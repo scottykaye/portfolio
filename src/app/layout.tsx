@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@site',
     creator: '@creator',
-    images: '/images/scottykaye-twitter',
+    images: '/images/scottykaye-twitter.png',
   },
 }
 
