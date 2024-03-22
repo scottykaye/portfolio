@@ -62,57 +62,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const metadata: Metadata = {
-  title: {
-    default: 'Scotty Kaye',
-    template: '%s | Scotty Kaye',
-  },
-  description:
-    'Scotty Kaye is a Frontend Software Engineer located in Boston, Massachusetts with a strong background in UI, React, Accessibility and Next.js',
-  icons: [
-    {
-      url: `/images/${
-        process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
-      }favicon.ico`,
-      type: 'image/x-icon',
-      sizes: '48x48',
-    },
-    {
-      url: `/images/${
-        process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
-      }favicon-32x32.png`,
-      type: 'image/png',
-      sizes: '32x32',
-    },
-
-    {
-      url: `/images/${
-        process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
-      }favicon-16x16.png`,
-      type: 'image/png',
-      sizes: '16x16',
-    },
-    {
-      rel: 'apple-touch-icon',
-      url: '/images/apple-touch-icon.png',
-      sizes: '180x180',
-    },
-  ],
-  openGraph: {
-    type: 'website',
-    title: 'Scotty Kaye',
-    siteName: 'Scotty Kaye',
-    description: 'Scotty Kaye | Staff Frontend Software Engineer',
-    url: 'https://scottykaye.com',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@site',
-    creator: '@creator',
-    images: '/images/android-chrome-512x512.png',
-  },
-}
-
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--montserrat',
