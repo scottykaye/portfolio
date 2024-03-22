@@ -9,7 +9,6 @@ export const viewport: Viewport = {
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
 }
-// @TODO: Add light mode vs dark mode favicon toggles
 
 export const metadata: Metadata = {
   title: {
@@ -58,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@site',
     creator: '@creator',
-    images: '/images/android-chrome-512x512.png',
+    images: '/images/scottykaye-twitter',
   },
 }
 
