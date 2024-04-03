@@ -13,8 +13,8 @@ export default function Page() {
       </p>
       <p className="my-3">
         My background and foundation in coding is CSS and HTML. In the past few
-        years I've grown strongly in accessibility and JavaScript in my role on
-        the platforms team.{' '}
+        years {`I've`} grown strongly in accessibility and JavaScript in my role
+        on the platforms team.
       </p>
       <p className="my-3">
         I love to teach, share and help those around me grow to be more
@@ -73,13 +73,13 @@ export default function Page() {
       </p>
       <p className="my-3">
         The solution was to build a react hook that we could hook into to make a
-        Product Card visually clickable but preserve it's semantic value.{' '}
+        Product Card visually clickable but preserve {`it's`} semantic value.
       </p>
       <h3 className="text-lg mt-4">Contextual Modals/Drawers/Sidebars</h3>
       <p className="my-3">
         I identified while working on the design system that we had the
         opportunity to create a hierarchy for our tools. The example I used was
-        an admin toolbar that should wrap a page, but we don't want it to
+        an admin toolbar that should wrap a page, but we {`don't`} want it to
         interact with the modals or other pop up elements.
       </p>{' '}
       <p className="my-3">
@@ -92,7 +92,7 @@ export default function Page() {
       </p>
       <h2 className="text-xl mt-4">Previous Experience</h2>
       <p className="my-3">
-        I've worked on many teams and different initiatives in my time as an
+        {`I've`} worked on many teams and different initiatives in my time as an
         engineer, some of the most notable (and coolest):
       </p>
       <ul className="my-3">
@@ -102,7 +102,7 @@ export default function Page() {
           and delivered on.
         </li>
         <li className="my-2">
-          Blueprinting and executing on making Wayfair's frontend go from
+          Blueprinting and executing on making {`Wayfair's`} frontend go from
           adaptive to response.
         </li>
         <li className="my-2">
@@ -118,7 +118,7 @@ export default function Page() {
         </li>
         <li className="my-2">
           Prototyping and developing a suite of components for our Design
-          System: Sidebar's, Modals, Drawers, Tabs, Accordions, Input components
+          System: Sidebars, Modals, Drawers, Tabs, Accordions, Input components
           and taking ownership of accessibility.
         </li>
         <li className="my-2">
