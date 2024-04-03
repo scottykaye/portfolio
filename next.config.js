@@ -19,6 +19,17 @@ const nextConfig = {
     return {
       beforeFiles: [
         {
+          source: '/:slug',
+          destination: '/v2/:slug',
+          /*  has: [
+            {
+              type: 'cookie',
+              key: 'scottykaye-v2',
+              value: 'true',
+            },
+          ],*/
+        },
+        {
           source: '/',
           destination: '/v2',
           /*  has: [
@@ -40,6 +51,7 @@ const nextConfig = {
             },
           ],*/
         },
+
         {
           source: '/blog/:slug*',
           destination: '/v2/blog/:slug*',
