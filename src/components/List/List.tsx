@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import React from 'react'
 import * as styles from './List.css'
 
@@ -15,15 +16,16 @@ interface Props {
 
 interface ItemProps extends Props {
   margin?: string | number
+  className?: string
 }
 
-export function ListItem({ children, margin }: ItemProps) {
+export function ListItem({ children, margin, className }: ItemProps) {
   return (
     <li
       style={assignInlineVars({
         [styles.margin]: stringOrNumber(margin),
       })}
-      className={styles.listItem}
+      className={clsx(styles.listItem, className)}
     >
       {children}
     </li>

@@ -1,14 +1,14 @@
-import { ReactNode } from 'react'
 import { Footer } from '@components/v2/Footer/Footer'
 import { SocialLinkIcon } from '@components/v2/Footer/SocialLinkIcon'
 import { Header, MainNav } from '@components/v2/Header/Header'
 import { MainNavLink } from '@components/v2/Header/Link'
 import Link from 'next/link'
+import { ReactNode } from 'react'
 
 export default function StandardLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <Header>
+      <Header className="print:hidden">
         <div className="flex">
           <Link
             href="/"

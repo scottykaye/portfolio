@@ -17,6 +17,10 @@ const config = {
       },
     },
     extend: {
+      display: ['print'],
+      textColor: ['print'],
+      fontSize: ['print'],
+
       gridTemplateRows: {
         layout: 'min-content 1fr',
       },
