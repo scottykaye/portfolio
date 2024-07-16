@@ -10,23 +10,23 @@ function PrimaryHeading(props) {
       is="h3"
       color="primary"
       {...props}
-      className="print:text-black text-sm leading-5"
+      className="print:text-black text-base leading-5 print:!text-[12px]"
     />
   )
 }
 
 function SubHeading(props) {
-  return <Heading is="h4" className="text-xs" {...props} />
+  return <Heading is="h4" className="print:!text-[11px] text-xs" {...props} />
 }
 
 function ListItem(props) {
-  return <List.Item className="text-sm" {...props} />
+  return <List.Item className="text-xs print:!text-[10px]" {...props} />
 }
 
 function WorkExperience() {
   return (
     <Section is="article" heading="Work Experience" headingIs="h1">
-      <Heading>Fireworks AI</Heading>
+      <Heading className="text-lg print:!text-[13px]">Fireworks AI</Heading>
       <PrimaryHeading>Staff Frontend Engineer</PrimaryHeading>
       <SubHeading>March 2024 - Present</SubHeading>
       <List>
@@ -35,20 +35,16 @@ function WorkExperience() {
           deployment management, user management and more.
         </ListItem>
         <ListItem>
-          Overhauling branding and rebuilding a design system for marketing
-          website and products.
-        </ListItem>
-        <ListItem>
           Adding testing frameworks and mechanisms like playwright and Github
           actions to ensure confidence in deploys.
         </ListItem>
         <ListItem>
-          Architecting a Next.js website to use the app router and create a
-          platform for customers using LLMs & Image models to stream line their
-          AI workflow.
+          Overhauling branding and rebuilding a design system for to architect a
+          Next.js website platform for customers using LLMs & Image models to
+          stream line their AI workflow.
         </ListItem>
       </List>
-      <Heading>Wayfair</Heading>
+      <Heading className="text-lg print:!text-[13px]">Wayfair</Heading>
       <PrimaryHeading>Staff Engineer - Frontend Platforms</PrimaryHeading>
       <SubHeading>November 2022 - March 2024</SubHeading>
       <List>
@@ -94,19 +90,9 @@ function WorkExperience() {
         </ListItem>
       </List>
       <PrimaryHeading>
-        {`Senior Software Engineer - "Arlow" an Interior Design Application`}
-      </PrimaryHeading>
-      <SubHeading>October 2017 - April 2019</SubHeading>
-      <List>
-        <ListItem>
-          Scaffolding the frontend for an interior design application that
-          allowed to save any product online and create services invoices.
-        </ListItem>
-      </List>
-      <PrimaryHeading>
         Senior Software Engineer - Lifestyles Brands
       </PrimaryHeading>
-      <SubHeading>February 2015 - October 2017</SubHeading>
+      <SubHeading>February 2015 - April 2019</SubHeading>
       <List>
         <ListItem>
           Leading frontend prototyping and creating new Perigold brand website.
@@ -132,7 +118,7 @@ function Knowledge() {
     <Section heading="Knowledge">
       <List>
         <ListItem>
-          <PrimaryHeading fontSize={18}>JavaScript</PrimaryHeading>
+          <PrimaryHeading>JavaScript</PrimaryHeading>
           <List>
             <ListItem>React</ListItem>
             <ListItem>TypeScript</ListItem>
@@ -146,14 +132,14 @@ function Knowledge() {
           </List>
         </ListItem>
         <ListItem>
-          <PrimaryHeading fontSize={18}>HTML</PrimaryHeading>
+          <PrimaryHeading>HTML</PrimaryHeading>
           <List>
             <ListItem>ARIA</ListItem>
             <ListItem>Accessibility best practices</ListItem>
           </List>
         </ListItem>
         <ListItem>
-          <PrimaryHeading fontSize={18}>CSS</PrimaryHeading>
+          <PrimaryHeading>CSS</PrimaryHeading>
           <List>
             <ListItem>SASS</ListItem>
             <ListItem>Styled Components</ListItem>
@@ -162,13 +148,13 @@ function Knowledge() {
           </List>
         </ListItem>
         <ListItem>
-          <PrimaryHeading fontSize={18}>Storybook</PrimaryHeading>
+          <PrimaryHeading>Storybook</PrimaryHeading>
         </ListItem>
         <ListItem>
-          <PrimaryHeading fontSize={18}>Wordpress</PrimaryHeading>
+          <PrimaryHeading>Wordpress</PrimaryHeading>
         </ListItem>
         <ListItem>
-          <PrimaryHeading fontSize={18}>PHP</PrimaryHeading>
+          <PrimaryHeading>PHP</PrimaryHeading>
         </ListItem>
         <ListItem>
           <PrimaryHeading>Design</PrimaryHeading>
@@ -203,7 +189,7 @@ export default function Resume() {
     <>
       <div className="hidden print:flex mb-5">
         <svg
-          width="32"
+          width="30"
           viewBox="0 0 400 400"
           className="fill-background-primary"
           aria-labelledby="title"
@@ -246,9 +232,9 @@ export default function Resume() {
         </svg>
 
         <ul className="list-none">
-          <li className="text-xs">Scotty Kaye</li>
-          <li className="text-xs">scottykaye.web@gmail.com</li>
-          <li className="text-xs">978-979-9908</li>
+          <li className="text-[11px]">Scotty Kaye</li>
+          <li className="text-[11px]">scottykaye.web@gmail.com</li>
+          <li className="text-[11px]">978-979-9908</li>
         </ul>
       </div>
       <AutoGrid alignItems="flexStart">
