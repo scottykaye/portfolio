@@ -1,6 +1,6 @@
-import { ReactNode, ElementType, ComponentPropsWithoutRef } from 'react'
 import Heading from '@components/v2/Heading'
 import { clsx } from 'clsx'
+import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
 
 interface Props<T extends ElementType> {
   is?: T | string
@@ -22,7 +22,7 @@ export default function Section<T extends ElementType = 'section'>({
   return (
     <Element
       className={clsx(
-        'relative border-2 border-solid border-t-0 border-primary my-2 print:border-black',
+        'relative border-2 border-solid border-t-0 border-primary my-2 print:border-black font-sm',
         {
           [className]: className,
         },

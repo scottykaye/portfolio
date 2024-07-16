@@ -1,6 +1,6 @@
+import clsx from 'clsx'
 import type { Metadata, Viewport } from 'next'
 import { Montserrat } from 'next/font/google'
-import clsx from 'clsx'
 import './globals.css'
 
 export const viewport: Viewport = {
