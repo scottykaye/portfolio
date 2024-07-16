@@ -39,9 +39,9 @@ function WorkExperience() {
           actions to ensure confidence in deploys.
         </ListItem>
         <ListItem>
-          Overhauling branding and rebuilding a design system for to architect a
-          Next.js website platform for customers using LLMs & Image models to
-          stream line their AI workflow.
+          Overhauling branding and building a design system to architect a
+          Next.js website platform for customers using our LLMs & Image models
+          to stream line their AI workflow.
         </ListItem>
       </List>
       <Heading className="text-lg print:!text-[13px]">Wayfair</Heading>
