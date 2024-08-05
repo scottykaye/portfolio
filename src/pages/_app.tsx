@@ -223,7 +223,7 @@ function AppContainer(props: Props) {
             <FooterRightContainer>
               <a
                 aria-label="Scotty Kaye's LinkedIn (opens in new window)"
-                href="https://www.linkedin.com/in/scott-kaye-93279b54/"
+                href="https://www.linkedin.com/in/scottykaye"
                 target="_blank"
                 rel="noreferrer"
                 className={styles.flex}

@@ -77,7 +77,7 @@ export default function StandardLayout({ children }: { children: ReactNode }) {
         <li className="gap-4 flex items-center">
           <SocialLinkIcon
             label="Scotty Kaye's LinkedIn (opens in new window)"
-            href="https://www.linkedin.com/in/scott-kaye-93279b54/"
+            href="https://www.linkedin.com/in/scottykaye"
             openInNewWindow
           >
             <title>LinkedIn</title>
