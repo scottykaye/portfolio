@@ -53,7 +53,6 @@ export default function Post({ params }: any) {
         {props.frontMatter.title}
       </Heading>
 
-      {/* @ts-expect-error Server Component*/}
       <MDXRemote source={props.content} components={components} />
     </article>
   )

@@ -1,4 +1,3 @@
-// @ts-expect-error
 import { cache } from 'react'
 import { Octokit } from 'octokit'
 import { headers as nextHeaders } from 'next/headers'
@@ -190,7 +189,6 @@ export default async function HomePage() {
          <iframe
             height="320"
             className="min-w-full"
-            // @ts-expect-error
             allowtransparency="true"
             srcDoc={codepen.html}
           ></iframe>
