@@ -16,7 +16,7 @@ function PrimaryHeading(props) {
 }
 
 function SubHeading(props) {
-  return <Heading is="h4" className="print:!text-[11px]" {...props} />
+  return <Heading is="h4" size="sm" className="print:!text-[11px]" {...props} />
 }
 
 function ListItem(props) {
