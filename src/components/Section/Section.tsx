@@ -1,7 +1,7 @@
 import { ReactNode, ElementType, ComponentPropsWithoutRef } from 'react'
 import * as styles from './Section.css'
 import Heading from '../Heading'
-import cx from 'classnames'
+import cx from 'clsx'
 
 interface Props<T extends ElementType> {
   is?: T | string

@@ -1,24 +1,111 @@
-import { ReactNode } from 'react';
-import { assignInlineVars } from '@vanilla-extract/dynamic';
-import cx from 'classnames';
-import * as styles from './Stack.css';
+import { ReactNode } from 'react'
+import { assignInlineVars } from '@vanilla-extract/dynamic'
+import cx from 'clsx'
+import * as styles from './Stack.css'
 
 interface Props {
-  children: ReactNode;
-  size?: string;
-  isFullHeight?: boolean;
-  rest?: { [key: string]: unknown };
-  p?: '0' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | '1000'
-  py?: '0' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | '1000'
-  px?: '0' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | '1000'
-  pl?: '0' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | '1000'
-  pr?: '0' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | '1000'
-  pt?: '0' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | '1000'
-  pb?: '0' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | '1000'
- }
+  children: ReactNode
+  size?: string
+  isFullHeight?: boolean
+  rest?: { [key: string]: unknown }
+  p?:
+    | '0'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+  py?:
+    | '0'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+  px?:
+    | '0'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+  pl?:
+    | '0'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+  pr?:
+    | '0'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+  pt?:
+    | '0'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+  pb?:
+    | '0'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+}
 
 export default function Stack({
-  children, isFullHeight = false, p, py, px, pt, pb, pl, pr, size = '10px', ...rest
+  children,
+  isFullHeight = false,
+  p,
+  py,
+  px,
+  pt,
+  pb,
+  pl,
+  pr,
+  size = '10px',
+  ...rest
 }: Props) {
   return (
     <div
@@ -34,9 +121,8 @@ export default function Stack({
         [styles.pb[pb]]: pb,
         [styles.pt[pt]]: pt,
       })}
-
     >
       {children}
     </div>
-  );
+  )
 }

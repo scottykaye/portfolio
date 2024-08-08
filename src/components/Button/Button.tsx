@@ -1,5 +1,5 @@
 import React from 'react'
-import cx from 'classnames'
+import cx from 'clsx'
 import { buttonStyles, fullWidth } from './Button.css'
 
 type BtnType = 'submit' | 'button'

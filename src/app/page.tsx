@@ -100,15 +100,15 @@ export default async function HomePage() {
             <span className="block">{`I'm Scotty Kaye`}</span>
           </span>
         </h1>
-        <p className="About Title max-w-3xl relative top-0 grid -translate-y-full place-items-center place-content-center gap-2 p-5 mx-auto">
+        <p className="About Title bg-gradient-to-b from-indigo-500 max-w-3xl text-center text-balance relative top-0 grid -translate-y-full place-items-center place-content-center gap-2 p-5 mx-auto">
           {`I'm a Staff Software Engineer with a strong foundation in UX & UI.`}
         </p>
       </div>
 
       <section className="HomeGrid grid max-w-3xl mx-auto relative -inset-y-80 px-5">
         <div>
-          <h2 className="sticky top-24 z-10 py-4 px-2 mt-40 text-2xl primary font-bold mb-5 text-primary backdrop-blur border-b border-border">
-            Projects
+          <h2 className="sticky mix-blend-difference bg-inverse/80 backdrop-blur top-24 z-10 py-4 px-2 mt-40 text-2xl font-bold mb-5 rounded">
+            <span className="text-background">Projects</span>
           </h2>
           <div className="min-w-full rounded-md m-auto shadow-lift backdrop-blur bg-background-opaque backdrop-hue-rotate-30 border border-border">
             <div className="flex gap-5 justify-between p-4 border-b border-border">

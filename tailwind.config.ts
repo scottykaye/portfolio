@@ -25,6 +25,7 @@ const config = {
           DEFAULT: 'rgb(var(--border))',
           opaque: 'rgb(var(--border) / .6)',
         },
+        inverse: 'rgb(var(--inverse))',
         input: 'rgb(var(--input))',
         ring: 'rgb(var(--ring))',
         foreground: 'rgb(var(--foreground-rgb))',
