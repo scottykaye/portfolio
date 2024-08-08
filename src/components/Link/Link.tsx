@@ -18,7 +18,11 @@ export default function Link({
   ...rest
 }: Props) {
   return (
-    <NextLink href={href} className={styles.link} {...rest}>
+    <NextLink
+      href={href}
+      className="underline underline-offset-2 text-primary [&:is(:focus,:hover)]:no-underline"
+      {...rest}
+    >
       {children}
     </NextLink>
   )

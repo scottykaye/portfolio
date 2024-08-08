@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import List, { ListItem } from '@components/List'
 import Heading from '@components/v2/Heading'
+import Link from '@root/src/components/Link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
 export async function generateStaticParams() {
@@ -42,6 +43,7 @@ const components = {
   h5: (props) => <Heading className="mb-5" is="h5" {...props} />,
   h6: (props) => <Heading className="mb-5" is="h6" {...props} />,
   p: (props) => <p className="mb-5" {...props} />,
+  a: (props) => <Link {...props} />,
 }
 
 export default function Post({ params }: any) {
@@ -49,7 +51,7 @@ export default function Post({ params }: any) {
 
   return (
     <article>
-      <Heading color="primary" is="h1" className="mb-5">
+      <Heading is="h1" className="mb-5">
         {props.frontMatter.title}
       </Heading>
 

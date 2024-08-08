@@ -1,40 +1,65 @@
-import { clsx } from 'clsx'
-import React from 'react'
+import { type ReactNode, type ElementType } from 'react'
+import { cn } from '../cn'
 
-interface Props<T extends React.ElementType> {
-  is?: T | string
-  color?: 'primary' | 'default'
-  fontSize?: 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl'
-  fontFamily?: 'inherit'
-  classname?: string
-  [rest: string]: unknown
+const SIZES = {
+  'display-100': 'text-display-100',
+  'display-200': 'text-display-200',
+  'display-300': 'text-display-300',
+  '7xl': 'text-6xl',
+  '6xl': 'text-7xl',
+  '5xl': 'text-5xl',
+  '4xl': 'text-4xl',
+  '3xl': 'text-3xl',
+  '2xl': 'text-2xl',
+  xl: 'text-xl',
+  lg: 'text-lg',
+  md: 'text-md',
+  sm: 'text-sm',
+  xs: 'text-xs',
 }
 
-export default function Heading<T extends React.ElementType = 'h2'>({
-  is = 'h2',
-  color = 'default',
-  fontSize,
+const HEADING = {
+  h1: 'text-4xl',
+  h2: 'text-3xl',
+  h3: 'text-2xl',
+  h4: 'text-xl',
+  h5: 'text-md',
+  h6: 'text-md',
+} as const
+
+type HeadingOption = keyof typeof HEADING
+type SizeOption = keyof typeof SIZES
+
+interface HeadingProps {
+  className?: string
+  size?: SizeOption | null
+  children: ReactNode
+  is?: ElementType
+}
+
+export default function Heading({
   className,
-  fontFamily,
+  is: Tag = 'h2',
+
+  size = null,
+  children,
   ...props
-}: Props<T> & React.ComponentPropsWithoutRef<T>) {
-  const Element = is
+}: HeadingProps) {
+  const classSize =
+    typeof Tag === 'string' && Object.keys(HEADING).includes(Tag)
+      ? HEADING[Tag as HeadingOption]
+      : null
+
   return (
-    <Element
-      {...props}
-      className={clsx(
-        {
-          ['text-primary']: color === 'primary',
-          ['text-sm']: fontSize === 'sm',
-          ['text-base']: fontSize === 'base',
-          ['text-lg']: fontSize === 'lg',
-          ['text-xl']: fontSize === 'xl',
-          ['text-2xl']: fontSize === '2xl',
-          ['text-3xl']: fontSize === '3xl',
-          ['text-4xl']: fontSize === '4xl',
-        },
+    <Tag
+      className={cn(
+        size ? SIZES[size as SizeOption] : classSize,
+        'text-pretty',
         className,
       )}
-    />
+      {...props}
+    >
+      {children}
+    </Tag>
   )
 }
