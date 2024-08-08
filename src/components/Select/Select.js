@@ -8,7 +8,7 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable no-console */
 import React, { useEffect } from 'react';
-import cx from 'classnames';
+import cx from 'clsx';
 import useOnClickOutside from '../useOnClickOutside';
 import * as styles from './Select.css';
 // import { useCombobox } from "downshift";

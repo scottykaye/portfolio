@@ -16,11 +16,11 @@ function PrimaryHeading(props) {
 }
 
 function SubHeading(props) {
-  return <Heading is="h4" className="print:!text-[11px] text-xs" {...props} />
+  return <Heading is="h4" className="print:!text-[11px]" {...props} />
 }
 
 function ListItem(props) {
-  return <List.Item className="text-xs print:!text-[10px]" {...props} />
+  return <List.Item className="print:!text-[10px]" {...props} />
 }
 
 function WorkExperience() {

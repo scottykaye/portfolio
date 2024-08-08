@@ -4,7 +4,7 @@ import React, {
   useContext,
   CSSProperties,
 } from 'react'
-import cx from 'classnames'
+import cx from 'clsx'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import * as styles from './Sidebar.css'
 

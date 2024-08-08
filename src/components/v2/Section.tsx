@@ -33,7 +33,7 @@ export default function Section<T extends ElementType = 'section'>({
           <Heading
             is={headingIs}
             fontSize="base"
-            className="relative inline-block p-4 ml-4 before:absolute -before:translate-x-1/2 before:top-1/2 before:w-[100vw] before:border-t-2 before:border-solid before:border-primary print:before:border-black before:right-full after:absolute -after:translate-x-1/2 after:top-1/2 after:w-[100vw] after:border-t-2 after:border-solid after:border-primary print:after:border-black after:left-full"
+            className="relative text-foreground inline-block p-4 ml-4 before:absolute -before:translate-x-1/2 before:top-1/2 before:w-[100vw] before:border-t-2 before:border-solid before:border-primary print:before:border-black before:right-full after:absolute -after:translate-x-1/2 after:top-1/2 after:w-[100vw] after:border-t-2 after:border-solid after:border-primary print:after:border-black after:left-full"
           >
             {heading}
           </Heading>
