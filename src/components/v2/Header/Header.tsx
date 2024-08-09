@@ -19,7 +19,7 @@ export function Header({
   return (
     <header
       className={clsx(
-        'Header fixed inset-x-0 backdrop-blur-sm backdrop-hue-rotate-30 border-b border-border p-5 z-40',
+        'bg-background/50 dark:bg-background/30 fixed inset-x-0 backdrop-blur-sm backdrop-hue-rotate-30 border-b border-border p-5 z-40',
         className,
       )}
     >

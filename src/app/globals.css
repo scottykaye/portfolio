@@ -153,9 +153,6 @@ ul {
   overflow: clip;
   scale: 0 1;
 }
-.Header {
-  background-color: rgb(var(--background-end-rgb) / 0.3);
-}
 .Header:hover .Logo {
   border-color: rgb(var(--primary));
 }
