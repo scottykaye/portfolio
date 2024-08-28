@@ -179,13 +179,20 @@ ul {
   }
 }
 
-@supports (animation-timeline: scroll()) {
-  .Scroll {
-    transform-origin: 50% 0%;
-    animation: scale-down both ease-in;
-    animation-timeline: view();
-    animation-range: exit;
-    view-timeline: --header;
+@layer scrolls {
+  @supports (animation-timeline: scroll()) {
+    .Scroll {
+      transform-origin: 50% 0%;
+      animation: scale-down both ease-in;
+      animation-timeline: view();
+      animation-range: exit;
+      view-timeline: --header;
+    }
+    .Hello::before {
+      animation: fade both linear;
+      animation-timeline: --header;
+      animation-range: exit-crossing 0% exit 0%;
+    }
   }
 }
 
@@ -226,19 +233,19 @@ ul {
 .Hello::before {
   content: '';
   position: absolute;
-  inset: -100% 0;
-  background-color: rgb(var(--background) / 0.6);
-  z-index: -1;
+  inset: -200% 0;
+  background-color: rgb(var(--background) / 0.4);
 
-  animation: fade both linear;
-  animation-timeline: --header;
-  animation-range: exit-crossing 0% exit 0%;
+  pointer-events: none;
+  z-index: -1;
 }
+
 .About {
   inset-block-start: -50vh;
 }
 
 .HomeGrid {
+  z-index: 1;
   grid-template-rows: repeat(4, min-content);
 }
 
