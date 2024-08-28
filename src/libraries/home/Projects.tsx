@@ -30,7 +30,15 @@ export function Project({ github, stargazers }) {
         <p className="text-xs text-primary">{github.language}</p>
       </div>
       <div className="p-4 border-b border-border">
-        <p className="mb-3">{github.name}</p>
+        <p className="mb-3">
+          {github.name
+            .split('-')
+            .map(
+              (word) =>
+                word.charAt(0).toUpperCase() + word.slice(1, word.length),
+            )
+            .join(' ')}
+        </p>
         <p>{github.description}</p>
       </div>
       <div className="flex gap-5 items-center text-sm p-4">
