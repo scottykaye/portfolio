@@ -3,6 +3,7 @@ import { Octokit } from 'octokit'
 import { headers as nextHeaders } from 'next/headers'
 import Image from 'next/image'
 import { Project } from '../libraries/home/Projects'
+import { Cartridge } from '../libraries/home/Cartridge'
 
 async function getKeyboardNav(userAgent: string) {
   const octokit = new Octokit({
@@ -132,14 +133,18 @@ export default async function HomePage() {
         </p>
       </div>
       <section className="HomeGrid grid max-w-3xl mx-auto relative -inset-y-80 px-5">
-        <div>
-          <h2 className="sticky mix-blend-difference bg-inverse/80 backdrop-blur top-24 z-10 py-4 px-2 mt-40 text-2xl font-bold mb-5 rounded">
-            <span className="text-background">Projects</span>
-          </h2>
-        </div>
-        <div className="flex flex-col gap-10">
-          <Project github={themeHandler} stargazers={themeHandlerStargazers} />
+        <h2 className="sticky mix-blend-difference bg-inverse/80 backdrop-blur top-28 z-10 p-2 mt-40 text-2xl font-bold mb-5 rounded inline-flex mr-auto">
+          <span className="text-background">Projects</span>
+        </h2>
+        <div className="flex flex-col gap-28">
+          {/*          <Project github={themeHandler} stargazers={themeHandlerStargazers} />
           <Project github={keyboardNav} stargazers={keyboardNavStargazers} />
+*/}
+          <Cartridge
+            github={themeHandler}
+            stargazers={themeHandlerStargazers}
+          />
+          <Cartridge github={keyboardNav} stargazers={keyboardNavStargazers} />
         </div>
       </section>
     </>
