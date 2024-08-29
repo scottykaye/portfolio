@@ -2,7 +2,6 @@ import { cache } from 'react'
 import { Octokit } from 'octokit'
 import { headers as nextHeaders } from 'next/headers'
 import Image from 'next/image'
-import { Project } from '../libraries/home/Projects'
 import { Cartridge } from '../libraries/home/Cartridge'
 
 async function getKeyboardNav(userAgent: string) {

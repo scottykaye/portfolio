@@ -305,7 +305,6 @@ ul {
   border-radius: var(--radius);
   clip-path: polygon(90% 0, 90% 5%, 100% 5%, 100% 100%, 0% 100%, 0% 0%);
   transition: 0.6s ease transform;
-  z-index: 11; /*above heading*/
 }
 
 .cartridge-container:hover {
