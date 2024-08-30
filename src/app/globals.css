@@ -337,6 +337,7 @@ ul {
     0.6s ease transform,
     0.6s ease translate;
   overflow: clip;
+  aspect-ratio: 1 / 1.1;
 }
 .cartridge::before,
 .cartridge::after {
@@ -346,7 +347,6 @@ ul {
   min-height: 65%;
   bottom: 0;
   width: 0.5rem;
-  aspect-ratio: 1;
   box-shadow:
     var(--glow) 0px 10px 0px -22px inset,
     var(--glow-secondary) 0px 8px 6px -1px inset;
@@ -423,7 +423,7 @@ ul {
   margin: 1rem 2.5rem 2.5rem;
   background: var(--bg-secondary);
   border-radius: var(--radius);
-  aspect-ratio: 1;
+  height: 100%;
   box-shadow:
     var(--glow) 0px 30px 60px -12px inset,
     var(--glow-secondary) 0px 18px 36px -18px inset;
