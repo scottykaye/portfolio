@@ -135,7 +135,7 @@ export default async function HomePage() {
         <h2 className="sticky mix-blend-difference bg-inverse/80 backdrop-blur top-28 z-10 p-2 mt-40 text-2xl font-bold mb-5 rounded inline-flex mr-auto">
           <span className="text-background">Projects</span>
         </h2>
-        <div className="flex flex-col gap-28">
+        <div className="flex flex-col gap-28 items-center">
           {/*          <Project github={themeHandler} stargazers={themeHandlerStargazers} />
           <Project github={keyboardNav} stargazers={keyboardNavStargazers} />
 */}
