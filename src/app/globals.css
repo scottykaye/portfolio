@@ -296,8 +296,8 @@ ul {
 .cartridge-container {
   background: var(--container-cartridge);
   position: relative;
-  display: inline-flex;
-  margin: 25px auto;
+  max-width: fit-content;
+  margin: 25px 0;
   transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg);
   box-shadow:
     var(--glow) 0px 10px 0px -22px inset,
@@ -312,13 +312,14 @@ ul {
     scale(1);
 }
 .cartridge-container:hover .cartridge {
-  translate: -0.5rem 0;
+  translate: -0.5rem -0.5rem;
 }
 
 .cartridge {
   position: relative;
   left: 0;
-  bottom: 0.5rem;
+  bottom: 0;
+  translate: 0.5rem -0.5rem;
   background: var(--bg);
   background-image: linear-gradient(
     180deg,
@@ -326,9 +327,8 @@ ul {
     var(--bg-secondary) 100%
   );
   min-height: 20rem;
-  width: 22rem;
+  max-width: 22rem;
   border-radius: var(--radius);
-  margin: auto;
   display: flex;
   flex-direction: column;
   clip-path: polygon(90% 0, 90% 5%, 100% 5%, 100% 100%, 0% 100%, 0% 0%);
