@@ -346,6 +346,7 @@ ul {
   min-height: 65%;
   bottom: 0;
   width: 0.5rem;
+  aspect-ratio: 1;
   box-shadow:
     var(--glow) 0px 10px 0px -22px inset,
     var(--glow-secondary) 0px 8px 6px -1px inset;
