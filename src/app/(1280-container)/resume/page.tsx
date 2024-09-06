@@ -118,51 +118,71 @@ function Knowledge() {
     <Section heading="Knowledge">
       <List>
         <ListItem>
-          <PrimaryHeading>JavaScript</PrimaryHeading>
+          <PrimaryHeading>Languages</PrimaryHeading>
           <List>
-            <ListItem>React</ListItem>
+            <ListItem>JavaScript</ListItem>
             <ListItem>TypeScript</ListItem>
-            <ListItem>NextJS</ListItem>
+            <ListItem>Go</ListItem>
+            <ListItem>PHP</ListItem>
+            <ListItem>CSS</ListItem>
+          </List>
+        </ListItem>
+        <ListItem>
+          <PrimaryHeading>Runtimes, Libraries & Frameworks</PrimaryHeading>
+          <List>
+            <ListItem>Node.js</ListItem>
+            <ListItem>Bun</ListItem>
+            <ListItem>Yarn</ListItem>
+            <ListItem>Deno</ListItem>
+            <ListItem>PNPM</ListItem>
+            <ListItem>Next.js</ListItem>
+            <ListItem>Webpack</ListItem>
+            <ListItem>React</ListItem>
+            <ListItem>React DOM</ListItem>
+            <ListItem>Turborepo</ListItem>
+            <ListItem>GraphQL</ListItem>
+            <ListItem>Babel</ListItem>
+            <ListItem>Storybook</ListItem>
+            <ListItem>Wordpress</ListItem>
+          </List>
+        </ListItem>
+        <ListItem>
+          <PrimaryHeading>Testing</PrimaryHeading>
+          <List>
             <ListItem>Jest</ListItem>
             <ListItem>Cypress</ListItem>
-            <ListItem>Webpack</ListItem>
-            <ListItem>Node</ListItem>
             <ListItem>Playwright</ListItem>
-            <ListItem>Babel</ListItem>
+            <ListItem>Chromatic</ListItem>
           </List>
         </ListItem>
         <ListItem>
           <PrimaryHeading>HTML</PrimaryHeading>
           <List>
-            <ListItem>ARIA</ListItem>
+            <ListItem>WAI-ARIA</ListItem>
+            <ListItem>WCAG</ListItem>
             <ListItem>Accessibility best practices</ListItem>
           </List>
         </ListItem>
         <ListItem>
-          <PrimaryHeading>CSS</PrimaryHeading>
+          <PrimaryHeading>CSS Libraries & Runtimes</PrimaryHeading>
           <List>
-            <ListItem>SASS</ListItem>
-            <ListItem>Styled Components</ListItem>
-            <ListItem>Vanilla Extract</ListItem>
             <ListItem>Tailwind</ListItem>
+            <ListItem>Vanilla Extract</ListItem>
+            <ListItem>Styled Components</ListItem>
+            <ListItem>SASS</ListItem>
+            <ListItem>Restyle</ListItem>
+            <ListItem>Emotion</ListItem>
+            <ListItem>Panda CSS</ListItem>
           </List>
-        </ListItem>
-        <ListItem>
-          <PrimaryHeading>Storybook</PrimaryHeading>
-        </ListItem>
-        <ListItem>
-          <PrimaryHeading>Wordpress</PrimaryHeading>
-        </ListItem>
-        <ListItem>
-          <PrimaryHeading>PHP</PrimaryHeading>
         </ListItem>
         <ListItem>
           <PrimaryHeading>Design</PrimaryHeading>
           <List>
+            <ListItem>Figma</ListItem>
             <ListItem>Adobe Photoshop</ListItem>
             <ListItem>Adobe Illustrator</ListItem>
-            <ListItem>Figma</ListItem>
             <ListItem>Sketch</ListItem>
+            <ListItem>Miro</ListItem>
           </List>
         </ListItem>
       </List>
