@@ -120,11 +120,11 @@ function Knowledge() {
         <ListItem>
           <PrimaryHeading>Languages</PrimaryHeading>
           <List>
-            <ListItem>JavaScript</ListItem>
             <ListItem>TypeScript</ListItem>
-            <ListItem>Go</ListItem>
+            <ListItem>JavaScript</ListItem>
             <ListItem>PHP</ListItem>
             <ListItem>CSS</ListItem>
+            <ListItem>Go</ListItem>
           </List>
         </ListItem>
         <ListItem>
@@ -136,10 +136,10 @@ function Knowledge() {
             <ListItem>Deno</ListItem>
             <ListItem>PNPM</ListItem>
             <ListItem>Next.js</ListItem>
-            <ListItem>Webpack</ListItem>
             <ListItem>React</ListItem>
             <ListItem>React DOM</ListItem>
             <ListItem>Turborepo</ListItem>
+            <ListItem>Webpack</ListItem>
             <ListItem>GraphQL</ListItem>
             <ListItem>Babel</ListItem>
             <ListItem>Storybook</ListItem>
