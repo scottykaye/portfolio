@@ -106,7 +106,7 @@ function WorkExperience() {
       <SubHeading>April 2014 - February 2015</SubHeading>
       <List>
         <ListItem>
-          Leading Jossandmain.com site migration Wayfair.com platform.
+          Leading Jossandmain.com site migration to the Wayfair.com platform.
         </ListItem>
       </List>
     </Section>
