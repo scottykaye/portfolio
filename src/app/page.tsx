@@ -6,7 +6,7 @@ import { Cartridge } from '../libraries/home/Cartridge'
 
 async function getKeyboardNav(userAgent: string) {
   const octokit = new Octokit({
-    auth: `${process.env.GITHUB}`,
+    auth: `Bearer: ${process.env.GITHUB}`,
     'Content-Type': 'application/json',
     userAgent,
   })
@@ -26,7 +26,7 @@ async function getKeyboardNav(userAgent: string) {
 }
 async function getThemeHandler(userAgent: string) {
   const octokit = new Octokit({
-    auth: `${process.env.GITHUB}`,
+    auth: `Bearer: ${process.env.GTHUB}`,
     'Content-Type': 'application/json',
     userAgent,
   })
@@ -35,7 +35,7 @@ async function getThemeHandler(userAgent: string) {
       'GET /repos/scottykaye/theme-handler',
       {
         owner: 'scottykaye',
-        repo: 'keyboard-navigation',
+        repo: 'theme-handler',
       },
     )
 
@@ -45,18 +45,26 @@ async function getThemeHandler(userAgent: string) {
   }
 }
 
-async function getStargazersData(url) {
-  const fetchData = fetch(url)
+async function getStargazersData(url: string) {
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error('Error fetching stargazers')
+  }
+
+  let data
 
   try {
-    const data = await fetchData
-    const response = data.json()
+    data = response.json()
 
-    return response
+    return data
   } catch (e) {
-    console.log(`Error retrieving Github Stargazers data: ${e}`)
+    console.log(
+      `Error retrieving Github Stargazers data: ${e.message as Error}`,
+    )
   }
 }
+
 const getKeyboardNavData = cache(getKeyboardNav)
 const getThemeHandlerData = cache(getThemeHandler)
 const getStargazers = cache(getStargazersData)
