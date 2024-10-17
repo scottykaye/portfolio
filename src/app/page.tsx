@@ -6,7 +6,7 @@ import { Cartridge } from '../libraries/home/Cartridge'
 
 async function getKeyboardNav(userAgent: string) {
   const octokit = new Octokit({
-    auth: `Bearer: ${process.env.GITHUB}`,
+    auth: `${process.env.GITHUB}`,
     'Content-Type': 'application/json',
     userAgent,
   })
@@ -26,7 +26,7 @@ async function getKeyboardNav(userAgent: string) {
 }
 async function getThemeHandler(userAgent: string) {
   const octokit = new Octokit({
-    auth: `Bearer: ${process.env.GTHUB}`,
+    auth: `${process.env.GTHUB}`,
     'Content-Type': 'application/json',
     userAgent,
   })
