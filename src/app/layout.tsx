@@ -123,11 +123,10 @@ export default function RootLayout({
             </Link>
           </div>
           <MainNav>
-            {/*
-    <li className="Nav-item">
-                  <MainNavLink href="/blog">Thoughts</MainNavLink>
-                              </li>
-        */}
+            <li className="Nav-item">
+              <MainNavLink href="/blog">Thoughts</MainNavLink>
+            </li>
+
             <li className="Nav-item">
               <MainNavLink href="/resume">Resume</MainNavLink>
             </li>

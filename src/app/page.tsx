@@ -4,68 +4,59 @@ import { headers as nextHeaders } from 'next/headers'
 import Image from 'next/image'
 import { Cartridge } from '../libraries/home/Cartridge'
 
-async function getKeyboardNav(userAgent: string) {
+async function fetchRepo({
+  repo,
+  userAgent,
+}: {
+  repo: string
+  userAgent: string
+}) {
   const octokit = new Octokit({
-    auth: `${process.env.GITHUB}`,
+    auth: process.env.GITHUB,
     'Content-Type': 'application/json',
     userAgent,
   })
   try {
-    const { data } = await octokit.request(
-      'GET /repos/scottykaye/keyboard-navigation',
-      {
-        owner: 'scottykaye',
-        repo: 'keyboard-navigation',
-      },
-    )
+    const { data } = await octokit.request(`GET /repos/scottykaye/${repo}`, {
+      owner: 'scottykaye',
+      repo,
+    })
 
     return data
   } catch (e) {
-    console.log(`Error retrieving Github data: ${e}`)
+    console.log(`Error retrieving github data: ${e.message as Error}`)
   }
 }
-async function getThemeHandler(userAgent: string) {
-  const octokit = new Octokit({
-    auth: `${process.env.GITHUB}`,
-    'Content-Type': 'application/json',
-    userAgent,
-  })
+
+async function getStargazersData(url: string) {
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error('Error fetching stargazers')
+  }
+
+  let data
+
   try {
-    const { data } = await octokit.request(
-      'GET /repos/scottykaye/theme-handler',
-      {
-        owner: 'scottykaye',
-        repo: 'keyboard-navigation',
-      },
-    )
+    data = response.json()
 
     return data
   } catch (e) {
-    console.log(`Error retrieving Github data: ${e}`)
+    console.log(`Error retrieving stargazers data: ${e.message as Error}`)
   }
 }
 
-async function getStargazersData(url) {
-  const fetchData = fetch(url)
-
-  try {
-    const data = await fetchData
-    const response = data.json()
-
-    return response
-  } catch (e) {
-    console.log(`Error retrieving Github Stargazers data: ${e}`)
-  }
-}
-const getKeyboardNavData = cache(getKeyboardNav)
-const getThemeHandlerData = cache(getThemeHandler)
+const getRepo = cache(fetchRepo)
 const getStargazers = cache(getStargazersData)
 
 export default async function HomePage() {
   const headers = nextHeaders()
   const [keyboardNavData, themeHandlerData] = await Promise.allSettled([
-    getKeyboardNavData(headers.get('user-agent')),
-    getThemeHandlerData(headers.get('user-agent')),
+    getRepo({
+      repo: 'accessible-navigation',
+      userAgent: headers.get('user-agent'),
+    }),
+    getRepo({ repo: 'theme-handler', userAgent: headers.get('user-agent') }),
   ])
 
   let keyboardNav
