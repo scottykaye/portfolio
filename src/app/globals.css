@@ -22,13 +22,9 @@
   --disabled: 204 214 217;
   --inverse: 0 0 0;
   --radius: 8px;
-  --gradient: radial-gradient(
-    circle farthest-corner at 18.7% 37.8%,
-    rgba(250, 250, 250, 1) 0%,
-    rgba(225, 234, 238, 1) 90%
-  );
+  --bg: 230 230 230;
+  --gradient: radial-gradient(rgba(250, 250, 250, 1) 0%, rgb(var(--bg)) 100%);
 
-  --bg: hsl(0, 0%, 90%);
   --bg-secondary: hsl(0, 0%, 80%);
   --glow: hsla(0, 0%, 20%, 0.15);
   --glow-secondary: hsla(0, 0%, 0%, 0.15);
@@ -50,11 +46,8 @@
     --border: 255 255 255;
 
     --inverse: 255 255 255;
-    --gradient: radial-gradient(
-      circle 815px at 23.4% -21.8%,
-      rgba(9, 29, 85, 1) 0.2%,
-      rgba(0, 0, 0, 1) 100.2%
-    );
+    --bg: 0 0 0;
+    --gradient: radial-gradient(rgba(20, 20, 20, 1) 2%, rgba(var(--bg) 1) 100%);
 
     --bg: hsl(0, 0%, 10%);
     --bg-secondary: hsl(0, 0%, 20%);
@@ -79,6 +72,7 @@ body {
     arial,
     sans-serif;
   color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--bg));
   background-image: var(--gradient);
   background-attachment: fixed;
   display: grid;
@@ -102,13 +96,13 @@ ul {
   border-block-start: 0.25rem solid transparent;
   inset-inline: 0;
   inset-block-end: 0;
-  border-color: var(--primary);
+  border-color: rgb(var(--primary));
   z-index: 1;
   scale: 0 1;
   transition: scale 0.2s;
 }
 
-.Nav-link:hover::before,
+.Nav-link:is(:hover, :focus)::before,
 .Nav-link.isActive::before {
   scale: 1;
 }
@@ -232,11 +226,6 @@ ul {
 .Title {
   font-size: 2.5rem;
   font-weight: 700;
-  /* background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(255, 94, 247, 1) 17.8%,
-    rgba(2, 245, 255, 1) 100.2%
-  ); */
   filter: drop-shadow(0 2px 1px rgb(var(--black)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -309,15 +298,18 @@ ul {
     var(--glow) 0px 10px 0px -22px inset,
     var(--glow-secondary) 0px 8px 6px -1px inset;
   border-radius: var(--radius);
+  /* this is a helpful trick for the shaping but kills focus ring */
   clip-path: polygon(90% 0, 90% 5%, 100% 5%, 100% 100%, 0% 100%, 0% 0%);
   transition: 0.6s ease transform;
 }
-
-.cartridge-container:hover {
+.cartridge-container:focus {
+  outline-offset: 10px;
+}
+.cartridge-container:is(:hover, :focus) {
   transform: perspective(800px) rotateY(-15deg) translateY(-50px) rotateX(10deg)
     scale(1);
 }
-.cartridge-container:hover .cartridge {
+.cartridge-container:is(:hover, :focus) .cartridge {
   translate: -0.5rem -0.5rem;
 }
 
