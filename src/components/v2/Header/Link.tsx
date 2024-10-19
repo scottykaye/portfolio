@@ -75,7 +75,7 @@ export function MainNavLink(props: LinkProps & { children: ReactNode }) {
     <CustomLink
       as={NextLink}
       {...rest}
-      className="Nav-link block relative rounded-md overflow-clip outline-offset-4 p-4 m-1 focus-visible:bg-gray-500/50 hover:bg-gray-500/50 transition-all mix-blend-difference active:translate-y-1"
+      className="Nav-link block relative rounded-md overflow-clip outline-offset-4 p-4 m-1 [&:is(:hover, :focus-visible)]:bg-gray-500/50 transition-all mix-blend-difference active:translate-y-1"
       ref={refs}
       onKeyDown={handleKeyDown}
     >

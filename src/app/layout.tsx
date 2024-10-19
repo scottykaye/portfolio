@@ -81,36 +81,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/*
-      Older handling of metadata, here in case I made a  mistake
-
-      <head>
-        <link
-          rel="icon"
-          href={`/images/${
-            process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
-          }favicon.ico`}
-          sizes="any"
-        />
-
-        <link
-          rel="icon"
-          href={`/images/${
-            process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
-          }/favicon?<generated>`}
-          type="image/<generated>"
-          sizes="<generated>"
-        />
-        <link
-          rel="apple-touch-icon"
-          href={`/images/${
-            process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
-          }/apple-touch-icon?<generated>`}
-          type="image/<generated>"
-          sizes="<generated>"
-        />
-      </head>
-    */}
       <body className={clsx(montserrat.className, montserrat.variable)}>
         <Header className="print:hidden">
           <div className="flex">
