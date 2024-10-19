@@ -10,11 +10,11 @@
   --background-start-rgb: 214 219 220;
   --background-end-rgb: 255 255 255;
   --background-hsl: 240 20% 15%;
-  --primary: 81 65 79;
+  --primary: 69 32 64;
   --secondary: 48 212 253;
   --tertiary: 253 48 117;
   --background: 255 255 255;
-  --border: 33 33 33;
+  --border: 210 210 210;
   --gray: 85 85 85;
   --base: 255 255 255;
   --white: 255 255 255;
@@ -39,11 +39,11 @@
     --foreground-rgb: 255 255 255;
     --background-start-rgb: 0 0 0;
     --background-end-rgb: 0 0 0;
-    --primary: 255 235 32;
+    --primary: 255 200 32;
     --secondary: 48 212 253;
     --tertiary: 253 48 117;
     --background: 0 0 0;
-    --border: 255 255 255;
+    --border: 33 33 33;
 
     --inverse: 255 255 255;
     --bg: 0 0 0;
@@ -64,6 +64,10 @@ body {
 }
 html {
   scroll-behavior: smooth;
+}
+
+:is(a, button):focus {
+  outline-color: rgb(245, 66, 123);
 }
 
 body {
@@ -163,11 +167,11 @@ ul {
   overflow: clip;
   scale: 0 1;
 }
-.Header:hover .Logo {
+.Header:is(:hover, :focus-within) .Logo {
   border-color: rgb(var(--primary));
 }
-.Header:hover .Logo::before,
-.Header:hover .Logo::after {
+.Header:is(:hover, :focus-within) .Logo::before,
+.Header:is(:hover, :focus-within) .Logo::after {
   scale: 1;
 }
 .Logo:focus-visible::before,
@@ -324,8 +328,9 @@ ul {
     var(--bg) 0%,
     var(--bg-secondary) 100%
   );
-  min-height: 20rem;
-  max-width: 22rem;
+  max-width: 40rem;
+  min-height: min(100vw, 20rem);
+  aspect-ratio: 1;
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
@@ -335,7 +340,6 @@ ul {
     0.6s ease transform,
     0.6s ease translate;
   overflow: clip;
-  aspect-ratio: 1 / 1.1;
 }
 .cartridge::before,
 .cartridge::after {
@@ -363,7 +367,7 @@ ul {
 .top {
   border-radius: 2.5rem;
   background: var(--bg);
-  height: 5rem;
+  min-height: clamp(5rem, 3vw 10rem);
   margin: 1rem 2.5rem 0;
   outline: 0.25rem solid var(--bg);
   box-shadow:
@@ -453,7 +457,7 @@ ul {
     var(--glow) 0px 30px 30px -12px inset,
     var(--glow-secondary) 0px 18px 20px -8px inset;
   color: rgb(0, 0, 0);
-  font-size: 14px;
+  font-size: clamp(0.5rem, 3vw, 2rem);
   overflow: clip;
 }
 .content::before {
