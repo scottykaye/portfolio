@@ -19,10 +19,10 @@ const SIZES = {
 }
 
 const HEADING = {
-  h1: 'text-4xl',
-  h2: 'text-3xl',
-  h3: 'text-2xl',
-  h4: 'text-xl',
+  h1: 'text-3xl',
+  h2: 'text-2xl',
+  h3: 'text-xl',
+  h4: 'text-lg',
   h5: 'text-md',
   h6: 'text-md',
 } as const
@@ -54,6 +54,7 @@ export default function Heading({
     <Tag
       className={cn(
         size ? SIZES[size as SizeOption] : classSize,
+        'text-primary font-bold',
         'text-pretty',
         className,
       )}

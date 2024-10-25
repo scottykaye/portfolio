@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Scotty Kaye',
     siteName: 'Scotty Kaye',
-    description: 'Scotty Kaye | Staff Frontend Software Engineer',
+    description: 'Scotty Kaye | Staff Software Engineer',
     url: 'https://scottykaye.com',
   },
   twitter: {
