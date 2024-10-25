@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 
 import Link from 'next/link'
+
 export default function Blog() {
   const blogDir = 'src/blog'
 
