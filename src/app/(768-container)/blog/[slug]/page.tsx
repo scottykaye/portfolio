@@ -6,6 +6,19 @@ import Heading from '@components/v2/Heading'
 import Link from '@root/src/components/Link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}) {
+  const props = getPost(params)
+
+  return {
+    title: props.frontMatter.title,
+    description: props.frontMatter.description,
+  }
+}
+
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join('src/blog'))
 
@@ -46,7 +59,7 @@ const components = {
   a: (props) => <Link {...props} />,
 }
 
-export default function Post({ params }: any) {
+export default function Post({ params }: { params: { slug: string } }) {
   const props = getPost(params)
 
   return (
