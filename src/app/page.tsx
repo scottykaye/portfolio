@@ -118,9 +118,31 @@ export default async function HomePage() {
             <span className="block">{`I'm Scotty Kaye`}</span>
           </span>
         </h1>
-        <p className="About Title bg-gradient-to-bl from-white to-rose-200 max-w-3xl text-center text-balance relative top-0 grid -translate-y-full place-items-center place-content-center gap-2 p-5 mx-auto">
+        <p className="text-[2.5rem] font-bold drop-shadow-[0_2px_1px_rgb(var(--black))] About text-white max-w-3xl text-center text-balance relative top-0 grid -translate-y-full place-items-center place-content-center gap-2 p-5 mx-auto">
           {`I'm a Staff Software Engineer with a strong foundation in UX & UI.`}
+          <a
+            href="https://twitter.com/intent/follow?screen_name=scottykaye"
+            aria-label="Follow Scotty Kaye on Twitter (opens in new window)"
+            target="_blank"
+            className="flex gap-2 place-items-center text-sm mt-5 rounded-[5rem]  outline-offset-4 p-4 [&:is(:hover,:focus-visible)]:bg-gray-500/50 transition-[transform,background-color] active:translate-y-1"
+          >
+            Follow
+            <svg
+              className="fill-current"
+              aria-hidden="true"
+              role="graphic-symbol"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <title>Twitter</title>
+              <desc>Follow ScottyKaye on Twitter</desc>
+              <path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-3.594-1.555c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 3.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 4.557z" />
+            </svg>
+          </a>
         </p>
+        <li className="Nav-item"></li>
       </div>
       <section className="HomeGrid grid max-w-3xl mx-auto relative -inset-y-80 px-5">
         <h2 className="sticky mix-blend-difference bg-inverse/80 backdrop-blur top-28 z-10 p-2 mt-40 text-2xl font-bold mb-5 rounded inline-flex mr-auto">
