@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/images/icons/twitter-card.png',
+        url: '/images/icons/scottykaye-twitter.png',
         width: 600,
         height: 314,
         alt: 'Scotty Kaye | Staff Sofware Engineer',
