@@ -89,13 +89,16 @@ export default function Post({ params }: { params: { slug: string } }) {
 
   return (
     <article>
+      <Image
+        src={props.frontMatter.image}
+        width={props.frontMatter.width}
+        height={props.frontMatter.height}
+        alt={props.frontMatter.title}
+      />
+
       <Heading is="h1" className="mb-5">
         {props.frontMatter.title}
       </Heading>
-      <Heading is="h1" className="mb-5">
-        {props.frontMatter.title}
-      </Heading>
-      <Image src={props.frontMatter.image} alt={props.frontMatter.title} />
 
       <MDXRemote source={props.content} components={components} />
     </article>

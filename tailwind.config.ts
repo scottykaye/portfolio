@@ -35,6 +35,9 @@ const config = {
           DEFAULT: 'rgb(var(--background))',
           opaque: 'rgb(var(--background) / .6)',
         },
+        surface: {
+          DEFAULT: 'var(--surface)',
+        },
         primary: {
           DEFAULT: 'rgb(var(--primary))',
           foreground: 'rgb(var(--primary-foreground))',
