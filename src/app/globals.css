@@ -29,6 +29,9 @@
 
   --bg-secondary: hsl(0, 0%, 80%);
   --surface: hsl(0, 0%, 90%);
+  --surface-background-100: hsl(0, 0%, 90%);
+  --surface-background-200: hsl(0, 0%, 80%);
+  --surface-background-300: hsl(0, 0%, 70%);
   --glow: hsla(0, 0%, 20%, 0.15);
   --glow-secondary: hsla(0, 0%, 0%, 0.15);
   --text: hsl(0, 0%, 90%);
@@ -54,6 +57,9 @@
     --bg-cart: hsl(0, 0%, 10%);
     --bg-secondary: hsl(0, 0%, 20%);
     --surface: hsl(0, 0%, 10%);
+    --surface-background-100: hsl(0, 0%, 10%);
+    --surface-background-200: hsl(0, 0%, 20%);
+    --surface-background-300: hsl(0, 0%, 30%);
     --glow: hsla(0, 0%, 80%, 0.15);
     --glow-secondary: hsla(0, 0%, 100%, 0.15);
     --body-bg: hsl(0, 0%, 0%);
