@@ -5,6 +5,7 @@ import List, { ListItem } from '@components/List'
 import Heading from '@components/v2/Heading'
 import Link from '@root/src/components/Link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import Image from 'next/image'
 
 export async function generateMetadata({
   params,
@@ -27,12 +28,17 @@ export async function generateMetadata({
       type: 'website',
       locale: 'en_US',
       images: [
-        {
-          url: '/images/scottykaye-bg.jpg',
-          width: 5472,
-          height: 3648,
-          alt: 'Scotty Kaye | Staff Software Engineer',
-        },
+        props.frontMatter.image
+          ? {
+              url: props.frontMatter.image,
+              alt: 'Scotty Kaye | Staff Software Engineer',
+            }
+          : {
+              url: '/images/scottykaye-bg.jpg',
+              width: 5472,
+              height: 3648,
+              alt: 'Scotty Kaye | Staff Software Engineer',
+            },
       ],
     },
   }
@@ -86,6 +92,10 @@ export default function Post({ params }: { params: { slug: string } }) {
       <Heading is="h1" className="mb-5">
         {props.frontMatter.title}
       </Heading>
+      <Heading is="h1" className="mb-5">
+        {props.frontMatter.title}
+      </Heading>
+      <Image src={props.frontMatter.image} alt={props.frontMatter.title} />
 
       <MDXRemote source={props.content} components={components} />
     </article>
