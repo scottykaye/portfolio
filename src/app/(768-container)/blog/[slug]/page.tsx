@@ -43,6 +43,26 @@ export async function generateMetadata({
             },
       ],
     },
+    twitter: {
+      site: '@scottykaye',
+      card: 'summary_large_image',
+      creator: '@scottykaye',
+      images: [
+        props.frontMatter.image
+          ? {
+              url: props.frontMatter.image,
+              alt: 'Scotty Kaye | Staff Software Engineer',
+              width: props.frontMatter.width ? props.frontMatter.width : 800,
+              height: props.frontMatter.height ? props.frontMatter.height : 400,
+            }
+          : {
+              url: '/images/icons/scottykaye-twitter.png',
+              width: 600,
+              height: 314,
+              alt: 'Scotty Kaye | Staff Software Engineer',
+            },
+      ],
+    },
   }
 }
 
