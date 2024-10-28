@@ -18,6 +18,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://scottykaye.com'),
   title: {
     default: 'Scotty Kaye',
     template: '%s | Scotty Kaye',
@@ -26,14 +27,14 @@ export const metadata: Metadata = {
     'Scotty Kaye is a Frontend Software Engineer located in Boston, Massachusetts with a strong background in UI, React, Accessibility and Next.js',
   icons: [
     {
-      url: `/images/${
+      url: `/images/icons/${
         process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
       }favicon.ico`,
       type: 'image/x-icon',
       sizes: '48x48',
     },
     {
-      url: `/images/${
+      url: `/images/icons/${
         process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
       }favicon-32x32.png`,
       type: 'image/png',
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     },
 
     {
-      url: `/images/${
+      url: `/images/icons/${
         process.env.DEV === 'local' ? 'scottykaye-dev/' : ''
       }favicon-16x16.png`,
       type: 'image/png',
@@ -49,22 +50,38 @@ export const metadata: Metadata = {
     },
     {
       rel: 'apple-touch-icon',
-      url: '/images/apple-touch-icon.png',
+      url: `/images/icons/apple-touch-icon.png`,
       sizes: '180x180',
     },
   ],
   openGraph: {
-    type: 'website',
     title: 'Scotty Kaye',
-    siteName: 'Scotty Kaye',
     description: 'Scotty Kaye | Staff Software Engineer',
     url: 'https://scottykaye.com',
+    siteName: 'Scotty Kaye',
+    type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/images/scottykaye-bg.jpg',
+        width: 5472,
+        height: 3648,
+        alt: 'Scotty Kaye | Staff Software Engineer',
+      },
+    ],
   },
   twitter: {
+    site: '@scottykaye',
     card: 'summary_large_image',
-    site: '@site',
-    creator: '@creator',
-    images: '/images/scottykaye-twitter.png',
+    creator: '@scottykaye',
+    images: [
+      {
+        url: '/images/icons/scottykaye-twitter.png',
+        width: 600,
+        height: 314,
+        alt: 'Scotty Kaye | Staff Software Engineer',
+      },
+    ],
   },
 }
 
