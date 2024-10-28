@@ -18,6 +18,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://scottykaye.com'),
   title: {
     default: 'Scotty Kaye',
     template: '%s | Scotty Kaye',
@@ -49,21 +50,30 @@ export const metadata: Metadata = {
     },
     {
       rel: 'apple-touch-icon',
-      url: '/images/apple-touch-icon.png',
+      url: `/images/apple-touch-icon.png`,
       sizes: '180x180',
     },
   ],
   openGraph: {
-    type: 'website',
     title: 'Scotty Kaye',
-    siteName: 'Scotty Kaye',
     description: 'Scotty Kaye | Staff Software Engineer',
     url: 'https://scottykaye.com',
+    siteName: 'Scotty Kaye',
+    type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/images/twitter-card.png',
+        width: 600,
+        height: 314,
+        alt: 'Scotty Kaye | Staff Sofware Engineer',
+      },
+    ],
   },
   twitter: {
+    site: '@scottykaye',
     card: 'summary_large_image',
-    site: '@site',
-    creator: '@creator',
+    creator: '@scottykaye',
     images: '/images/scottykaye-twitter.png',
   },
 }
