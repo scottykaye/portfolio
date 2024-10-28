@@ -94,6 +94,7 @@ export default function Post({ params }: { params: { slug: string } }) {
         width={props.frontMatter.width}
         height={props.frontMatter.height}
         alt={props.frontMatter.title}
+        className="mb-10"
       />
 
       <Heading is="h1" className="mb-5">
