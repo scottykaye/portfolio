@@ -3,7 +3,6 @@ import { Octokit } from 'octokit'
 import { headers as nextHeaders } from 'next/headers'
 import Image from 'next/image'
 import { Cartridge } from '../libraries/home/Cartridge'
-import { Button } from '@/components/Button'
 
 async function fetchRepo({
   repo,
