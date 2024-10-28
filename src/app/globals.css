@@ -10,6 +10,7 @@
   --background-start-rgb: 214 219 220;
   --background-end-rgb: 255 255 255;
   --background-hsl: 240 20% 15%;
+
   --primary: 69 32 64;
   --secondary: 48 212 253;
   --tertiary: 253 48 117;
@@ -21,16 +22,16 @@
   --black: 0 0 0;
   --disabled: 204 214 217;
   --inverse: 0 0 0;
-  --radius: 8px;
+  --radius: 1rem;
   --bg: 230 230 230;
   --bg-cart: hsl(0, 0%, 90%);
   --gradient: radial-gradient(rgba(250, 250, 250, 1) 0%, rgb(var(--bg)) 100%);
 
   --bg-secondary: hsl(0, 0%, 80%);
+  --surface: hsl(0, 0%, 90%);
   --glow: hsla(0, 0%, 20%, 0.15);
   --glow-secondary: hsla(0, 0%, 0%, 0.15);
   --text: hsl(0, 0%, 90%);
-  --radius: 0.5rem;
   --body-bg: hsl(0, 0%, 100%);
   --container-cartridge: hsl(0, 0%, 90%);
 }
@@ -52,6 +53,7 @@
 
     --bg-cart: hsl(0, 0%, 10%);
     --bg-secondary: hsl(0, 0%, 20%);
+    --surface: hsl(0, 0%, 10%);
     --glow: hsla(0, 0%, 80%, 0.15);
     --glow-secondary: hsla(0, 0%, 100%, 0.15);
     --body-bg: hsl(0, 0%, 0%);

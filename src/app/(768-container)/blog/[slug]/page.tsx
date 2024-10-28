@@ -5,6 +5,7 @@ import List, { ListItem } from '@components/List'
 import Heading from '@components/v2/Heading'
 import Link from '@root/src/components/Link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import Image from 'next/image'
 
 export async function generateMetadata({
   params,
@@ -27,12 +28,19 @@ export async function generateMetadata({
       type: 'website',
       locale: 'en_US',
       images: [
-        {
-          url: '/images/scottykaye-bg.jpg',
-          width: 5472,
-          height: 3648,
-          alt: 'Scotty Kaye | Staff Software Engineer',
-        },
+        props.frontMatter.image
+          ? {
+              url: props.frontMatter.image,
+              alt: 'Scotty Kaye | Staff Software Engineer',
+              width: props.frontMatter.width ? props.frontMatter.width : 800,
+              height: props.frontMatter.height ? props.frontMatter.height : 400,
+            }
+          : {
+              url: '/images/scottykaye-bg.jpg',
+              width: 5472,
+              height: 3648,
+              alt: 'Scotty Kaye | Staff Software Engineer',
+            },
       ],
     },
   }
@@ -69,11 +77,11 @@ const components = {
   h1: (props) => (
     <Heading className="mb-5" color="primary" is="h1" {...props} />
   ),
-  h2: (props) => <Heading className="mb-5" {...props} />,
-  h3: (props) => <Heading className="mb-5" is="h3" {...props} />,
-  h4: (props) => <Heading className="mb-5" is="h4" {...props} />,
-  h5: (props) => <Heading className="mb-5" is="h5" {...props} />,
-  h6: (props) => <Heading className="mb-5" is="h6" {...props} />,
+  h2: (props) => <Heading className="mt-10 mb-5" {...props} />,
+  h3: (props) => <Heading className="mt-10 mb-5" is="h3" {...props} />,
+  h4: (props) => <Heading className="mt-10 mb-5" is="h4" {...props} />,
+  h5: (props) => <Heading className="mt-10 mb-5" is="h5" {...props} />,
+  h6: (props) => <Heading className="mt-10 mb-5" is="h6" {...props} />,
   p: (props) => <p className="mb-5" {...props} />,
   a: (props) => <Link {...props} />,
 }
@@ -83,6 +91,14 @@ export default function Post({ params }: { params: { slug: string } }) {
 
   return (
     <article>
+      <Image
+        src={props.frontMatter.image}
+        width={props.frontMatter.width}
+        height={props.frontMatter.height}
+        alt={props.frontMatter.title}
+        className="mb-10"
+      />
+
       <Heading is="h1" className="mb-5">
         {props.frontMatter.title}
       </Heading>
