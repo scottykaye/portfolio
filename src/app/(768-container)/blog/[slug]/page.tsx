@@ -31,7 +31,7 @@ export async function generateMetadata({
           url: '/images/icons/scottykaye-twitter.png',
           width: 600,
           height: 314,
-          alt: 'Scotty Kaye | Staff Sofware Engineer',
+          alt: 'Scotty Kaye | Staff Software Engineer',
         },
       ],
     },
