@@ -32,6 +32,8 @@ export async function generateMetadata({
           ? {
               url: props.frontMatter.image,
               alt: 'Scotty Kaye | Staff Software Engineer',
+              width: props.frontMatter.width ? props.frontMatter.width : 800,
+              height: props.frontMatter.height ? props.frontMatter.height : 400,
             }
           : {
               url: '/images/scottykaye-bg.jpg',
@@ -75,11 +77,11 @@ const components = {
   h1: (props) => (
     <Heading className="mb-5" color="primary" is="h1" {...props} />
   ),
-  h2: (props) => <Heading className="mb-5" {...props} />,
-  h3: (props) => <Heading className="mb-5" is="h3" {...props} />,
-  h4: (props) => <Heading className="mb-5" is="h4" {...props} />,
-  h5: (props) => <Heading className="mb-5" is="h5" {...props} />,
-  h6: (props) => <Heading className="mb-5" is="h6" {...props} />,
+  h2: (props) => <Heading className="mt-10 mb-5" {...props} />,
+  h3: (props) => <Heading className="mt-10 mb-5" is="h3" {...props} />,
+  h4: (props) => <Heading className="mt-10 mb-5" is="h4" {...props} />,
+  h5: (props) => <Heading className="mt-10 mb-5" is="h5" {...props} />,
+  h6: (props) => <Heading className="mt-10 mb-5" is="h6" {...props} />,
   p: (props) => <p className="mb-5" {...props} />,
   a: (props) => <Link {...props} />,
 }
