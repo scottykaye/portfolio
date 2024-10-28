@@ -28,9 +28,9 @@ export async function generateMetadata({
       locale: 'en_US',
       images: [
         {
-          url: '/images/icons/scottykaye-twitter.png',
-          width: 600,
-          height: 314,
+          url: '/images/scottykaye-bg.jpg',
+          width: 5472,
+          height: 3648,
           alt: 'Scotty Kaye | Staff Software Engineer',
         },
       ],
