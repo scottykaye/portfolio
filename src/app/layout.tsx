@@ -63,10 +63,10 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/images/icons/scottykaye-twitter.png',
-        width: 600,
-        height: 314,
-        alt: 'Scotty Kaye | Staff Sofware Engineer',
+        url: '/images/scottykaye-bg.jpg',
+        width: 5472,
+        height: 3648,
+        alt: 'Scotty Kaye | Staff Software Engineer',
       },
     ],
   },
@@ -74,7 +74,14 @@ export const metadata: Metadata = {
     site: '@scottykaye',
     card: 'summary_large_image',
     creator: '@scottykaye',
-    images: '/images/icons/scottykaye-twitter.png',
+    images: [
+      {
+        url: '/images/icons/scottykaye-twitter.png',
+        width: 600,
+        height: 314,
+        alt: 'Scotty Kaye | Staff Software Engineer',
+      },
+    ],
   },
 }
 

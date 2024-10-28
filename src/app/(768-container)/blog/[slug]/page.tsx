@@ -14,8 +14,27 @@ export async function generateMetadata({
   const props = getPost(params)
 
   return {
-    title: props.frontMatter.title,
+    title: {
+      default: 'Scotty Kaye',
+      template: '%s | Scotty Kaye',
+    },
     description: props.frontMatter.description,
+    openGraph: {
+      title: `${props.frontMatter.title} | Scotty Kaye`,
+      description: props.frontMatter.description,
+      url: 'https://scottykaye.com',
+      siteName: 'Scotty Kaye',
+      type: 'website',
+      locale: 'en_US',
+      images: [
+        {
+          url: '/images/icons/scottykaye-twitter.png',
+          width: 600,
+          height: 314,
+          alt: 'Scotty Kaye | Staff Sofware Engineer',
+        },
+      ],
+    },
   }
 }
 
