@@ -9,42 +9,30 @@ width: '1600'
 height: '800'
 ---
 
-My background in web development was primarily HTML and CSS. I saw myself as a
-CSS expert early on in my career. When I first was introduced to tailwind I was
-initially skeptical, but that was until I built a few projects with it and saw
-the pros drastically out weigh the cons.
+Early in my career, my background was in web development with a focus on HTML &
+CSS. When I first was introduced to Tailwind I was initially skeptical. However,
+using it in different projects, I quickly realized that the advantages outweigh
+the disadvantages.
 
 ## Utility first approach
 
-One of the main differences but advantages of Tailwind is the utility first
-approach. Tailwind allows you to use predefined class names directly in your
-code.
+One of the main differences of Tailwind is the utility first approach. Tailwind
+allows you to leverage predefined class names directly in your code.
 
-Folks who prefer, a modular approach to CSS are often turned off at this. I
-myself felt this way at first even with experience to both utility and modular
-approaches. I find those who are really deep into CSS like the freedom that
-comes with a modular approach as it feels fresh and separates concerns.
+This is the first point of contention for folks who prefer a modular approach to
+CSS. I felt this way at first even with experience using both utility class and
+modular approaches. Those who are really deeply interested in CSS like the
+freedom that comes with a modular approach as it feels fresh and creates a
+separation of concerns.
 
-The biggest argument and long running joke against tailwind are super long class
-names.
+The most important benefit Tailwind provides leverages the utility class first
+approach. Tailwind classes are tied to single or in some cases two or three CSS
+declarations. This allows the style sheet to only record declarations once.
 
-There are many approaches to managing this:
-
-- Using a [clsx](https://www.npmjs.com/package/clsx) function to create arrays
-  of strings to manage organization.
-- Creating constants and use them in your class names or clsx functions.
-- Using sorting mechanisms to reduce friction of class name changes.
-
-This allows you the opportunity to organize class names similar to how you may
-want to organize modular styles.
-
-The most important benefit Tailwind provides by this utility class first
-approach is since classes are tied to single or a few CSS dthat it only has to
-record a class declarations, it only has to record them once in the style sheet.
-
-For example, if you use `display: flex` or `margin: 1rem` multiple times in
-classes in your modular style sheets, those are only recorded once in your CSS
-style sheet with Tailwind, reducing the cost of size of a style sheet.
+For example, with modular styles you will declare declarations like
+`display: flex` or `margin: 1rem` repeatedly in classes where using Tailwind
+declarations are recorded once in your style sheet reducing the cost of size of
+the overall size of the styles you need to bundle to your browser.
 
 ```jsx
 // Tailwind - These two classes are reused every time you use these CSS declarations
@@ -69,23 +57,44 @@ style sheet with Tailwind, reducing the cost of size of a style sheet.
 
 ```
 
-By definition, we will always have leaner styles heets using Tailwind due to
-this approach.
+By definition, we will always have leaner style sheets using Tailwind due to
+this approach. We can do more with recording less and allows us to move faster
+without the need to be concerned about how many styles we are using.
+
+The utility first approach makes it easier for users to adhere to standards with
+themes. By providing classes out of the box, it is more likely that users of
+your system will stick to the conventions set by the team. When given the chance
+to write a new style sheet, engineers are more likely try to solve a problem
+using unique values or different units and not sticking to variables and best
+practices.
+
+Providing class names for engineers who may be less confident with CSS who may
+need to set layout or make small CSS tweaks, are more likely to be successful
+when they don't have to understand the entire ecosystem of style sheets to get
+their feature across the finish line.
+
+Tailwind still provides flexibility to break out of any utility class and
+provide custom declarations:
+
+```jsx
+<div className="grid grid-cols-[200px,1fr]">...</div>
+```
 
 ## Customization
 
 Tailwind supports endless customization, you can easily customize your
-configurations:
+configuration:
 
-- Configuration
 - Specify files that use Tailwind
-- Custom themeing
+- Themes
 - Screen sizes
 - Spacing
 - Colors
 - Typography
 - Countless plugins
-- Presets for your default theme
+- Reusable presets
+
+Anything you can do in CSS you can configure Tailwind to handle.
 
 ## Prototyping
 
@@ -116,13 +125,6 @@ Tailwind currently has over 82K stars on GitHub and is actively growing. There's
 huge community support around this styling library with many trusted
 contributors and active [plugins](https://tailwindcss.com/docs/plugins).
 
-## Where I think it's acceptable to prefer Modular styles
-
-Tailwind can be incredibly fast. It's not just faster than vanilla CSS. It'sa
-
-It alleviates some of the somewhat "harder" problems of CSS. Structure,
-performance, splitting, etc.
-
 Simply put, being a successful developer or engineer reuqires a willing to try
 new things.
 
@@ -135,3 +137,18 @@ toolkit. For me currently, I've been using Tailwind CSS whenever I spin up a new
 app. 😁 I do still use CSS and regular styles in my quick
 [Codepen's](https://codepen.io/scottykaye) and when Tailwind might not have a
 class out of the box for prototyping.
+
+####
+
+The biggest argument and longest running joke against Tailwind are super long
+class names.
+
+There are many approaches to managing this:
+
+- Using a [clsx](https://www.npmjs.com/package/clsx) function to create arrays
+  of strings to manage organization.
+- Creating constants and use them in your class names or clsx functions.
+- Using sorting mechanisms to reduce friction of class name changes.
+
+This allows you the opportunity to organize class names similar to how you may
+want to organize modular styles.

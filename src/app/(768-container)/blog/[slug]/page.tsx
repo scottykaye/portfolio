@@ -100,8 +100,8 @@ function getPost({ slug }: { slug: string }) {
 }
 
 const components = {
-  List,
-  ListItem,
+  ul: (props) => <ul className="my-5" {...props} />,
+  li: (props) => <li className="mb-2" {...props} />,
   h1: (props) => (
     <Heading className="mb-5" color="primary" is="h1" {...props} />
   ),
