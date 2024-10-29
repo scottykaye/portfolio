@@ -14,6 +14,44 @@ CSS. When I first was introduced to Tailwind I was initially skeptical. However,
 using it in different projects, I quickly realized that the advantages outweigh
 the disadvantages.
 
+---
+
+## Customization
+
+Tailwind supports endless customization, you can easily customize your
+configuration:
+
+- Specify files that use Tailwind
+- Themes
+- Screen sizes
+- Spacing
+- Colors
+- Typography
+- Countless plugins
+- Reusable presets
+
+Anything you can do in CSS you can configure Tailwind to handle.
+
+## Prototyping
+
+It is a tool that allows you to more rapidly prototype because you're given some
+presets that allow you to hit the ground running right away. It's important to
+remember though Tailwind is not bootstrap. Yes it comes out of the box
+unopinionated and it's a strong prototyping tool but the ability to customize it
+so heavily is there for you to form opinions on its use and how the application
+should leverage it.
+
+## Large community and ecosystem
+
+Tailwind currently has over 82K stars on GitHub and is actively growing. There's
+huge community support around this styling library with many trusted
+contributors and active [plugins](https://tailwindcss.com/docs/plugins).
+
+Simply put, being a successful developer or engineer reuqires a willing to try
+new things.
+
+---
+
 ## Utility first approach
 
 One of the main differences of Tailwind is the utility first approach. Tailwind
@@ -80,65 +118,22 @@ provide custom declarations:
 <div className="grid grid-cols-[200px,1fr]">...</div>
 ```
 
-## Customization
-
-Tailwind supports endless customization, you can easily customize your
-configuration:
-
-- Specify files that use Tailwind
-- Themes
-- Screen sizes
-- Spacing
-- Colors
-- Typography
-- Countless plugins
-- Reusable presets
-
-Anything you can do in CSS you can configure Tailwind to handle.
-
-## Prototyping
-
-It is a tool that allows you to more rapidly prototype because you're given some
-presets that allow you to hit the ground running right away. It's important to
-remember though Tailwind is not bootstrap. Yes it comes out of the box
-unopinionated and it's a strong prototyping tool but the ability to customize it
-so heavily is there for you to form opinions on its use and how the application
-should leverage it.
-
 ## Performance
 
 Where Tailwind shines most brightly is its ability to do all the hard parts of
 performance for you. Without Tailwind traditionally when running your
 application against performance metrics, (especially large enterprise
 applications) you will likely have to determine which CSS is critical or above
-the fold. Typically teams have to create a solution to the`<head/>` with
-critical CSS and immediately hydrate critical CSS. All of this is taken care of
-for you in Tailwind.
+the fold. Typically teams have to create a solution to inline styles in the
+`<head/>` of the page and immediately hydrate the critical CSS. All of this is
+taken care of for you in Tailwind.
 
-## Maintainability
+By default purging is built into Tailwind out of the box, further reducing the
+need to manually curate styles that need to be purged. Tailwind will purge all
+styles used in its `base`, `components` and `utilities` layers but also provides
+purge key mechanism to further purge.
 
-Tailwinds
-
-## Large community and ecosystem
-
-Tailwind currently has over 82K stars on GitHub and is actively growing. There's
-huge community support around this styling library with many trusted
-contributors and active [plugins](https://tailwindcss.com/docs/plugins).
-
-Simply put, being a successful developer or engineer reuqires a willing to try
-new things.
-
-Yes, Tailwind does take some of the hard parts of CSS and simplify them. CSS
-specs are becoming easier and easier to use and we tend to praise these newer
-solutions like flex, grid, etc. We should look to alternative framework
-approaches the same. Embrace change and new tools by trying them out for a
-period of time in applications or side projects and add another tool to our
-toolkit. For me currently, I've been using Tailwind CSS whenever I spin up a new
-app. 😁 I do still use CSS and regular styles in my quick
-[Codepen's](https://codepen.io/scottykaye) and when Tailwind might not have a
-class out of the box for prototyping.
-
-####
+### The weak argument against Tailwind
 
 The biggest argument and longest running joke against Tailwind are super long
 class names.
@@ -152,3 +147,15 @@ There are many approaches to managing this:
 
 This allows you the opportunity to organize class names similar to how you may
 want to organize modular styles.
+
+### Conclusion
+
+Yes, Tailwind does take some of the hard parts of CSS and simplify them. CSS
+specs are becoming easier and easier to use and we tend to praise these newer
+solutions like flex, grid, etc. We should look to alternative framework
+approaches the same. Embrace change and new tools by trying them out for a
+period of time in applications or side projects and add another tool to our
+toolkit. For me currently, I've been using Tailwind CSS whenever I spin up a new
+app. 😁 I do still use CSS and regular styles in my quick
+[Codepen's](https://codepen.io/scottykaye) and when Tailwind might not have a
+class out of the box for prototyping.
