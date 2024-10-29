@@ -6,6 +6,14 @@ import Heading from '@components/v2/Heading'
 import Link from '@root/src/components/Link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Image from 'next/image'
+import { Code } from 'bright'
+
+Code.theme = {
+  dark: 'github-dark',
+  light: 'github-light',
+  lightSelector: 'html.light',
+  darkSelector: 'html.dark',
+}
 
 export async function generateMetadata({
   params,
@@ -92,8 +100,8 @@ function getPost({ slug }: { slug: string }) {
 }
 
 const components = {
-  List,
-  ListItem,
+  ul: (props) => <ul className="my-5" {...props} />,
+  li: (props) => <li className="mb-2" {...props} />,
   h1: (props) => (
     <Heading className="mb-5" color="primary" is="h1" {...props} />
   ),
@@ -103,7 +111,7 @@ const components = {
   h5: (props) => <Heading className="mt-10 mb-5" is="h5" {...props} />,
   h6: (props) => <Heading className="mt-10 mb-5" is="h6" {...props} />,
   p: (props) => <p className="mb-5" {...props} />,
-  a: (props) => <Link {...props} />,
+  pre: (props) => <Code className="scrollbar" lang="jsx" {...props} />,
 }
 
 export default function Post({ params }: { params: { slug: string } }) {

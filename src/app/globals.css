@@ -6,7 +6,6 @@
   color-scheme: light dark;
 
   --foreground-rgb: 0 0 0;
-  --foreground-rgb: 0 0 0;
   --background-start-rgb: 214 219 220;
   --background-end-rgb: 255 255 255;
   --background-hsl: 240 20% 15%;
@@ -210,6 +209,11 @@ ul {
 @keyframes scale-down {
   to {
     scale: 0.8 0.8;
+  }
+}
+@layer utilities {
+  .scrollbar {
+    scrollbar-color: rgb(var(--foreground-rgb)) var(--surface);
   }
 }
 
