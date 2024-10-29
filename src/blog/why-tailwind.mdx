@@ -7,7 +7,6 @@ description:
 image: '/images/blog/why-tailwind.png'
 width: '1600'
 height: '800'
-draft: 'true'
 ---
 
 My background in web development was primarily HTML and CSS. I saw myself as a
@@ -17,25 +16,105 @@ the pros drastically out weigh the cons.
 
 ## Utility first approach
 
+One of the main differences but advantages of Tailwind is the utility first
+approach. Tailwind allows you to use predefined class names directly in your
+code.
+
+Folks who prefer, a modular approach to CSS are often turned off at this. I
+myself felt this way at first even with experience to both utility and modular
+approaches. I find those who are really deep into CSS like the freedom that
+comes with a modular approach as it feels fresh and separates concerns.
+
+The biggest argument and long running joke against tailwind are super long class
+names.
+
+There are many approaches to managing this:
+
+- Using a [clsx](https://www.npmjs.com/package/clsx) function to create arrays
+  of strings to manage organization.
+- Creating constants and use them in your class names or clsx functions.
+- Using sorting mechanisms to reduce friction of class name changes.
+
+This allows you the opportunity to organize class names similar to how you may
+want to organize modular styles.
+
+The most important benefit Tailwind provides by this utility class first
+approach is since classes are tied to single or a few CSS dthat it only has to
+record a class declarations, it only has to record them once in the style sheet.
+
+For example, if you use `display: flex` or `margin: 1rem` multiple times in
+classes in your modular style sheets, those are only recorded once in your CSS
+style sheet with Tailwind, reducing the cost of size of a style sheet.
+
+```jsx
+// Tailwind - These two classes are reused every time you use these CSS declarations
+.m-4 {
+  margin: 1rem;
+}
+.flex {
+  display: flex;
+}
+
+// Modular - We will find ourselves writing declarations more than once
+.MyClass {
+  display: flex;
+  margin: 1rem;
+}
+
+.MyOtherClass {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+```
+
+By definition, we will always have leaner styles heets using Tailwind due to
+this approach.
+
 ## Customization
 
-## Maintainabiltiy
+Tailwind supports endless customization, you can easily customize your
+configurations:
+
+- Configuration
+- Specify files that use Tailwind
+- Custom themeing
+- Screen sizes
+- Spacing
+- Colors
+- Typography
+- Countless plugins
+- Presets for your default theme
 
 ## Prototyping
 
+It is a tool that allows you to more rapidly prototype because you're given some
+presets that allow you to hit the ground running right away. It's important to
+remember though Tailwind is not bootstrap. Yes it comes out of the box
+unopinionated and it's a strong prototyping tool but the ability to customize it
+so heavily is there for you to form opinions on its use and how the application
+should leverage it.
+
 ## Performance
+
+Where Tailwind shines most brightly is its ability to do all the hard parts of
+performance for you. Without Tailwind traditionally when running your
+application against performance metrics, (especially large enterprise
+applications) you will likely have to determine which CSS is critical or above
+the fold. Typically teams have to create a solution to the`<head/>` with
+critical CSS and immediately hydrate critical CSS. All of this is taken care of
+for you in Tailwind.
+
+## Maintainability
+
+Tailwinds
 
 ## Large community and ecosystem
 
-## The cons
-
-Lots of folks complain about long class names. Yes this can be a pain, however,
-there are many approaches we can take to solve this.
-
-- We can use cn or clsx to create arrays of strings to manage this.
-- We can create constants and use them in cn or clsx as well.
-- You can come up with your own way of organizing these class names.
-- You can add sorting mechanisms to reduce friction of class name changes.
+Tailwind currently has over 82K stars on GitHub and is actively growing. There's
+huge community support around this styling library with many trusted
+contributors and active [plugins](https://tailwindcss.com/docs/plugins).
 
 ## Where I think it's acceptable to prefer Modular styles
 
@@ -44,12 +123,15 @@ Tailwind can be incredibly fast. It's not just faster than vanilla CSS. It'sa
 It alleviates some of the somewhat "harder" problems of CSS. Structure,
 performance, splitting, etc.
 
-### Conclusion
+Simply put, being a successful developer or engineer reuqires a willing to try
+new things.
 
-Being a successful developer or engineer is being willing to try new things.
 Yes, Tailwind does take some of the hard parts of CSS and simplify them. CSS
 specs are becoming easier and easier to use and we tend to praise these newer
 solutions like flex, grid, etc. We should look to alternative framework
 approaches the same. Embrace change and new tools by trying them out for a
 period of time in applications or side projects and add another tool to our
-toolkit. For me currently, I've been using Tailwind CSS on everything! 😁
+toolkit. For me currently, I've been using Tailwind CSS whenever I spin up a new
+app. 😁 I do still use CSS and regular styles in my quick
+[Codepen's](https://codepen.io/scottykaye) and when Tailwind might not have a
+class out of the box for prototyping.

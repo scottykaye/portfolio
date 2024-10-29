@@ -18,6 +18,7 @@
     "@vanilla-extract/dynamic": "^2.1.1",
     "@vanilla-extract/next-plugin": "^2.4.3",
     "accessible-navigation": "^0.0.0",
+    "bright": "^0.8.5",
     "clsx": "^2.1.1",
     "eslint-config-next": "^14.2.5",
     "knip": "^5.27.2",
