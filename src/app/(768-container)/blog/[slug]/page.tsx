@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import List, { ListItem } from '@components/List'
 import Heading from '@components/v2/Heading'
 import Link from '@root/src/components/Link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -105,6 +104,7 @@ const components = {
   h1: (props) => (
     <Heading className="mb-5" color="primary" is="h1" {...props} />
   ),
+  a: (props) => <Link target="_blank" {...props} />,
   h2: (props) => <Heading className="mt-10 mb-5" {...props} />,
   h3: (props) => <Heading className="mt-10 mb-5" is="h3" {...props} />,
   h4: (props) => <Heading className="mt-10 mb-5" is="h4" {...props} />,
