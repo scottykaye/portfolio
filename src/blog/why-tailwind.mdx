@@ -36,7 +36,7 @@ declarations are recorded once in your style sheet reducing the overall size of
 the styles you need to bundle to the browser.
 
 ```css
-// Tailwind - These two classes are reused every time you use these CSS declarations
+/* Tailwind - These two classes are reused every time you use these CSS declarations */
 .m-4 {
   margin: 1rem;
 }
@@ -44,7 +44,7 @@ the styles you need to bundle to the browser.
   display: flex;
 }
 
-// Modular - We will find ourselves writing declarations more than once
+/* Modular - We will find ourselves writing declarations more than once */
 .MyClass {
   display: flex;
   margin: 1rem;
@@ -52,8 +52,7 @@ the styles you need to bundle to the browser.
 
 .MyOtherClass {
   flex-direction: column;
-  // focus(1:3)
-  // repeated declarations:
+  /* repeated declarations: */
   display: flex;
   margin: 1rem;
 }
@@ -68,7 +67,7 @@ and become to cumbersome to edit. Tailwind removes this problem by keeping
 styles coupled directly with the code.
 
 Another point of contention is removing the need to handle CSS specificity.
-Tailwind will handle this for you and provides solutions like
+Tailwind will handle this for you and community solutions like
 [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) that allow you to
 focus on building your application and removing this complexity.
 
