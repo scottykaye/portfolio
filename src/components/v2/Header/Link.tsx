@@ -1,6 +1,11 @@
 'use client'
 import clsx from 'clsx'
-import { type ReactNode, type HTMLAttributes, type KeyboardEvent } from 'react'
+import {
+  type ReactNode,
+  type HTMLAttributes,
+  type KeyboardEvent,
+  forwardRef,
+} from 'react'
 import { usePathname } from 'next/navigation'
 import NextLink, { LinkProps } from 'next/link'
 import { createKeyboardNavHook, KeyboardNav } from 'accessible-navigation'
@@ -41,8 +46,11 @@ interface CustomLinkProps extends LinkProps, HTMLAttributes<HTMLAnchorElement> {
   ref: (node: HTMLElement) => void
   as?: any
 }
-const CustomLink = function Link(props: CustomLinkProps) {
-  const { children, className, as, ref, ...rest } = props
+const CustomLink = forwardRef(function Link(
+  props: CustomLinkProps,
+  ref: (node: HTMLElement) => void,
+) {
+  const { children, className, as, ...rest } = props
   const pathname = usePathname()
 
   const Element = as ?? 'a'
@@ -59,7 +67,7 @@ const CustomLink = function Link(props: CustomLinkProps) {
       {children}
     </Element>
   )
-}
+})
 
 const navLinks = new KeyboardNav('horizontal')
 const useKeyboardNav = createKeyboardNavHook(navLinks)
