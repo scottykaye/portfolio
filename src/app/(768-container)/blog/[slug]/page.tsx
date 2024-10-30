@@ -97,7 +97,7 @@ export async function generateMetadata({
 
   return {
     title: {
-      default: 'Scotty Kaye',
+      default: `${props.frontMatter.title}`,
       template: '%s | Scotty Kaye',
     },
     description: props.frontMatter.description,
