@@ -6,7 +6,6 @@
   color-scheme: light dark;
 
   --foreground-rgb: 0 0 0;
-  --foreground-rgb: 0 0 0;
   --background-start-rgb: 214 219 220;
   --background-end-rgb: 255 255 255;
   --background-hsl: 240 20% 15%;
@@ -71,8 +70,25 @@ html,
 body {
   height: 100%;
 }
+
 html {
   scroll-behavior: smooth;
+  accent-color: rgb(var(--primary));
+  text-rendering: optimizeSpeed;
+}
+
+::-moz-selection {
+  background: rgb(var(--primary));
+  color: rgb(var(--background));
+}
+
+::selection {
+  background: rgb(var(--primary));
+  color: rgb(var(--background));
+}
+
+ul ::marker {
+  color: rgb(var(--primary));
 }
 
 :is(a, button):focus {
@@ -201,6 +217,11 @@ ul {
     scale: 0.8 0.8;
   }
 }
+@layer utilities {
+  .scrollbar {
+    scrollbar-color: rgb(var(--foreground-rgb)) var(--surface);
+  }
+}
 
 @layer scrolls {
   @supports (animation-timeline: scroll()) {
@@ -236,15 +257,7 @@ ul {
     background-position: 0% 50%;
   }
 }
-.Title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  filter: drop-shadow(0 2px 1px rgb(var(--black)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 
-  animation: rotate 10s ease infinite;
-}
 .Hello {
   grid-template-columns: repeat(2, auto);
 }
