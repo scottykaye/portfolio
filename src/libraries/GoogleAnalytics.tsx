@@ -6,7 +6,6 @@ export function GoogleAnalytics() {
   return (
     <>
       <Script
-        async
         src="https://www.googletagmanager.com/gtag/js?id=G-PHR3NMG6SK"
         id="google-analytics-tag-script"
       />
@@ -18,9 +17,8 @@ export function GoogleAnalytics() {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              gtag('config', 'G-465284526');            `,
+              gtag('config', 'G-PHR3NMG6SK');            `,
         }}
-        async
       />
     </>
   )
