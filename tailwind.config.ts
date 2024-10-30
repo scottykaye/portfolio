@@ -37,6 +37,11 @@ const config = {
         },
         surface: {
           DEFAULT: 'var(--surface)',
+          background: {
+            100: 'var(--surface-background-100)',
+            200: 'var(--surface-background-200)',
+            300: 'var(--surface-background-300)',
+          },
         },
         primary: {
           DEFAULT: 'rgb(var(--primary))',
@@ -85,10 +90,23 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        'bg-loader': {
+          '0%': {
+            backgroundPosition: '0% 50%',
+          },
+          '50%': {
+            backgroundPosition: '100% 50%',
+          },
+          '100%': {
+            backgroundPosition: '0% 50%',
+          },
+        },
       },
+
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'bg-loader': 'bg-loader 2s ease infinite',
       },
       fontFamily: {
         sans: ['var(--montserrat)'],
