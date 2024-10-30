@@ -98,6 +98,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className={clsx(montserrat.className, montserrat.variable)}>
         <Header className="print:hidden">
           <div className="flex">
