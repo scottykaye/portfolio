@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@root/*": ["*"],
+      "~/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@private/*": ["src/private/*"],
       "@hooks/*": ["src/hooks/*"],
       "@pages/*": ["src/pages/*"],
       "@theme/*": ["src/theme/*"]
     },
-    "target": "es5",
+    "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
