@@ -2,10 +2,10 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Heading from '@components/v2/Heading'
-import Link from '@root/src/components/Link'
+import Link from '@components/Link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Image from 'next/image'
-import { 
+import {
   Code,
   //type Extension
 } from 'bright'

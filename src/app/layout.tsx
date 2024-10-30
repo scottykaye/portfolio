@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import type { Metadata, Viewport } from 'next'
 import { Montserrat } from 'next/font/google'
-
+import { GoogleAnalytics } from '~/libraries/GoogleAnalytics'
 import { Footer } from '@components/v2/Footer/Footer'
 import { SocialLinkIcon } from '@components/v2/Footer/SocialLinkIcon'
 import { Header, MainNav } from '@components/v2/Header/Header'
@@ -98,6 +98,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className={clsx(montserrat.className, montserrat.variable)}>
         <Header className="print:hidden">
           <div className="flex">
