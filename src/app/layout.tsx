@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s | Scotty Kaye',
   },
   description:
-    'Scotty Kaye is a Frontend Software Engineer located in Boston, Massachusetts with a strong background in UI, React, Accessibility and Next.js',
+    'Scott Kaye is a Frontend Software Engineer located in Boston, Massachusetts with a strong background in UI, React, Accessibility and Next.js',
   icons: [
     {
       url: `/images/icons/${
