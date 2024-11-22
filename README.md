@@ -5,8 +5,8 @@ This repo is a space for me to:
 - Build cool accessible UI
 - Inspire others to be better versions of themselves
 
-### To load dev
-Using yarn berry 😎. @Theo hates it and hates me for it. _(Will update to bun soon though!)_
+### Local
+
 
 Run `yarn && yarn dev`
 
