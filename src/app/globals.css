@@ -1,6 +1,153 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --grid-template-rows-layout: min-content 1fr;
+
+  --color-border: rgb(var(--border));
+  --color-border-opaque: rgb(var(--border) / 0.6);
+
+  --color-inverse: rgb(var(--inverse));
+  --color-input: rgb(var(--input));
+  --color-ring: rgb(var(--ring));
+  --color-foreground: rgb(var(--foreground-rgb));
+
+  --color-background-primary: rgb(var(--background-end-rgb));
+  --color-background: rgb(var(--background));
+  --color-background-opaque: rgb(var(--background) / 0.6);
+
+  --color-surface: var(--surface);
+
+  --color-surface-background-100: var(--surface-background-100);
+  --color-surface-background-200: var(--surface-background-200);
+  --color-surface-background-300: var(--surface-background-300);
+
+  --color-primary: rgb(var(--primary));
+  --color-primary-foreground: rgb(var(--primary-foreground));
+  --color-primary-opaque: rgb(var(--primary) / 0.5);
+
+  --color-secondary: rgb(var(--secondary));
+  --color-secondary-foreground: rgb(var(--secondary-foreground));
+
+  --color-destructive: rgb(var(--destructive));
+  --color-destructive-foreground: rgb(var(--destructive-foreground));
+
+  --color-muted: rgb(var(--muted));
+  --color-muted-foreground: rgb(var(--muted-foreground));
+
+  --color-accent: rgb(var(--accent));
+  --color-accent-foreground: rgb(var(--accent-foreground));
+
+  --color-popover: rgb(var(--popover));
+  --color-popover-foreground: rgb(var(--popover-foreground));
+
+  --color-card: rgb(var(--card));
+  --color-card-foreground: rgb(var(--card-foreground));
+
+  --shadow-lift: 0 10px 8px -10px rgb(var(--black));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-bg-loader: bg-loader 2s ease infinite;
+
+  --font-sans: var(--montserrat);
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes bg-loader {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility scrollbar {
+  scrollbar-color: rgb(var(--foreground-rgb)) var(--surface);
+}
+
+@layer scrolls {
+  @supports (animation-timeline: scroll()) {
+    .Scroll {
+      transform-origin: 50% 0%;
+      animation: scale-down both ease-in;
+      animation-timeline: view();
+      animation-range: exit;
+      view-timeline: --header;
+    }
+    .Hello::before {
+      animation: fade both linear;
+      animation-timeline: --header;
+      animation-range: exit-crossing 0% exit 0%;
+    }
+  }
+}
+
+/* @utility * { */
+/*   @apply border-border; */
+/* } */
+
+@utility body {
+  overflow-y: scroll;
+  /* @apply bg-background text-foreground; */
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
 
 :root {
   color-scheme: light dark;
@@ -97,7 +244,7 @@ ul ::marker {
 
 body {
   font:
-    16px/1.33 var(--montserrat),
+    16px / 1.33 var(--montserrat),
     arial,
     sans-serif;
   color: rgb(var(--foreground-rgb));
@@ -113,6 +260,7 @@ ul {
   list-style-type: disc;
 }
 .Nav-list {
+  list-style: none;
   animation: slideIn 0.2s ease-in-out forwards 0.4s;
   /* using p-5 for the header which is 1.25rem on top and bottom
    * Multiplying that by 2 then making it negative for it to start outside the page */
@@ -217,28 +365,6 @@ ul {
     scale: 0.8 0.8;
   }
 }
-@layer utilities {
-  .scrollbar {
-    scrollbar-color: rgb(var(--foreground-rgb)) var(--surface);
-  }
-}
-
-@layer scrolls {
-  @supports (animation-timeline: scroll()) {
-    .Scroll {
-      transform-origin: 50% 0%;
-      animation: scale-down both ease-in;
-      animation-timeline: view();
-      animation-range: exit;
-      view-timeline: --header;
-    }
-    .Hello::before {
-      animation: fade both linear;
-      animation-timeline: --header;
-      animation-range: exit-crossing 0% exit 0%;
-    }
-  }
-}
 
 @keyframes fade {
   to {
@@ -287,22 +413,6 @@ ul {
   }
   100% {
     translate: 0 0;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    overflow-y: scroll;
-    @apply bg-background text-foreground;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
   }
 }
 

@@ -31,32 +31,30 @@ export default function Blog() {
             return null
           }
           return (
-            <>
-              <li
-                className="[&:not(:last-child)]:mb-4 [&:not(:last-child)]:border-border [&:not(:last-child)]:border-b list-none pb-4"
-                key={blog.slug}
+            <li
+              className="not-last:mb-4 not-last:border-border not-last:border-b list-none pb-4"
+              key={blog.slug}
+            >
+              <Link
+                className="block BlogItem bg-transparent [&:is(:focus,:hover)]:bg-surface transition-[background-color] p-4"
+                href={'/blog/' + blog.slug}
               >
-                <Link
-                  className="block BlogItem bg-transparent [&:is(:focus,:hover)]:bg-surface transition-[background-color] p-4"
-                  href={'/blog/' + blog.slug}
-                >
-                  <Image
-                    src={blog.meta.image}
-                    width={blog.meta.width}
-                    height={blog.meta.height}
-                    alt={blog.meta.title}
-                  />
+                <Image
+                  src={blog.meta.image}
+                  width={blog.meta.width}
+                  height={blog.meta.height}
+                  alt={blog.meta.title}
+                />
 
-                  <div className="py-5">
-                    <h2 className="text-lg font-bold [.BlogItem:is(:hover,:focus)_&]:underline [.BlogItem:is(:hover,:focus)_&]:text-current text-primary transition-colors mb-4">
-                      {blog.meta.title}
-                    </h2>
-                    <p className="mb-2">{blog.meta.description}</p>
-                    <p className="text-xs text-gray-400">{blog.meta.date}</p>
-                  </div>
-                </Link>
-              </li>
-            </>
+                <div className="py-5">
+                  <h2 className="text-lg font-bold [.BlogItem:is(:hover,:focus)_&]:underline [.BlogItem:is(:hover,:focus)_&]:text-current text-primary transition-colors mb-4">
+                    {blog.meta.title}
+                  </h2>
+                  <p className="mb-2">{blog.meta.description}</p>
+                  <p className="text-xs text-gray-400">{blog.meta.date}</p>
+                </div>
+              </Link>
+            </li>
           )
         })}
       </ul>

@@ -1,4 +1,4 @@
-import { useMemo, useEffect, ReactNode, useRef } from 'react'
+import { type ReactNode, useEffect, useMemo, useRef } from 'react'
 
 import { ThemesContext, useLocalStorage } from '../../hooks'
 
@@ -32,7 +32,7 @@ export default function ThemeProvider({
     [setCurrentTheme, currentTheme],
   )
 
-  const prevCurrentTheme = useRef<any>()
+  const prevCurrentTheme = useRef<any>(null)
   useEffect(() => {
     document.body.classList.add(currentTheme)
 

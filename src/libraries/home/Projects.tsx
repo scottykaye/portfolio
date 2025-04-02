@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export function Project({ github, stargazers }) {
   return (
-    <div className="min-w-full rounded-md m-auto shadow-lift backdrop-blur bg-background-opaque backdrop-hue-rotate-30 border border-border">
+    <div className="min-w-full rounded-md m-auto shadow-lift backdrop-blur-sm bg-background-opaque backdrop-hue-rotate-30 border border-border">
       <div className="flex gap-5 justify-between p-4 border-b border-border">
         <div className="flex gap-2">
           <svg

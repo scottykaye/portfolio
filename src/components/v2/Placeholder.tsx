@@ -12,7 +12,7 @@ export function Placeholder({
   return (
     <Element
       className={cn(
-        'min-h-8 w-full animate-bg-loader rounded bg-[length:400%_400%] bg-gradient-to-bl from-surface-background-100 via-surface-background-300 to-surface-background-100',
+        'min-h-8 w-full animate-bg-loader rounded bg-[length:400%_400%] bg-linear-to-bl from-surface-background-100 via-surface-background-300 to-surface-background-100',
         { 'aspect-1 rounded-full': rounded },
         className,
       )}
