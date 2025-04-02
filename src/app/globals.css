@@ -115,13 +115,11 @@
   }
 }
 
-@utility utilities {
-  .scrollbar {
-    scrollbar-color: rgb(var(--foreground-rgb)) var(--surface);
-  }
+@utility scrollbar {
+  scrollbar-color: rgb(var(--foreground-rgb)) var(--surface);
 }
 
-@utility scrolls {
+@layer scrolls {
   @supports (animation-timeline: scroll()) {
     .Scroll {
       transform-origin: 50% 0%;
