@@ -1,14 +1,14 @@
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
-import Heading from '@components/v2/Heading'
 import Link from '@components/Link'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import Image from 'next/image'
+import Heading from '@components/v2/Heading'
 import {
   Code,
   //type Extension
 } from 'bright'
+import matter from 'gray-matter'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import Image from 'next/image'
 
 Code.theme = {
   dark: 'github-dark',
@@ -91,9 +91,10 @@ Code.theme = {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  const props = getPost(params)
+  const paramsValue = await params
+  const props = getPost(paramsValue)
 
   return {
     title: {
@@ -188,8 +189,13 @@ const components = {
   pre: (props) => <Code className="scrollbar" lang="jsx" {...props} />,
 }
 
-export default function Post({ params }: { params: { slug: string } }) {
-  const props = getPost(params)
+export default async function Post({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) {
+  const paramsValue = await params
+  const props = getPost(paramsValue)
 
   return (
     <article>
