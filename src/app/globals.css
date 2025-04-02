@@ -262,6 +262,7 @@ ul {
   list-style-type: disc;
 }
 .Nav-list {
+  list-style: none;
   animation: slideIn 0.2s ease-in-out forwards 0.4s;
   /* using p-5 for the header which is 1.25rem on top and bottom
    * Multiplying that by 2 then making it negative for it to start outside the page */
