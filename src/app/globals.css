@@ -136,15 +136,6 @@
   }
 }
 
-/* @utility * { */
-/*   @apply border-border; */
-/* } */
-
-@utility body {
-  overflow-y: scroll;
-  /* @apply bg-background text-foreground; */
-}
-
 @utility text-balance {
   text-wrap: balance;
 }
@@ -253,6 +244,7 @@ body {
   background-attachment: fixed;
   display: grid;
   grid-template-rows: 1fr min-content;
+  overflow-y: scroll;
 }
 
 ul {
