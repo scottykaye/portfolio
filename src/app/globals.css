@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 :root {
   color-scheme: light dark;
@@ -97,7 +95,7 @@ ul ::marker {
 
 body {
   font:
-    16px/1.33 var(--montserrat),
+    16px / 1.33 var(--montserrat),
     arial,
     sans-serif;
   color: rgb(var(--foreground-rgb));
@@ -217,13 +215,13 @@ ul {
     scale: 0.8 0.8;
   }
 }
-@layer utilities {
+@utility utilities {
   .scrollbar {
     scrollbar-color: rgb(var(--foreground-rgb)) var(--surface);
   }
 }
 
-@layer scrolls {
+@utility scrolls {
   @supports (animation-timeline: scroll()) {
     .Scroll {
       transform-origin: 50% 0%;
@@ -290,20 +288,17 @@ ul {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    overflow-y: scroll;
-    @apply bg-background text-foreground;
-  }
+/* @utility * { */
+/*   @apply border-border; */
+/* } */
+
+@utility body {
+  overflow-y: scroll;
+  /* @apply bg-background text-foreground; */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@utility text-balance {
+  text-wrap: balance;
 }
 
 /* remove printing titles */
