@@ -1,7 +1,7 @@
-import { cache } from 'react'
-import { Octokit } from 'octokit'
 import { headers as nextHeaders } from 'next/headers'
 import Image from 'next/image'
+import { Octokit } from 'octokit'
+import { cache } from 'react'
 import { Cartridge } from '../libraries/home/Cartridge'
 
 async function fetchRepo({
@@ -50,7 +50,7 @@ const getRepo = cache(fetchRepo)
 const getStargazers = cache(getStargazersData)
 
 export default async function HomePage() {
-  const headers = nextHeaders()
+  const headers = await nextHeaders()
   const [keyboardNavData, themeHandlerData] = await Promise.allSettled([
     getRepo({
       repo: 'accessible-navigation',
@@ -125,6 +125,7 @@ export default async function HomePage() {
             aria-label="Follow Scotty Kaye on Twitter (opens in new window)"
             target="_blank"
             className="flex gap-2 place-items-center text-sm mt-5 rounded-[5rem]  outline-offset-4 p-4 [&:is(:hover,:focus-visible)]:bg-gray-500/50 transition-[transform,background-color] active:translate-y-1"
+            rel="noreferrer"
           >
             Follow
             <svg

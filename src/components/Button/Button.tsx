@@ -1,14 +1,13 @@
-import React from 'react'
 import cx from 'clsx'
+import React from 'react'
 import { buttonStyles, fullWidth } from './Button.css'
 
-type BtnType = 'submit' | 'button'
+type BtnType = 'submit' | 'button' | 'reset'
 
 interface Props {
   children: React.ReactNode
   type: BtnType
   isFullWidth: boolean
-  [props: string]: unknown
 }
 
 const Button = React.forwardRef<HTMLButtonElement, Props>(
