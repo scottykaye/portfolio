@@ -10,23 +10,23 @@ function PrimaryHeading(props) {
       is="h3"
       color="primary"
       {...props}
-      className="print:text-black text-base leading-5 print:!text-[12px]"
+      className="print:text-black text-base leading-5 print:text-[12px]!"
     />
   )
 }
 
 function SubHeading(props) {
-  return <Heading is="h4" size="sm" className="print:!text-[11px]" {...props} />
+  return <Heading is="h4" size="sm" className="print:text-[11px]!" {...props} />
 }
 
 function ListItem(props) {
-  return <List.Item className="print:!text-[10px]" {...props} />
+  return <List.Item className="print:text-[10px]!" {...props} />
 }
 
 function WorkExperience() {
   return (
     <Section is="article" heading="Work Experience" headingIs="h1">
-      <Heading className="text-lg print:!text-[13px]">Fireworks AI</Heading>
+      <Heading className="text-lg print:text-[13px]!">Fireworks AI</Heading>
       <PrimaryHeading>Staff Frontend Engineer</PrimaryHeading>
       <SubHeading>March 2024 - Present</SubHeading>
       <List>
@@ -44,7 +44,7 @@ function WorkExperience() {
           to stream line their AI workflow.
         </ListItem>
       </List>
-      <Heading className="text-lg print:!text-[13px]">Wayfair</Heading>
+      <Heading className="text-lg print:text-[13px]!">Wayfair</Heading>
       <PrimaryHeading>Staff Engineer - Frontend Platforms</PrimaryHeading>
       <SubHeading>November 2022 - March 2024</SubHeading>
       <List>

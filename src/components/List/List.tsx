@@ -1,5 +1,5 @@
 import { clsx } from 'clsx'
-import React from 'react'
+import type React from 'react'
 import * as styles from './List.css'
 
 import { assignInlineVars } from '@vanilla-extract/dynamic'
@@ -22,9 +22,12 @@ interface ItemProps extends Props {
 export function ListItem({ children, margin, className }: ItemProps) {
   return (
     <li
-      style={assignInlineVars({
-        [styles.margin]: stringOrNumber(margin),
-      })}
+      style={{
+        // spread to new object as a hack for assignInlineVars to comply with RSC
+        ...assignInlineVars({
+          [styles.margin]: stringOrNumber(margin),
+        }),
+      }}
       className={clsx(styles.listItem, className)}
     >
       {children}
