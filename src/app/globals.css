@@ -1,0 +1,611 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --grid-template-rows-layout: min-content 1fr;
+
+  --color-border: rgb(var(--border));
+  --color-border-opaque: rgb(var(--border) / 0.6);
+
+  --color-inverse: rgb(var(--inverse));
+  --color-input: rgb(var(--input));
+  --color-ring: rgb(var(--ring));
+  --color-foreground: rgb(var(--foreground-rgb));
+
+  --color-background-primary: rgb(var(--background-end-rgb));
+  --color-background: rgb(var(--background));
+  --color-background-opaque: rgb(var(--background) / 0.6);
+
+  --color-surface: var(--surface);
+
+  --color-surface-background-100: var(--surface-background-100);
+  --color-surface-background-200: var(--surface-background-200);
+  --color-surface-background-300: var(--surface-background-300);
+
+  --color-primary: rgb(var(--primary));
+  --color-primary-foreground: rgb(var(--primary-foreground));
+  --color-primary-opaque: rgb(var(--primary) / 0.5);
+
+  --color-secondary: rgb(var(--secondary));
+  --color-secondary-foreground: rgb(var(--secondary-foreground));
+
+  --color-destructive: rgb(var(--destructive));
+  --color-destructive-foreground: rgb(var(--destructive-foreground));
+
+  --color-muted: rgb(var(--muted));
+  --color-muted-foreground: rgb(var(--muted-foreground));
+
+  --color-accent: rgb(var(--accent));
+  --color-accent-foreground: rgb(var(--accent-foreground));
+
+  --color-popover: rgb(var(--popover));
+  --color-popover-foreground: rgb(var(--popover-foreground));
+
+  --color-card: rgb(var(--card));
+  --color-card-foreground: rgb(var(--card-foreground));
+
+  --shadow-lift: 0 10px 8px -10px rgb(var(--black));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-bg-loader: bg-loader 2s ease infinite;
+
+  --font-sans: var(--montserrat);
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes bg-loader {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility scrollbar {
+  scrollbar-color: rgb(var(--foreground-rgb)) var(--surface);
+}
+
+@layer scrolls {
+  @supports (animation-timeline: scroll()) {
+    .Scroll {
+      transform-origin: 50% 0%;
+      animation: scale-down both ease-in;
+      animation-timeline: view();
+      animation-range: exit;
+      view-timeline: --header;
+    }
+    .Hello::before {
+      animation: fade both linear;
+      animation-timeline: --header;
+      animation-range: exit-crossing 0% exit 0%;
+    }
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --foreground-rgb: 0 0 0;
+  --background-start-rgb: 214 219 220;
+  --background-end-rgb: 255 255 255;
+  --background-hsl: 240 20% 15%;
+
+  --primary: 69 32 64;
+  --secondary: 48 212 253;
+  --tertiary: 253 48 117;
+  --background: 255 255 255;
+  --border: 210 210 210;
+  --gray: 85 85 85;
+  --base: 255 255 255;
+  --white: 255 255 255;
+  --black: 0 0 0;
+  --disabled: 204 214 217;
+  --inverse: 0 0 0;
+  --radius: 1rem;
+  --bg: 230 230 230;
+  --bg-cart: hsl(0, 0%, 90%);
+  --gradient: radial-gradient(rgba(250, 250, 250, 1) 0%, rgb(var(--bg)) 100%);
+
+  --bg-secondary: hsl(0, 0%, 80%);
+  --surface: hsl(0, 0%, 90%);
+  --surface-background-100: hsl(0, 0%, 90%);
+  --surface-background-200: hsl(0, 0%, 80%);
+  --surface-background-300: hsl(0, 0%, 70%);
+  --glow: hsla(0, 0%, 20%, 0.15);
+  --glow-secondary: hsla(0, 0%, 0%, 0.15);
+  --text: hsl(0, 0%, 90%);
+  --body-bg: hsl(0, 0%, 100%);
+  --container-cartridge: hsl(0, 0%, 90%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255 255 255;
+    --background-start-rgb: 0 0 0;
+    --background-end-rgb: 0 0 0;
+    --primary: 255 200 32;
+    --secondary: 48 212 253;
+    --tertiary: 253 48 117;
+    --background: 0 0 0;
+    --border: 33 33 33;
+
+    --inverse: 255 255 255;
+    --bg: 0 0 0;
+    --gradient: radial-gradient(rgba(20, 20, 20, 1) 2%, rgba(var(--bg) 1) 100%);
+
+    --bg-cart: hsl(0, 0%, 10%);
+    --bg-secondary: hsl(0, 0%, 20%);
+    --surface: hsl(0, 0%, 10%);
+    --surface-background-100: hsl(0, 0%, 10%);
+    --surface-background-200: hsl(0, 0%, 20%);
+    --surface-background-300: hsl(0, 0%, 30%);
+    --glow: hsla(0, 0%, 80%, 0.15);
+    --glow-secondary: hsla(0, 0%, 100%, 0.15);
+    --body-bg: hsl(0, 0%, 0%);
+    --container-cartridge: hsl(0, 0%, 20%);
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  accent-color: rgb(var(--primary));
+  text-rendering: optimizeSpeed;
+}
+
+::-moz-selection {
+  background: rgb(var(--primary));
+  color: rgb(var(--background));
+}
+
+::selection {
+  background: rgb(var(--primary));
+  color: rgb(var(--background));
+}
+
+ul ::marker {
+  color: rgb(var(--primary));
+}
+
+:is(a, button):focus {
+  outline-color: rgb(245, 66, 123);
+}
+
+body {
+  font:
+    16px / 1.33 var(--montserrat),
+    arial,
+    sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--bg));
+  background-image: var(--gradient);
+  background-attachment: fixed;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  overflow-y: scroll;
+}
+
+ul {
+  padding-inline-start: 15px;
+  list-style-type: disc;
+}
+.Nav-list {
+  list-style: none;
+  animation: slideIn 0.2s ease-in-out forwards 0.4s;
+  /* using p-5 for the header which is 1.25rem on top and bottom
+   * Multiplying that by 2 then making it negative for it to start outside the page */
+  translate: 0 calc(-1 * (100% + 1.25rem * 2));
+}
+
+.Nav-link::before {
+  content: '';
+  position: absolute;
+  border-block-start: 0.25rem solid transparent;
+  inset-inline: 0;
+  inset-block-end: 0;
+  border-color: rgb(var(--primary));
+  z-index: 1;
+  scale: 0 1;
+  transition: scale 0.2s;
+}
+
+.Nav-link:is(:hover, :focus)::before,
+.Nav-link.isActive::before {
+  scale: 1;
+}
+.Nav-item:nth-child(odd) .Nav-link::before {
+  transform-origin: right;
+}
+.Nav-item:nth-child(even) .Nav-link::before {
+  transform-origin: left;
+}
+.Nav-item:nth-child(odd) .Nav-link::before {
+  transform-origin: left;
+}
+.Nav-item:nth-child(even) .Nav-link::before {
+  transform-origin: right;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.Logo {
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 65px;
+  height: 60px;
+  padding: 8px 11px 8px 8px;
+  overflow: clip;
+  z-index: 2;
+  font-size: 2rem;
+  color: rgb(var(---foreground-rgb));
+  border: 4px solid rgb(var(--foreground-rgb));
+  text-transform: uppercase;
+  letter-spacing: -0.2rem;
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeIn 0.2s linear forwards 0.2s;
+}
+
+.Logo::before,
+.Logo::after {
+  content: '';
+  display: block;
+  position: absolute;
+  inset-inline: 0;
+  height: 0.2rem;
+  background-color: rgb(var(--foreground-rgb));
+  transition:
+    border-color 0.2s,
+    scale 0.2s;
+  overflow: clip;
+  scale: 0 1;
+}
+.Header:is(:hover, :focus-within) .Logo {
+  border-color: rgb(var(--primary));
+}
+.Header:is(:hover, :focus-within) .Logo::before,
+.Header:is(:hover, :focus-within) .Logo::after {
+  scale: 1;
+}
+.Logo:focus-visible::before,
+.Logo:focus-visible::after {
+  scale: 1;
+}
+
+.Logo::before {
+  inset-block-start: 0;
+  transform-origin: left;
+}
+.Logo::after {
+  inset-block-end: 0;
+  transform-origin: right;
+}
+@keyframes scale-down {
+  to {
+    scale: 0.8 0.8;
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.Hello {
+  grid-template-columns: repeat(2, auto);
+}
+.Hello::before {
+  content: '';
+  position: absolute;
+  /*-100% doesn't account for both images when safari has a bug with animation-timeline, this makes it decent*/
+  inset: -200% 0;
+  background-color: rgb(var(--background) / 0.4);
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+.About {
+  inset-block-start: -50vh;
+}
+
+.HomeGrid {
+  z-index: 1;
+  grid-template-rows: repeat(4, min-content);
+}
+
+@keyframes slideIn {
+  0% {
+    translate: 0 -100%;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+/* remove printing titles */
+@page {
+  size: auto; /* auto is the initial value */
+  margin: 0; /* this affects the margin in the printer settings */
+}
+
+/** All Cartridge **/
+
+.cartridge-container {
+  background: var(--container-cartridge);
+  position: relative;
+  max-width: fit-content;
+  margin: 25px 0;
+  transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg);
+  box-shadow:
+    var(--glow) 0px 10px 0px -22px inset,
+    var(--glow-secondary) 0px 8px 6px -1px inset;
+  border-radius: var(--radius);
+  /* this is a helpful trick for the shaping but kills focus ring */
+  clip-path: polygon(90% 0, 90% 5%, 100% 5%, 100% 100%, 0% 100%, 0% 0%);
+  transition: 0.6s ease transform;
+}
+.cartridge-container:focus {
+  outline-offset: 10px;
+}
+.cartridge-container:is(:hover, :focus) {
+  transform: perspective(800px) rotateY(-15deg) translateY(-50px) rotateX(10deg)
+    scale(1);
+}
+.cartridge-container:is(:hover, :focus) .cartridge {
+  translate: -0.5rem -0.5rem;
+}
+
+.cartridge {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  translate: 0.5rem -0.5rem;
+  background: var(--bg-cart);
+  background-image: linear-gradient(
+    180deg,
+    var(--bg-cart) 0%,
+    var(--bg-secondary) 100%
+  );
+  min-height: 20rem;
+  max-width: 22rem;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  clip-path: polygon(90% 0, 90% 5%, 100% 5%, 100% 100%, 0% 100%, 0% 0%);
+  cursor: pointer;
+  transition:
+    0.6s ease transform,
+    0.6s ease translate;
+  overflow: clip;
+  aspect-ratio: 1 / 1.1;
+}
+.cartridge::before,
+.cartridge::after {
+  content: '';
+  position: absolute;
+  display: block;
+  min-height: 65%;
+  bottom: 0;
+  width: 0.5rem;
+  box-shadow:
+    var(--glow) 0px 10px 0px -22px inset,
+    var(--glow-secondary) 0px 8px 6px -1px inset;
+}
+
+.cartridge::before {
+  left: 0;
+  border-bottom-left-radius: var(--radius);
+}
+
+.cartridge::after {
+  right: 0;
+  border-bottom-right-radius: var(--radius);
+}
+
+.top {
+  border-radius: 2.5rem;
+  background: var(--bg-cart);
+  height: 5rem;
+  margin: 1rem 2.5rem 0;
+  outline: 0.25rem solid var(--bg-cart);
+  box-shadow:
+    var(--glow) 0px 30px 60px -12px inset,
+    var(--glow-secondary) 0px 18px 36px -18px inset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.top-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.sidelines-container {
+  z-index: 1;
+}
+.sidelines {
+  position: relative;
+  height: 0.5rem;
+}
+.sidelines:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+
+.sidelines::before,
+.sidelines::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 200%;
+  height: 100%;
+  background: hsl(0, 0%, 100%, 0.1);
+  box-shadow:
+    var(--glow) 0px 10px 0px -22px inset,
+    var(--glow-secondary) 0px 8px 6px -1px inset;
+  z-index: -1;
+}
+
+.sidelines::before {
+  left: -100%;
+}
+.sidelines::after {
+  left: 100%;
+}
+
+.main {
+  margin: 1rem 2.5rem 2.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  height: 100%;
+  box-shadow:
+    var(--glow) 0px 30px 60px -12px inset,
+    var(--glow-secondary) 0px 18px 36px -18px inset;
+}
+
+.main::after {
+  content: '';
+  position: relative;
+  left: 50%;
+  bottom: 0;
+  translate: -50% -25%;
+  rotate: 45deg;
+  display: block;
+  border-radius: var(--radius);
+  background: var(--bg-cart);
+  width: 2rem;
+  height: 2rem;
+  clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+}
+
+.content {
+  position: relative;
+  display: grid;
+  align-items: center;
+  height: 100%;
+  padding: 0 30px;
+  border-radius: var(--radius);
+  box-shadow:
+    var(--glow) 0px 30px 30px -12px inset,
+    var(--glow-secondary) 0px 18px 20px -8px inset;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  overflow: clip;
+}
+.content::before {
+  content: '';
+  position: absolute;
+  background: black;
+  width: 1.5rem;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+.cartridge-container:nth-of-type(1) .content {
+  background-color: #a18cd1;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+.cartridge-container:nth-of-type(2) .content {
+  background-color: #ff9a9e;
+  background-image: linear-gradient(
+    to top,
+    #ff9a9e 0%,
+    #fecfef 99%,
+    #fecfef 100%
+  );
+}
