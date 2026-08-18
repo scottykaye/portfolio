@@ -213,6 +213,7 @@ html {
   scroll-behavior: smooth;
   accent-color: rgb(var(--primary));
   text-rendering: optimizeSpeed;
+  scrollbar-gutter: stable;
 }
 
 ::-moz-selection {
@@ -244,7 +245,6 @@ body {
   background-attachment: fixed;
   display: grid;
   grid-template-rows: 1fr min-content;
-  overflow-y: scroll;
 }
 
 ul {
