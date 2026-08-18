@@ -89,12 +89,12 @@ export default async function HomePage() {
     <>
       <div className="Scroll">
         <Image
-          src="/images/scottykaye-bg.jpg"
+          src="/images/scottykaye-bg-2.jpg"
           fill={true}
           placeholder="blur"
           style={{
             objectFit: 'cover',
-            objectPosition: '45% center',
+            objectPosition: '45% top',
             zIndex: '-1',
             filter:
               'sepia(.2) brightness(.5) contrast(1.1) saturate(1.5) opacity(1)',
