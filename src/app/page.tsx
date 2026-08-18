@@ -28,8 +28,16 @@ async function fetchRepo({
   }
 }
 
-async function getStargazersData(url: string) {
-  const response = await fetch(url)
+async function getStargazersData({ url, userAgent }) {
+  const response = await fetch(url, {
+    headers: {
+      ...(process.env.GITHUB && {
+        Authorization: `Bearer ${process.env.GITHUB}`,
+      }),
+      'Content-Type': 'application/json',
+      userAgent,
+    },
+  })
 
   if (!response.ok) {
     throw new Error('Error fetching stargazers')
@@ -38,7 +46,7 @@ async function getStargazersData(url: string) {
   let data
 
   try {
-    data = response.json()
+    data = await response.json()
 
     return data
   } catch (e) {
@@ -71,8 +79,14 @@ export default async function HomePage() {
 
   const [keyboardNavStargazersData, themHandlerStargazersData] =
     await Promise.allSettled([
-      await getStargazers(keyboardNav.stargazers_url),
-      await getStargazers(themeHandler.stargazers_url),
+      await getStargazers({
+        url: keyboardNav.stargazers_url,
+        userAgent: headers.get('user-agent'),
+      }),
+      await getStargazers({
+        url: themeHandler.stargazers_url,
+        userAgent: headers.get('user-agent'),
+      }),
     ])
 
   let keyboardNavStargazers = false
